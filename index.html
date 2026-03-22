@@ -113,10 +113,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .nav-logo span{color:var(--accent);}
 .nav-logo.animated{animation-play-state:running;}
 .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
-.nav-links a{color:var(--text2);font-size:.85rem;font-weight:500;padding:.38rem .75rem;border-radius:8px;transition:all .2s;white-space:nowrap;}
+.nav-links a{color:var(--text2);font-size:.85rem;font-weight:500;padding:.38rem .75rem;border-radius:8px;transition:all .2s;white-space:normal;word-break:break-word;}
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--tag-bg);}
 .nav-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
-.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.52rem 1.15rem;border-radius:10px;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .25s;border:none;white-space:nowrap;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.52rem 1.15rem;border-radius:10px;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .25s;border:none;white-space:normal;word-break:break-word;}
 .btn-primary{background:var(--accent);color:#0a0a05;font-weight:600;}
 .btn-primary:hover{color:#0a0a05;transform:translateY(-2px);box-shadow:0 8px 24px var(--glow);}
 .btn-outline{background:rgba(217,217,217,.04);color:var(--text);border:1.5px solid rgba(16,185,129,.28);}
@@ -240,7 +240,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 }
 .cs-back-btn:hover{background:var(--card2);color:var(--accent);border-color:var(--accent);}
 .cs-back-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
-.cs-panel-nav-title{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cs-panel-nav-title{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-break:break-word;}
 
 .cs-hero-band{
   padding:clamp(3rem,7vw,5.5rem) 0 clamp(2rem,5vw,3.5rem);
@@ -459,8 +459,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;}
 @media(max-width:768px){
   .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(20px);flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:.2rem;border-bottom:1px solid var(--border);z-index:800;}
   .nav-links.open{display:flex;}
-  .nav-links a{padding:.7rem .95rem;border-radius:10px;font-size:.9rem;}
-  .menu-toggle{display:flex;}
+  .nav-links a{padding:.7rem .95rem;border-radius:10px;font-size:.9rem;white-space:normal;word-break:break-word;}
+  .menu-toggle{display:flex !important;}
   .hero-ctas .btn{min-width:0;flex:1;}
   .hero-stats{gap:1.5rem;}
   .services-grid,.projects-grid{grid-template-columns:1fr;}
@@ -488,6 +488,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;}
   .cs-nav-btn{max-width:100%;width:100%;}
   .step{grid-template-columns:34px 1fr;}
   .step-n{width:34px;height:34px;}
+  .nav-links a, .btn, .cs-panel-nav-title {white-space:normal !important;word-break:break-word !important;}
 }
 </style>
 </head>
@@ -1403,8 +1404,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;}
     </div>
     <div class="gallery-tabs" role="tablist" aria-label="Gallery categories">
       <button class="gallery-tab active" role="tab" aria-selected="true" data-tab="photography">Photography</button>
-      <button class="gallery-tab" role="tab" aria-selected="false" data-tab="graphics">Graphics</button>
-      <button class="gallery-tab" role="tab" aria-selected="false" data-tab="ai-art">AI Art</button>
     </div>
     <div class="gallery-panel active" id="panel-photography" role="tabpanel">
       <div class="gallery-grid stagger reveal">
@@ -1416,28 +1415,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;}
         <div class="g-item" onclick="openLB('images/photography/image6.jpg','Photo 6')"><img src="images/photography/image6.jpg" alt="Photography 6" loading="lazy"/><div class="g-overlay"><span>Street - Ganpati Visarjan</span></div></div>
       </div>
       <!-- <p class="gallery-note">Drop your images into <code>images/photography/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
-    </div>
-    <div class="gallery-panel" id="panel-graphics" role="tabpanel">
-      <div class="gallery-grid stagger reveal">
-        <div class="g-item" onclick="openLB('images/graphics/image1.jpg','Graphic 1')"><img src="images/graphics/image1.jpg" alt="Graphic design 1" loading="lazy"/><div class="g-overlay"><span>Graphic 1</span></div></div>
-        <div class="g-item" onclick="openLB('images/graphics/image2.jpg','Graphic 2')"><img src="images/graphics/image2.jpg" alt="Graphic design 2" loading="lazy"/><div class="g-overlay"><span>Graphic 2</span></div></div>
-        <div class="g-item" onclick="openLB('images/graphics/image3.jpg','Graphic 3')"><img src="images/graphics/image3.jpg" alt="Graphic design 3" loading="lazy"/><div class="g-overlay"><span>Graphic 3</span></div></div>
-        <div class="g-item" onclick="openLB('images/graphics/image4.jpg','Graphic 4')"><img src="images/graphics/image4.jpg" alt="Graphic design 4" loading="lazy"/><div class="g-overlay"><span>Graphic 4</span></div></div>
-        <div class="g-item" onclick="openLB('images/graphics/image5.jpg','Graphic 5')"><img src="images/graphics/image5.jpg" alt="Graphic design 5" loading="lazy"/><div class="g-overlay"><span>Graphic 5</span></div></div>
-        <div class="g-item" onclick="openLB('images/graphics/image6.jpg','Graphic 6')"><img src="images/graphics/image6.jpg" alt="Graphic design 6" loading="lazy"/><div class="g-overlay"><span>Graphic 6</span></div></div>
-      </div>
-      <!-- <p class="gallery-note">Drop your images into <code>images/graphics/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
-    </div>
-    <div class="gallery-panel" id="panel-ai-art" role="tabpanel">
-      <div class="gallery-grid stagger reveal">
-        <div class="g-item" onclick="openLB('images/ai-art/image1.jpg','AI Art 1')"><img src="images/ai-art/image1.jpg" alt="AI artwork 1" loading="lazy"/><div class="g-overlay"><span>AI Art 1</span></div></div>
-        <div class="g-item" onclick="openLB('images/ai-art/image2.jpg','AI Art 2')"><img src="images/ai-art/image2.jpg" alt="AI artwork 2" loading="lazy"/><div class="g-overlay"><span>AI Art 2</span></div></div>
-        <div class="g-item" onclick="openLB('images/ai-art/image3.jpg','AI Art 3')"><img src="images/ai-art/image3.jpg" alt="AI artwork 3" loading="lazy"/><div class="g-overlay"><span>AI Art 3</span></div></div>
-        <div class="g-item" onclick="openLB('images/ai-art/image4.jpg','AI Art 4')"><img src="images/ai-art/image4.jpg" alt="AI artwork 4" loading="lazy"/><div class="g-overlay"><span>AI Art 4</span></div></div>
-        <div class="g-item" onclick="openLB('images/ai-art/image5.jpg','AI Art 5')"><img src="images/ai-art/image5.jpg" alt="AI artwork 5" loading="lazy"/><div class="g-overlay"><span>AI Art 5</span></div></div>
-        <div class="g-item" onclick="openLB('images/ai-art/image6.jpg','AI Art 6')"><img src="images/ai-art/image6.jpg" alt="AI artwork 6" loading="lazy"/><div class="g-overlay"><span>AI Art 6</span></div></div>
-      </div>
-      <!-- <p class="gallery-note">Drop your images into <code>images/ai-art/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
     </div>
   </div>
 </section>
