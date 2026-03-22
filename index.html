@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Omkar Khandalkar — Product Designer</title>
+
+<!-- Favicon: Circular profile image -->
+<link rel="icon" href="images/ok-favicon.png" type="image/png" />
+<!--
+  Favicon instructions:
+  1. Create a square image (at least 64x64px) with the OK. logo (matching the header, white or accent color on transparent or dark background).
+  2. Save as images/ok-favicon.png.
+  3. Place it in the images/ folder.
+-->
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Omkar Khandalkar — Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India." />
+<meta name="keywords" content="Omkar Khandalkar, Product Designer, UX, UI, Accessibility, Podcast, Portfolio, Mumbai, India, Case Study, Creative, CodeOS, Zeus Learning, Edtech, Workshops, Maharashtra, 12 Jilhe 12 Bhangadi" />
+<meta name="author" content="Omkar Khandalkar" />
+<link rel="canonical" href="https://omkarkhandalkar.com/" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Omkar Khandalkar — Product Designer" />
+<meta property="og:description" content="Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India." />
+<meta property="og:url" content="https://omkarkhandalkar.com/" />
+<meta property="og:image" content="https://omkarkhandalkar.com/images/profile.jpeg" />
+<meta property="og:site_name" content="Omkar Khandalkar Portfolio" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Omkar Khandalkar — Product Designer" />
+<meta name="twitter:description" content="Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India." />
+<meta name="twitter:image" content="https://omkarkhandalkar.com/images/profile.jpeg" />
+<meta name="twitter:site" content="@omkarkhandalkar" />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Omkar Khandalkar",
+  "url": "https://omkarkhandalkar.com/",
+  "image": "https://omkarkhandalkar.com/images/profile.jpeg",
+  "sameAs": [
+    "https://www.linkedin.com/in/omkarkhandalkar",
+    "https://www.behance.net/omkarkhandalkar",
+    "https://www.instagram.com/omkarkhandalkar",
+    "https://www.youtube.com/@CodeOS"
+  ],
+  "jobTitle": "Senior Product Designer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Zeus Learning"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:ital,opsz,wght@0,16..28,300;0,16..28,400;0,16..28,500;0,16..28,600;1,16..28,300&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+/* ── TOKENS ─────────────────────────────────────── */
+:root{
+  --bg:#0a0a05;--bg2:#0f0f09;--card:#1a1a0d;--card2:#252511;
+  --border:rgba(16,185,129,.08);--borderS:rgba(16,185,129,.16);
+  --text:#d9d9d9;--text2:#d9d9d9;--muted:#bcffd5;
+  --accent:#10b981;--a2:#059669;--a3:#34d399;
+  --glow:rgba(16,185,129,.22);--glow2:rgba(5,150,105,.16);
+  --nav-bg:rgba(10,10,5,.88);
+  --tag-bg:rgba(16,185,129,.1);--tag:rgba(52,211,153,1);
+  --shadow:0 8px 40px rgba(0,0,0,.55);
+  --shadow-c:0 2px 20px rgba(0,0,0,.4);
+  --hero-g:radial-gradient(ellipse 80% 60% at 60% 0%,rgba(16,185,129,.12) 0%,transparent 60%),
+           radial-gradient(ellipse 60% 40% at 10% 80%,rgba(5,150,105,.07) 0%,transparent 50%);
+}
+
+/* ── RESET ───────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s;}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--accent);text-decoration:none;transition:color .2s;}
+a:hover{color:var(--a2);}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk',sans-serif;line-height:1.13;letter-spacing:-.025em;}
+
+/* ── TYPE ────────────────────────────────────────── */
+.eyebrow{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.section-title{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;margin-bottom:.5rem;}
+.section-sub{font-size:1rem;color:var(--text2);line-height:1.75;max-width:520px;}
+
+/* ── LAYOUT ──────────────────────────────────────── */
+.container{width:100%;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem);}
+section{padding:clamp(4rem,8vw,7rem) 0;}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .4s;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);letter-spacing:-.04em;flex-shrink:0;animation:logoGlow 1.2s ease-out forwards;animation-play-state:paused;will-change:transform,filter;}
+.nav-logo span{color:var(--accent);}
+.nav-logo.animated{animation-play-state:running;}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
+.nav-links a{color:var(--text2);font-size:.85rem;font-weight:500;padding:.38rem .75rem;border-radius:8px;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--tag-bg);}
+.nav-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.52rem 1.15rem;border-radius:10px;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .25s;border:none;white-space:nowrap;}
+.btn-primary{background:var(--accent);color:#0a0a05;font-weight:600;}
+.btn-primary:hover{color:#0a0a05;transform:translateY(-2px);box-shadow:0 8px 24px var(--glow);}
+.btn-outline{background:rgba(217,217,217,.04);color:var(--text);border:1.5px solid rgba(16,185,129,.28);}
+.btn-outline:hover{background:var(--card2);border-color:var(--accent);color:var(--accent);}
+.icon-btn{width:2.5rem;height:2.5rem;padding:0;display:flex;align-items:center;justify-content:center;}
+.icon-btn i{font-size:1.1rem;}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+.menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.open span:nth-child(2){opacity:0;}
+.menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── HERO ────────────────────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;background:var(--hero-g);padding-top:clamp(7rem,14vw,9rem);padding-bottom:clamp(4rem,8vw,6rem);overflow:hidden;position:relative;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.4;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);pointer-events:none;}
+.hero-layout{display:grid;grid-template-columns:1fr 380px;gap:4rem;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--tag-bg);border:1px solid rgba(16,185,129,.22);color:var(--tag);font-size:.74rem;font-weight:500;padding:.32rem .85rem;border-radius:100px;margin-bottom:1.4rem;animation:fadeUp .6s ease both;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--a3);animation:pulse 2s ease infinite;flex-shrink:0;}
+.hero-name{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-.04em;animation:titleWave 1.1s cubic-bezier(.34,.1,.68,.55) forwards;animation-play-state:paused;perspective:1000px;will-change:transform,opacity;}
+.hero-name .grad{background:linear-gradient(135deg,var(--accent),var(--a3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-name.animated{animation-play-state:running;}
+.hero-role{font-size:1rem;color:var(--text2);margin:.8rem 0 1.4rem;animation:fadeUp .6s .18s ease both;}
+.role-highlight{color:var(--accent);font-weight:600;background:rgba(16,185,129,.08);padding:.2rem .4rem;border-radius:6px;}
+.hero-desc{font-size:.98rem;color:var(--text2);line-height:1.8;max-width:500px;margin-bottom:2.2rem;animation:fadeUp .6s .26s ease both;}
+.hero-ctas{display:flex;gap:.85rem;flex-wrap:wrap;animation:fadeUp .6s .34s ease both;}
+.hero-stats{display:flex;gap:2.2rem;flex-wrap:wrap;margin-top:2.8rem;animation:fadeUp .6s .42s ease both;}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:800;line-height:1;}
+.stat-num span{color:var(--accent);}
+.stat-label{font-size:.7rem;color:var(--muted);margin-top:.25rem;letter-spacing:.06em;text-transform:uppercase;}
+.hero-card{position:relative;animation:fadeRight .8s .2s ease both;}
+.hero-card-inner{border-radius:26px;overflow:hidden;background:var(--card);border:1px solid var(--borderS);box-shadow:0 24px 80px rgba(0,0,0,.35);}
+.hero-avatar{width:100%;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;}
+.avatar-photo{width:100%;height:100%;object-fit:cover;}
+.avatar-label{font-size:.78rem;color:var(--muted);}
+.float-tag{position:absolute;background:var(--card);border:1px solid var(--borderS);border-radius:14px;padding:.65rem 1rem;box-shadow:var(--shadow-c);}
+.ft-1{bottom:2rem;left:-1.4rem;}
+.ft-2{top:1rem;right:-1.4rem;text-align:right;}
+.ft-main{font-size:.83rem;font-weight:600;color:var(--text);}
+.ft-sub{font-size:.7rem;color:var(--muted);}
+
+/* ── ABOUT ───────────────────────────────────────── */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.about-text p{color:var(--text2);line-height:1.82;margin-bottom:1.2rem;font-size:.98rem;}
+.about-text p strong{color:var(--text);}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+.svc-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.4rem;transition:all .3s;position:relative;overflow:hidden;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--a3));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--borderS);}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-icon{width:40px;height:40px;border-radius:11px;background:var(--tag-bg);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;}
+.svc-icon svg{width:17px;height:17px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.svc-card h4{font-size:.92rem;font-weight:700;margin-bottom:.35rem;}
+.svc-card p{font-size:.8rem;color:var(--muted);line-height:1.6;}
+
+/* ── RESUME ──────────────────────────────────────── */
+.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.col-head{font-size:1rem;font-weight:700;margin-bottom:1.8rem;display:flex;align-items:center;gap:.6rem;}
+.col-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.timeline{position:relative;padding-left:1.8rem;}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent) 0%,var(--a2) 100%);opacity:.25;}
+.tl-item{position:relative;margin-bottom:2.2rem;opacity:0;transform:translateX(-18px);transition:all .5s ease;}
+.tl-item.v{opacity:1;transform:translateX(0);}
+.tl-item::before{content:'';position:absolute;left:-1.8rem;top:5px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg),0 0 0 5px rgba(249,115,22,.2);transform:translateX(-3.5px);}
+.tl-period{font-size:.72rem;font-weight:500;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;}
+.tl-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.2rem;}
+.tl-co{font-size:.83rem;color:var(--text2);margin-bottom:.65rem;}
+.tl-desc{font-size:.82rem;color:var(--muted);line-height:1.7;}
+.tl-desc ul{list-style:none;padding:0;}
+.tl-desc ul li{padding-left:.95rem;position:relative;margin-bottom:.28rem;}
+.tl-desc ul li::before{content:'--';position:absolute;left:0;color:var(--accent);font-size:.62rem;letter-spacing:-.08em;}
+
+/* ── PROJECTS ────────────────────────────────────── */
+#projects{background:var(--bg2);}
+.filter-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.filter-btn{padding:.4rem .95rem;border-radius:100px;border:1px solid var(--borderS);background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s;}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .35s;cursor:pointer;}
+.project-card.hidden{display:none;}
+.project-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:var(--borderS);}
+.p-thumb{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;display:block;}
+.p-thumb-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.p-thumb-label{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.16);letter-spacing:.08em;text-transform:uppercase;}
+.p-overlay{position:absolute;inset:0;background:linear-gradient(135deg,var(--glow),var(--glow2));display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;}
+.project-card:hover .p-overlay{opacity:1;}
+.p-overlay span{font-size:.8rem;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.3);padding:.38rem .85rem;border-radius:100px;}
+.p-body{padding:1.35rem;}
+.p-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem;}
+.p-tag{font-size:.68rem;font-weight:500;padding:.22rem .55rem;border-radius:100px;background:var(--tag-bg);color:var(--tag);}
+.p-body h3{font-size:1rem;font-weight:700;margin-bottom:.45rem;}
+.p-body > p{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;}
+.p-card-footer{display:flex;gap:.6rem;flex-wrap:wrap;}
+.cs-btn{font-size:.78rem;padding:.44rem .9rem;flex:1;justify-content:center;min-width:0;}
+
+/* ── CASE STUDY PANEL (full-page overlay) ─────────── */
+.cs-panel{
+  position:fixed;inset:0;z-index:990;
+  background:var(--bg);
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.cs-panel.open{transform:translateX(0);}
+
+.cs-panel-nav{
+  position:sticky;top:0;z-index:10;
+  background:var(--nav-bg);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 clamp(1.25rem,5vw,2.5rem);
+  height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.cs-back-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.82rem;font-weight:500;color:var(--text2);
+  border:1px solid var(--borderS);border-radius:8px;
+  padding:.38rem .85rem;transition:all .2s;background:none;cursor:pointer;
+  font-family:'Inter',sans-serif;
+}
+.cs-back-btn:hover{background:var(--card2);color:var(--accent);border-color:var(--accent);}
+.cs-back-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.cs-panel-nav-title{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+.cs-hero-band{
+  padding:clamp(3rem,7vw,5.5rem) 0 clamp(2rem,5vw,3.5rem);
+  position:relative;overflow:hidden;
+}
+.cs-hero-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:50px 50px;opacity:.4;
+  mask-image:radial-gradient(ellipse 80% 100% at 50% 0%,black 30%,transparent 100%);
+}
+.cs-hero-inner{position:relative;}
+.cs-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.1rem;}
+.cs-tag{font-size:.67rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.26rem .68rem;border-radius:100px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2);color:var(--a3);}
+.cs-hero-band h1{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;margin-bottom:.85rem;}
+.cs-hero-band .cs-sub{font-size:clamp(.92rem,1.8vw,1.1rem);color:var(--text2);max-width:600px;line-height:1.75;}
+.cs-meta-row{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.2rem;padding-top:2rem;border-top:1px solid var(--borderS);}
+.cs-meta-lbl{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.3rem;}
+.cs-meta-val{font-size:.9rem;font-weight:500;}
+
+.cs-body{padding-bottom:4rem;}
+.cs-sec{padding:clamp(2.5rem,5vw,4rem) 0;border-bottom:1px solid var(--border);}
+.cs-sec:last-child{border-bottom:none;}
+.sec-lbl{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem;}
+.sec-lbl::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:1px;flex-shrink:0;}
+.cs-sec h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;margin-bottom:1.1rem;}
+.cs-sec p{font-size:.97rem;color:var(--text2);line-height:1.82;margin-bottom:1rem;}
+.cs-sec p:last-child{margin-bottom:0;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+
+.ic{background:var(--card);border:1px solid var(--borderS);border-radius:14px;padding:1.4rem;position:relative;overflow:hidden;}
+.ic::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--a3));}
+.ic h3{font-size:.95rem;font-weight:700;margin-bottom:.55rem;}
+.ic p{font-size:.83rem;color:var(--text2);line-height:1.7;}
+.ic ul{list-style:none;padding:0;}
+.ic ul li{font-size:.83rem;color:var(--text2);line-height:1.68;padding-left:1rem;position:relative;margin-bottom:.3rem;}
+.ic ul li::before{content:'--';position:absolute;left:0;color:var(--accent);font-size:.6rem;letter-spacing:-.08em;}
+
+.stat-c{background:var(--card2);border:1px solid var(--borderS);border-radius:13px;padding:1.4rem;text-align:center;}
+.stat-big{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1;}
+.stat-lbl{font-size:.75rem;color:var(--muted);margin-top:.35rem;line-height:1.5;}
+
+.steps{display:flex;flex-direction:column;gap:1.1rem;}
+.step{display:grid;grid-template-columns:38px 1fr;gap:.9rem;align-items:start;}
+.step-n{width:38px;height:38px;border-radius:9px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:800;color:var(--accent);flex-shrink:0;}
+.step h4{font-size:.93rem;font-weight:700;margin-bottom:.28rem;}
+.step p{font-size:.83rem;color:var(--text2);line-height:1.7;}
+
+.mock-wide{background:var(--card);border:1px solid var(--borderS);border-radius:18px;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-top:1.4rem;}
+.mock-wide img{width:100%;height:100%;object-fit:cover;}
+.mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+.mock-frame{background:var(--card);border:1px solid var(--borderS);border-radius:13px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
+.mock-frame img{width:100%;height:100%;object-fit:cover;}
+.mock-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:linear-gradient(135deg,var(--bg2),var(--card2));}
+.mph-lbl{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
+.mph-note{font-size:.65rem;color:var(--muted);opacity:.65;}
+
+.cs-quote{border-left:3px solid var(--accent);padding:1.1rem 1.4rem;background:rgba(16,185,129,.06);border-radius:0 11px 11px 0;margin:1.4rem 0;}
+.cs-quote p{font-size:1rem;font-style:italic;line-height:1.7;margin:0;}
+
+.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem;}
+.learn-item{background:var(--card2);border:1px solid var(--border);border-radius:11px;padding:1.1rem;}
+.learn-item h4{font-size:.87rem;font-weight:700;color:var(--a3);margin-bottom:.35rem;}
+.learn-item p{font-size:.81rem;color:var(--text2);line-height:1.65;}
+
+/* ── CONTENT CREATION ──────────────────────────────── */
+#content{background:var(--bg2);}
+.content-tabs{display:flex;gap:.45rem;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:.38rem;width:fit-content;margin-bottom:2.2rem;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.content-tab{padding:.5rem 1.1rem;border-radius:9px;border:none;background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .25s;white-space:nowrap;}
+.content-tab:hover{color:var(--text);}
+.content-tab.active{background:var(--accent);color:#fff;}
+.content-panel{display:none;}
+.content-panel.active{display:block;}
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.video-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s;cursor:pointer;text-decoration:none;}
+.video-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--borderS);}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg);}
+.video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.video-card:hover .video-thumb img{transform:scale(1.05);}
+.play-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#fff;background:rgba(0,0,0,.4);opacity:0;transition:opacity .3s;}
+.video-card:hover .play-icon{opacity:1;}
+.video-info{padding:1.2rem;flex:1;display:flex;flex-direction:column;}
+.video-info h3{font-size:.95rem;font-weight:700;margin-bottom:.5rem;color:var(--text);}
+.video-date{font-size:.78rem;color:var(--muted);line-height:1.5;}
+
+.cs-cta-box{background:var(--card);border:1px solid var(--borderS);border-radius:18px;padding:clamp(1.8rem,4vw,2.8rem);text-align:center;margin:2.5rem 0;}
+.cs-cta-box h2{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;margin-bottom:.65rem;}
+.cs-cta-box p{font-size:.93rem;color:var(--text2);margin-bottom:1.6rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.72;}
+.cta-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+
+.cs-nav-btns{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;}
+.cs-nav-btn{display:flex;flex-direction:column;gap:.28rem;padding:.85rem 1.1rem;border-radius:11px;border:1px solid var(--borderS);background:var(--card);transition:all .2s;max-width:240px;cursor:pointer;background:none;font-family:'Inter',sans-serif;text-align:left;}
+.cs-nav-btn:hover{border-color:var(--accent);background:var(--card2);}
+.cs-nav-btn-dir{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);}
+.cs-nav-btn-name{font-size:.88rem;font-weight:600;color:var(--text);}
+
+/* ── GALLERY ─────────────────────────────────────── */
+.gallery-tabs{display:flex;gap:.45rem;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:.38rem;width:fit-content;margin-bottom:2.2rem;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.gallery-tab{padding:.5rem 1.1rem;border-radius:9px;border:none;background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .25s;white-space:nowrap;}
+.gallery-tab:hover{color:var(--text);}
+.gallery-tab.active{background:var(--accent);color:#fff;}
+.gallery-panel{display:none;}
+.gallery-panel.active{display:block;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.g-item{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--card);cursor:pointer;transition:transform .3s;}
+.g-item:hover{transform:scale(1.02);}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.g-item:hover img{transform:scale(1.08);}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:.85rem;}
+.g-item:hover .g-overlay{opacity:1;}
+.g-overlay span{font-size:.8rem;font-weight:500;color:#fff;}
+.gallery-note{font-size:.75rem;color:var(--muted);margin-top:1.1rem;text-align:center;}
+.gallery-note code{background:var(--card);padding:.18rem .4rem;border-radius:4px;font-family:monospace;font-size:.72rem;}
+
+/* ── LIGHTBOX ────────────────────────────────────── */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px;}
+.lb-close{position:absolute;top:1.4rem;right:1.4rem;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;font-family:'Inter',sans-serif;}
+.lb-close:hover{background:rgba(255,255,255,.22);}
+
+/* ── EXTRACURRICULAR ─────────────────────────────── */
+#extracurricular{background:var(--bg2);}
+.extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:2.5rem;}
+.extra-card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all .3s;}
+.extra-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.extra-img-wrap{overflow:hidden;aspect-ratio:16/9;}
+.extra-img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .4s;display:block;}
+.extra-card:hover .extra-img{transform:scale(1.04);}
+.extra-body{padding:1.35rem;}
+.extra-meta{display:flex;align-items:center;gap:.55rem;margin-bottom:.65rem;}
+.x-badge{font-size:.67rem;font-weight:600;padding:.22rem .65rem;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;}
+.xb-ws{background:rgba(16,185,129,.12);color:var(--a3);}
+.xb-csr{background:rgba(255,107,157,.12);color:#ff6b9d;}
+.xb-media{background:var(--tag-bg);color:var(--tag);}
+.xb-event{background:rgba(232,184,75,.12);color:#e8b84b;}
+.extra-date{font-size:.73rem;color:var(--muted);}
+.extra-body h3{font-size:.98rem;font-weight:700;margin-bottom:.45rem;}
+.extra-body p{font-size:.8rem;color:var(--muted);line-height:1.65;}
+.extra-stats{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border);}
+.xstat{font-size:.76rem;color:var(--muted);}
+.xstat strong{color:var(--text);font-weight:600;display:block;font-size:.92rem;}
+.impact-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:2rem;}
+.impact-item{text-align:center;}
+.impact-num{font-family:'Space Grotesk',sans-serif;font-size:2.1rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.impact-lbl{font-size:.72rem;color:var(--muted);margin-top:.3rem;}
+
+/* ── CONTACT ─────────────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-tagline{font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:2rem;}
+.contact-links{display:flex;flex-direction:column;gap:.85rem;}
+.contact-link-item{display:flex;align-items:center;gap:1rem;padding:.95rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:13px;transition:all .25s;color:var(--text);}
+.contact-link-item:hover{border-color:var(--accent);background:var(--card2);transform:translateX(4px);}
+.cl-icon{width:38px;height:38px;border-radius:9px;background:var(--tag-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cl-icon svg{width:16px;height:16px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.cl-text{flex:1;}
+.cl-lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.cl-val{font-size:.88rem;font-weight:500;}
+.cl-arrow{font-size:.8rem;color:var(--muted);}
+.form-group{margin-bottom:1.1rem;}
+.form-label{display:block;font-size:.78rem;font-weight:500;color:var(--text2);margin-bottom:.45rem;}
+.form-input,.form-textarea{width:100%;background:var(--card);border:1px solid var(--borderS);border-radius:11px;padding:.75rem .95rem;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none;resize:none;}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--muted);}
+.form-input:focus,.form-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow);}
+.form-textarea{min-height:125px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-success{display:none;margin-top:1rem;padding:.85rem;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.28);border-radius:11px;color:var(--a3);font-size:.86rem;text-align:center;}
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:.8rem;color:var(--muted);}
+.footer-links{display:flex;gap:1rem;align-items:center;}
+.footer-links a{font-size:.8rem;color:var(--muted);transition:color .2s;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:transparent;}
+.footer-links a i{font-size:.9rem;}
+.footer-links a:hover{color:var(--accent);}
+
+/* ── ANIMATIONS ──────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeRight{from{opacity:0;transform:translateX(36px);}to{opacity:1;transform:translateX(0);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.5);}}
+@keyframes logoGlow{0%{transform:scale(.9);opacity:0;filter:drop-shadow(0 0 0 var(--accent));}50%{filter:drop-shadow(0 0 8px var(--accent));transform:scale(1.05);}100%{transform:scale(1);opacity:1;filter:drop-shadow(0 0 4px var(--accent));}}
+@keyframes titleWave{0%{opacity:0;transform:translateY(40px) rotateX(90deg);}60%{transform:translateY(-5px) rotateX(0deg);}100%{opacity:1;transform:translateY(0) rotateX(0deg);}}
+.reveal,.reveal-l{opacity:0;transition:opacity .6s ease,transform .6s ease;}
+.reveal{transform:translateY(28px);}
+.reveal-l{transform:translateX(-28px);}
+.reveal.v,.reveal-l.v{opacity:1;transform:translate(0);}
+.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
+.stagger.v>*:nth-child(1){transition-delay:0s;}.stagger.v>*:nth-child(2){transition-delay:.07s;}.stagger.v>*:nth-child(3){transition-delay:.14s;}.stagger.v>*:nth-child(4){transition-delay:.21s;}.stagger.v>*:nth-child(5){transition-delay:.28s;}.stagger.v>*:nth-child(6){transition-delay:.35s;}
+.stagger.v>*{opacity:1;transform:translateY(0);}
+
+/* ── CAROUSEL ────────────────────────────────────── */
+.carousel-wrap{position:relative;overflow:hidden;background:var(--bg);aspect-ratio:16/9;}
+.carousel-inner{display:flex;transition:transform .5s ease;height:100%;}
+.carousel-item{min-width:100%;flex-shrink:0;height:100%;display:flex;align-items:center;justify-content:center;}
+.carousel-img{width:100%;height:100%;object-fit:cover;display:block;}
+.carousel-controls{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;gap:.8rem;z-index:10;align-items:center;}
+.carousel-dots{display:flex;gap:.5rem;}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s;}
+.carousel-dot.active{background:var(--accent);width:12px;border-radius:100px;}
+.carousel-pause-btn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:.9rem;color:#fff;font-weight:600;}
+.carousel-pause-btn:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.5);}
+.carousel-pause-btn.paused{background:var(--accent);border-color:var(--accent);}
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media(max-width:1024px){
+  .hero-layout{grid-template-columns:1fr;}
+  .hero-card{display:none;}
+  .hero-desc{max-width:100%;}
+  .about-grid,.resume-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .services-grid,.projects-grid,.gallery-grid,.videos-grid{grid-template-columns:1fr 1fr;}
+  .two-col,.three-col{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(20px);flex-direction:column;padding:1rem 1.25rem 1.5rem;gap:.2rem;border-bottom:1px solid var(--border);z-index:800;}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:.7rem .95rem;border-radius:10px;font-size:.9rem;}
+  .menu-toggle{display:flex;}
+  .hero-ctas .btn{min-width:0;flex:1;}
+  .hero-stats{gap:1.5rem;}
+  .services-grid,.projects-grid{grid-template-columns:1fr;}
+  .gallery-tabs{width:100%;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .extra-grid{grid-template-columns:1fr;}
+  .impact-row{grid-template-columns:1fr 1fr;gap:1rem;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;align-items:flex-start;}
+  .two-col,.three-col,.mock-grid,.learn-grid{grid-template-columns:1fr;}
+  .cs-meta-row{gap:1.2rem;}
+  .cta-row{flex-direction:column;align-items:stretch;}
+  .cta-row .btn{width:100%;justify-content:center;}
+  .cs-panel-nav-title{display:none;}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr;}
+  .hero-ctas{flex-direction:column;}
+  .hero-ctas .btn{width:100%;justify-content:center;}
+  .hero-stats{gap:1.2rem;}
+  .impact-row{grid-template-columns:1fr 1fr;}
+  .filter-btn{font-size:.75rem;padding:.35rem .75rem;}
+  .nav-actions .btn-primary{display:none;}
+  .cs-nav-btns{flex-direction:column;}
+  .cs-nav-btn{max-width:100%;width:100%;}
+  .step{grid-template-columns:34px 1fr;}
+  .step-n{width:34px;height:34px;}
+}
+</style>
+</head>
+<body>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lbClose" aria-label="Close viewer">&#x2715;</button>
+    <img src="" alt="" id="lbImg" />
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CASE STUDY PANELS (all 6 inline)
+       ═══════════════════════════════════════ -->
+
+<!-- PANEL: CLIO -->
+<div class="cs-panel" id="cs-clio" role="dialog" aria-modal="true" aria-label="Clio case study">
+  <div class="cs-panel-nav">
+    <button class="cs-back-btn" onclick="closeCS('cs-clio')">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <span class="cs-panel-nav-title">Clio &mdash; AI Investment Assistant</span>
+    <span></span>
+  </div>
+  <div class="cs-hero-band" style="background:linear-gradient(135deg,#0d1a0d 0%,#1a3a1a 100%);">
+    <div class="container cs-hero-inner">
+      <div class="cs-tags"><span class="cs-tag">Fintech</span><span class="cs-tag">Data Visualisation</span><span class="cs-tag">AI Feature</span><span class="cs-tag">Product Design</span></div>
+      <h1>Clio &mdash; AI Investment Assistant</h1>
+      <p class="cs-sub">Dense financial data, made human. A case study in progressive disclosure, behavioural nudges, and designing for people who don&rsquo;t speak the language of markets &mdash; yet.</p>
+      <div class="cs-meta-row">
+        <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Lead Product Designer</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS &amp; Android</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">8 Weeks</div></div>
+        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Adobe XD, Maze</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container cs-body">
+    <div class="cs-sec">
+      <p class="sec-lbl">Overview</p>
+      <h2>The brief in one sentence</h2>
+      <p>Design a portfolio management feature for Clio that makes complex financial data understandable for novice investors without dumbing it down for experienced ones.</p>
+      <p>The challenge wasn&rsquo;t purely visual. It was cognitive &mdash; how do you show volatility, risk exposure, sector allocation, and smart trade recommendations to someone who opened their first investment account three weeks ago, without overwhelming them into inaction?</p>
+      <div class="cs-quote"><p>&ldquo;When I open my portfolio I see a wall of numbers and feel like I&rsquo;m missing something. I just close the app.&rdquo;</p></div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">The Problem</p>
+      <h2>Information density is not the same as clarity</h2>
+      <div class="two-col">
+        <div><p>Most investment apps were designed for people who already understand finance. They cram every metric onto one screen because power users want it. But for everyone else, it triggers decision paralysis &mdash; too much information, no action at all.</p><p>This isn&rsquo;t a cosmetic problem. It&rsquo;s a retention and trust problem. Users who feel confused churn. Users who feel empowered invest more and stay longer.</p></div>
+        <div class="ic"><h3>Key pain points</h3><ul>
+          <li>Dashboard shows 14+ data points simultaneously with no visual hierarchy</li>
+          <li>No contextual explanation of what numbers mean or what to do with them</li>
+          <li>Trade recommendations appear with no rationale, creating distrust</li>
+          <li>Risk levels displayed as jargon-heavy scores (e.g. &ldquo;Beta 1.4&rdquo;)</li>
+          <li>No sense of progress or portfolio health at a glance</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Research</p>
+      <h2>Listening before designing</h2>
+      <div class="three-col">
+        <div class="ic"><h3>User Interviews</h3><p>12 sessions with novice investors and 6 with experienced traders. Goal: map the knowledge gap and identify where confidence collapses.</p></div>
+        <div class="ic"><h3>Competitive Analysis</h3><p>Evaluated 5 platforms including Zerodha, Groww, and Robinhood on information hierarchy, onboarding clarity, and trade decision support.</p></div>
+        <div class="ic"><h3>Cognitive Load Mapping</h3><p>Task-based test asking users to answer 5 simple questions using their current app. Measured time-to-answer and error rates to find overload points.</p></div>
+      </div>
+      <p style="margin-top:1.8rem;">Key insight: novice users don&rsquo;t need less data &mdash; they need data presented with context and intent. They want to know what something means <em>for them</em>, not just what it is.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Process</p>
+      <h2>From insight to interface</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><h4>Define the user spectrum</h4><p>Created two primary personas: &ldquo;Curious Priya&rdquo; (first-time investor, wants simplicity) and &ldquo;Confident Raj&rdquo; (2+ years, wants density). The design needed to serve both without compromise.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Progressive disclosure architecture</h4><p>Restructured information hierarchy so the default view shows only three high-value signals: portfolio health score, today&rsquo;s change, and a single action nudge. All detail is one tap away.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Smart Trade flows</h4><p>Designed an AI-powered recommendation system that shows not just what to trade but why &mdash; with plain-language rationale, risk profile alignment, and a &ldquo;what happens if I do/don&rsquo;t&rdquo; framing.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Contextual data visualisation</h4><p>Replaced raw charts with annotated visuals. Every significant data point has a tooltip in plain language. Sector allocation shows as a labelled visual map, not just percentages.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Usability testing and iteration</h4><p>Two rounds of moderated testing with 8 participants using Maze. Iterated on the Smart Trade confirmation flow after discovering users wanted one more step of reassurance before committing.</p></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Screens</p>
+      <h2>What the work looks like</h2>
+      <p>Add your Figma exports to the <code style="background:var(--card2);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;">images/clio/</code> folder and update the <code style="background:var(--card2);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;">src</code> attributes below.</p>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Dashboard Overview</div><div class="mph-note">images/clio/dashboard.png</div></div></div>
+      <div class="mock-grid">
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Portfolio Health</div><div class="mph-note">images/clio/health.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Smart Trade Flow</div><div class="mph-note">images/clio/smart-trade.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Risk Profile</div><div class="mph-note">images/clio/risk-profile.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Sector Allocation</div><div class="mph-note">images/clio/allocation.png</div></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Outcome</p>
+      <h2>Numbers that tell the real story</h2>
+      <div class="three-col">
+        <div class="stat-c"><div class="stat-big">+40%</div><div class="stat-lbl">Dashboard comprehension score in usability testing</div></div>
+        <div class="stat-c"><div class="stat-big">-60%</div><div class="stat-lbl">Decision time for Smart Trade among test participants</div></div>
+        <div class="stat-c"><div class="stat-big">89%</div><div class="stat-lbl">Task completion rate (up from 54% in baseline)</div></div>
+      </div>
+      <p style="margin-top:1.8rem;">Users who previously closed the app when faced with the dashboard were now spending more time exploring &mdash; not because there was more to see, but because they finally understood what they were looking at.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Learnings</p>
+      <h2>What this project taught me</h2>
+      <div class="learn-grid">
+        <div class="learn-item"><h4>Simplicity is not reduction</h4><p>Hiding information is not the same as designing for clarity. Progressive disclosure works because it respects the user&rsquo;s journey &mdash; giving them what they need, when they need it.</p></div>
+        <div class="learn-item"><h4>Context is the design</h4><p>The most impactful change wasn&rsquo;t visual &mdash; it was adding plain-language context to every data point. Data without meaning is noise. Data with meaning is a conversation.</p></div>
+        <div class="learn-item"><h4>Trust is designed, not assumed</h4><p>The Smart Trade flow taught me that AI recommendations need to show their work. Users won&rsquo;t act on a suggestion they don&rsquo;t understand, no matter how accurate it is.</p></div>
+        <div class="learn-item"><h4>Test with real sceptics</h4><p>Recruiting participants who actively avoided investing gave us the most actionable feedback. Designing for the hesitant user makes the product better for everyone.</p></div>
+      </div>
+    </div>
+    <div class="cs-cta-box">
+      <h2>Want to see the full Figma file?</h2>
+      <p>Complete design system, all screens, prototypes, and research documentation are available on Behance.</p>
+      <div class="cta-row">
+        <a href="https://www.behance.net/gallery/231258555/Clio-AI-Investment-Assistant-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-primary">View on Behance &rarr;</a>
+        <button class="btn btn-outline" onclick="closeCS('cs-clio')">Back to Portfolio</button>
+      </div>
+    </div>
+    <div class="cs-nav-btns">
+      <span></span>
+      <button class="cs-nav-btn" onclick="closeCS('cs-clio');openCS('cs-assure')">
+        <span class="cs-nav-btn-dir">Next Case Study &rarr;</span>
+        <span class="cs-nav-btn-name">Amazon Assure</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL: AMAZON ASSURE -->
+<div class="cs-panel" id="cs-assure" role="dialog" aria-modal="true" aria-label="Amazon Assure case study">
+  <div class="cs-panel-nav">
+    <button class="cs-back-btn" onclick="closeCS('cs-assure')">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <span class="cs-panel-nav-title">Amazon Assure</span>
+    <span></span>
+  </div>
+  <div class="cs-hero-band" style="background:linear-gradient(135deg,#0a1a14 0%,#0f2d20 100%);">
+    <div class="container cs-hero-inner">
+      <div class="cs-tags"><span class="cs-tag">E-commerce</span><span class="cs-tag">Trust Design</span><span class="cs-tag">Feature Design</span><span class="cs-tag">UX Research</span></div>
+      <h1>Amazon Assure</h1>
+      <p class="cs-sub">Post-purchase anxiety is a silent churn driver. This feature case study tackles what happens after the buy button &mdash; and why that moment defines long-term customer trust.</p>
+      <div class="cs-meta-row">
+        <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Lead UX Designer</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS, Android, Web</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">6 Weeks</div></div>
+        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Hotjar, Lookback</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container cs-body">
+    <div class="cs-sec">
+      <p class="sec-lbl">Overview</p>
+      <h2>The brief in one sentence</h2>
+      <p>Design a trust-building feature for Amazon that reduces post-purchase anxiety, lowers WISMO (Where Is My Order) contact rates, and improves customer satisfaction without adding friction to the existing checkout flow.</p>
+      <div class="cs-quote"><p>&ldquo;I bought it three days ago. I just keep refreshing the tracking page every hour hoping something has changed.&rdquo;</p></div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">The Problem</p>
+      <h2>The experience falls apart after the sale</h2>
+      <div class="two-col">
+        <div><p>The invisible problem with e-commerce is that the experience falls apart the moment the customer pays. The product is sold. The design team moves on. But the user is now in a state of uncertainty that can last days &mdash; and that uncertainty is where trust is won or lost.</p></div>
+        <div class="ic"><h3>Key pain points</h3><ul>
+          <li>Return initiation requires 5+ steps with confusing policy language at each point</li>
+          <li>Order tracking shows carrier codes and depot names with no plain-language status</li>
+          <li>No proactive communication when delays occur</li>
+          <li>No visual confirmation of what the guarantee covers until a problem arises</li>
+          <li>Customer support chat used mostly for questions the UI could answer</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Research</p>
+      <h2>Finding the trust gaps</h2>
+      <div class="three-col">
+        <div class="ic"><h3>Customer Journey Mapping</h3><p>Mapped the post-purchase journey for 20 users from order confirmation to receipt, identifying every moment of uncertainty and every touch point that either built or eroded trust.</p></div>
+        <div class="ic"><h3>Review Mining</h3><p>Analysed 500 one-star reviews across product categories. 60% mentioned order uncertainty, return difficulty, or lack of communication as the primary complaint.</p></div>
+        <div class="ic"><h3>Competitive Benchmarking</h3><p>Evaluated return and tracking UX across Flipkart, Myntra, and Nykaa to identify what the market was doing well and where Amazon had an opportunity to lead.</p></div>
+      </div>
+      <p style="margin-top:1.8rem;">Core insight: users didn&rsquo;t need faster delivery. They needed fewer moments of uncertainty. Every step that told a user &ldquo;here&rsquo;s where your order is and what happens next&rdquo; reduced anxiety, even if the timeline didn&rsquo;t change.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Process</p>
+      <h2>From insight to interface</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><h4>Map the trust gaps first</h4><p>Mapped all post-confirmation touch points on a trust scale before designing a single screen. This focused effort on the highest-anxiety moments, not the most visible ones.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Design the guarantee badge system</h4><p>A persistent visual badge communicating what protection the customer has, visible on order confirmation, tracking, and product pages.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Redesign the tracking page</h4><p>Replaced carrier codes and depot names with a plain-language progress narrative: &ldquo;Your order left the sorting facility in Pune and is on its way to Mumbai.&rdquo;</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Proactive delay communication</h4><p>In-app notification system that pre-empts customer queries by proactively communicating delays with reason, updated ETA, and a one-tap support option.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Streamlined return initiation</h4><p>Reduced return initiation from 5 steps to 2 with plain-language policy summaries at the decision point.</p></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Screens</p>
+      <h2>What the work looks like</h2>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Order Tracking Redesign</div><div class="mph-note">images/assure/tracking.png</div></div></div>
+      <div class="mock-grid">
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Assure Badge</div><div class="mph-note">images/assure/badge.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Delay Notification</div><div class="mph-note">images/assure/delay.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Return Flow Step 1</div><div class="mph-note">images/assure/return-1.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Return Flow Step 2</div><div class="mph-note">images/assure/return-2.png</div></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Outcome</p>
+      <h2>Numbers that tell the real story</h2>
+      <div class="three-col">
+        <div class="stat-c"><div class="stat-big">-28%</div><div class="stat-lbl">Projected reduction in WISMO support contacts</div></div>
+        <div class="stat-c"><div class="stat-big">+18pts</div><div class="stat-lbl">Post-purchase NPS improvement in prototype testing</div></div>
+        <div class="stat-c"><div class="stat-big">2 steps</div><div class="stat-lbl">Return initiation reduced from 5 steps to 2</div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Learnings</p>
+      <h2>What this project taught me</h2>
+      <div class="learn-grid">
+        <div class="learn-item"><h4>The experience lives after the sale</h4><p>Most design attention goes to conversion. This project proved that the post-purchase experience has enormous leverage on NPS, repeat purchase rate, and brand trust.</p></div>
+        <div class="learn-item"><h4>Proactive beats reactive</h4><p>A single proactive delay notification eliminated the need for customers to contact support. Prevention is always cheaper than resolution.</p></div>
+        <div class="learn-item"><h4>Plain language is a design decision</h4><p>Changing &ldquo;HYD1 &rarr; BOM2&rdquo; to a human sentence was one of the highest-impact changes in the project. Clarity is not a copywriting task &mdash; it is a UX task.</p></div>
+        <div class="learn-item"><h4>Guarantees need to be visible to work</h4><p>Customers didn&rsquo;t know Amazon&rsquo;s return policy was generous because it was buried. Making the guarantee visible changed perception before any problem even occurred.</p></div>
+      </div>
+    </div>
+    <div class="cs-cta-box">
+      <h2>Want to see the full Figma file?</h2>
+      <p>Complete design system, all screens, prototypes, and research documentation are available on Behance.</p>
+      <div class="cta-row">
+        <a href="https://www.behance.net/gallery/229228627/Amazon-Assure-Prodcut-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-primary">View on Behance &rarr;</a>
+        <button class="btn btn-outline" onclick="closeCS('cs-assure')">Back to Portfolio</button>
+      </div>
+    </div>
+    <div class="cs-nav-btns">
+      <button class="cs-nav-btn" onclick="closeCS('cs-assure');openCS('cs-clio')">
+        <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Clio</span>
+      </button>
+      <button class="cs-nav-btn" onclick="closeCS('cs-assure');openCS('cs-tryfit')">
+        <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Tryfit</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL: TRYFIT -->
+<div class="cs-panel" id="cs-tryfit" role="dialog" aria-modal="true" aria-label="Tryfit case study">
+  <div class="cs-panel-nav">
+    <button class="cs-back-btn" onclick="closeCS('cs-tryfit')">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <span class="cs-panel-nav-title">Tryfit &mdash; Shopping App</span>
+    <span></span>
+  </div>
+  <div class="cs-hero-band" style="background:linear-gradient(135deg,#122010 0%,#1c3a18 100%);">
+    <div class="container cs-hero-inner">
+      <div class="cs-tags"><span class="cs-tag">E-commerce</span><span class="cs-tag">Mobile UX</span><span class="cs-tag">User Research</span><span class="cs-tag">Conversion Design</span></div>
+      <h1>Tryfit &mdash; Shopping App</h1>
+      <p class="cs-sub">Clothing returns cost the industry billions annually. Most are caused by a single unsolvable problem &mdash; people can&rsquo;t tell if something will fit. This case study is the design response to that.</p>
+      <div class="cs-meta-row">
+        <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">UX Designer &amp; Researcher</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS Mobile App</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">10 Weeks</div></div>
+        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Adobe XD, Lookback</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container cs-body">
+    <div class="cs-sec">
+      <p class="sec-lbl">Overview</p>
+      <h2>The brief in one sentence</h2>
+      <p>Design a mobile shopping experience that reduces size-related return rates, increases first-purchase conversion, and builds enough confidence in fit prediction that users are willing to buy clothing they&rsquo;ve never tried on.</p>
+      <div class="cs-quote"><p>&ldquo;I&rsquo;ve bought the same jeans in three different sizes hoping one fits. Two of them are still in the bag.&rdquo;</p></div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">The Problem</p>
+      <h2>Uncertainty lives between the photo and the body</h2>
+      <div class="two-col">
+        <div><p>Clothing e-commerce has a returns problem that&rsquo;s been accepted as a cost of doing business. But the problem isn&rsquo;t logistics &mdash; it&rsquo;s uncertainty. Users know what they see; they don&rsquo;t know how it will feel. The gap between the product image and the lived experience is where conversion dies.</p></div>
+        <div class="ic"><h3>Key pain points</h3><ul>
+          <li>Size charts are generic and use measurements most users don&rsquo;t know without a tape measure</li>
+          <li>Product images show models with unknown body proportions &mdash; useless as a fit reference</li>
+          <li>No way to compare how an item fits someone with similar measurements</li>
+          <li>Review sections don&rsquo;t surface fit information prominently</li>
+          <li>Wishlist and comparison flows are cumbersome, preventing considered decisions</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Research</p>
+      <h2>Listening before designing</h2>
+      <div class="three-col">
+        <div class="ic"><h3>Generative Research</h3><p>15 semi-structured interviews with users aged 22&ndash;38. Goal: understand the mental model of &ldquo;deciding to buy&rdquo; clothing online and where confidence collapses.</p></div>
+        <div class="ic"><h3>Usability Baseline Testing</h3><p>Task-based testing on the existing prototype. Measured task completion, error rate, and time-on-task for five key journeys including size selection and purchase.</p></div>
+        <div class="ic"><h3>Persona Development</h3><p>Built three validated personas: The Overcautious Returner, The Optimistic Guesser, and The Research-Heavy Buyer. Each had distinct decision patterns the design needed to accommodate.</p></div>
+      </div>
+      <p style="margin-top:1.8rem;">Pivotal insight: users weren&rsquo;t primarily worried about whether something would look good. They were worried about whether it would feel good &mdash; fit around the shoulders, length, fabric weight. These are tactile questions no image can answer. The design task was to find proxies for touch.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Process</p>
+      <h2>From insight to interface</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><h4>Map the decision moment</h4><p>Identified the exact point where confidence collapsed: the size selection screen. Redesigned it as the primary trust-building moment in the entire flow.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Smart fit profiles</h4><p>One-time body measurement flow that maps users to a &ldquo;fit type&rdquo; and surfaces real customer reviews filtered by similar body type.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Social fit proof</h4><p>Added a &ldquo;Fits like&rdquo; section to every product page, showing verified buyer photos filtered by similar fit type. More useful than professional model shots.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Review surface redesign</h4><p>Moved &ldquo;fit mentions&rdquo; from buried review text to a prominent visual breakdown at the top: &ldquo;Runs small / True to size / Runs large&rdquo; with percentage breakdowns.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Micro-interactions for confidence</h4><p>Subtle animation states on the size recommendation to communicate that the suggestion was personalised, not generic. Small signal, large impact on perceived accuracy.</p></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Screens</p>
+      <h2>What the work looks like</h2>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Size Selection Redesign</div><div class="mph-note">images/tryfit/size-screen.png</div></div></div>
+      <div class="mock-grid">
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Fit Profile Setup</div><div class="mph-note">images/tryfit/fit-profile.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Social Fit Proof</div><div class="mph-note">images/tryfit/social-proof.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Review Surface</div><div class="mph-note">images/tryfit/reviews.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Product Page</div><div class="mph-note">images/tryfit/product.png</div></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Outcome</p>
+      <h2>Numbers that tell the real story</h2>
+      <div class="three-col">
+        <div class="stat-c"><div class="stat-big">89%</div><div class="stat-lbl">Task completion (up from 54% baseline)</div></div>
+        <div class="stat-c"><div class="stat-big">-35%</div><div class="stat-lbl">Size-related drop-offs with fit nudge</div></div>
+        <div class="stat-c"><div class="stat-big">3.2x</div><div class="stat-lbl">Increase in review engagement after surface redesign</div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Learnings</p>
+      <h2>What this project taught me</h2>
+      <div class="learn-grid">
+        <div class="learn-item"><h4>Tactile problems need social proxies</h4><p>You can&rsquo;t replace touch with technology yet. But you can replace uncertainty with social proof from people who have the same body. That proximity is more persuasive than any feature.</p></div>
+        <div class="learn-item"><h4>Personalised framing builds trust</h4><p>The moment a recommendation feels calculated for you rather than averaged from a spreadsheet, trust increases dramatically.</p></div>
+        <div class="learn-item"><h4>Surface the right reviews, not just the best ones</h4><p>A review from someone with similar measurements saying &ldquo;runs small on the shoulders&rdquo; is worth more than five five-star reviews that don&rsquo;t mention fit.</p></div>
+        <div class="learn-item"><h4>Less is more at the decision moment</h4><p>The original size screen had 7 options and a size guide link. The redesign had a single confident recommendation with an explanation. Confidence is a design output.</p></div>
+      </div>
+    </div>
+    <div class="cs-cta-box">
+      <h2>Want to see the full Figma file?</h2>
+      <p>Complete design system, all screens, and research documentation available on Behance.</p>
+      <div class="cta-row">
+        <a href="https://www.behance.net/gallery/209155525/UX-Case-Study-Shopping-App" target="_blank" rel="noopener" class="btn btn-primary">View on Behance &rarr;</a>
+        <button class="btn btn-outline" onclick="closeCS('cs-tryfit')">Back to Portfolio</button>
+      </div>
+    </div>
+    <div class="cs-nav-btns">
+      <button class="cs-nav-btn" onclick="closeCS('cs-tryfit');openCS('cs-assure')">
+        <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Amazon Assure</span>
+      </button>
+      <button class="cs-nav-btn" onclick="closeCS('cs-tryfit');openCS('cs-codevault')">
+        <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">CodeVault</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL: CODEVAULT -->
+<div class="cs-panel" id="cs-codevault" role="dialog" aria-modal="true" aria-label="CodeVault case study">
+  <div class="cs-panel-nav">
+    <button class="cs-back-btn" onclick="closeCS('cs-codevault')">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <span class="cs-panel-nav-title">CodeVault &mdash; Learn to Code</span>
+    <span></span>
+  </div>
+  <div class="cs-hero-band" style="background:linear-gradient(135deg,#0d2818 0%,#1a4d2e 100%);">
+    <div class="container cs-hero-inner">
+      <div class="cs-tags"><span class="cs-tag">E-Learning</span><span class="cs-tag">Mobile Design</span><span class="cs-tag">Gamification</span><span class="cs-tag">Information Design</span></div>
+      <h1>CodeVault &mdash; Learn to Code</h1>
+      <p class="cs-sub">Interview prep is one of the most high-stakes learning contexts that exists &mdash; and most tools for it are terrible. CodeVault is the design response to a broken experience.</p>
+      <div class="cs-meta-row">
+        <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Product Designer</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS Mobile App</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">7 Weeks</div></div>
+        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Principle, UserTesting</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container cs-body">
+    <div class="cs-sec">
+      <p class="sec-lbl">Overview</p>
+      <h2>The brief in one sentence</h2>
+      <p>Design a mobile learning companion for developers preparing for technical interviews that fits into the real constraints of a working professional&rsquo;s day &mdash; commutes, lunch breaks, distracted evenings &mdash; while still building deep, testable knowledge.</p>
+      <div class="cs-quote"><p>&ldquo;I bought a course, got three hours in, and then work got busy. Now I feel too behind to start again.&rdquo;</p></div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">The Problem</p>
+      <h2>Most prep tools were built for people with four hours a day</h2>
+      <div class="two-col">
+        <div><p>Most interview prep platforms were designed for people with four hours a day and a whiteboard. The reality is most candidates prep in fifteen-minute windows between meetings, on their phones, with limited concentration. The design had to meet them there.</p></div>
+        <div class="ic"><h3>Key pain points</h3><ul>
+          <li>Long-form video content can&rsquo;t be consumed in short, interrupted sessions</li>
+          <li>No sense of daily progress &mdash; the course feels the same length at 10% or 80%</li>
+          <li>Problems are presented without the contextual knowledge needed to solve them</li>
+          <li>No spaced repetition &mdash; concepts learned are forgotten by interview day</li>
+          <li>Competitive leaderboards create anxiety rather than motivation</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Research</p>
+      <h2>Listening before designing</h2>
+      <div class="three-col">
+        <div class="ic"><h3>Learner Interviews</h3><p>Spoke with 14 developers who had recently gone through interview prep. Mapped the emotional arc from initial motivation through the plateau phase where most people quit.</p></div>
+        <div class="ic"><h3>Learning Science Review</h3><p>Researched spaced repetition, retrieval practice, and microlearning principles and identified which patterns from education research applied specifically to technical interview prep.</p></div>
+        <div class="ic"><h3>Platform Analysis</h3><p>Evaluated LeetCode, AlgoExpert, Neetcode, and Grokking on engagement design, progress communication, and mobile experience quality.</p></div>
+      </div>
+      <p style="margin-top:1.8rem;">Key insight: motivation to prep peaks at the start and collapses at &ldquo;the plateau&rdquo; &mdash; around 30&ndash;40% through, when easy problems are done and hard ones feel impossible. The design needed to address the plateau, not just the first session.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Process</p>
+      <h2>From insight to interface</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><h4>Daily tracks, not courses</h4><p>Restructured content from &ldquo;courses to complete&rdquo; to &ldquo;daily tracks to do.&rdquo; Each track takes 12&ndash;15 minutes and covers one concept end-to-end. The sense of completion resets every day.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Spaced repetition engine</h4><p>A review system that resurfaces concepts based on how confidently the user rated their understanding. Problems marked &ldquo;shaky&rdquo; come back in 24 hours. Problems marked &ldquo;solid&rdquo; come back in a week.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Contextual problem sets</h4><p>Every problem is preceded by a 90-second concept primer that gives just enough context to attempt it. No more arriving at a problem cold.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Streak and milestone design</h4><p>Streak system that rewards consistency over volume. Missing one day breaks the streak but doesn&rsquo;t reset progress &mdash; a deliberate choice to reduce the &ldquo;might as well quit&rdquo; response.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Offline-first architecture</h4><p>Problems, content, and progress sync when connected, but the core experience works on the tube, in a lift, and in areas with no signal.</p></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Screens</p>
+      <h2>What the work looks like</h2>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Daily Track Home Screen</div><div class="mph-note">images/codevault/home.png</div></div></div>
+      <div class="mock-grid">
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Problem + Primer</div><div class="mph-note">images/codevault/problem.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Confidence Rating</div><div class="mph-note">images/codevault/confidence.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Streak Screen</div><div class="mph-note">images/codevault/streak.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Review Queue</div><div class="mph-note">images/codevault/review.png</div></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Outcome</p>
+      <h2>Numbers that tell the real story</h2>
+      <div class="three-col">
+        <div class="stat-c"><div class="stat-big">12&ndash;15 min</div><div class="stat-lbl">Average session length &mdash; fits real daily schedules</div></div>
+        <div class="stat-c"><div class="stat-big">+67%</div><div class="stat-lbl">Day-7 retention vs. industry benchmark for learning apps</div></div>
+        <div class="stat-c"><div class="stat-big">4.6/5</div><div class="stat-lbl">Confidence rating from usability test participants</div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Learnings</p>
+      <h2>What this project taught me</h2>
+      <div class="learn-grid">
+        <div class="learn-item"><h4>Completion is an illusion</h4><p>Long courses create a false finish line that makes any interruption feel like failure. Daily tracks reframe the goal: not &ldquo;finish the course&rdquo; but &ldquo;show up today.&rdquo;</p></div>
+        <div class="learn-item"><h4>The plateau is a design problem</h4><p>The motivation collapse at 30&ndash;40% is predictable and preventable. Designing for it specifically keeps users moving through the hardest stretch.</p></div>
+        <div class="learn-item"><h4>Confidence is a metric too</h4><p>Standardised assessment scores don&rsquo;t tell you whether someone feels ready. Confidence tracked more closely with actual interview performance than problem-solve rates did.</p></div>
+        <div class="learn-item"><h4>Offline is not an edge case</h4><p>Treating connectivity as optional rather than required changed how we thought about the entire product architecture. Features that require a connection are features some users will never use.</p></div>
+      </div>
+    </div>
+    <div class="cs-cta-box">
+      <h2>Want to see the full Figma file?</h2>
+      <p>Complete design system, all screens, and research documentation available on Behance.</p>
+      <div class="cta-row">
+        <a href="https://www.behance.net/gallery/173062333/CodeValutThe-ultimate-companion-for-your-interviews" target="_blank" rel="noopener" class="btn btn-primary">View on Behance &rarr;</a>
+        <button class="btn btn-outline" onclick="closeCS('cs-codevault')">Back to Portfolio</button>
+      </div>
+    </div>
+    <div class="cs-nav-btns">
+      <button class="cs-nav-btn" onclick="closeCS('cs-codevault');openCS('cs-tryfit')">
+        <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Tryfit</span>
+      </button>
+      <button class="cs-nav-btn" onclick="closeCS('cs-codevault');openCS('cs-mai')">
+        <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">MAI Labs</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL: MAI LABS -->
+<div class="cs-panel" id="cs-mai" role="dialog" aria-modal="true" aria-label="MAI Labs case study">
+  <div class="cs-panel-nav">
+    <button class="cs-back-btn" onclick="closeCS('cs-mai')">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <span class="cs-panel-nav-title">MAI Labs &mdash; Company Website</span>
+    <span></span>
+  </div>
+  <div class="cs-hero-band" style="background:linear-gradient(135deg,#091a12 0%,#0d2d1a 100%);">
+    <div class="container cs-hero-inner">
+      <div class="cs-tags"><span class="cs-tag">Frontend Development</span><span class="cs-tag">Next.js</span><span class="cs-tag">Tailwind CSS</span><span class="cs-tag">Responsive Design</span></div>
+      <h1>MAI Labs &mdash; Company Website</h1>
+      <p class="cs-sub">A design that doesn&rsquo;t reach code is still just a hypothesis. This project was about closing the gap &mdash; from Figma to deployed, fully responsible for both.</p>
+      <div class="cs-meta-row">
+        <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">UI Developer &amp; Consultant</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Web (Desktop &amp; Mobile)</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">3 Months</div></div>
+        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Next.js, Tailwind CSS, GitHub, Vercel</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container cs-body">
+    <div class="cs-sec">
+      <p class="sec-lbl">Overview</p>
+      <h2>The brief in one sentence</h2>
+      <p>Design and develop the complete MAI Labs company website from the ground up &mdash; fully responsive, performant across browsers, and built with a reusable component system that the internal team could maintain and extend after handoff.</p>
+      <div class="cs-quote"><p>&ldquo;Every time we try to update the site, something else breaks. We&rsquo;ve just stopped updating it.&rdquo;</p></div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">The Problem</p>
+      <h2>A site the team can&rsquo;t own</h2>
+      <div class="two-col">
+        <div><p>This was a different kind of design challenge. There was no user problem to diagnose &mdash; there was a craft problem. The existing site was slow, visually inconsistent, and couldn&rsquo;t be updated without breaking things. The brief was: build something the team can own.</p></div>
+        <div class="ic"><h3>Key pain points</h3><ul>
+          <li>No component system &mdash; every page was custom-coded, making updates expensive</li>
+          <li>No mobile experience &mdash; layout broke below 1200px</li>
+          <li>Page load time over 6 seconds due to unoptimised assets</li>
+          <li>Contact and application forms sent emails to a personal inbox with no structure</li>
+          <li>Brand inconsistency across pages &mdash; multiple type scales and button styles</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Research</p>
+      <h2>Understanding before building</h2>
+      <div class="three-col">
+        <div class="ic"><h3>Codebase Audit</h3><p>Reviewed the existing site for architectural issues, dependency bloat, and performance bottlenecks. A full rebuild would be faster and more maintainable than attempting to refactor.</p></div>
+        <div class="ic"><h3>Stakeholder Interviews</h3><p>Three sessions with the founding team to understand the site&rsquo;s goals, the team&rsquo;s technical comfort level for future maintenance, and the content they most needed to communicate.</p></div>
+        <div class="ic"><h3>Component Inventory</h3><p>Mapped all UI patterns needed across the site to design a minimal, complete component library before writing a single line of production code.</p></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Process</p>
+      <h2>From insight to interface</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><h4>Design the component system first</h4><p>Before any page layout, designed and agreed on the complete component library: buttons, cards, navigation, forms, and typography tokens.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Build with Next.js App Router</h4><p>Chose Next.js for server-side rendering, built-in image optimisation, and file-based routing that makes future page additions intuitive for non-engineers.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Tailwind utility system</h4><p>Utility-first approach means any team member can read and update styles without understanding the full CSS architecture.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>API-integrated forms</h4><p>Built contact and job application forms with server-side API routes, validation, and structured email templates. Applications arrive formatted and filterable.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Performance and cross-browser QA</h4><p>Lighthouse audits on every page. Compressed and converted all assets to WebP. Tested across Chrome, Safari, Firefox, and Edge on desktop and mobile.</p></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Screens</p>
+      <h2>What the work looks like</h2>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Homepage</div><div class="mph-note">images/mai/homepage.png</div></div></div>
+      <div class="mock-grid">
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">About Page</div><div class="mph-note">images/mai/about.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Careers Page</div><div class="mph-note">images/mai/careers.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Contact Form</div><div class="mph-note">images/mai/contact.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Mobile View</div><div class="mph-note">images/mai/mobile.png</div></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Outcome</p>
+      <h2>Numbers that tell the real story</h2>
+      <div class="three-col">
+        <div class="stat-c"><div class="stat-big">94</div><div class="stat-lbl">Lighthouse performance score (up from 41)</div></div>
+        <div class="stat-c"><div class="stat-big">100</div><div class="stat-lbl">Lighthouse accessibility score</div></div>
+        <div class="stat-c"><div class="stat-big">&lt;1.8s</div><div class="stat-lbl">First Contentful Paint on 4G mobile</div></div>
+      </div>
+      <p style="margin-top:1.8rem;">The handoff was the outcome that mattered most. The team could update copy, add new team members, and post job listings without touching the codebase. That independence was the measure of success.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Learnings</p>
+      <h2>What this project taught me</h2>
+      <div class="learn-grid">
+        <div class="learn-item"><h4>Maintainability is a design output</h4><p>A site the team can&rsquo;t update will stop being updated. Designing for the person who maintains the product after you leave is as important as designing for the end user.</p></div>
+        <div class="learn-item"><h4>Component-first is faster, not slower</h4><p>Spending a week on the component system before building pages felt like overhead. It saved three weeks of inconsistency fixes and rework in the final sprint.</p></div>
+        <div class="learn-item"><h4>Performance is a feature</h4><p>A 6-second load time is a worse first impression than bad visual design. Performance optimisation is UX work &mdash; it just lives in the build system, not Figma.</p></div>
+        <div class="learn-item"><h4>Document for the person after you</h4><p>The handoff documentation included not just &ldquo;how to add a page&rdquo; but &ldquo;why certain architecture decisions were made.&rdquo; Future developers need context, not just instructions.</p></div>
+      </div>
+    </div>
+    <div class="cs-cta-box">
+      <h2>Interested in this build?</h2>
+      <p>Reach out to discuss the architecture, component system, or the handoff process in more detail.</p>
+      <div class="cta-row">
+        <a href="mailto:oomkarsk6@gmail.com" class="btn btn-primary">Get In Touch &rarr;</a>
+        <button class="btn btn-outline" onclick="closeCS('cs-mai')">Back to Portfolio</button>
+      </div>
+    </div>
+    <div class="cs-nav-btns">
+      <button class="cs-nav-btn" onclick="closeCS('cs-mai');openCS('cs-codevault')">
+        <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">CodeVault</span>
+      </button>
+      <button class="cs-nav-btn" onclick="closeCS('cs-mai');openCS('cs-accessiq')">
+        <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">AccessIQ</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL: ACCESSIQ -->
+<div class="cs-panel" id="cs-accessiq" role="dialog" aria-modal="true" aria-label="AccessIQ case study">
+  <div class="cs-panel-nav">
+    <button class="cs-back-btn" onclick="closeCS('cs-accessiq')">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <span class="cs-panel-nav-title">AccessIQ &mdash; WCAG Summariser</span>
+    <span></span>
+  </div>
+  <div class="cs-hero-band" style="background:linear-gradient(135deg,#0e200e 0%,#173517 100%);">
+    <div class="container cs-hero-inner">
+      <div class="cs-tags"><span class="cs-tag">Accessibility</span><span class="cs-tag">AI Tool</span><span class="cs-tag">Design + Development</span><span class="cs-tag">Side Project</span></div>
+      <h1>AccessIQ &mdash; WCAG Summariser</h1>
+      <p class="cs-sub">Accessibility audits are only useful if teams can read them. AccessIQ translates WCAG compliance findings into plain language &mdash; closing the gap between audit and action.</p>
+      <div class="cs-meta-row">
+        <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Designer &amp; Developer</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Web App</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">Side Project</div></div>
+        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, React, OpenAI API, Tailwind CSS</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container cs-body">
+    <div class="cs-sec">
+      <p class="sec-lbl">Overview</p>
+      <h2>The brief in one sentence</h2>
+      <p>Build a tool that makes WCAG 2.1 compliance findings understandable for design and development teams who have the will to fix accessibility issues but lack the knowledge to interpret technical audit reports.</p>
+      <div class="cs-quote"><p>&ldquo;We got an audit back with 47 issues. I read the first three, had no idea what they meant practically, and forwarded it to a developer who also had no idea.&rdquo;</p></div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">The Problem</p>
+      <h2>It&rsquo;s a translation problem, not a willingness problem</h2>
+      <div class="two-col">
+        <div><p>The accessibility problem in most organisations isn&rsquo;t malice or laziness. It&rsquo;s translation. Audit reports come back written in WCAG criterion language that means nothing to a designer who&rsquo;s never read the spec. The findings sit in a spreadsheet and nothing changes.</p></div>
+        <div class="ic"><h3>Key pain points</h3><ul>
+          <li>WCAG criterion codes (e.g. &ldquo;1.4.3 Contrast Minimum AA&rdquo;) are meaningless without deep knowledge of the spec</li>
+          <li>Audit reports list issues without design-specific remediation guidance</li>
+          <li>No differentiation between issues affecting different user groups</li>
+          <li>No prioritisation of issues by severity and actual user impact</li>
+          <li>Designers and developers need different guidance for the same issue</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Research</p>
+      <h2>Understanding the gap</h2>
+      <div class="three-col">
+        <div class="ic"><h3>Designer Interviews</h3><p>Spoke with 8 product designers at companies that had recently received accessibility audits. Mapped how reports were read, who they were forwarded to, and how many issues were actually resolved.</p></div>
+        <div class="ic"><h3>Specialist Consultation</h3><p>Consulted with two certified accessibility specialists to understand which WCAG criteria are most commonly misunderstood, and what plain-language framing works best for each category.</p></div>
+        <div class="ic"><h3>Audit Report Analysis</h3><p>Collected and analysed 12 real accessibility audit reports from open-source projects. Categorised findings by criterion type, severity, and how actionable the guidance was.</p></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Process</p>
+      <h2>From insight to interface</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><h4>Plain-language criterion library</h4><p>Built a complete library of all Level A and AA WCAG 2.1 criteria, each translated into three versions: a one-sentence summary, a designer-specific guide, and a developer-specific fix guide.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>AI interpretation layer</h4><p>Integrated OpenAI&rsquo;s API to take raw audit output and map findings to the criterion library, generating a structured, plain-language action plan automatically.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Role-based remediation views</h4><p>Separate output views for designers and developers. The same issue surfaces different guidance depending on who is reading it.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Severity and impact scoring</h4><p>Custom severity model that scores each issue on both WCAG level and estimated user impact across disability categories, allowing teams to prioritise by real-world effect.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Shareable report output</h4><p>Clean, exportable report format that product managers can share with stakeholders as a readable brief rather than a technical spreadsheet.</p></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Design Screens</p>
+      <h2>What the work looks like</h2>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Audit Upload + Analysis View</div><div class="mph-note">images/accessiq/main.png</div></div></div>
+      <div class="mock-grid">
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Designer View</div><div class="mph-note">images/accessiq/designer.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Developer View</div><div class="mph-note">images/accessiq/developer.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Severity Matrix</div><div class="mph-note">images/accessiq/severity.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Export Report</div><div class="mph-note">images/accessiq/export.png</div></div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Outcome</p>
+      <h2>Numbers that tell the real story</h2>
+      <div class="three-col">
+        <div class="stat-c"><div class="stat-big">47&rarr;5</div><div class="stat-lbl">Avg. issues acted on per report before vs. after AccessIQ</div></div>
+        <div class="stat-c"><div class="stat-big">&lt;3 min</div><div class="stat-lbl">Time to generate a plain-language action plan from raw audit</div></div>
+        <div class="stat-c"><div class="stat-big">100</div><div class="stat-lbl">Lighthouse accessibility score on AccessIQ itself</div></div>
+      </div>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Learnings</p>
+      <h2>What this project taught me</h2>
+      <div class="learn-grid">
+        <div class="learn-item"><h4>Accessibility is a communication problem</h4><p>The biggest barrier to accessible products isn&rsquo;t technical complexity. It&rsquo;s the translation gap between compliance language and design practice.</p></div>
+        <div class="learn-item"><h4>Role-specific guidance multiplies action</h4><p>Splitting the same issue into &ldquo;what the designer does&rdquo; and &ldquo;what the developer does&rdquo; eliminated the round-trip conversation that usually results in neither person acting.</p></div>
+        <div class="learn-item"><h4>Build the thing you wish existed</h4><p>This tool came from a real frustration encountered in professional work. The most useful tools are often the ones you build because you couldn&rsquo;t find them anywhere else.</p></div>
+        <div class="learn-item"><h4>Practise what you preach</h4><p>Building an accessibility tool with an inaccessible interface would be the worst possible outcome. Achieving a perfect Lighthouse accessibility score was non-negotiable.</p></div>
+      </div>
+    </div>
+    <div class="cs-cta-box">
+      <h2>Interested in this tool?</h2>
+      <p>Reach out to discuss the build, the AI integration, or how AccessIQ could work for your team.</p>
+      <div class="cta-row">
+        <a href="mailto:oomkarsk6@gmail.com" class="btn btn-primary">Get In Touch &rarr;</a>
+        <button class="btn btn-outline" onclick="closeCS('cs-accessiq')">Back to Portfolio</button>
+      </div>
+    </div>
+    <div class="cs-nav-btns">
+      <button class="cs-nav-btn" onclick="closeCS('cs-accessiq');openCS('cs-mai')">
+        <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">MAI Labs</span>
+      </button>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">OK<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#creative">Creative</a></li>
+          <li><a href="#content">Content</a></li>
+          <li><a href="#extracurricular">Activities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="mailto:oomkarsk6@gmail.com" class="btn btn-primary">Hire Me</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-badge"><span class="badge-dot" aria-hidden="true"></span>Open to new opportunities</div>
+        <h1 class="hero-name">Omkar<br/><span class="grad">Khandalkar</span></h1>
+        <p class="hero-role"><span class="role-highlight">Senior Product Designer</span> &nbsp;&middot;&nbsp; <span class="role-highlight">Podcast Host</span> &nbsp;&middot;&nbsp; <span class="role-highlight">Accessibility Designer</span></p>
+        <p class="hero-desc">I turn complex systems into intuitive experiences — blending behavioral psychology, accessible design, and product thinking to build things people actually want to use.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">See My Work &rarr;</a>
+          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" aria-label="LinkedIn" class="btn btn-outline icon-btn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/@CodeOS" target="_blank" rel="noopener" aria-label="YouTube" class="btn btn-outline icon-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Behance" class="btn btn-outline icon-btn" title="Behance"><i class="fab fa-behance"></i></a>
+          <a href="https://www.instagram.com/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Instagram" class="btn btn-outline icon-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">2<span>+</span></div><div class="stat-label">Years at Zeus</div></div>
+          <div><div class="stat-num">8<span>+</span></div><div class="stat-label">Products Shipped</div></div>
+          <div><div class="stat-num">5M<span>+</span></div><div class="stat-label">Users Served</div></div>
+          <div><div class="stat-num">15<span>+</span></div><div class="stat-label">Episodes Recorded</div></div>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="hero-card-inner">
+          <div class="hero-avatar">
+            <img src="images/profile.jpeg" alt="Omkar Khandalkar" class="avatar-photo"/>
+          </div>
+        </div>
+        <div class="float-tag ft-1"><div class="ft-main">Podcast Host</div><div class="ft-sub">CodeOS Podcast</div></div>
+        <div class="float-tag ft-2"><div class="ft-main">Zeus Learning</div><div class="ft-sub">Senior UI Designer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-label="About me">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal-l">
+        <p class="eyebrow">About Me</p>
+        <h2 class="section-title">Design is how I<br/>decode the world</h2>
+        <div class="about-text" style="margin-top:1.5rem;">
+          <p>I&rsquo;m a Product Designer from Mumbai with an engineering backbone and a designer&rsquo;s soul. My work lives at the intersection of <strong>behavioural psychology, systems thinking, and visual craft</strong> &mdash; where products stop being tools and start becoming habits.</p>
+          <p>At <strong>Zeus Learning</strong>, I lead the UX and visual design of Quantum &mdash; an enterprise LMS and CMS used by over a million students. I translate labyrinthine academic workflows into flows so intuitive, users don&rsquo;t notice the design at all. That invisibility is the goal.</p>
+          <p>I believe education should be a universal right, not a privilege. That conviction drives every accessibility audit, every contrast check, and every inclusive design decision I make.</p>
+          <p>Outside the product world, I founded <strong>CodeOS</strong> &mdash; an edtech initiative that has mentored 500+ students, run 25+ bootcamps, and built a learning community with 100K+ YouTube views.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">What I Bring</p>
+        <div class="services-grid stagger">
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>UX Design</h4><p>Research-led, human-centred experiences built from real behaviour, not assumptions.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h4>Visual &amp; UI Design</h4><p>High-fidelity interfaces that are beautiful, accessible, and technically grounded.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Frontend Development</h4><p>I prototype in code &mdash; React, HTML, CSS &mdash; so handoff is never lost in translation.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><h4>Content Creation</h4><p>Photography, podcasts, and video &mdash; storytelling as an extension of design thinking.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume" aria-label="Resume">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3.5rem;">
+      <p class="eyebrow">Resume</p>
+      <h2 class="section-title">Where I&rsquo;ve been,<br/>what I&rsquo;ve built</h2>
+      <p class="section-sub">Every role has added a layer &mdash; strategy, systems, scale, and the stubborn belief that design can make education better for everyone.</p>
+    </div>
+    <div class="resume-grid">
+      <div>
+        <div class="col-head"><span class="col-dot"></span>Work Experience</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-period">Jul 2025 &ndash; Present</div><div class="tl-title">Senior UI Designer / Design Analyst</div><div class="tl-co">Zeus Learning &mdash; Mumbai</div><div class="tl-desc"><ul><li>Promoted to lead design strategy for enterprise-scale LMS and CMS platforms</li><li>Mentoring two junior designers &mdash; direction, critique, quality, growth</li><li>Primary design POC for 32 developers and 8 QA engineers</li><li>Led full-scale UI revamp, defining new visual standards and interaction patterns</li><li>Reporting to VP of Product to align design with long-term roadmap</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Aug 2023 &ndash; Jun 2025</div><div class="tl-title">UI Designer / Design Analyst</div><div class="tl-co">Zeus Learning &mdash; Mumbai</div><div class="tl-desc"><ul><li>End-to-end UX ownership across multiple LMS and CMS modules</li><li>Redesigned core flows with modern patterns; resolved years of legacy debt</li><li>Responsive design from 1920px to 768px &mdash; every breakpoint, every edge case</li><li>Built the full spectrum: IA, wireframes, high-fi mockups, interactive prototypes</li><li>All work WCAG-compliant; heuristic evaluations run every sprint</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Jun 2023 &ndash; Aug 2023</div><div class="tl-title">UI Developer &mdash; Consultant</div><div class="tl-co">MAI Labs &mdash; Remote</div><div class="tl-desc"><ul><li>Built complete company website with Next.js and Tailwind CSS</li><li>Reusable component library, API-integrated forms, Lighthouse 90+ scores</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Jan 2023 &ndash; Apr 2023</div><div class="tl-title">UX Designer &mdash; Intern</div><div class="tl-co">Corbin Technology Solutions &mdash; Thane</div><div class="tl-desc"><ul><li>Designed full UX for Swadeshi Brands e-commerce app in Figma</li><li>User flows, checkout journeys, information architecture &mdash; built from scratch</li></ul></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="col-head"><span class="col-dot" style="background:var(--a2);"></span>Education</div>
+        <div class="timeline" style="margin-bottom:2.5rem;">
+          <div class="tl-item"><div class="tl-period">Aug 2019 &ndash; May 2023</div><div class="tl-title">B.E. Electronics &amp; Telecommunication</div><div class="tl-co">D Y Patil's Ramrao Adik Institute of Technology (Mumbai University), Navi Mumbai<br>CGPA 9.35/10</div><div class="tl-desc">Vice Chairman of IETE RAIT. Organised Internal Smart India Hackathon, conducted Python and Java workshops, and represented the college at eYantra &mdash; a national robotics competition.</div></div>
+          <div class="tl-item"><div class="tl-period">Jun 2016 &ndash; Feb 2018</div><div class="tl-title">HSC, Science</div><div class="tl-co">Kelkar Education Trust's V.G. Vaze College of Science, Mumbai<br>69.38%</div></div>
+          <div class="tl-item"><div class="tl-period">Jun 2006 &ndash; Apr 2016</div><div class="tl-title">SSC</div><div class="tl-co">Sau. Naline Yashwantrao Dode Vidyalay, Mumbai<br>89.20%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-label="Projects and case studies">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:1.5rem;">
+      <p class="eyebrow">Selected Work</p>
+      <h2 class="section-title">Problems solved,<br/>products shipped</h2>
+      <p class="section-sub">Every project starts with a real problem. Click any card to open the full case study &mdash; the brief, the process, and what actually changed.</p>
+    </div>
+    <div class="filter-row stagger reveal">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="ux">UX Design</button>
+      <button class="filter-btn" data-filter="fintech">Fintech</button>
+      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="filter-btn" data-filter="dev">Development</button>
+    </div>
+    <div class="projects-grid stagger reveal">
+
+      <div class="project-card" data-categories="ux fintech" onclick="openCS('cs-clio')">
+        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0d1a0d,#1a3a1a);"><span class="p-thumb-label">Clio</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-body">
+          <div class="p-tags"><span class="p-tag">Fintech</span><span class="p-tag">Data Viz</span><span class="p-tag">AI Feature</span></div>
+          <h3>Clio &mdash; AI Investment Assistant</h3>
+          <p>Dense financial data, made approachable. Progressive disclosure for first-time investors who don&rsquo;t speak the language of markets &mdash; yet.</p>
+          <div class="p-card-footer">
+            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-clio')">Read Case Study &rarr;</button>
+            <a href="https://www.behance.net/gallery/231258555/Clio-AI-Investment-Assistant-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-categories="ux ecommerce" onclick="openCS('cs-assure')">
+        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0a1a14,#0f2d20);"><span class="p-thumb-label">Assure</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-body">
+          <div class="p-tags"><span class="p-tag">E-commerce</span><span class="p-tag">Trust Design</span></div>
+          <h3>Amazon Assure</h3>
+          <p>Post-purchase anxiety is a trust killer. This feature redesign fixes what happens after users click &ldquo;Buy Now&rdquo; and the silence that follows.</p>
+          <div class="p-card-footer">
+            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-assure')">Read Case Study &rarr;</button>
+            <a href="https://www.behance.net/gallery/229228627/Amazon-Assure-Prodcut-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-categories="ux ecommerce" onclick="openCS('cs-tryfit')">
+        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#122010,#1c3a18);"><span class="p-thumb-label">Tryfit</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-body">
+          <div class="p-tags"><span class="p-tag">E-commerce</span><span class="p-tag">User Research</span><span class="p-tag">Mobile</span></div>
+          <h3>Tryfit &mdash; Shopping App</h3>
+          <p>Size uncertainty kills conversion. This case study removes the anxiety from the one question every online shopper dreads: &ldquo;Will it fit?&rdquo;</p>
+          <div class="p-card-footer">
+            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-tryfit')">Read Case Study &rarr;</button>
+            <a href="https://www.behance.net/gallery/209155525/UX-Case-Study-Shopping-App" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-categories="ux" onclick="openCS('cs-codevault')">
+        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0d2818,#1a4d2e);"><span class="p-thumb-label">CodeVault</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-body">
+          <div class="p-tags"><span class="p-tag">E-Learning</span><span class="p-tag">Mobile</span></div>
+          <h3>CodeVault &mdash; Learn to Code</h3>
+          <p>Interview prep shouldn&rsquo;t feel like homework. A mobile learning companion built around how developers actually retain knowledge.</p>
+          <div class="p-card-footer">
+            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-codevault')">Read Case Study &rarr;</button>
+            <a href="https://www.behance.net/gallery/173062333/CodeValutThe-ultimate-companion-for-your-interviews" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-categories="dev" onclick="openCS('cs-mai')">
+        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#091a12,#0d2d1a);"><span class="p-thumb-label">MAI Labs</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-body">
+          <div class="p-tags"><span class="p-tag">Next.js</span><span class="p-tag">Tailwind CSS</span><span class="p-tag">Frontend</span></div>
+          <h3>MAI Labs &mdash; Company Website</h3>
+          <p>Design that doesn&rsquo;t reach code is just a hypothesis. This is where I built the whole thing &mdash; responsive, performant, and production-grade from day one.</p>
+          <div class="p-card-footer">
+            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-mai')">Read Case Study &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-categories="dev ux" onclick="openCS('cs-accessiq')">
+        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0e200e,#173517);"><span class="p-thumb-label">AccessIQ</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-body">
+          <div class="p-tags"><span class="p-tag">Accessibility</span><span class="p-tag">Design + Dev</span><span class="p-tag">AI Tool</span></div>
+          <h3>AccessIQ &mdash; WCAG Summariser</h3>
+          <p>Most accessibility audits live in spreadsheets nobody reads. AccessIQ translates WCAG issues into plain language that teams can actually act on.</p>
+          <div class="p-card-footer">
+            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-accessiq')">Read Case Study &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CREATIVE GALLERY -->
+<section id="creative" aria-label="Creative work">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:2rem;">
+      <p class="eyebrow">Creative Work</p>
+      <h2 class="section-title">What I make<br/>when no one&rsquo;s watching</h2>
+      <p class="section-sub">Design thinking doesn&rsquo;t clock out. Photography, graphic work, and AI art &mdash; each one a different way of seeing the same world.</p>
+    </div>
+    <div class="gallery-tabs" role="tablist" aria-label="Gallery categories">
+      <button class="gallery-tab active" role="tab" aria-selected="true" data-tab="photography">Photography</button>
+      <button class="gallery-tab" role="tab" aria-selected="false" data-tab="graphics">Graphics</button>
+      <button class="gallery-tab" role="tab" aria-selected="false" data-tab="ai-art">AI Art</button>
+    </div>
+    <div class="gallery-panel active" id="panel-photography" role="tabpanel">
+      <div class="gallery-grid stagger reveal">
+        <div class="g-item" onclick="openLB('images/photography/image1.jpg','Photo 1')"><img src="images/photography/image1.jpg" alt="Photography 1" loading="lazy"/><div class="g-overlay"><span>Landscape - Sunset, Vasai Fort</span></div></div>
+        <div class="g-item" onclick="openLB('images/photography/image2.jpg','Photo 2')"><img src="images/photography/image2.jpg" alt="Photography 2" loading="lazy"/><div class="g-overlay"><span>Macro - Housefly</span></div></div>
+        <div class="g-item" onclick="openLB('images/photography/image3.jpg','Photo 3')"><img src="images/photography/image3.jpg" alt="Photography 3" loading="lazy"/><div class="g-overlay"><span>Portrait</span></div></div>
+        <div class="g-item" onclick="openLB('images/photography/image4.jpg','Photo 4')"><img src="images/photography/image4.jpg" alt="Photography 4" loading="lazy"/><div class="g-overlay"><span>Landscape - Painted Stork, Seawood</span></div></div>
+        <div class="g-item" onclick="openLB('images/photography/image5.jpg','Photo 5')"><img src="images/photography/image5.jpg" alt="Photography 5" loading="lazy"/><div class="g-overlay"><span>Architectural - Ghondeshwar Temple, Nashik</span></div></div>
+        <div class="g-item" onclick="openLB('images/photography/image6.jpg','Photo 6')"><img src="images/photography/image6.jpg" alt="Photography 6" loading="lazy"/><div class="g-overlay"><span>Street - Ganpati Visarjan</span></div></div>
+      </div>
+      <!-- <p class="gallery-note">Drop your images into <code>images/photography/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
+    </div>
+    <div class="gallery-panel" id="panel-graphics" role="tabpanel">
+      <div class="gallery-grid stagger reveal">
+        <div class="g-item" onclick="openLB('images/graphics/image1.jpg','Graphic 1')"><img src="images/graphics/image1.jpg" alt="Graphic design 1" loading="lazy"/><div class="g-overlay"><span>Graphic 1</span></div></div>
+        <div class="g-item" onclick="openLB('images/graphics/image2.jpg','Graphic 2')"><img src="images/graphics/image2.jpg" alt="Graphic design 2" loading="lazy"/><div class="g-overlay"><span>Graphic 2</span></div></div>
+        <div class="g-item" onclick="openLB('images/graphics/image3.jpg','Graphic 3')"><img src="images/graphics/image3.jpg" alt="Graphic design 3" loading="lazy"/><div class="g-overlay"><span>Graphic 3</span></div></div>
+        <div class="g-item" onclick="openLB('images/graphics/image4.jpg','Graphic 4')"><img src="images/graphics/image4.jpg" alt="Graphic design 4" loading="lazy"/><div class="g-overlay"><span>Graphic 4</span></div></div>
+        <div class="g-item" onclick="openLB('images/graphics/image5.jpg','Graphic 5')"><img src="images/graphics/image5.jpg" alt="Graphic design 5" loading="lazy"/><div class="g-overlay"><span>Graphic 5</span></div></div>
+        <div class="g-item" onclick="openLB('images/graphics/image6.jpg','Graphic 6')"><img src="images/graphics/image6.jpg" alt="Graphic design 6" loading="lazy"/><div class="g-overlay"><span>Graphic 6</span></div></div>
+      </div>
+      <!-- <p class="gallery-note">Drop your images into <code>images/graphics/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
+    </div>
+    <div class="gallery-panel" id="panel-ai-art" role="tabpanel">
+      <div class="gallery-grid stagger reveal">
+        <div class="g-item" onclick="openLB('images/ai-art/image1.jpg','AI Art 1')"><img src="images/ai-art/image1.jpg" alt="AI artwork 1" loading="lazy"/><div class="g-overlay"><span>AI Art 1</span></div></div>
+        <div class="g-item" onclick="openLB('images/ai-art/image2.jpg','AI Art 2')"><img src="images/ai-art/image2.jpg" alt="AI artwork 2" loading="lazy"/><div class="g-overlay"><span>AI Art 2</span></div></div>
+        <div class="g-item" onclick="openLB('images/ai-art/image3.jpg','AI Art 3')"><img src="images/ai-art/image3.jpg" alt="AI artwork 3" loading="lazy"/><div class="g-overlay"><span>AI Art 3</span></div></div>
+        <div class="g-item" onclick="openLB('images/ai-art/image4.jpg','AI Art 4')"><img src="images/ai-art/image4.jpg" alt="AI artwork 4" loading="lazy"/><div class="g-overlay"><span>AI Art 4</span></div></div>
+        <div class="g-item" onclick="openLB('images/ai-art/image5.jpg','AI Art 5')"><img src="images/ai-art/image5.jpg" alt="AI artwork 5" loading="lazy"/><div class="g-overlay"><span>AI Art 5</span></div></div>
+        <div class="g-item" onclick="openLB('images/ai-art/image6.jpg','AI Art 6')"><img src="images/ai-art/image6.jpg" alt="AI artwork 6" loading="lazy"/><div class="g-overlay"><span>AI Art 6</span></div></div>
+      </div>
+      <!-- <p class="gallery-note">Drop your images into <code>images/ai-art/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT CREATION -->
+<section id="content" aria-label="Content creation">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:2rem;">
+      <p class="eyebrow">Content Creation</p>
+      <h2 class="section-title">Videos that teach,<br/>stories that resonate</h2>
+      <p class="section-sub">Exploring ideas through thoughtful conversations and cultural journeys—from tech insights to Maharashtra's diverse landscapes.</p>
+    </div>
+    <div class="content-tabs" role="tablist" aria-label="Content categories">
+      <button class="content-tab active" role="tab" aria-selected="true" data-tab="podcast">Podcasts</button>
+      <button class="content-tab" role="tab" aria-selected="false" data-tab="vlog">Vlogs</button>
+    </div>
+    <div class="content-panel active" id="panel-podcast" role="tabpanel">
+      <div class="content-insights reveal" style="margin-bottom:2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem;">
+        <h3 style="font-size:.95rem;font-weight:700;margin-bottom:.6rem;color:var(--text);">About This Podcast</h3>
+        <p style="font-size:.85rem;color:var(--text2);line-height:1.7;margin:0;">A conversation series with industry experts and thought leaders on design, technology, and personal growth. Each episode brings unique perspectives on building products, careers in tech, and making an impact in the industry.</p>
+      </div>
+      <div class="videos-grid stagger reveal">
+        <a href="https://www.youtube.com/watch?v=DKhW_Z3maAE" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/DKhW_Z3maAE/0.jpg" alt="Podcast 1" loading="lazy"/><div class="play-icon">▶</div></div>
+          <div class="video-info"><h3>AI vs Educator Ft. Professor Saurav Ghag</h3><p class="video-date">Watch on YouTube</p></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=V_o6XobIoww" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/V_o6XobIoww/0.jpg" alt="Podcast 2" loading="lazy"/><div class="play-icon">▶</div></div>
+          <div class="video-info"><h3>How to crack Oracle Ft. Shivangi & Khushi</h3><p class="video-date">Watch on YouTube</p></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=_nqmx8KJu1Q" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/_nqmx8KJu1Q/0.jpg" alt="Podcast 3" loading="lazy"/><div class="play-icon">▶</div></div>
+          <div class="video-info"><h3>Building a Career in Tech Ft. Diyansh Singh </h3><p class="video-date">Watch on YouTube</p></div>
+        </a>
+      </div>
+    </div>
+    <div class="content-panel" id="panel-vlog" role="tabpanel">
+      <div class="content-insights reveal" style="margin-bottom:2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem;">
+        <h3 style="font-size:.95rem;font-weight:700;margin-bottom:.6rem;color:var(--text);">About This Vlog Series</h3>
+        <p style="font-size:.85rem;color:var(--text2);line-height:1.7;margin:0;">12 Jilhe 12 Bhangadi—a cultural exploration series through Maharashtra's 12 districts. Experience authentic food, traditions, spiritual places, and rich history while connecting with diverse communities and capturing untold stories from across the state.</p>
+      </div>
+      <div class="videos-grid stagger reveal">
+        <a href="https://www.youtube.com/watch?v=h0UtWpyLZw8" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/h0UtWpyLZw8/0.jpg" alt="Vlog 1" loading="lazy"/><div class="play-icon">▶</div></div>
+          <div class="video-info"><h3>Nashik Vlog</h3><p class="video-date">Watch on YouTube</p></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=CgInSPp5UUk" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/CgInSPp5UUk/0.jpg" alt="Vlog 2" loading="lazy"/><div class="play-icon">▶</div></div>
+          <div class="video-info"><h3>Sindhudurg Vlog</h3><p class="video-date">Watch on YouTube</p></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=gpGIIra-_ns" target="_blank" rel="noopener" class="video-card">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/gpGIIra-_ns/0.jpg" alt="Vlog 3" loading="lazy"/><div class="play-icon">▶</div></div>
+          <div class="video-info"><h3>Satara Vlog</h3><p class="video-date">Watch on YouTube</p></div>
+        </a>
+      </div>
+    </div>
+
+<!-- EXTRACURRICULAR -->
+<section id="extracurricular" aria-label="Extracurricular activities">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem;">
+      <p class="eyebrow">Beyond the Desk</p>
+      <h2 class="section-title">Teaching, building,<br/>showing up</h2>
+      <p class="section-sub">The best designers never stop learning &mdash; and never stop giving back. Here&rsquo;s where I put that belief into practice.</p>
+    </div>
+    <div class="extra-grid stagger reveal">
+      <div class="extra-card">
+        <div class="carousel-wrap extra-img-wrap">
+          <div class="carousel-inner" id="carousel1">
+            <div class="carousel-item"><img src="images/extracurricular/codeos-1.jpg" alt="CodeOS Workshop" class="carousel-img" loading="lazy"/></div>
+            <div class="carousel-item"><img src="images/extracurricular/codeos-2.jpg" alt="CodeOS Event" class="carousel-img" loading="lazy"/></div>
+            <div class="carousel-item"><img src="images/extracurricular/codeos-3.jpg" alt="CodeOS Bootcamp" class="carousel-img" loading="lazy"/></div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-dots" id="dots1"><span class="carousel-dot active" data-index="0"></span><span class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span></div>
+            <button class="carousel-pause-btn" id="pauseBtn1" aria-label="Pause carousel" title="Pause">⏸</button>
+          </div>
+        </div>
+        <div class="extra-body">
+          <div class="extra-meta"><span class="x-badge xb-ws">Workshop</span><span class="extra-date">2021 &ndash; 2024</span></div>
+          <h3>CodeOS &mdash; Skill Development Bootcamps</h3>
+          <p>Mentoring sessions, workshops, and educational programs for underserved students, empowering them with digital skills and career guidance.
+</p>
+          <div class="extra-stats"><div class="xstat"><strong>1000+</strong> Students</div><div class="xstat"><strong>25+</strong> Workshops/Bootcamps</div><div class="xstat"></div></div>
+        </div>
+      </div>
+      <div class="extra-card">
+        <div class="carousel-wrap extra-img-wrap">
+          <div class="carousel-inner" id="carousel2">
+            <div class="carousel-item"><img src="images/extracurricular/csr-1.jpg" alt="Kotak Education Foundation Mentoring" class="carousel-img" loading="lazy"/></div>
+            <div class="carousel-item"><img src="images/extracurricular/csr-2.jpg" alt="Kotak Education Foundation Workshop" class="carousel-img" loading="lazy"/></div>
+            <div class="carousel-item"><img src="images/extracurricular/csr-3.jpg" alt="Kotak Education Foundation Session" class="carousel-img" loading="lazy"/></div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-dots" id="dots2"><span class="carousel-dot active" data-index="0"></span><span class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span></div>
+            <button class="carousel-pause-btn" id="pauseBtn2" aria-label="Pause carousel" title="Pause">⏸</button>
+          </div>
+        </div>
+        <div class="extra-body">
+          <!-- <div class="extra-meta"><span class="x-badge xb-csr">Kotak Education Foundation</span><span class="extra-date">2022 &ndash; 2024</span></div> -->
+          <div class="extra-meta"><span class="x-badge xb-csr">CSR</span><span class="extra-date">2022 &ndash; Present</span></div>
+          <h3>Kotak Education Foundation</h3>
+          <p>Mentoring sessions, workshops, and educational programs for students from underserved communities, empowering them with digital skills and career guidance.</p>
+          <div class="extra-stats"><div class="xstat"><strong>Multiple</strong> Venues</div><div class="xstat"><strong>Kotak &amp; RAIT</strong> Partners</div></div>
+        </div>
+      </div>
+      <div class="extra-card">
+        <div class="carousel-wrap extra-img-wrap">
+          <div class="carousel-inner" id="carousel3">
+            <div class="carousel-item"><img src="images/extracurricular/iete-1.jpg" alt="IETE Event" class="carousel-img" loading="lazy"/></div>
+            <div class="carousel-item"><img src="images/extracurricular/iete-2.jpg" alt="Hackathon" class="carousel-img" loading="lazy"/></div>
+            <div class="carousel-item"><img src="images/extracurricular/iete-3.jpg" alt="eYantra" class="carousel-img" loading="lazy"/></div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-dots" id="dots3"><span class="carousel-dot active" data-index="0"></span><span class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span></div>
+            <button class="carousel-pause-btn" id="pauseBtn3" aria-label="Pause carousel" title="Pause">⏸</button>
+          </div>
+        </div>
+        <div class="extra-body">
+          <div class="extra-meta"><span class="x-badge xb-event">College Event</span><span class="extra-date">2019 &ndash; 2023</span></div>
+          <h3>IETE RAIT &mdash; Vice Chairman</h3>
+          <p>Organised the Internal Smart India Hackathon, ran Python and Java workshops, and represented the college at eYantra &mdash; a national-level robotics competition.</p>
+          <div class="extra-stats"><div class="xstat"><strong>National</strong> Representation</div><div class="xstat"><strong>eYantra</strong> Finalist</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="impact-row reveal">
+      <div class="impact-item"><div class="impact-num">1000+</div><div class="impact-lbl">Students Directly Mentored</div></div>
+      <div class="impact-item"><div class="impact-num">25+</div><div class="impact-lbl">Workshops and Bootcamps</div></div>
+      <div class="impact-item"><div class="impact-num">125K+</div><div class="impact-lbl">YouTube Views</div></div>
+      <div class="impact-item"><div class="impact-num">30+</div><div class="impact-lbl">Podcast Episodes</div></div>
+    </div>
+    <!-- <p class="gallery-note" style="margin-top:1.5rem;">Drop your images into <code>images/extracurricular/</code> &mdash; just name them image1.jpg, image2.jpg, image3.jpg, etc.</p> -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-label="Contact">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem;">
+      <p class="eyebrow">Get In Touch</p>
+      <h2 class="section-title">Got a problem worth<br/>designing for?</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal-l">
+        <p class="contact-tagline">Whether you&rsquo;re building something from scratch, fixing something broken, or just want a second opinion from someone who cares deeply about craft &mdash; my inbox is open.</p>
+        <div class="contact-links">
+          <a href="mailto:oomkarsk6@gmail.com" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="cl-text"><div class="cl-lbl">Email</div><div class="cl-val">oomkarsk6@gmail.com</div></div><span class="cl-arrow">&rarr;</span></a>
+          <a href="tel:+918169191669" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 5.5 5.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="cl-text"><div class="cl-lbl">Phone</div><div class="cl-val">+91 8169191669</div></div><span class="cl-arrow">&rarr;</span></a>
+          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div class="cl-text"><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/omkarkhandalkar</div></div><span class="cl-arrow">&rarr;</span></a>
+          <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.427c-.103-1.2-.952-1.93-1.703-1.93-.905 0-1.617.636-1.724 1.93z"/></svg></div><div class="cl-text"><div class="cl-lbl">Behance</div><div class="cl-val">behance.net/omkarkhandalkar</div></div><span class="cl-arrow">&rarr;</span></a>
+          <div class="contact-link-item" style="cursor:default;"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="cl-text"><div class="cl-lbl">Location</div><div class="cl-val">Mumbai, Maharashtra, India</div></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form action="https://formspree.io/f/xdoqzqzq" method="POST" novalidate>
+          <input type="hidden" name="_to" value="oomkarsk6@gmail.com" />
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="cf-name">Your Name</label><input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane Doe" required autocomplete="name"/></div>
+            <div class="form-group"><label class="form-label" for="cf-email">Email Address</label><input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@example.com" required autocomplete="email"/></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="cf-subject">What&rsquo;s this about?</label><input class="form-input" type="text" id="cf-subject" name="subject" placeholder="Project, collaboration, freelance..."/></div>
+          <div class="form-group"><label class="form-label" for="cf-msg">Tell me more</label><textarea class="form-textarea" id="cf-msg" name="message" placeholder="Describe the problem, the product, or just say hello..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" id="cfBtn" style="width:100%;justify-content:center;padding:.82rem;">Send Message &rarr;</button>
+          <div class="form-success" id="cfOk">Message sent. I&rsquo;ll be in touch shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">Omkar Khandalkar &mdash; Designed and built in Mumbai.</span>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Behance" title="Behance"><i class="fab fa-behance"></i></a>
+          <a href="https://www.instagram.com/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@CodeOS" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+/* MOBILE NAV */
+const mBtn=document.getElementById('menuToggle');
+const navEl=document.getElementById('navLinks');
+mBtn.addEventListener('click',()=>{
+  const o=navEl.classList.toggle('open');
+  mBtn.classList.toggle('open',o);
+});
+navEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navEl.classList.remove('open');mBtn.classList.remove('open');}));
+
+/* ACTIVE NAV */
+const sects=document.querySelectorAll('section[id]');
+const navAs=document.querySelectorAll('.nav-links a');
+const io2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navAs.forEach(a=>a.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active');}});},{threshold:0.35});
+sects.forEach(s=>io2.observe(s));
+
+/* SCROLL REVEAL */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('v');
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal,.reveal-l,.stagger,.tl-item').forEach(el=>ro.observe(el));
+
+/* LOGO & TITLE ANIMATIONS */
+const logoObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('animated');});},{threshold:.5});
+const navLogo=document.querySelector('.nav-logo');
+if(navLogo)logoObs.observe(navLogo);
+
+const titleObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('animated');});},{threshold:.3});
+const heroName=document.querySelector('.hero-name');
+if(heroName)titleObs.observe(heroName);
+
+
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(c=>{
+      c.classList.toggle('hidden',!(f==='all'||(c.dataset.categories||'').includes(f)));
+    });
+  });
+});
+
+/* CASE STUDY PANEL OPEN/CLOSE */
+function openCS(id){
+  const panel=document.getElementById(id);
+  if(!panel)return;
+  panel.classList.add('open');
+  panel.scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+function closeCS(id){
+  const panel=document.getElementById(id);
+  if(!panel)return;
+  panel.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.cs-panel.open').forEach(p=>p.classList.remove('open'));
+    document.body.style.overflow='';
+    closeLB();
+  }
+});
+
+/* GALLERY TABS */
+document.querySelectorAll('.gallery-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.gallery-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');});
+    document.querySelectorAll('.gallery-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');tab.setAttribute('aria-selected','true');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* CONTENT TABS */
+document.querySelectorAll('.content-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.content-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');});
+    document.querySelectorAll('.content-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');tab.setAttribute('aria-selected','true');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* LIGHTBOX */
+function openLB(src,alt){
+  const lb=document.getElementById('lightbox');
+  document.getElementById('lbImg').src=src;
+  document.getElementById('lbImg').alt=alt;
+  lb.classList.add('open');document.body.style.overflow='hidden';
+}
+document.getElementById('lbClose').addEventListener('click',closeLB);
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLB();});
+function closeLB(){document.getElementById('lightbox').classList.remove('open');if(!document.querySelector('.cs-panel.open'))document.body.style.overflow='';}
+
+/* CONTACT FORM */
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=document.getElementById('cfBtn');
+  btn.textContent='Sending...';btn.disabled=true;
+  setTimeout(()=>{
+    btn.textContent='Sent';
+    document.getElementById('cfOk').style.display='block';
+    e.target.reset();
+    setTimeout(()=>{btn.textContent='Send Message \u2192';btn.disabled=false;document.getElementById('cfOk').style.display='none';},5000);
+  },1200);
+}
+
+/* CAROUSEL AUTO-PLAY */
+function initCarousel(carouselId,dotsId,pauseBtnId){
+  const carousel=document.getElementById(carouselId);
+  const dots=document.querySelectorAll(`#${dotsId} .carousel-dot`);
+  const pauseBtn=document.getElementById(pauseBtnId);
+  let current=0;
+  let isPaused=false;
+  const total=carousel.querySelectorAll('.carousel-item').length;
+  let autoPlayInterval;
+
+  function updateCarousel(){
+    carousel.style.transform=`translateX(-${current*100}%)`;
+    dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+  }
+
+  function next(){
+    current=(current+1)%total;
+    updateCarousel();
+  }
+
+  function goTo(index){
+    current=index;
+    updateCarousel();
+  }
+
+  function startAutoPlay(){
+    autoPlayInterval=setInterval(next,4000);
+  }
+
+  function stopAutoPlay(){
+    clearInterval(autoPlayInterval);
+  }
+
+  function togglePause(){
+    isPaused=!isPaused;
+    if(isPaused){
+      stopAutoPlay();
+      pauseBtn.classList.add('paused');
+      pauseBtn.textContent='▶';
+      pauseBtn.setAttribute('aria-label','Play carousel');
+      pauseBtn.setAttribute('title','Play');
+    }else{
+      startAutoPlay();
+      pauseBtn.classList.remove('paused');
+      pauseBtn.textContent='⏸';
+      pauseBtn.setAttribute('aria-label','Pause carousel');
+      pauseBtn.setAttribute('title','Pause');
+    }
+  }
+
+  dots.forEach((dot,i)=>{
+    dot.addEventListener('click',()=>goTo(i));
+  });
+
+  pauseBtn.addEventListener('click',togglePause);
+
+  startAutoPlay();
+}
+
+initCarousel('carousel1','dots1','pauseBtn1');
+initCarousel('carousel2','dots2','pauseBtn2');
+initCarousel('carousel3','dots3','pauseBtn3');
+initCarousel('carousel4','dots4','pauseBtn4');
+
+</script>
+</body>
+</html>
