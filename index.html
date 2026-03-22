@@ -70,6 +70,9 @@
 <style>
 /* ── APPLE-INSPIRED TOKENS ──────────────────────── */
 :root{
+  html, body {margin-bottom: 0 !important; padding-bottom: 0 !important; height: 100%; min-height: 100vh;}
+  body {display: flex; flex-direction: column; min-height: 100vh;}
+  footer {margin-top: auto !important;}
   --bg:#000000;--bg2:#0a0a0a;--card:rgba(28,28,30,.8);--card2:rgba(44,44,46,.6);
   --border:rgba(255,255,255,.06);--borderS:rgba(255,255,255,.1);
   --text:#f5f5f7;--text2:#a1a1a6;--muted:#86868b;
@@ -133,7 +136,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .menu-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
 /* ── HERO ────────────────────────────────────────── */
-#hero{min-height:100vh;display:flex;align-items:center;background:var(--hero-g);padding-top:clamp(8rem,16vw,12rem);padding-bottom:clamp(5rem,10vw,8rem);overflow:hidden;position:relative;}
+#hero{min-height:100vh;display:flex;align-items:center;background:var(--hero-g);padding-top:clamp(3.5rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem);overflow:hidden;position:relative;}
 .hero-grid-bg{position:absolute;inset:0;opacity:0;pointer-events:none;}
 .hero-layout{display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--text2);font-size:.75rem;font-weight:500;padding:.35rem .9rem;border-radius:100px;margin-bottom:2rem;}
@@ -413,7 +416,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .form-success{display:none;margin-top:1rem;padding:.85rem;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.15);border-radius:12px;color:var(--a3);font-size:.86rem;text-align:center;}
 
 /* ── FOOTER ──────────────────────────────────────── */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0;}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:100%;}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:.78rem;color:var(--muted);}
 .footer-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
@@ -520,6 +523,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0;
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-clio')">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+    </button>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" aria-label="Scroll to top" style="position:fixed;right:2rem;bottom:5.5rem;z-index:999;background:var(--accent);color:#000;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 16px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;transition:background .2s;opacity:0;pointer-events:none;">
+      <i class="fas fa-arrow-up"></i>
     </button>
     <span class="cs-panel-nav-title">Clio &mdash; AI Investment Assistant</span>
     <span></span>
@@ -1226,10 +1233,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0;
         <p class="hero-desc">I turn complex systems into intuitive experiences — blending behavioral psychology, accessible design, and product thinking to build things people actually want to use.</p>
         <div class="hero-ctas">
           <a href="#projects" class="btn btn-primary">See My Work &rarr;</a>
-          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" aria-label="LinkedIn" class="btn btn-outline icon-btn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.youtube.com/@CodeOS" target="_blank" rel="noopener" aria-label="YouTube" class="btn btn-outline icon-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/omkar-khandalkar/" target="_blank" rel="noopener" aria-label="LinkedIn" class="btn btn-outline icon-btn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/@omkarskhandalkar" target="_blank" rel="noopener" aria-label="YouTube" class="btn btn-outline icon-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
           <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Behance" class="btn btn-outline icon-btn" title="Behance"><i class="fab fa-behance"></i></a>
-          <a href="https://www.instagram.com/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Instagram" class="btn btn-outline icon-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/hey.omyya/" target="_blank" rel="noopener" aria-label="Instagram" class="btn btn-outline icon-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="hero-stats">
           <div><div class="stat-num">2.5<span>+</span></div><div class="stat-label">Years at Zeus</div></div>
@@ -1600,14 +1607,49 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 0;
       <div class="footer-inner">
         <span class="footer-copy">Omkar Khandalkar &mdash; Designed and built in Mumbai.</span>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/omkar-khandalkar/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Behance" title="Behance"><i class="fab fa-behance"></i></a>
-          <a href="https://www.instagram.com/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@CodeOS" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/hey.omyya/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@omkarskhandalkar" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
   </footer>
+
+<!-- Scroll to Bottom Button -->
+<button id="scrollToBottomBtn" aria-label="Scroll to bottom" style="position:fixed;right:2rem;bottom:2rem;z-index:999;background:var(--accent);color:#000;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 16px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;transition:background .2s;opacity:0;pointer-events:none;">
+  <i class="fas fa-arrow-down"></i>
+</button>
+<script>
+// Scroll to Top Button logic
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    scrollToTopBtn.style.opacity = 1;
+    scrollToTopBtn.style.pointerEvents = 'auto';
+  } else {
+    scrollToTopBtn.style.opacity = 0;
+    scrollToTopBtn.style.pointerEvents = 'none';
+  }
+});
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// Show/hide scroll to bottom button
+const scrollBtn = document.getElementById('scrollToBottomBtn');
+window.addEventListener('scroll', () => {
+  if (window.innerHeight + window.scrollY < document.body.offsetHeight - 100) {
+    scrollBtn.style.opacity = 1;
+    scrollBtn.style.pointerEvents = 'auto';
+  } else {
+    scrollBtn.style.opacity = 0;
+    scrollBtn.style.pointerEvents = 'none';
+  }
+});
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
+</script>
 
 <script>
 /* MOBILE NAV */
