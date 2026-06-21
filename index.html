@@ -90,7 +90,60 @@
   --radius:16px;
   --ease:cubic-bezier(.25,.46,.45,.94);
   --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --btn-on-accent: #000;
+  --btn-outline-bg: rgba(255,255,255,.06);
+  --btn-outline-color: var(--text2);
+  --btn-outline-border: var(--borderS);
+  --accent-dark: #064e3b;
 }
+
+/* Light theme variables (WCAG-aware contrast) */
+[data-theme="light"]{
+  --bg: #ffffff;--bg2:#f6f7f8;--card:rgba(2,6,23,.06);--card2:rgba(2,6,23,.04);
+  --border:rgba(2,6,23,.08);--borderS:rgba(2,6,23,.12);
+  --text:#0b1220;--text2:#374151;--muted:#6b7280;
+  --accent:#0b7a52;--a2:#0a6f4a;--a3:#34d399;
+  --glow:rgba(11,122,82,.12);--glow2:rgba(10,111,74,.08);
+  --nav-bg:rgba(255,255,255,.92);
+  --tag-bg:rgba(11,122,82,.08);--tag:#0b7a52;
+  --shadow:0 2px 30px rgba(2,6,23,.05);
+  --shadow-c:0 2px 12px rgba(2,6,23,.04);
+  --hero-g:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(11,122,82,.06) 0%,transparent 70%);
+}
+
+/* Light-theme specific component overrides */
+[data-theme="light"] .btn-primary{color:#fff;} /* white text on green accent */
+[data-theme="light"] .btn-outline{background:transparent;color:var(--text2);border:1px solid rgba(11,122,82,.12);} 
+[data-theme="light"] .hero-badge{background:rgba(11,122,82,.04);border:1px solid rgba(11,122,82,.08);color:var(--text2);} 
+[data-theme="light"] .svc-card, [data-theme="light"] .project-card, [data-theme="light"] .stat-c, [data-theme="light"] .mock-wide, [data-theme="light"] .mock-frame, [data-theme="light"] .cs-cta-box, [data-theme="light"] .extra-card, [data-theme="light"] .learn-item, [data-theme="light"] .g-item{background:transparent;border:1px solid rgba(11,122,82,.08);} 
+[data-theme="light"] .p-thumb-label{color:rgba(0,0,0,.12);} 
+[data-theme="light"] .p-overlay span{color:#fff;border:1px solid rgba(0,0,0,.08);background:rgba(0,0,0,.5);} 
+[data-theme="light"] .p-tag{background:rgba(11,122,82,.06);color:var(--a3);} 
+[data-theme="light"] .simplified-list{background:transparent;border:1px solid rgba(11,122,82,.06);} 
+
+/* Tabs and chips in light theme */
+[data-theme="light"] .content-tabs, [data-theme="light"] .gallery-tabs, [data-theme="light"] .filter-row{background:transparent; border:1px solid rgba(6,78,59,.06);}
+[data-theme="light"] .content-tab, [data-theme="light"] .gallery-tab, [data-theme="light"] .filter-btn{background:transparent;color:var(--text2);border:1px solid rgba(6,78,59,.04);}
+[data-theme="light"] .content-tab.active, [data-theme="light"] .gallery-tab.active, [data-theme="light"] .filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);} 
+
+/* Force dark green border on all card-like elements */
+[data-theme="light"] .svc-card,
+[data-theme="light"] .project-card,
+[data-theme="light"] .stat-c,
+[data-theme="light"] .mock-wide,
+[data-theme="light"] .mock-frame,
+[data-theme="light"] .cs-cta-box,
+[data-theme="light"] .extra-card,
+[data-theme="light"] .learn-item,
+[data-theme="light"] .g-item,
+[data-theme="light"] .video-card,
+[data-theme="light"] .gallery-item,
+[data-theme="light"] .carousel-wrap,
+[data-theme="light"] .hero-card-inner,
+[data-theme="light"] .lightbox img
+{border:1px solid rgba(6,78,59,.4) !important;}
+
+[data-theme="light"] .svc-card:hover, [data-theme="light"] .project-card:hover{box-shadow:0 6px 24px rgba(6,78,59,.06);} 
 
 /* ── RESET ───────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -126,10 +179,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(255,255,255,.06);}
 .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;}
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.2rem;border-radius:100px;font-family:'Inter',system-ui,sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .3s var(--ease);border:none;white-space:nowrap;letter-spacing:-.01em;}
-.btn-primary{background:var(--accent);color:#000;font-weight:600;}
+.btn-primary{background:var(--accent);color:var(--btn-on-accent);font-weight:600;}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--glow);opacity:.9;}
-.btn-outline{background:rgba(255,255,255,.06);color:var(--text2);border:1px solid var(--borderS);}
-.btn-outline:hover{background:rgba(255,255,255,.1);color:var(--text);border-color:rgba(255,255,255,.2);}
+.btn-outline{background:var(--btn-outline-bg);color:var(--btn-outline-color);border:1px solid var(--btn-outline-border);} 
+.btn-outline:hover{background:rgba(255,255,255,.1);color:var(--text);border-color:rgba(255,255,255,.2);} 
 .icon-btn{width:2.3rem;height:2.3rem;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;}
 .icon-btn i{font-size:1rem;}
 .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
@@ -1253,6 +1306,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         <div class="nav-actions">
           <a href="mailto:oomkarsk6@gmail.com" class="btn btn-primary">Hire Me</a>
           <button id="simplifyToggle" class="btn btn-outline" title="Toggle simplified portfolio view" aria-pressed="false">Simplified</button>
+          <button id="themeToggle" class="btn btn-outline" title="Toggle theme" aria-pressed="false">Light</button>
           <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
         </div>
       </div>
@@ -2009,6 +2063,36 @@ initCarousel('carousel4','dots4','pauseBtn4');
   // initialize
   const pref = localStorage.getItem('portfolioMode');
   if(pref === 'simplified') setSimplified(true);
+})();
+</script>
+<script>
+// Theme toggle: toggles html[data-theme] between 'dark' and 'light'
+(function(){
+  const themeBtn = document.getElementById('themeToggle');
+  if(!themeBtn) return;
+  const html = document.documentElement;
+
+  function applyTheme(t){
+    html.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'light' ? 'Dark' : 'Light';
+    themeBtn.setAttribute('aria-pressed', t === 'light' ? 'true' : 'false');
+    try{ localStorage.setItem('preferredTheme', t); }catch(e){}
+  }
+
+  themeBtn.addEventListener('click', ()=>{
+    const current = html.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = current === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+  });
+
+  // initialize from preference or system
+  const pref = localStorage.getItem('preferredTheme');
+  if(pref === 'light' || pref === 'dark'){
+    applyTheme(pref);
+  } else {
+    const sys = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    applyTheme(sys);
+  }
 })();
 </script>
 </body>
