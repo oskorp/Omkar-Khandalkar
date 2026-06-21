@@ -561,6 +561,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
   .cs-panel-nav-title{display:none;}
   section{padding:clamp(2.5rem,6vw,4rem) 0;}
 }
+
+/* Projects carousel behaviour for small viewports */
+@media(max-width:768px){
+  .projects-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1rem;padding-bottom:1rem;}
+  .projects-grid .project-card{min-width:84%;flex:0 0 84%;scroll-snap-align:center;margin-right:0;}
+  .projects-grid .projects-carousel-controls{position:relative;display:flex;gap:.5rem;justify-content:flex-end;margin-top:.8rem;padding-right:clamp(1rem,5vw,3rem);}
+  .projects-carousel-controls button{width:40px;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-size:1rem;background:var(--btn-outline-bg);border:1px solid rgba(6,78,59,.15);color:var(--text2);}
+  .projects-carousel-controls{display:flex;}
+}
+
+@media(min-width:769px){
+  .projects-carousel-controls{display:none !important;}
+}
 @media(max-width:480px){
     .footer-links{width:100%;justify-content:flex-start;gap:0.5rem;margin-top:0.5rem;}
     .footer-links a{width:38px;height:38px;font-size:1.2rem;}
@@ -1395,6 +1408,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     </div>
     <div class="projects-grid stagger reveal">
 
+      <!-- Mobile carousel controls -->
+      <div class="projects-carousel-controls" aria-hidden="true">
+        <button id="projPrev" class="btn btn-outline" aria-label="Previous projects">◀</button>
+        <button id="projNext" class="btn btn-outline" aria-label="Next projects">▶</button>
+      </div>
+
       <div class="project-card" data-categories="ux fintech" onclick="openCS('cs-clio')">
         <div class="p-thumb">
           <img class="p-thumb-img" src="images/clio/Clio_cover.png" alt="Clio — AI Investment Assistant">
@@ -1952,7 +1971,31 @@ initCarousel('carousel4','dots4','pauseBtn4');
 </script>
 <script>
 (function(){
-  
+  // Projects carousel controls for small viewports
+  const grid = document.querySelector('.projects-grid');
+  const prev = document.getElementById('projPrev');
+  const next = document.getElementById('projNext');
+  if(!grid || !prev || !next) return;
+
+  function scrollByCard(dir){
+    const card = grid.querySelector('.project-card');
+    if(!card) return;
+    const scrollAmount = Math.round(grid.clientWidth * 0.86);
+    grid.scrollBy({left: dir * scrollAmount, behavior: 'smooth'});
+  }
+
+  prev.addEventListener('click', ()=> scrollByCard(-1));
+  next.addEventListener('click', ()=> scrollByCard(1));
+
+  // enable/disable buttons near ends
+  function updateButtons(){
+    const maxScroll = grid.scrollWidth - grid.clientWidth - 1;
+    prev.disabled = grid.scrollLeft <= 5;
+    next.disabled = grid.scrollLeft >= maxScroll - 5;
+  }
+  grid.addEventListener('scroll', updateButtons, {passive:true});
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
 })();
 </script>
 <script>
