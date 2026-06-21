@@ -266,6 +266,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .p-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s var(--ease);}
 .project-card:hover .p-overlay{opacity:1;}
 .p-overlay span{font-size:.8rem;font-weight:500;color:#fff;border:1px solid rgba(255,255,255,.2);padding:.4rem .9rem;border-radius:100px;}
+
+/* Hide per-card open overlay and footer buttons to reduce repetition */
+.project-card .p-overlay, .project-card .p-card-footer{display:none !important;}
 .p-body{padding:1.4rem;}
 .p-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.75rem;}
 .p-tag{font-size:.67rem;font-weight:500;padding:.2rem .55rem;border-radius:100px;background:rgba(255,255,255,.05);color:var(--text2);}
@@ -274,15 +277,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .p-card-footer{display:flex;gap:.5rem;flex-wrap:wrap;}
 .cs-btn{font-size:.78rem;padding:.44rem .9rem;flex:1;justify-content:center;min-width:0;}
 
-/* Compact view: simplified project cards */
-#projects.compact .projects-grid{grid-template-columns:repeat(4,1fr);}
-#projects.compact .p-body{padding:.6rem;}
-#projects.compact .p-tags,#projects.compact .p-body>p,#projects.compact .p-card-footer{display:none;}
-#projects.compact .p-body h3{font-size:.95rem;margin-bottom:0;}
-#projects.compact .p-thumb{aspect-ratio:16/9;}
-#projects.compact .project-card{border-radius:12px;}
-#projects.compact .p-thumb-img{height:100%;object-fit:cover;display:block;}
-
+/* (compact view removed) */
 /* Global simplified portfolio view */
 body.simplified section{display:none;}
 body.simplified #projects, body.simplified footer, body.simplified nav{display:block;}
@@ -1388,7 +1383,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
           <p class="section-sub">Every project starts with a real problem. Click any card to open the full case study the brief, the process, and what actually changed.</p>
         </div>
         <div style="display:flex;align-items:center;gap:.6rem;">
-          <button id="viewToggle" class="filter-btn" aria-pressed="false" onclick="toggleCompactView()">Compact View</button>
         </div>
       </div>
     </div>
@@ -1958,33 +1952,7 @@ initCarousel('carousel4','dots4','pauseBtn4');
 </script>
 <script>
 (function(){
-  const projects = document.getElementById('projects');
-  const btn = document.getElementById('viewToggle');
-  if(!projects || !btn) return;
-
-  function setView(compact){
-    if(compact){
-      projects.classList.add('compact');
-      btn.textContent='Detailed View';
-      btn.setAttribute('aria-pressed','true');
-    } else {
-      projects.classList.remove('compact');
-      btn.textContent='Compact View';
-      btn.setAttribute('aria-pressed','false');
-    }
-    try{localStorage.setItem('portfolioView', compact ? 'compact' : 'detailed');}catch(e){}
-  }
-
-  window.toggleCompactView = function(){
-    const isCompact = projects.classList.toggle('compact');
-    setView(isCompact);
-  };
-
-  // initialize from preference
-  const pref = localStorage.getItem('portfolioView');
-  if(pref === 'compact' || pref === 'detailed'){
-    setView(pref === 'compact');
-  }
+  
 })();
 </script>
 <script>
