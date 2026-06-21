@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Omkar Khandalkar</title>
 
 <!-- Favicon: prefer SVG, with PNG fallback -->
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml"/>
-<link rel="icon" href="images/profile-favicon.png" type="image/png"/>
-<link rel="mask-icon" href="images/favicon.svg" color="#000000"/>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="images/profile-favicon.png" type="image/png" />
+<link rel="mask-icon" href="images/favicon.svg" color="#000000" />
 <!--
   Favicon instructions:
   1. Create a square image (at least 64x64px) with the OK. logo (matching the header, white or accent color on transparent or dark background).
@@ -17,26 +17,26 @@
 -->
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Omkar Khandalkar — Senior Product Designer, Podcast Host (CodeOS), and Vlogger. Portfolio, case studies, podcasts, and vlogs from Mumbai, India."/>
-<meta name="keywords" content="Omkar, Omkar Khandalkar, Omkar Suresh Khandalkar, Omkar CodeOS, Omkar Khandalkar vlogs, Omkar designer, Omkar product designer, Omkar Zeus, Omkar podcast, Product Designer, UX, UI, Accessibility, Podcast, Portfolio, Mumbai, India, CodeOS, Zeus Learning"/>
-<meta name="author" content="Omkar Khandalkar"/>
-<link rel="canonical" href="https://omkarkhandalkar.space/"/>
-<meta name="theme-color" content="#000000"/>
+<meta name="description" content="Omkar Khandalkar — Senior Product Designer, Podcast Host (CodeOS), and Vlogger. Portfolio, case studies, podcasts, and vlogs from Mumbai, India." />
+<meta name="keywords" content="Omkar, Omkar Khandalkar, Omkar Suresh Khandalkar, Omkar CodeOS, Omkar Khandalkar vlogs, Omkar designer, Omkar product designer, Omkar Zeus, Omkar podcast, Product Designer, UX, UI, Accessibility, Podcast, Portfolio, Mumbai, India, CodeOS, Zeus Learning" />
+<meta name="author" content="Omkar Khandalkar" />
+<link rel="canonical" href="https://omkarkhandalkar.space/" />
+<meta name="theme-color" content="#000000" />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Omkar Khandalkar — Product Designer"/>
-<meta property="og:description" content="Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India."/>
-<meta property="og:url" content="https://omkarkhandalkar.space/"/>
-<meta property="og:image" content="https://omkarkhandalkar.space/images/profile.jpeg"/>
-<meta property="og:site_name" content="Omkar Khandalkar Portfolio"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Omkar Khandalkar — Product Designer" />
+<meta property="og:description" content="Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India." />
+<meta property="og:url" content="https://omkarkhandalkar.space/" />
+<meta property="og:image" content="https://omkarkhandalkar.space/images/profile.jpeg" />
+<meta property="og:site_name" content="Omkar Khandalkar Portfolio" />
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Omkar Khandalkar — Product Designer"/>
-<meta name="twitter:description" content="Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India."/>
-<meta name="twitter:image" content="https://omkarkhandalkar.space/images/profile.jpeg"/>
-<meta name="twitter:site" content="@omkarkhandalkar"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Omkar Khandalkar — Product Designer" />
+<meta name="twitter:description" content="Senior Product Designer, Podcast Host, and Accessibility Designer. Portfolio, case studies, creative work, and content creation from Mumbai, India." />
+<meta name="twitter:image" content="https://omkarkhandalkar.space/images/profile.jpeg" />
+<meta name="twitter:site" content="@omkarkhandalkar" />
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -67,10 +67,10 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <style>
 /* ── APPLE-INSPIRED TOKENS ──────────────────────── */
 :root{
@@ -537,7 +537,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" id="lbClose" aria-label="Close viewer">&#x2715;</button>
-    <img src="" alt="" id="lbImg"/>
+    <img src="" alt="" id="lbImg" />
   </div>
 
   <!-- ═══════════════════════════════════════
@@ -548,17 +548,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 <div class="cs-panel" id="cs-clio" role="dialog" aria-modal="true" aria-label="Clio case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-clio')">
-      <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
 
-    <span class="cs-panel-nav-title">Clio AI Investment Assistant</span>
+    <span class="cs-panel-nav-title">Clio &mdash; AI Investment Assistant</span>
     <span></span>
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#0d1a0d 0%,#1a3a1a 100%);">
     <div class="container cs-hero-inner">
       <div class="cs-tags"><span class="cs-tag">Fintech</span><span class="cs-tag">Data Visualisation</span><span class="cs-tag">AI Feature</span><span class="cs-tag">Product Design</span></div>
-      <h1>Clio AI Investment Assistant</h1>
-      <p class="cs-sub">Dense financial data, made human. A case study in progressive disclosure, behavioural nudges, and designing for people who don&rsquo;t speak the language of markets yet.</p>
+      <h1>Clio &mdash; AI Investment Assistant</h1>
+      <p class="cs-sub">Dense financial data, made human. A case study in progressive disclosure, behavioural nudges, and designing for people who don&rsquo;t speak the language of markets &mdash; yet.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Product Designer</div></div>
         <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Conceptual Web App</div></div>
@@ -572,19 +572,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <p class="sec-lbl">Overview</p>
       <h2>The brief in one sentence</h2>
       <p>Design a portfolio management feature for Clio that makes complex financial data understandable for novice investors without dumbing it down for experienced ones.</p>
-      <p>The challenge wasn&rsquo;t purely visual. It was cognitive how do you show volatility, risk exposure, sector allocation, and smart trade recommendations to someone who opened their first investment account three weeks ago, without overwhelming them into inaction?</p>
+      <p>The challenge wasn&rsquo;t purely visual. It was cognitive &mdash; how do you show volatility, risk exposure, sector allocation, and smart trade recommendations to someone who opened their first investment account three weeks ago, without overwhelming them into inaction?</p>
       <div class="cs-quote"><p>&ldquo;When I open my portfolio I see a wall of numbers and feel like I&rsquo;m missing something. I just close the app.&rdquo;</p></div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">The Problem</p>
       <h2>Information density is not the same as clarity</h2>
       <div class="two-col">
-        <div><p>Most investment apps were designed for people who already understand finance. They cram every metric onto one screen because power users want it. But for everyone else, it triggers decision paralysis too much information, no action at all.</p><p>This isn&rsquo;t a cosmetic problem. It&rsquo;s a retention and trust problem. Users who feel confused churn. Users who feel empowered invest more and stay longer.</p></div>
+        <div><p>Most investment apps were designed for people who already understand finance. They cram every metric onto one screen because power users want it. But for everyone else, it triggers decision paralysis &mdash; too much information, no action at all.</p><p>This isn&rsquo;t a cosmetic problem. It&rsquo;s a retention and trust problem. Users who feel confused churn. Users who feel empowered invest more and stay longer.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
           <li>Dashboard shows 14+ data points simultaneously with no visual hierarchy</li>
           <li>No contextual explanation of what numbers mean or what to do with them</li>
           <li>Trade recommendations appear with no rationale, creating distrust</li>
-          <li>Risk levels displayed as jargonheavy scores (e.g.&ldquo;Beta 1.4&rdquo;)</li>
+          <li>Risk levels displayed as jargon-heavy scores (e.g. &ldquo;Beta 1.4&rdquo;)</li>
           <li>No sense of progress or portfolio health at a glance</li>
         </ul></div>
       </div>
@@ -595,17 +595,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="three-col">
         <div class="ic"><h3>User Interviews</h3><p>12 sessions with novice investors and 6 with experienced traders. Goal: map the knowledge gap and identify where confidence collapses.</p></div>
         <div class="ic"><h3>Competitive Analysis</h3><p>Evaluated 5 platforms including Zerodha, Groww, and Robinhood on information hierarchy, onboarding clarity, and trade decision support.</p></div>
-        <div class="ic"><h3>Cognitive Load Mapping</h3><p>Taskbased test asking users to answer 5 simple questions using their current app. Measured timetoanswer and error rates to find overload points.</p></div>
+        <div class="ic"><h3>Cognitive Load Mapping</h3><p>Task-based test asking users to answer 5 simple questions using their current app. Measured time-to-answer and error rates to find overload points.</p></div>
       </div>
-      <p style="margin-top:1.8rem;">Key insight: novice users don&rsquo;t need less data they need data presented with context and intent. They want to know what something means<em>for them</em>, not just what it is.</p>
+      <p style="margin-top:1.8rem;">Key insight: novice users don&rsquo;t need less data &mdash; they need data presented with context and intent. They want to know what something means <em>for them</em>, not just what it is.</p>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Process</p>
       <h2>From insight to interface</h2>
       <div class="steps">
-        <div class="step"><div class="step-n">01</div><div><h4>Define the user spectrum</h4><p>Created two primary personas:&ldquo;Curious Priya&rdquo;(firsttime investor, wants simplicity) and&ldquo;Confident Raj&rdquo;(2+ years, wants density). The design needed to serve both without compromise.</p></div></div>
-        <div class="step"><div class="step-n">02</div><div><h4>Progressive disclosure architecture</h4><p>Restructured information hierarchy so the default view shows only three highvalue signals: portfolio health score, today&rsquo;s change, and a single action nudge. All detail is one tap away.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Smart Trade flows</h4><p>Designed an AIpowered recommendation system that shows not just what to trade but why with plainlanguage rationale, risk profile alignment, and a&ldquo;what happens if I do/don&rsquo;t&rdquo;framing.</p></div></div>
+        <div class="step"><div class="step-n">01</div><div><h4>Define the user spectrum</h4><p>Created two primary personas: &ldquo;Curious Priya&rdquo; (first-time investor, wants simplicity) and &ldquo;Confident Raj&rdquo; (2+ years, wants density). The design needed to serve both without compromise.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Progressive disclosure architecture</h4><p>Restructured information hierarchy so the default view shows only three high-value signals: portfolio health score, today&rsquo;s change, and a single action nudge. All detail is one tap away.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Smart Trade flows</h4><p>Designed an AI-powered recommendation system that shows not just what to trade but why &mdash; with plain-language rationale, risk profile alignment, and a &ldquo;what happens if I do/don&rsquo;t&rdquo; framing.</p></div></div>
         <div class="step"><div class="step-n">04</div><div><h4>Contextual data visualisation</h4><p>Replaced raw charts with annotated visuals. Every significant data point has a tooltip in plain language. Sector allocation shows as a labelled visual map, not just percentages.</p></div></div>
         <div class="step"><div class="step-n">05</div><div><h4>Usability testing and iteration</h4><p>Two rounds of moderated testing with 8 participants using Maze. Iterated on the Smart Trade confirmation flow after discovering users wanted one more step of reassurance before committing.</p></div></div>
       </div>
@@ -613,7 +613,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="cs-sec">
       <p class="sec-lbl">Design Screens</p>
       <h2>What the work looks like</h2>
-      <p>Add your Figma exports to the<code style="background:var(--card2);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;">images/clio/</code>folder and update the<code style="background:var(--card2);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;">src</code>attributes below.</p>
+      <p>Add your Figma exports to the <code style="background:var(--card2);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;">images/clio/</code> folder and update the <code style="background:var(--card2);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;">src</code> attributes below.</p>
       <div class="mock-wide">
         <div class="mock-ph">
           <img src="images/clio/frame.png" alt="Dashboard Overview">
@@ -642,17 +642,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <h2>Numbers that tell the real story</h2>
       <div class="three-col">
         <div class="stat-c"><div class="stat-big">+40%</div><div class="stat-lbl">Dashboard comprehension score in usability testing</div></div>
-        <div class="stat-c"><div class="stat-big">60%</div><div class="stat-lbl">Decision time for Smart Trade among test participants</div></div>
+        <div class="stat-c"><div class="stat-big">-60%</div><div class="stat-lbl">Decision time for Smart Trade among test participants</div></div>
         <div class="stat-c"><div class="stat-big">89%</div><div class="stat-lbl">Task completion rate (up from 54% in baseline)</div></div>
       </div>
-      <p style="margin-top:1.8rem;">Users who previously closed the app when faced with the dashboard were now spending more time exploring not because there was more to see, but because they finally understood what they were looking at.</p>
+      <p style="margin-top:1.8rem;">Users who previously closed the app when faced with the dashboard were now spending more time exploring &mdash; not because there was more to see, but because they finally understood what they were looking at.</p>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Learnings</p>
       <h2>What this project taught me</h2>
       <div class="learn-grid">
-        <div class="learn-item"><h4>Simplicity is not reduction</h4><p>Hiding information is not the same as designing for clarity. Progressive disclosure works because it respects the user&rsquo;s journey giving them what they need, when they need it.</p></div>
-        <div class="learn-item"><h4>Context is the design</h4><p>The most impactful change wasn&rsquo;t visual it was adding plainlanguage context to every data point. Data without meaning is noise. Data with meaning is a conversation.</p></div>
+        <div class="learn-item"><h4>Simplicity is not reduction</h4><p>Hiding information is not the same as designing for clarity. Progressive disclosure works because it respects the user&rsquo;s journey &mdash; giving them what they need, when they need it.</p></div>
+        <div class="learn-item"><h4>Context is the design</h4><p>The most impactful change wasn&rsquo;t visual &mdash; it was adding plain-language context to every data point. Data without meaning is noise. Data with meaning is a conversation.</p></div>
         <div class="learn-item"><h4>Trust is designed, not assumed</h4><p>The Smart Trade flow taught me that AI recommendations need to show their work. Users won&rsquo;t act on a suggestion they don&rsquo;t understand, no matter how accurate it is.</p></div>
         <div class="learn-item"><h4>Test with real sceptics</h4><p>Recruiting participants who actively avoided investing gave us the most actionable feedback. Designing for the hesitant user makes the product better for everyone.</p></div>
       </div>
@@ -679,16 +679,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 <div class="cs-panel" id="cs-assure" role="dialog" aria-modal="true" aria-label="Amazon Assure case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-assure')">
-      <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
     <span class="cs-panel-nav-title">Amazon Assure</span>
     <span></span>
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#0a1a14 0%,#0f2d20 100%);">
     <div class="container cs-hero-inner">
-      <div class="cs-tags"><span class="cs-tag">Ecommerce</span><span class="cs-tag">Trust Design</span><span class="cs-tag">Feature Design</span><span class="cs-tag">UX Research</span></div>
+      <div class="cs-tags"><span class="cs-tag">E-commerce</span><span class="cs-tag">Trust Design</span><span class="cs-tag">Feature Design</span><span class="cs-tag">UX Research</span></div>
       <h1>Amazon Assure</h1>
-      <p class="cs-sub">Postpurchase anxiety is a silent churn driver. This feature case study tackles what happens after the buy button and why that moment defines longterm customer trust.</p>
+      <p class="cs-sub">Post-purchase anxiety is a silent churn driver. This feature case study tackles what happens after the buy button &mdash; and why that moment defines long-term customer trust.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Lead UX Designer</div></div>
         <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS, Android, Web</div></div>
@@ -701,17 +701,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="cs-sec">
       <p class="sec-lbl">Overview</p>
       <h2>The brief in one sentence</h2>
-      <p>Design a trustbuilding feature for Amazon that reduces postpurchase anxiety, lowers WISMO (Where Is My Order) contact rates, and improves customer satisfaction without adding friction to the existing checkout flow.</p>
+      <p>Design a trust-building feature for Amazon that reduces post-purchase anxiety, lowers WISMO (Where Is My Order) contact rates, and improves customer satisfaction without adding friction to the existing checkout flow.</p>
       <div class="cs-quote"><p>&ldquo;I bought it three days ago. I just keep refreshing the tracking page every hour hoping something has changed.&rdquo;</p></div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">The Problem</p>
       <h2>The experience falls apart after the sale</h2>
       <div class="two-col">
-        <div><p>The invisible problem with ecommerce is that the experience falls apart the moment the customer pays. The product is sold. The design team moves on. But the user is now in a state of uncertainty that can last days and that uncertainty is where trust is won or lost.</p></div>
+        <div><p>The invisible problem with e-commerce is that the experience falls apart the moment the customer pays. The product is sold. The design team moves on. But the user is now in a state of uncertainty that can last days &mdash; and that uncertainty is where trust is won or lost.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
           <li>Return initiation requires 5+ steps with confusing policy language at each point</li>
-          <li>Order tracking shows carrier codes and depot names with no plainlanguage status</li>
+          <li>Order tracking shows carrier codes and depot names with no plain-language status</li>
           <li>No proactive communication when delays occur</li>
           <li>No visual confirmation of what the guarantee covers until a problem arises</li>
           <li>Customer support chat used mostly for questions the UI could answer</li>
@@ -722,21 +722,21 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <p class="sec-lbl">Research</p>
       <h2>Finding the trust gaps</h2>
       <div class="three-col">
-        <div class="ic"><h3>Customer Journey Mapping</h3><p>Mapped the postpurchase journey for 20 users from order confirmation to receipt, identifying every moment of uncertainty and every touch point that either built or eroded trust.</p></div>
-        <div class="ic"><h3>Review Mining</h3><p>Analysed 500 onestar reviews across product categories. 60% mentioned order uncertainty, return difficulty, or lack of communication as the primary complaint.</p></div>
+        <div class="ic"><h3>Customer Journey Mapping</h3><p>Mapped the post-purchase journey for 20 users from order confirmation to receipt, identifying every moment of uncertainty and every touch point that either built or eroded trust.</p></div>
+        <div class="ic"><h3>Review Mining</h3><p>Analysed 500 one-star reviews across product categories. 60% mentioned order uncertainty, return difficulty, or lack of communication as the primary complaint.</p></div>
         <div class="ic"><h3>Competitive Benchmarking</h3><p>Evaluated return and tracking UX across Flipkart, Myntra, and Nykaa to identify what the market was doing well and where Amazon had an opportunity to lead.</p></div>
       </div>
-      <p style="margin-top:1.8rem;">Core insight: users didn&rsquo;t need faster delivery. They needed fewer moments of uncertainty. Every step that told a user&ldquo;here&rsquo;s where your order is and what happens next&rdquo;reduced anxiety, even if the timeline didn&rsquo;t change.</p>
+      <p style="margin-top:1.8rem;">Core insight: users didn&rsquo;t need faster delivery. They needed fewer moments of uncertainty. Every step that told a user &ldquo;here&rsquo;s where your order is and what happens next&rdquo; reduced anxiety, even if the timeline didn&rsquo;t change.</p>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Process</p>
       <h2>From insight to interface</h2>
       <div class="steps">
-        <div class="step"><div class="step-n">01</div><div><h4>Map the trust gaps first</h4><p>Mapped all postconfirmation touch points on a trust scale before designing a single screen. This focused effort on the highestanxiety moments, not the most visible ones.</p></div></div>
+        <div class="step"><div class="step-n">01</div><div><h4>Map the trust gaps first</h4><p>Mapped all post-confirmation touch points on a trust scale before designing a single screen. This focused effort on the highest-anxiety moments, not the most visible ones.</p></div></div>
         <div class="step"><div class="step-n">02</div><div><h4>Design the guarantee badge system</h4><p>A persistent visual badge communicating what protection the customer has, visible on order confirmation, tracking, and product pages.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Redesign the tracking page</h4><p>Replaced carrier codes and depot names with a plainlanguage progress narrative:&ldquo;Your order left the sorting facility in Pune and is on its way to Mumbai.&rdquo;</p></div></div>
-        <div class="step"><div class="step-n">04</div><div><h4>Proactive delay communication</h4><p>Inapp notification system that preempts customer queries by proactively communicating delays with reason, updated ETA, and a onetap support option.</p></div></div>
-        <div class="step"><div class="step-n">05</div><div><h4>Streamlined return initiation</h4><p>Reduced return initiation from 5 steps to 2 with plainlanguage policy summaries at the decision point.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Redesign the tracking page</h4><p>Replaced carrier codes and depot names with a plain-language progress narrative: &ldquo;Your order left the sorting facility in Pune and is on its way to Mumbai.&rdquo;</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Proactive delay communication</h4><p>In-app notification system that pre-empts customer queries by proactively communicating delays with reason, updated ETA, and a one-tap support option.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Streamlined return initiation</h4><p>Reduced return initiation from 5 steps to 2 with plain-language policy summaries at the decision point.</p></div></div>
       </div>
     </div>
     <div class="cs-sec">
@@ -746,16 +746,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="mock-grid">
         <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Assure Badge</div><div class="mph-note">images/assure/badge.png</div></div></div>
         <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Delay Notification</div><div class="mph-note">images/assure/delay.png</div></div></div>
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Return Flow Step 1</div><div class="mph-note">images/assure/return1.png</div></div></div>
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Return Flow Step 2</div><div class="mph-note">images/assure/return2.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Return Flow Step 1</div><div class="mph-note">images/assure/return-1.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Return Flow Step 2</div><div class="mph-note">images/assure/return-2.png</div></div></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Outcome</p>
       <h2>Numbers that tell the real story</h2>
       <div class="three-col">
-        <div class="stat-c"><div class="stat-big">28%</div><div class="stat-lbl">Projected reduction in WISMO support contacts</div></div>
-        <div class="stat-c"><div class="stat-big">+18pts</div><div class="stat-lbl">Postpurchase NPS improvement in prototype testing</div></div>
+        <div class="stat-c"><div class="stat-big">-28%</div><div class="stat-lbl">Projected reduction in WISMO support contacts</div></div>
+        <div class="stat-c"><div class="stat-big">+18pts</div><div class="stat-lbl">Post-purchase NPS improvement in prototype testing</div></div>
         <div class="stat-c"><div class="stat-big">2 steps</div><div class="stat-lbl">Return initiation reduced from 5 steps to 2</div></div>
       </div>
     </div>
@@ -763,9 +763,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <p class="sec-lbl">Learnings</p>
       <h2>What this project taught me</h2>
       <div class="learn-grid">
-        <div class="learn-item"><h4>The experience lives after the sale</h4><p>Most design attention goes to conversion. This project proved that the postpurchase experience has enormous leverage on NPS, repeat purchase rate, and brand trust.</p></div>
+        <div class="learn-item"><h4>The experience lives after the sale</h4><p>Most design attention goes to conversion. This project proved that the post-purchase experience has enormous leverage on NPS, repeat purchase rate, and brand trust.</p></div>
         <div class="learn-item"><h4>Proactive beats reactive</h4><p>A single proactive delay notification eliminated the need for customers to contact support. Prevention is always cheaper than resolution.</p></div>
-        <div class="learn-item"><h4>Plain language is a design decision</h4><p>Changing&ldquo;HYD1&rarr;BOM2&rdquo;to a human sentence was one of the highestimpact changes in the project. Clarity is not a copywriting task it is a UX task.</p></div>
+        <div class="learn-item"><h4>Plain language is a design decision</h4><p>Changing &ldquo;HYD1 &rarr; BOM2&rdquo; to a human sentence was one of the highest-impact changes in the project. Clarity is not a copywriting task &mdash; it is a UX task.</p></div>
         <div class="learn-item"><h4>Guarantees need to be visible to work</h4><p>Customers didn&rsquo;t know Amazon&rsquo;s return policy was generous because it was buried. Making the guarantee visible changed perception before any problem even occurred.</p></div>
       </div>
     </div>
@@ -792,7 +792,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 <div class="cs-panel" id="cs-tryfit" role="dialog" aria-modal="true" aria-label="Tryfit case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-tryfit')">
-      <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
     <span class="cs-panel-nav-title">Tryfit Shopping App</span>
     <span></span>
@@ -821,7 +821,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <p class="sec-lbl">The Problem</p>
       <h2>You can&rsquo;t really decide from a product page</h2>
       <div class="two-col">
-        <div><p>Clothing e commerce has had a returns problem for years, and most companies just treat it as a cost of doing business. But the real issue isn&rsquo;t logistics. It&rsquo;s that fit and style are things your body figures out, not your eyes. A photo can&rsquo;t tell you how a fabric actually falls, whether a colour works with your skin tone, or if a cut suits your shape. So buying turns into a guess, and guesses are what lead to returns, refunds, and people losing trust in the brand.</p><p>Tryfit&rsquo;s whole idea is to stop asking people to decide before they&rsquo;ve tried something on. The question moves from&ldquo;will I keep this?&rdquo;at checkout to&ldquo;did I actually like wearing this?&rdquo;at home, and payment only happens once that second question has an answer.</p></div>
+        <div><p>Clothing e commerce has had a returns problem for years, and most companies just treat it as a cost of doing business. But the real issue isn&rsquo;t logistics. It&rsquo;s that fit and style are things your body figures out, not your eyes. A photo can&rsquo;t tell you how a fabric actually falls, whether a colour works with your skin tone, or if a cut suits your shape. So buying turns into a guess, and guesses are what lead to returns, refunds, and people losing trust in the brand.</p><p>Tryfit&rsquo;s whole idea is to stop asking people to decide before they&rsquo;ve tried something on. The question moves from &ldquo;will I keep this?&rdquo; at checkout to &ldquo;did I actually like wearing this?&rdquo; at home, and payment only happens once that second question has an answer.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
           <li>Size charts are generic and ask for measurements most people don&rsquo;t know off the top of their head</li>
           <li>Product photos show models with body proportions that are nothing like the shopper&rsquo;s own</li>
@@ -847,18 +847,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="steps">
         <div class="step"><div class="step-n">01</div><div><h4>Rethinking the commitment moment</h4><p>We redesigned checkout around something we called a Try Set instead of a single purchase. Users add a few items to a try at home box with zero payment collected upfront, which moves the actual decision from before delivery to after.</p></div></div>
         <div class="step"><div class="step-n">02</div><div><h4>The styling feature</h4><p>We built a styling layer that suggests pieces and full looks based on whatever a user adds to their Try Set, so the box that shows up feels curated rather than just a pile of size options.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Keep or return, all on one screen</h4><p>We designed a single screen after delivery where people swipe each item into&ldquo;Keep&rdquo;or&ldquo;Return,&rdquo;watch a running total update live, and confirm. This replaced what used to be a multi step return form with one simple decision.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Keep or return, all on one screen</h4><p>We designed a single screen after delivery where people swipe each item into &ldquo;Keep&rdquo; or &ldquo;Return,&rdquo; watch a running total update live, and confirm. This replaced what used to be a multi step return form with one simple decision.</p></div></div>
         <div class="step"><div class="step-n">04</div><div><h4>Free pickup instead of a return label</h4><p>The return flow became a scheduled doorstep pickup instead of a packing and shipping task. That one change removed the biggest reason people end up keeping things they didn&rsquo;t really want.</p></div></div>
-        <div class="step"><div class="step-n">05</div><div><h4>Paying only for what you keep</h4><p>Final payment only kicks in for items marked&ldquo;Keep,&rdquo;and it&rsquo;s charged automatically once pickup is scheduled for everything else. So the app never asks people to pay for uncertainty, only for choices they&rsquo;ve already made.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Paying only for what you keep</h4><p>Final payment only kicks in for items marked &ldquo;Keep,&rdquo; and it&rsquo;s charged automatically once pickup is scheduled for everything else. So the app never asks people to pay for uncertainty, only for choices they&rsquo;ve already made.</p></div></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Screens</p>
       <h2>What the work looks like</h2>
-      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Try Set and Styling Suggestions</div><div class="mph-note">images/tryfit/tryset.png</div></div></div>
+      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Try Set and Styling Suggestions</div><div class="mph-note">images/tryfit/try-set.png</div></div></div>
       <div class="mock-grid">
         <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Styling Feature</div><div class="mph-note">images/tryfit/styling.png</div></div></div>
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Keep or Return Screen</div><div class="mph-note">images/tryfit/keepreturn.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Keep or Return Screen</div><div class="mph-note">images/tryfit/keep-return.png</div></div></div>
         <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Pickup Scheduling</div><div class="mph-note">images/tryfit/pickup.png</div></div></div>
         <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Pay for What You Keep Checkout</div><div class="mph-note">images/tryfit/checkout.png</div></div></div>
       </div>
@@ -904,16 +904,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 <div class="cs-panel" id="cs-codevault" role="dialog" aria-modal="true" aria-label="CodeVault case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-codevault')">
-      <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
-    <span class="cs-panel-nav-title">CodeVault Learn to Code</span>
+    <span class="cs-panel-nav-title">CodeVault &mdash; Learn to Code</span>
     <span></span>
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#0d2818 0%,#1a4d2e 100%);">
     <div class="container cs-hero-inner">
-      <div class="cs-tags"><span class="cs-tag">ELearning</span><span class="cs-tag">Mobile Design</span><span class="cs-tag">Gamification</span><span class="cs-tag">Information Design</span></div>
-      <h1>CodeVault Learn to Code</h1>
-      <p class="cs-sub">Interview prep is one of the most highstakes learning contexts that exists and most tools for it are terrible. CodeVault is the design response to a broken experience.</p>
+      <div class="cs-tags"><span class="cs-tag">E-Learning</span><span class="cs-tag">Mobile Design</span><span class="cs-tag">Gamification</span><span class="cs-tag">Information Design</span></div>
+      <h1>CodeVault &mdash; Learn to Code</h1>
+      <p class="cs-sub">Interview prep is one of the most high-stakes learning contexts that exists &mdash; and most tools for it are terrible. CodeVault is the design response to a broken experience.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Product Designer</div></div>
         <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS Mobile App</div></div>
@@ -926,19 +926,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="cs-sec">
       <p class="sec-lbl">Overview</p>
       <h2>The brief in one sentence</h2>
-      <p>Design a mobile learning companion for developers preparing for technical interviews that fits into the real constraints of a working professional&rsquo;s day commutes, lunch breaks, distracted evenings while still building deep, testable knowledge.</p>
+      <p>Design a mobile learning companion for developers preparing for technical interviews that fits into the real constraints of a working professional&rsquo;s day &mdash; commutes, lunch breaks, distracted evenings &mdash; while still building deep, testable knowledge.</p>
       <div class="cs-quote"><p>&ldquo;I bought a course, got three hours in, and then work got busy. Now I feel too behind to start again.&rdquo;</p></div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">The Problem</p>
       <h2>Most prep tools were built for people with four hours a day</h2>
       <div class="two-col">
-        <div><p>Most interview prep platforms were designed for people with four hours a day and a whiteboard. The reality is most candidates prep in fifteenminute windows between meetings, on their phones, with limited concentration. The design had to meet them there.</p></div>
+        <div><p>Most interview prep platforms were designed for people with four hours a day and a whiteboard. The reality is most candidates prep in fifteen-minute windows between meetings, on their phones, with limited concentration. The design had to meet them there.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
-          <li>Longform video content can&rsquo;t be consumed in short, interrupted sessions</li>
-          <li>No sense of daily progress the course feels the same length at 10% or 80%</li>
+          <li>Long-form video content can&rsquo;t be consumed in short, interrupted sessions</li>
+          <li>No sense of daily progress &mdash; the course feels the same length at 10% or 80%</li>
           <li>Problems are presented without the contextual knowledge needed to solve them</li>
-          <li>No spaced repetition concepts learned are forgotten by interview day</li>
+          <li>No spaced repetition &mdash; concepts learned are forgotten by interview day</li>
           <li>Competitive leaderboards create anxiety rather than motivation</li>
         </ul></div>
       </div>
@@ -951,17 +951,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         <div class="ic"><h3>Learning Science Review</h3><p>Researched spaced repetition, retrieval practice, and microlearning principles and identified which patterns from education research applied specifically to technical interview prep.</p></div>
         <div class="ic"><h3>Platform Analysis</h3><p>Evaluated LeetCode, AlgoExpert, Neetcode, and Grokking on engagement design, progress communication, and mobile experience quality.</p></div>
       </div>
-      <p style="margin-top:1.8rem;">Key insight: motivation to prep peaks at the start and collapses at&ldquo;the plateau&rdquo;around 3040% through, when easy problems are done and hard ones feel impossible. The design needed to address the plateau, not just the first session.</p>
+      <p style="margin-top:1.8rem;">Key insight: motivation to prep peaks at the start and collapses at &ldquo;the plateau&rdquo; &mdash; around 30&ndash;40% through, when easy problems are done and hard ones feel impossible. The design needed to address the plateau, not just the first session.</p>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Process</p>
       <h2>From insight to interface</h2>
       <div class="steps">
-        <div class="step"><div class="step-n">01</div><div><h4>Daily tracks, not courses</h4><p>Restructured content from&ldquo;courses to complete&rdquo;to&ldquo;daily tracks to do.&rdquo;Each track takes 1215 minutes and covers one concept endtoend. The sense of completion resets every day.</p></div></div>
-        <div class="step"><div class="step-n">02</div><div><h4>Spaced repetition engine</h4><p>A review system that resurfaces concepts based on how confidently the user rated their understanding. Problems marked&ldquo;shaky&rdquo;come back in 24 hours. Problems marked&ldquo;solid&rdquo;come back in a week.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Contextual problem sets</h4><p>Every problem is preceded by a 90second concept primer that gives just enough context to attempt it. No more arriving at a problem cold.</p></div></div>
-        <div class="step"><div class="step-n">04</div><div><h4>Streak and milestone design</h4><p>Streak system that rewards consistency over volume. Missing one day breaks the streak but doesn&rsquo;t reset progress a deliberate choice to reduce the&ldquo;might as well quit&rdquo;response.</p></div></div>
-        <div class="step"><div class="step-n">05</div><div><h4>Offlinefirst architecture</h4><p>Problems, content, and progress sync when connected, but the core experience works on the tube, in a lift, and in areas with no signal.</p></div></div>
+        <div class="step"><div class="step-n">01</div><div><h4>Daily tracks, not courses</h4><p>Restructured content from &ldquo;courses to complete&rdquo; to &ldquo;daily tracks to do.&rdquo; Each track takes 12&ndash;15 minutes and covers one concept end-to-end. The sense of completion resets every day.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Spaced repetition engine</h4><p>A review system that resurfaces concepts based on how confidently the user rated their understanding. Problems marked &ldquo;shaky&rdquo; come back in 24 hours. Problems marked &ldquo;solid&rdquo; come back in a week.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Contextual problem sets</h4><p>Every problem is preceded by a 90-second concept primer that gives just enough context to attempt it. No more arriving at a problem cold.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Streak and milestone design</h4><p>Streak system that rewards consistency over volume. Missing one day breaks the streak but doesn&rsquo;t reset progress &mdash; a deliberate choice to reduce the &ldquo;might as well quit&rdquo; response.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Offline-first architecture</h4><p>Problems, content, and progress sync when connected, but the core experience works on the tube, in a lift, and in areas with no signal.</p></div></div>
       </div>
     </div>
     <div class="cs-sec">
@@ -979,8 +979,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <p class="sec-lbl">Outcome</p>
       <h2>Numbers that tell the real story</h2>
       <div class="three-col">
-        <div class="stat-c"><div class="stat-big">1215 min</div><div class="stat-lbl">Average session length fits real daily schedules</div></div>
-        <div class="stat-c"><div class="stat-big">+67%</div><div class="stat-lbl">Day7 retention vs. industry benchmark for learning apps</div></div>
+        <div class="stat-c"><div class="stat-big">12&ndash;15 min</div><div class="stat-lbl">Average session length &mdash; fits real daily schedules</div></div>
+        <div class="stat-c"><div class="stat-big">+67%</div><div class="stat-lbl">Day-7 retention vs. industry benchmark for learning apps</div></div>
         <div class="stat-c"><div class="stat-big">4.6/5</div><div class="stat-lbl">Confidence rating from usability test participants</div></div>
       </div>
     </div>
@@ -988,9 +988,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <p class="sec-lbl">Learnings</p>
       <h2>What this project taught me</h2>
       <div class="learn-grid">
-        <div class="learn-item"><h4>Completion is an illusion</h4><p>Long courses create a false finish line that makes any interruption feel like failure. Daily tracks reframe the goal: not&ldquo;finish the course&rdquo;but&ldquo;show up today.&rdquo;</p></div>
-        <div class="learn-item"><h4>The plateau is a design problem</h4><p>The motivation collapse at 3040% is predictable and preventable. Designing for it specifically keeps users moving through the hardest stretch.</p></div>
-        <div class="learn-item"><h4>Confidence is a metric too</h4><p>Standardised assessment scores don&rsquo;t tell you whether someone feels ready. Confidence tracked more closely with actual interview performance than problemsolve rates did.</p></div>
+        <div class="learn-item"><h4>Completion is an illusion</h4><p>Long courses create a false finish line that makes any interruption feel like failure. Daily tracks reframe the goal: not &ldquo;finish the course&rdquo; but &ldquo;show up today.&rdquo;</p></div>
+        <div class="learn-item"><h4>The plateau is a design problem</h4><p>The motivation collapse at 30&ndash;40% is predictable and preventable. Designing for it specifically keeps users moving through the hardest stretch.</p></div>
+        <div class="learn-item"><h4>Confidence is a metric too</h4><p>Standardised assessment scores don&rsquo;t tell you whether someone feels ready. Confidence tracked more closely with actual interview performance than problem-solve rates did.</p></div>
         <div class="learn-item"><h4>Offline is not an edge case</h4><p>Treating connectivity as optional rather than required changed how we thought about the entire product architecture. Features that require a connection are features some users will never use.</p></div>
       </div>
     </div>
@@ -1017,16 +1017,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 <div class="cs-panel" id="cs-mai" role="dialog" aria-modal="true" aria-label="MAI Labs case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-mai')">
-      <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
-    <span class="cs-panel-nav-title">MAI Labs Company Website</span>
+    <span class="cs-panel-nav-title">MAI Labs &mdash; Company Website</span>
     <span></span>
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#091a12 0%,#0d2d1a 100%);">
     <div class="container cs-hero-inner">
       <div class="cs-tags"><span class="cs-tag">Frontend Development</span><span class="cs-tag">Next.js</span><span class="cs-tag">Tailwind CSS</span><span class="cs-tag">Responsive Design</span></div>
-      <h1>MAI Labs Company Website</h1>
-      <p class="cs-sub">A design that doesn&rsquo;t reach code is still just a hypothesis. This project was about closing the gap from Figma to deployed, fully responsible for both.</p>
+      <h1>MAI Labs &mdash; Company Website</h1>
+      <p class="cs-sub">A design that doesn&rsquo;t reach code is still just a hypothesis. This project was about closing the gap &mdash; from Figma to deployed, fully responsible for both.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">UI Developer &amp; Consultant</div></div>
         <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Web (Desktop &amp; Mobile)</div></div>
@@ -1039,20 +1039,20 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="cs-sec">
       <p class="sec-lbl">Overview</p>
       <h2>The brief in one sentence</h2>
-      <p>Design and develop the complete MAI Labs company website from the ground up fully responsive, performant across browsers, and built with a reusable component system that the internal team could maintain and extend after handoff.</p>
+      <p>Design and develop the complete MAI Labs company website from the ground up &mdash; fully responsive, performant across browsers, and built with a reusable component system that the internal team could maintain and extend after handoff.</p>
       <div class="cs-quote"><p>&ldquo;Every time we try to update the site, something else breaks. We&rsquo;ve just stopped updating it.&rdquo;</p></div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">The Problem</p>
       <h2>A site the team can&rsquo;t own</h2>
       <div class="two-col">
-        <div><p>This was a different kind of design challenge. There was no user problem to diagnose there was a craft problem. The existing site was slow, visually inconsistent, and couldn&rsquo;t be updated without breaking things. The brief was: build something the team can own.</p></div>
+        <div><p>This was a different kind of design challenge. There was no user problem to diagnose &mdash; there was a craft problem. The existing site was slow, visually inconsistent, and couldn&rsquo;t be updated without breaking things. The brief was: build something the team can own.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
-          <li>No component system every page was customcoded, making updates expensive</li>
-          <li>No mobile experience layout broke below 1200px</li>
+          <li>No component system &mdash; every page was custom-coded, making updates expensive</li>
+          <li>No mobile experience &mdash; layout broke below 1200px</li>
           <li>Page load time over 6 seconds due to unoptimised assets</li>
           <li>Contact and application forms sent emails to a personal inbox with no structure</li>
-          <li>Brand inconsistency across pages multiple type scales and button styles</li>
+          <li>Brand inconsistency across pages &mdash; multiple type scales and button styles</li>
         </ul></div>
       </div>
     </div>
@@ -1070,10 +1070,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <h2>From insight to interface</h2>
       <div class="steps">
         <div class="step"><div class="step-n">01</div><div><h4>Design the component system first</h4><p>Before any page layout, designed and agreed on the complete component library: buttons, cards, navigation, forms, and typography tokens.</p></div></div>
-        <div class="step"><div class="step-n">02</div><div><h4>Build with Next.js App Router</h4><p>Chose Next.js for serverside rendering, builtin image optimisation, and filebased routing that makes future page additions intuitive for nonengineers.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Tailwind utility system</h4><p>Utilityfirst approach means any team member can read and update styles without understanding the full CSS architecture.</p></div></div>
-        <div class="step"><div class="step-n">04</div><div><h4>APIintegrated forms</h4><p>Built contact and job application forms with serverside API routes, validation, and structured email templates. Applications arrive formatted and filterable.</p></div></div>
-        <div class="step"><div class="step-n">05</div><div><h4>Performance and crossbrowser QA</h4><p>Lighthouse audits on every page. Compressed and converted all assets to WebP. Tested across Chrome, Safari, Firefox, and Edge on desktop and mobile.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Build with Next.js App Router</h4><p>Chose Next.js for server-side rendering, built-in image optimisation, and file-based routing that makes future page additions intuitive for non-engineers.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Tailwind utility system</h4><p>Utility-first approach means any team member can read and update styles without understanding the full CSS architecture.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>API-integrated forms</h4><p>Built contact and job application forms with server-side API routes, validation, and structured email templates. Applications arrive formatted and filterable.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Performance and cross-browser QA</h4><p>Lighthouse audits on every page. Compressed and converted all assets to WebP. Tested across Chrome, Safari, Firefox, and Edge on desktop and mobile.</p></div></div>
       </div>
     </div>
     <div class="cs-sec">
@@ -1102,9 +1102,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <h2>What this project taught me</h2>
       <div class="learn-grid">
         <div class="learn-item"><h4>Maintainability is a design output</h4><p>A site the team can&rsquo;t update will stop being updated. Designing for the person who maintains the product after you leave is as important as designing for the end user.</p></div>
-        <div class="learn-item"><h4>Componentfirst is faster, not slower</h4><p>Spending a week on the component system before building pages felt like overhead. It saved three weeks of inconsistency fixes and rework in the final sprint.</p></div>
-        <div class="learn-item"><h4>Performance is a feature</h4><p>A 6second load time is a worse first impression than bad visual design. Performance optimisation is UX work it just lives in the build system, not Figma.</p></div>
-        <div class="learn-item"><h4>Document for the person after you</h4><p>The handoff documentation included not just&ldquo;how to add a page&rdquo;but&ldquo;why certain architecture decisions were made.&rdquo;Future developers need context, not just instructions.</p></div>
+        <div class="learn-item"><h4>Component-first is faster, not slower</h4><p>Spending a week on the component system before building pages felt like overhead. It saved three weeks of inconsistency fixes and rework in the final sprint.</p></div>
+        <div class="learn-item"><h4>Performance is a feature</h4><p>A 6-second load time is a worse first impression than bad visual design. Performance optimisation is UX work &mdash; it just lives in the build system, not Figma.</p></div>
+        <div class="learn-item"><h4>Document for the person after you</h4><p>The handoff documentation included not just &ldquo;how to add a page&rdquo; but &ldquo;why certain architecture decisions were made.&rdquo; Future developers need context, not just instructions.</p></div>
       </div>
     </div>
     <div class="cs-cta-box">
@@ -1130,16 +1130,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 <div class="cs-panel" id="cs-accessiq" role="dialog" aria-modal="true" aria-label="AccessIQ case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-accessiq')">
-      <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
-    <span class="cs-panel-nav-title">AccessIQ WCAG Summariser</span>
+    <span class="cs-panel-nav-title">AccessIQ &mdash; WCAG Summariser</span>
     <span></span>
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#0e200e 0%,#173517 100%);">
     <div class="container cs-hero-inner">
       <div class="cs-tags"><span class="cs-tag">Accessibility</span><span class="cs-tag">AI Tool</span><span class="cs-tag">Design + Development</span><span class="cs-tag">Side Project</span></div>
-      <h1>AccessIQ WCAG Summariser</h1>
-      <p class="cs-sub">Accessibility audits are only useful if teams can read them. AccessIQ translates WCAG compliance findings into plain language closing the gap between audit and action.</p>
+      <h1>AccessIQ &mdash; WCAG Summariser</h1>
+      <p class="cs-sub">Accessibility audits are only useful if teams can read them. AccessIQ translates WCAG compliance findings into plain language &mdash; closing the gap between audit and action.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Designer &amp; Developer</div></div>
         <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Web App</div></div>
@@ -1161,8 +1161,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="two-col">
         <div><p>The accessibility problem in most organisations isn&rsquo;t malice or laziness. It&rsquo;s translation. Audit reports come back written in WCAG criterion language that means nothing to a designer who&rsquo;s never read the spec. The findings sit in a spreadsheet and nothing changes.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
-          <li>WCAG criterion codes (e.g.&ldquo;1.4.3 Contrast Minimum AA&rdquo;) are meaningless without deep knowledge of the spec</li>
-          <li>Audit reports list issues without designspecific remediation guidance</li>
+          <li>WCAG criterion codes (e.g. &ldquo;1.4.3 Contrast Minimum AA&rdquo;) are meaningless without deep knowledge of the spec</li>
+          <li>Audit reports list issues without design-specific remediation guidance</li>
           <li>No differentiation between issues affecting different user groups</li>
           <li>No prioritisation of issues by severity and actual user impact</li>
           <li>Designers and developers need different guidance for the same issue</li>
@@ -1174,18 +1174,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <h2>Understanding the gap</h2>
       <div class="three-col">
         <div class="ic"><h3>Designer Interviews</h3><p>Spoke with 8 product designers at companies that had recently received accessibility audits. Mapped how reports were read, who they were forwarded to, and how many issues were actually resolved.</p></div>
-        <div class="ic"><h3>Specialist Consultation</h3><p>Consulted with two certified accessibility specialists to understand which WCAG criteria are most commonly misunderstood, and what plainlanguage framing works best for each category.</p></div>
-        <div class="ic"><h3>Audit Report Analysis</h3><p>Collected and analysed 12 real accessibility audit reports from opensource projects. Categorised findings by criterion type, severity, and how actionable the guidance was.</p></div>
+        <div class="ic"><h3>Specialist Consultation</h3><p>Consulted with two certified accessibility specialists to understand which WCAG criteria are most commonly misunderstood, and what plain-language framing works best for each category.</p></div>
+        <div class="ic"><h3>Audit Report Analysis</h3><p>Collected and analysed 12 real accessibility audit reports from open-source projects. Categorised findings by criterion type, severity, and how actionable the guidance was.</p></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Process</p>
       <h2>From insight to interface</h2>
       <div class="steps">
-        <div class="step"><div class="step-n">01</div><div><h4>Plainlanguage criterion library</h4><p>Built a complete library of all Level A and AA WCAG 2.1 criteria, each translated into three versions: a onesentence summary, a designerspecific guide, and a developerspecific fix guide.</p></div></div>
-        <div class="step"><div class="step-n">02</div><div><h4>AI interpretation layer</h4><p>Integrated OpenAI&rsquo;s API to take raw audit output and map findings to the criterion library, generating a structured, plainlanguage action plan automatically.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Rolebased remediation views</h4><p>Separate output views for designers and developers. The same issue surfaces different guidance depending on who is reading it.</p></div></div>
-        <div class="step"><div class="step-n">04</div><div><h4>Severity and impact scoring</h4><p>Custom severity model that scores each issue on both WCAG level and estimated user impact across disability categories, allowing teams to prioritise by realworld effect.</p></div></div>
+        <div class="step"><div class="step-n">01</div><div><h4>Plain-language criterion library</h4><p>Built a complete library of all Level A and AA WCAG 2.1 criteria, each translated into three versions: a one-sentence summary, a designer-specific guide, and a developer-specific fix guide.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>AI interpretation layer</h4><p>Integrated OpenAI&rsquo;s API to take raw audit output and map findings to the criterion library, generating a structured, plain-language action plan automatically.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Role-based remediation views</h4><p>Separate output views for designers and developers. The same issue surfaces different guidance depending on who is reading it.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Severity and impact scoring</h4><p>Custom severity model that scores each issue on both WCAG level and estimated user impact across disability categories, allowing teams to prioritise by real-world effect.</p></div></div>
         <div class="step"><div class="step-n">05</div><div><h4>Shareable report output</h4><p>Clean, exportable report format that product managers can share with stakeholders as a readable brief rather than a technical spreadsheet.</p></div></div>
       </div>
     </div>
@@ -1205,7 +1205,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <h2>Numbers that tell the real story</h2>
       <div class="three-col">
         <div class="stat-c"><div class="stat-big">47&rarr;5</div><div class="stat-lbl">Avg. issues acted on per report before vs. after AccessIQ</div></div>
-        <div class="stat-c"><div class="stat-big">&lt;3 min</div><div class="stat-lbl">Time to generate a plainlanguage action plan from raw audit</div></div>
+        <div class="stat-c"><div class="stat-big">&lt;3 min</div><div class="stat-lbl">Time to generate a plain-language action plan from raw audit</div></div>
         <div class="stat-c"><div class="stat-big">100</div><div class="stat-lbl">Lighthouse accessibility score on AccessIQ itself</div></div>
       </div>
     </div>
@@ -1214,9 +1214,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <h2>What this project taught me</h2>
       <div class="learn-grid">
         <div class="learn-item"><h4>Accessibility is a communication problem</h4><p>The biggest barrier to accessible products isn&rsquo;t technical complexity. It&rsquo;s the translation gap between compliance language and design practice.</p></div>
-        <div class="learn-item"><h4>Rolespecific guidance multiplies action</h4><p>Splitting the same issue into&ldquo;what the designer does&rdquo;and&ldquo;what the developer does&rdquo;eliminated the roundtrip conversation that usually results in neither person acting.</p></div>
+        <div class="learn-item"><h4>Role-specific guidance multiplies action</h4><p>Splitting the same issue into &ldquo;what the designer does&rdquo; and &ldquo;what the developer does&rdquo; eliminated the round-trip conversation that usually results in neither person acting.</p></div>
         <div class="learn-item"><h4>Build the thing you wish existed</h4><p>This tool came from a real frustration encountered in professional work. The most useful tools are often the ones you build because you couldn&rsquo;t find them anywhere else.</p></div>
-        <div class="learn-item"><h4>Practise what you preach</h4><p>Building an accessibility tool with an inaccessible interface would be the worst possible outcome. Achieving a perfect Lighthouse accessibility score was nonnegotiable.</p></div>
+        <div class="learn-item"><h4>Practise what you preach</h4><p>Building an accessibility tool with an inaccessible interface would be the worst possible outcome. Achieving a perfect Lighthouse accessibility score was non-negotiable.</p></div>
       </div>
     </div>
     <div class="cs-cta-box">
@@ -1278,10 +1278,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
           <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" aria-label="Behance" class="btn btn-outline icon-btn" title="Behance"><i class="fab fa-behance"></i></a>
           <a href="https://www.instagram.com/hey.omyya/" target="_blank" rel="noopener" aria-label="Instagram" class="btn btn-outline icon-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <!-- <div class="hero-stats">
+        <div class="hero-stats">
           <div><div class="stat-num">3<span>+</span></div><div class="stat-label">Years at Zeus</div></div>
-          <div><div class="stat-num">20<span>+</span></div><div class="stat-label">Podcast Episodes Recorded</div></div>
-        </div> -->
+          <!-- <div><div class="stat-num">20<span>+</span></div><div class="stat-label">Podcast Episodes Recorded</div></div> -->
+        </div>
       </div>
       <div class="hero-card" aria-hidden="true">
         <div class="hero-card-inner">
@@ -1289,7 +1289,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
             <img src="images/profile.jpeg" alt="Omkar Khandalkar" class="avatar-photo"/>
           </div>
         </div>
-        <div class="float-tag ft-1"><div class="ft-main">3+ Years</div><div class="ft-sub">Designing Solutions</div></div>
+        <div class="float-tag ft-1"><div class="ft-main">Host & Editor</div><div class="ft-sub">CodeOS Podcast</div></div>
         <div class="float-tag ft-2"><div class="ft-main">Zeus Learning</div><div class="ft-sub">Senior UI Designer</div></div>
       </div>
     </div>
@@ -1304,19 +1304,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         <p class="eyebrow">About Me</p>
         <h2 class="section-title">Design is how I<br/>decode the world</h2>
         <div class="about-text" style="margin-top:1.5rem;">
-          <p>I&rsquo;m a Product Designer from Mumbai with an engineering backbone and a designer&rsquo;s soul. My work sits at the intersection of<strong>behavioural psychology, systems thinking, and visual craft</strong>, where products stop being tools and start becoming habits.</p>
-          <p>At<strong>Zeus Learning</strong>, I lead UX and visual design for Quantum, an enterprise LMS and CMS used by over a million students, turning complex academic workflows into flows so intuitive, users don&rsquo;t notice the design at all.</p>
+          <p>I&rsquo;m a Product Designer from Mumbai with an engineering backbone and a designer&rsquo;s soul. My work sits at the intersection of <strong>behavioural psychology, systems thinking, and visual craft</strong>, where products stop being tools and start becoming habits.</p>
+          <p>At <strong>Zeus Learning</strong>, I lead UX and visual design for Quantum, an enterprise LMS and CMS used by over a million students, turning complex academic workflows into flows so intuitive, users don&rsquo;t notice the design at all.</p>
           <p>I believe education should be a universal right, not a privilege. That conviction shapes every accessibility audit and inclusive design decision I make.</p>
-          <p>Outside the product world, I founded<strong>CodeOS</strong>, an edtech initiative that has mentored 500+ students, run 25+ bootcamps, and built a community with 100K+ YouTube views.</p>
+          <p>Outside the product world, I founded <strong>CodeOS</strong>, an edtech initiative that has mentored 500+ students, run 25+ bootcamps, and built a community with 100K+ YouTube views.</p>
         </div>
       </div>
       <div class="reveal">
         <p class="eyebrow">What I Bring</p>
         <div class="services-grid stagger">
-          <div class="svc-card"><div class="svc-icon"><svg viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>UX Design</h4><p>Researchled, humancentred experiences built from real behaviour, not assumptions.</p></div>
-          <div class="svc-card"><div class="svc-icon"><svg viewbox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h4>Visual &amp; UI Design</h4><p>Highfidelity interfaces that are beautiful, accessible, and technically grounded.</p></div>
-          <div class="svc-card"><div class="svc-icon"><svg viewbox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Frontend Development</h4><p>I prototype in code React, HTML, CSS so handoff is never lost in translation.</p></div>
-          <div class="svc-card"><div class="svc-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><h4>Content Creation</h4><p>Photography, podcasts, and video storytelling as an extension of design thinking.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>UX Design</h4><p>Research-led, human-centred experiences built from real behaviour, not assumptions.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h4>Visual &amp; UI Design</h4><p>High-fidelity interfaces that are beautiful, accessible, and technically grounded.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Frontend Development</h4><p>I prototype in code &mdash; React, HTML, CSS &mdash; so handoff is never lost in translation.</p></div>
+          <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><h4>Content Creation</h4><p>Photography, podcasts, and video &mdash; storytelling as an extension of design thinking.</p></div>
         </div>
       </div>
     </div>
@@ -1331,7 +1331,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
         <div>
           <h2 class="section-title">Problems solved,<br/>products shipped</h2>
-          <p class="section-sub">Every project starts with a real problem. Click any card to open the full case study the brief, the process, and what actually changed.</p>
+          <p class="section-sub">Every project starts with a real problem. Click any card to open the full case study &mdash; the brief, the process, and what actually changed.</p>
         </div>
         <div style="display:flex;align-items:center;gap:.6rem;">
           <button id="viewToggle" class="filter-btn" aria-pressed="false" onclick="toggleCompactView()">Compact View</button>
@@ -1354,8 +1354,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         </div>
         <div class="p-body">
           <div class="p-tags"><span class="p-tag">Fintech</span><span class="p-tag">Data Viz</span><span class="p-tag">AI Feature</span></div>
-          <h3>Clio AI Investment Assistant</h3>
-          <p>Dense financial data, made approachable. Progressive disclosure for firsttime investors who don&rsquo;t speak the language of markets yet.</p>
+          <h3>Clio &mdash; AI Investment Assistant</h3>
+          <p>Dense financial data, made approachable. Progressive disclosure for first-time investors who don&rsquo;t speak the language of markets &mdash; yet.</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-clio')">Read Case Study</button>
             <a href="https://www.behance.net/gallery/231258555/Clio-AI-Investment-Assistant-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
@@ -1366,9 +1366,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="project-card" data-categories="ux ecommerce" onclick="openCS('cs-assure')">
         <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0a1a14,#0f2d20);"><span class="p-thumb-label">Assure</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
-          <div class="p-tags"><span class="p-tag">Ecommerce</span><span class="p-tag">Trust Design</span></div>
+          <div class="p-tags"><span class="p-tag">E-commerce</span><span class="p-tag">Trust Design</span></div>
           <h3>Amazon Assure</h3>
-          <p>Postpurchase anxiety is a trust killer. This feature redesign fixes what happens after users click&ldquo;Buy Now&rdquo;and the silence that follows.</p>
+          <p>Post-purchase anxiety is a trust killer. This feature redesign fixes what happens after users click &ldquo;Buy Now&rdquo; and the silence that follows.</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-assure')">Read Case Study</button>
             <a href="https://www.behance.net/gallery/229228627/Amazon-Assure-Prodcut-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
@@ -1379,9 +1379,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="project-card" data-categories="ux ecommerce" onclick="openCS('cs-tryfit')">
         <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#122010,#1c3a18);"><span class="p-thumb-label">Tryfit</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
-          <div class="p-tags"><span class="p-tag">Ecommerce</span><span class="p-tag">User Research</span><span class="p-tag">Mobile</span></div>
-          <h3>Tryfit Shopping App</h3>
-          <p>Size uncertainty kills conversion. This case study removes the anxiety from the one question every online shopper dreads:&ldquo;Will it fit?&rdquo;</p>
+          <div class="p-tags"><span class="p-tag">E-commerce</span><span class="p-tag">User Research</span><span class="p-tag">Mobile</span></div>
+          <h3>Tryfit &mdash; Shopping App</h3>
+          <p>Size uncertainty kills conversion. This case study removes the anxiety from the one question every online shopper dreads: &ldquo;Will it fit?&rdquo;</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-tryfit')">Read Case Study</button>
             <a href="https://www.behance.net/gallery/209155525/UX-Case-Study-Shopping-App" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
@@ -1392,8 +1392,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
       <div class="project-card" data-categories="ux" onclick="openCS('cs-codevault')">
         <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0d2818,#1a4d2e);"><span class="p-thumb-label">CodeVault</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
-          <div class="p-tags"><span class="p-tag">ELearning</span><span class="p-tag">Mobile</span></div>
-          <h3>CodeVault Learn to Code</h3>
+          <div class="p-tags"><span class="p-tag">E-Learning</span><span class="p-tag">Mobile</span></div>
+          <h3>CodeVault &mdash; Learn to Code</h3>
           <p>Interview prep shouldn&rsquo;t feel like homework. A mobile learning companion built around how developers actually retain knowledge.</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-codevault')">Read Case Study</button>
@@ -1406,8 +1406,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#091a12,#0d2d1a);"><span class="p-thumb-label">MAI Labs</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
           <div class="p-tags"><span class="p-tag">Next.js</span><span class="p-tag">Tailwind CSS</span><span class="p-tag">Frontend</span></div>
-          <h3>MAI Labs Company Website</h3>
-          <p>Design that doesn&rsquo;t reach code is just a hypothesis. This is where I built the whole thing responsive, performant, and productiongrade from day one.</p>
+          <h3>MAI Labs &mdash; Company Website</h3>
+          <p>Design that doesn&rsquo;t reach code is just a hypothesis. This is where I built the whole thing &mdash; responsive, performant, and production-grade from day one.</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-mai')">Read Case Study</button>
           </div>
@@ -1418,7 +1418,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0e200e,#173517);"><span class="p-thumb-label">AccessIQ</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
           <div class="p-tags"><span class="p-tag">Accessibility</span><span class="p-tag">Design + Dev</span><span class="p-tag">AI Tool</span></div>
-          <h3>AccessIQ WCAG Summariser</h3>
+          <h3>AccessIQ &mdash; WCAG Summariser</h3>
           <p>Most accessibility audits live in spreadsheets nobody reads. AccessIQ translates WCAG issues into plain language that teams can actually act on.</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-accessiq')">Read Case Study</button>
@@ -1436,16 +1436,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="reveal" style="margin-bottom:3.5rem;">
       <p class="eyebrow">Resume</p>
       <h2 class="section-title">Where I&rsquo;ve been,<br/>what I&rsquo;ve built</h2>
-      <p class="section-sub">Every role has added a layer strategy, systems, scale, and the stubborn belief that design can make education better for everyone.</p>
+      <p class="section-sub">Every role has added a layer &mdash; strategy, systems, scale, and the stubborn belief that design can make education better for everyone.</p>
     </div>
     <div class="resume-grid">
       <div>
         <div class="col-head"><span class="col-dot"></span>Work Experience</div>
         <div class="timeline">
-          <div class="tl-item"><div class="tl-period">Jul 2025 &ndash; Present</div><div class="tl-title">Senior UI Designer / Design Analyst</div><div class="tl-co">Zeus Learning &mdash; Mumbai</div><div class="tl-desc"><ul><li>Promoted to lead design strategy for enterprisescale LMS and CMS platforms</li><li>Mentoring two junior designers direction, critique, quality, growth</li><li>Primary design POC for 32 developers and 8 QA engineers</li><li>Led fullscale UI revamp, defining new visual standards and interaction patterns</li><li>Reporting to VP of Product to align design with longterm roadmap</li></ul></div></div>
-          <div class="tl-item"><div class="tl-period">Aug 2023 &ndash; Jun 2025</div><div class="tl-title">UI Designer / Design Analyst</div><div class="tl-co">Zeus Learning &mdash; Mumbai</div><div class="tl-desc"><ul><li>Endtoend UX ownership across multiple LMS and CMS modules</li><li>Redesigned core flows with modern patterns; resolved years of legacy debt</li><li>Responsive design from 1920px to 768px every breakpoint, every edge case</li><li>Built the full spectrum: IA, wireframes, highfi mockups, interactive prototypes</li><li>All work WCAGcompliant; heuristic evaluations run every sprint</li></ul></div></div>
-          <div class="tl-item"><div class="tl-period">Jun 2023 &ndash; Aug 2023</div><div class="tl-title">UI Developer &mdash; Consultant</div><div class="tl-co">MAI Labs &mdash; Remote</div><div class="tl-desc"><ul><li>Built complete company website with Next.js and Tailwind CSS</li><li>Reusable component library, APIintegrated forms, Lighthouse 90+ scores</li></ul></div></div>
-          <div class="tl-item"><div class="tl-period">Jan 2023 &ndash; Apr 2023</div><div class="tl-title">UX Designer &mdash; Intern</div><div class="tl-co">Corbin Technology Solutions &mdash; Thane</div><div class="tl-desc"><ul><li>Designed full UX for Swadeshi Brands ecommerce app in Figma</li><li>User flows, checkout journeys, information architecture built from scratch</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Jul 2025 &ndash; Present</div><div class="tl-title">Senior UI Designer / Design Analyst</div><div class="tl-co">Zeus Learning &mdash; Mumbai</div><div class="tl-desc"><ul><li>Promoted to lead design strategy for enterprise-scale LMS and CMS platforms</li><li>Mentoring two junior designers &mdash; direction, critique, quality, growth</li><li>Primary design POC for 32 developers and 8 QA engineers</li><li>Led full-scale UI revamp, defining new visual standards and interaction patterns</li><li>Reporting to VP of Product to align design with long-term roadmap</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Aug 2023 &ndash; Jun 2025</div><div class="tl-title">UI Designer / Design Analyst</div><div class="tl-co">Zeus Learning &mdash; Mumbai</div><div class="tl-desc"><ul><li>End-to-end UX ownership across multiple LMS and CMS modules</li><li>Redesigned core flows with modern patterns; resolved years of legacy debt</li><li>Responsive design from 1920px to 768px &mdash; every breakpoint, every edge case</li><li>Built the full spectrum: IA, wireframes, high-fi mockups, interactive prototypes</li><li>All work WCAG-compliant; heuristic evaluations run every sprint</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Jun 2023 &ndash; Aug 2023</div><div class="tl-title">UI Developer &mdash; Consultant</div><div class="tl-co">MAI Labs &mdash; Remote</div><div class="tl-desc"><ul><li>Built complete company website with Next.js and Tailwind CSS</li><li>Reusable component library, API-integrated forms, Lighthouse 90+ scores</li></ul></div></div>
+          <div class="tl-item"><div class="tl-period">Jan 2023 &ndash; Apr 2023</div><div class="tl-title">UX Designer &mdash; Intern</div><div class="tl-co">Corbin Technology Solutions &mdash; Thane</div><div class="tl-desc"><ul><li>Designed full UX for Swadeshi Brands e-commerce app in Figma</li><li>User flows, checkout journeys, information architecture &mdash; built from scratch</li></ul></div></div>
         </div>
       </div>
       <div>
@@ -1466,7 +1466,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="reveal" style="margin-bottom:2rem;">
       <p class="eyebrow">Creative Work</p>
       <h2 class="section-title">What I make<br/>when no one&rsquo;s watching</h2>
-      <p class="section-sub">Design thinking doesn&rsquo;t clock out. Photography, graphic work, and AI art each one a different way of seeing the same world.</p>
+      <p class="section-sub">Design thinking doesn&rsquo;t clock out. Photography, graphic work, and AI art &mdash; each one a different way of seeing the same world.</p>
     </div>
     <div class="gallery-tabs" role="tablist" aria-label="Gallery categories">
       <button class="gallery-tab active" role="tab" aria-selected="true" data-tab="photography">Photography</button>
@@ -1491,7 +1491,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="reveal" style="margin-bottom:2rem;">
       <p class="eyebrow">Content Creation</p>
       <h2 class="section-title">Videos that teach,<br/>stories that resonate</h2>
-      <p class="section-sub">Exploring ideas through thoughtful conversations and cultural journeysfrom tech insights to Maharashtra's diverse landscapes.</p>
+      <p class="section-sub">Exploring ideas through thoughtful conversations and cultural journeys—from tech insights to Maharashtra's diverse landscapes.</p>
     </div>
     <div class="content-tabs" role="tablist" aria-label="Content categories">
       <button class="content-tab active" role="tab" aria-selected="true" data-tab="podcast">Podcasts</button>
@@ -1509,18 +1509,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         </a>
         <a href="https://www.youtube.com/watch?v=V_o6XobIoww" target="_blank" rel="noopener" class="video-card">
           <div class="video-thumb"><img src="https://img.youtube.com/vi/V_o6XobIoww/0.jpg" alt="Podcast 2" loading="lazy"/><div class="play-icon">▶</div></div>
-          <div class="video-info"><h3>How to crack Oracle Ft. Shivangi&Khushi</h3><p class="video-date">Watch on YouTube</p></div>
+          <div class="video-info"><h3>How to crack Oracle Ft. Shivangi & Khushi</h3><p class="video-date">Watch on YouTube</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=_nqmx8KJu1Q" target="_blank" rel="noopener" class="video-card">
           <div class="video-thumb"><img src="https://img.youtube.com/vi/_nqmx8KJu1Q/0.jpg" alt="Podcast 3" loading="lazy"/><div class="play-icon">▶</div></div>
-          <div class="video-info"><h3>Building a Career in Tech Ft. Diyansh Singh</h3><p class="video-date">Watch on YouTube</p></div>
+          <div class="video-info"><h3>Building a Career in Tech Ft. Diyansh Singh </h3><p class="video-date">Watch on YouTube</p></div>
         </a>
       </div>
     </div>
     <div class="content-panel" id="panel-vlog" role="tabpanel">
       <div class="content-insights reveal" style="margin-bottom:2rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:1.5rem;">
         <h3 style="font-size:.92rem;font-weight:600;margin-bottom:.6rem;color:var(--text);letter-spacing:-.01em;">About This Vlog Series</h3>
-        <p style="font-size:.85rem;color:var(--text2);line-height:1.75;margin:0;">12 Jilhe 12 Bhangadia cultural exploration series through Maharashtra's 12 districts. Experience authentic food, traditions, spiritual places, and rich history while connecting with diverse communities and capturing untold stories from across the state.</p>
+        <p style="font-size:.85rem;color:var(--text2);line-height:1.75;margin:0;">12 Jilhe 12 Bhangadi—a cultural exploration series through Maharashtra's 12 districts. Experience authentic food, traditions, spiritual places, and rich history while connecting with diverse communities and capturing untold stories from across the state.</p>
       </div>
       <div class="videos-grid stagger reveal">
         <a href="https://www.youtube.com/watch?v=h0UtWpyLZw8" target="_blank" rel="noopener" class="video-card">
@@ -1544,7 +1544,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     <div class="reveal" style="margin-bottom:3rem;">
       <p class="eyebrow">Beyond the Desk</p>
       <h2 class="section-title">Teaching, building,<br/>showing up</h2>
-      <p class="section-sub">The best designers never stop learning and never stop giving back. Here&rsquo;s where I put that belief into practice.</p>
+      <p class="section-sub">The best designers never stop learning &mdash; and never stop giving back. Here&rsquo;s where I put that belief into practice.</p>
     </div>
     <div class="extra-grid stagger reveal">
       <div class="extra-card">
@@ -1561,8 +1561,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         </div>
         <div class="extra-body">
           <div class="extra-meta"><span class="x-badge xb-ws">Workshop</span><span class="extra-date">2021 &ndash; 2024</span></div>
-          <h3>CodeOS Skill Development Bootcamps</h3>
-          <p>Mentoring sessions, workshops, and educational programs for underserved students, empowering them with digital skills and career guidance.</p>
+          <h3>CodeOS &mdash; Skill Development Bootcamps</h3>
+          <p>Mentoring sessions, workshops, and educational programs for underserved students, empowering them with digital skills and career guidance.
+</p>
           <div class="extra-stats"><div class="xstat"><strong>1000+</strong> Students</div><div class="xstat"><strong>25+</strong> Workshops/Bootcamps</div><div class="xstat"></div></div>
         </div>
       </div>
@@ -1600,8 +1601,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
         </div>
         <div class="extra-body">
           <div class="extra-meta"><span class="x-badge xb-event">College Event</span><span class="extra-date">2019 &ndash; 2023</span></div>
-          <h3>IETE RAIT Vice Chairman</h3>
-          <p>Organised the Internal Smart India Hackathon, ran Python and Java workshops, and represented the college at eYantra a nationallevel robotics competition.</p>
+          <h3>IETE RAIT &mdash; Vice Chairman</h3>
+          <p>Organised the Internal Smart India Hackathon, ran Python and Java workshops, and represented the college at eYantra &mdash; a national-level robotics competition.</p>
           <div class="extra-stats"><div class="xstat"><strong>National</strong> Representation</div><div class="xstat"><strong>eYantra</strong> Finalist</div></div>
         </div>
       </div>
@@ -1625,18 +1626,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
     </div>
     <div class="contact-grid">
       <div class="reveal-l">
-        <p class="contact-tagline">Whether you&rsquo;re building something from scratch, fixing something broken, or just want a second opinion from someone who cares deeply about craft my inbox is open.</p>
+        <p class="contact-tagline">Whether you&rsquo;re building something from scratch, fixing something broken, or just want a second opinion from someone who cares deeply about craft &mdash; my inbox is open.</p>
         <div class="contact-links">
-          <a href="mailto:oomkarsk6@gmail.com" class="contact-link-item"><div class="cl-icon"><svg viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="cl-text"><div class="cl-lbl">Email</div><div class="cl-val">oomkarsk6@gmail.com</div></div><span class="cl-arrow">&rarr;</span></a>
-          <a href="tel:+918169191669" class="contact-link-item"><div class="cl-icon"><svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 5.5 5.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="cl-text"><div class="cl-lbl">Phone</div><div class="cl-val">+91 8169191669</div></div><span class="cl-arrow">&rarr;</span></a>
-          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" class="contact-link-item"><div class="cl-icon"><svg viewbox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div class="cl-text"><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/omkarkhandalkar</div></div><span class="cl-arrow">&rarr;</span></a>
-          <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" class="contact-link-item"><div class="cl-icon"><svg viewbox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.427c-.103-1.2-.952-1.93-1.703-1.93-.905 0-1.617.636-1.724 1.93z"/></svg></div><div class="cl-text"><div class="cl-lbl">Behance</div><div class="cl-val">behance.net/omkarkhandalkar</div></div><span class="cl-arrow">&rarr;</span></a>
-          <div class="contact-link-item" style="cursor:default;"><div class="cl-icon"><svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="cl-text"><div class="cl-lbl">Location</div><div class="cl-val">Mumbai, Maharashtra, India</div></div></div>
+          <a href="mailto:oomkarsk6@gmail.com" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="cl-text"><div class="cl-lbl">Email</div><div class="cl-val">oomkarsk6@gmail.com</div></div><span class="cl-arrow">&rarr;</span></a>
+          <a href="tel:+918169191669" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 5.5 5.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="cl-text"><div class="cl-lbl">Phone</div><div class="cl-val">+91 8169191669</div></div><span class="cl-arrow">&rarr;</span></a>
+          <a href="https://www.linkedin.com/in/omkarkhandalkar" target="_blank" rel="noopener" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div class="cl-text"><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/omkarkhandalkar</div></div><span class="cl-arrow">&rarr;</span></a>
+          <a href="https://www.behance.net/omkarkhandalkar" target="_blank" rel="noopener" class="contact-link-item"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.427c-.103-1.2-.952-1.93-1.703-1.93-.905 0-1.617.636-1.724 1.93z"/></svg></div><div class="cl-text"><div class="cl-lbl">Behance</div><div class="cl-val">behance.net/omkarkhandalkar</div></div><span class="cl-arrow">&rarr;</span></a>
+          <div class="contact-link-item" style="cursor:default;"><div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="cl-text"><div class="cl-lbl">Location</div><div class="cl-val">Mumbai, Maharashtra, India</div></div></div>
         </div>
       </div>
       <div class="reveal">
         <form action="https://formspree.io/f/xdoqzqzq" method="POST" novalidate>
-          <input type="hidden" name="_to" value="oomkarsk6@gmail.com"/>
+          <input type="hidden" name="_to" value="oomkarsk6@gmail.com" />
           <div class="form-row">
             <div class="form-group"><label class="form-label" for="cf-name">Your Name</label><input class="form-input" type="text" id="cf-name" name="name" placeholder="Jane Doe" required autocomplete="name"/></div>
             <div class="form-group"><label class="form-label" for="cf-email">Email Address</label><input class="form-input" type="email" id="cf-email" name="email" placeholder="jane@example.com" required autocomplete="email"/></div>
