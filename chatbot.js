@@ -409,20 +409,6 @@
         footer: 'That creative range adds depth to his visual and narrative thinking.'
       }
     },
-    hire: {
-      triggers: ['hire', 'hiring', 'interested', 'want to work', 'collaborate', 'reach out', 'contact', 'email', 'phone', 'offer', 'job'],
-      response: {
-        title: 'Get in touch',
-        summary: 'If you want to discuss a collaboration or opportunity, these are the best ways to reach Omkar.',
-        bullets: [
-          'Email: oomkarsk6@gmail.com',
-          'Phone: +91 8169191669',
-          'LinkedIn: linkedin.com/in/omkar-khandalkar',
-          'Behance: behance.net/omkarkhandalkar'
-        ],
-        footer: 'A short message with the problem, timeline, and context usually gets the quickest response.'
-      }
-    },
     tools: {
       triggers: ['tools', 'skills', 'tech stack', 'software', 'figma', 'react', 'css', 'html', 'code'],
       response: {
