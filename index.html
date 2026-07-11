@@ -2108,5 +2108,506 @@ initCarousel('carousel4','dots4','pauseBtn4');
   }
 })();
 </script>
+
+<!-- CHATBOT -->
+<div id="chatbotContainer" class="chatbot-container">
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      <h3>Ask About Omkar</h3>
+      <button class="chatbot-close" id="chatbotClose" aria-label="Close chatbot">&times;</button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <div class="chatbot-input-wrapper">
+      <input 
+        type="text" 
+        id="chatbotInput" 
+        class="chatbot-input" 
+        placeholder="Ask anything about Omkar 🤖" 
+        autocomplete="off"
+      />
+      <button class="chatbot-send" id="chatbotSend" aria-label="Send message">→</button>
+    </div>
+  </div>
+  <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chatbot">
+    <span class="chatbot-icon">💬</span>
+  </button>
+</div>
+
+<style>
+/* ── CHATBOT STYLES ──────────────────────────────── */
+.chatbot-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.chatbot-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s var(--ease);
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
+}
+
+.chatbot-toggle.hidden {
+  display: none;
+}
+
+.chatbot-panel {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 380px;
+  height: 520px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: none;
+  transition: all 0.3s var(--ease);
+}
+
+.chatbot-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.chatbot-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.chatbot-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.chatbot-close:hover {
+  color: var(--text);
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.chatbot-message {
+  display: flex;
+  gap: 0.6rem;
+  animation: fadeUp 0.3s var(--ease);
+}
+
+.chatbot-message.user {
+  justify-content: flex-end;
+}
+
+.chatbot-message-content {
+  max-width: 70%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.chatbot-message.bot .chatbot-message-content {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text2);
+  border: 1px solid var(--border);
+}
+
+.chatbot-message.user .chatbot-message-content {
+  background: var(--accent);
+  color: var(--btn-on-accent);
+}
+
+.chatbot-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.chatbot-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.chatbot-input::placeholder {
+  color: var(--muted);
+}
+
+.chatbot-input:focus {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.chatbot-send {
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: var(--btn-on-accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.chatbot-send:hover {
+  transform: scale(1.05);
+}
+
+.chatbot-send:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+  .chatbot-container {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .chatbot-panel {
+    width: 320px;
+    height: 480px;
+  }
+
+  .chatbot-message-content {
+    max-width: 85%;
+  }
+}
+</style>
+
+<script>
+(function() {
+  const chatbotToggle = document.getElementById('chatbotToggle');
+  const chatbotClose = document.getElementById('chatbotClose');
+  const chatbotPanel = document.getElementById('chatbotPanel');
+  const chatbotInput = document.getElementById('chatbotInput');
+  const chatbotSend = document.getElementById('chatbotSend');
+  const chatbotMessages = document.getElementById('chatbotMessages');
+
+  // Toggle chatbot panel
+  chatbotToggle.addEventListener('click', () => {
+    chatbotPanel.classList.toggle('open');
+    if (chatbotPanel.classList.contains('open')) {
+      chatbotInput.focus();
+    }
+  });
+
+  chatbotClose.addEventListener('click', () => {
+    chatbotPanel.classList.remove('open');
+  });
+
+  // Chatbot knowledge base with sarcasm
+  const knowledgeBase = {
+    greeting: {
+      triggers: ['hello', 'hi', 'hey', 'start', 'help'],
+      responses: [
+        "Hey there! 👋 Welcome to Omkar's portfolio. I'm here to answer all your burning questions. Fair warning: I'm fluent in both design and sarcasm.",
+        "Well, well, well... another human visitor! 🤖 Ask me anything about Omkar and watch me work my magic.",
+        "Sup! I'm Omkar's AI sidekick. You can ask me about his work, experience, projects, or why he's basically a wizard with design."
+      ]
+    },
+    experience: {
+      triggers: ['experience', 'work', 'job', 'career', 'role', 'position', 'worked', 'working'],
+      response: `Here's Omkar's journey (the highlight reel):
+
+🎯 **Current**: Senior UI Designer / Design Analyst at Zeus Learning (Jul 2025 - Present)
+- Leading design strategy for enterprise LMS/CMS
+- Mentoring junior designers (basically telling them what works)
+- 32 developers and 8 QA engineers listen to him
+
+📊 **Previous**: UI Designer / Design Analyst at Zeus Learning (Aug 2023 - Jun 2025)
+- 2 years of making complex educational workflows actually usable
+- WCAG-compliant design (accessibility isn't optional)
+- Responsive design across all breakpoints
+
+💻 **Other**: 
+- UI Developer at MAI Labs (Jun-Aug 2023) - Built their entire site in Next.js
+- UX Designer Intern at Corbin Technology (Jan-Apr 2023)
+
+TL;DR: Omkar has turned complexity into clarity for 3+ years straight.`
+    },
+    education: {
+      triggers: ['education', 'college', 'university', 'degree', 'studied', 'school', 'graduation', 'graduated'],
+      response: `Education unlocked 🎓
+
+📚 **B.E. Electronics & Telecommunication** 
+- D Y Patil's Ramrao Adik Institute of Technology, Mumbai University
+- CGPA: 9.35/10 (pretty solid, not gonna lie)
+- Vice Chairman of IETE RAIT
+- Organized hackathons, conducted workshops, competed in robotics
+
+🏫 **HSC Science** | V.G. Vaze College of Science, Mumbai (69.38%)
+
+Why this matters: Engineering background + design mindset = someone who actually understands technical constraints AND human experience.`
+    },
+    projects: {
+      triggers: ['projects', 'case study', 'work', 'portfolio', 'design', 'built', 'created'],
+      response: `The portfolio hits different. Here's what Omkar's shipped:
+
+🎯 **Clio AI Investment Assistant** - Progressive disclosure for financial data
+🛍️ **Amazon Assure** - Trust-building for post-purchase anxiety
+🏢 **MAI Labs Website** - Enterprise site with 94 Lighthouse score
+🔍 **AccessIQ** - WCAG compliance tool
+💰 **Fintech Dashboard Redesign** - Enterprise-scale system thinking
+🌍 **Zeus Learning LMS/CMS** - Million+ students using it daily
+
+Every project has a full case study with the problem, research, process, and actual results. Check the portfolio section for the deep dive.`
+    },
+    compensation: {
+      triggers: ['salary', 'compensation', 'pay', 'ctc', 'package', 'lpa', 'cost', 'rate', 'price'],
+      response: `💰 **Compensation Range**: ₹16-20 LPA
+
+That's fixed. No games, no nonsense. This is what Omkar brings to the table at current market rates. ✅
+
+Got a better offer? Congrats! Got questions about what's included? That's a conversation for the actual call. 😎`
+    },
+    notice_period: {
+      triggers: ['notice', 'availability', 'availability', 'notice period', 'joinining', 'when', 'start'],
+      response: `⏳ **Notice Period**: 60 Days
+
+Translation: Omkar needs 2 months to wrap things up properly at Zeus Learning (because he does things the right way). After that? Ready to roll.`
+    },
+    accessibility: {
+      triggers: ['accessibility', 'wcag', 'inclusive', 'a11y', 'accessible', 'inclusive design'],
+      response: `♿ **Accessibility is Non-Negotiable**
+
+Omkar doesn't see accessibility as a feature—it's the baseline. Every design:
+- WCAG-compliant (minimum Level AA)
+- Heuristic evaluations every sprint
+- Tested with actual assistive tech
+- Built for real humans with real needs
+
+Design for the margins, benefit everyone. That's the philosophy.`
+    },
+    team_work: {
+      triggers: ['team', 'collaborate', 'mentoring', 'leadership', 'mentor', 'developers', 'engineers'],
+      response: `🤝 **Omkar as a Team Player**
+
+- Mentoring 2+ junior designers (growth-focused feedback)
+- Primary design POC for 32 developers + 8 QA engineers
+- Reports to VP of Product (alignment at scale)
+- Designs systems that engineers actually like working with
+
+Translation: Not just a solo genius—builds better teams.`
+    },
+    creative: {
+      triggers: ['creative', 'photography', 'podcast', 'youtube', 'vlog', 'video', 'content', 'codeos'],
+      response: `🎨 **Creative Work** (the passion projects)
+
+📸 **Photography** - Landscapes, macro, architecture. Real eye for composition.
+
+🎙️ **CodeOS Podcast** - Industry experts, tech insights, personal growth
+- 1000+ students mentored
+- 25+ bootcamps & workshops
+- 125K+ YouTube views
+
+🎬 **Vlogs** - "12 Jilhe 12 Bhangadia" cultural exploration through Maharashtra
+- Authentic storytelling
+- Real communities, real food, real history
+
+Design thinking extends beyond pixels. It's about telling stories that matter.`
+    },
+    hire: {
+      triggers: ['hire', 'hiring', 'interested', 'want to work', 'collaborate', 'reach out', 'contact', 'email', 'phone', 'offer', 'job'],
+      response: `✅ **Let's Talk**
+
+Email: oomkarsk6@gmail.com
+Phone: +91 8169191669
+LinkedIn: linkedin.com/in/omkar-khandalkar
+Behance: behance.net/omkarkhandalkar
+
+What to include:
+- The actual problem you need solved (not just "we need design")
+- Budget & timeline (everyone appreciates honesty)
+- Team structure (who will Omkar work with?)
+
+Omkar responds fast to serious inquiries. 🚀`
+    },
+    tools: {
+      triggers: ['tools', 'skills', 'tech stack', 'software', 'figma', 'react', 'css', 'html', 'code'],
+      response: `🛠️ **Design & Dev Stack**
+
+**Design**: Figma (obviously), design systems, prototyping
+**Frontend**: React, HTML, CSS, JavaScript, Next.js
+**Testing**: Usability testing, A/B testing, accessibility audits
+**Research**: User interviews, competitive analysis, heuristic evaluation
+**Other**: Tailwind CSS, component systems, responsive design
+
+Omkar doesn't just design—he can prototype in code, so handoff actually works.`
+    },
+    values: {
+      triggers: ['values', 'believe', 'philosophy', 'approach', 'mindset', 'why'],
+      response: `🎯 **Design Philosophy**
+
+1. **Accessibility First** - Not optional. Universal design benefits everyone.
+2. **User Research** - Designs for humans, not assumptions.
+3. **Simplicity Through Depth** - Make complex things feel effortless.
+4. **Craft Matters** - Details compound. Polish is respect.
+5. **Systems Thinking** - One solution should scale across contexts.
+6. **No Shortcuts** - If it's not done right, it's not done.
+
+Education should be a universal right. That conviction shapes everything.`
+    },
+    size_scope: {
+      triggers: ['scale', 'users', 'million', 'impact', 'size', 'scope'],
+      response: `📈 **Working at Scale**
+
+- **Zeus Learning LMS**: 1M+ students daily
+- **Enterprise Teams**: 32 developers, 8 QA engineers
+- **Design Leadership**: Mentoring junior designers
+- **Complex Systems**: Multi-module platforms, legacy debt resolution
+
+Omkar doesn't just make things pretty—he scales them. 🚀`
+    },
+    culture_fit: {
+      triggers: ['culture', 'work style', 'fit', 'environment', 'team'],
+      response: `🎭 **Culture & Work Style**
+
+Omkar thrives in:
+- **Collaborative environments** with serious, curious people
+- **Problem-first thinking** (not feature factories)
+- **Autonomy + accountability** balance
+- **Continuous learning** culture
+- **Ship-and-iterate** mindset
+
+Red flags? Designs by committee, "make it pop", no research. Omkar will nope out. 😎`
+    },
+    portfolio_depth: {
+      triggers: ['case study', 'detailed', 'process', 'research', 'methodology'],
+      response: `📚 **Case Studies - Full Transparency**
+
+Every project in the portfolio includes:
+✅ The Problem (research-backed, not guessed)
+✅ The Process (messy reality, not polished fiction)
+✅ The Design (screens, flows, systems)
+✅ The Outcomes (actual metrics, not fluff)
+✅ The Learnings (what stuck, what didn't)
+
+Click any project card to see the full story. Omkar doesn't do shallow.`
+    }
+  };
+
+  // Smart question matching
+  function findBestResponse(userMessage) {
+    const msg = userMessage.toLowerCase().trim();
+    
+    for (const [key, content] of Object.entries(knowledgeBase)) {
+      if (content.triggers.some(trigger => msg.includes(trigger))) {
+        if (typeof content.response === 'string') {
+          return content.response;
+        } else {
+          return content.responses[Math.floor(Math.random() * content.responses.length)];
+        }
+      }
+    }
+
+    // Default witty responses for unmatched questions
+    const defaultResponses = [
+      "That's a great question! Honestly, I might be overthinking it, but you could also ask Omkar directly. Email or LinkedIn might be faster than chatting with a bot. 🤷",
+      "Hmm, you've stumped me! That's actually impressive. Shoot Omkar an email and he'll sort you out: oomkarsk6@gmail.com",
+      "I don't have that data, but I'm pretty sure Omkar does. Let's find out: oomkarsk6@gmail.com",
+      "You know what? Valid question. Ask the human directly—they're usually smarter than their chatbot anyway.",
+      "That's either genius or nonsense, and I can't tell which. Email Omkar and let me know! 😄"
+    ];
+    
+    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+  }
+
+  // Add message to chat
+  function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chatbot-message ${isUser ? 'user' : 'bot'}`;
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'chatbot-message-content';
+    contentDiv.textContent = text;
+    
+    messageDiv.appendChild(contentDiv);
+    chatbotMessages.appendChild(messageDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  // Send message
+  function sendMessage() {
+    const message = chatbotInput.value.trim();
+    
+    if (!message) return;
+
+    addMessage(message, true);
+    chatbotInput.value = '';
+
+    // Simulate typing delay
+    setTimeout(() => {
+      const response = findBestResponse(message);
+      addMessage(response, false);
+    }, 300);
+  }
+
+  // Event listeners
+  chatbotSend.addEventListener('click', sendMessage);
+  chatbotInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  // Initial greeting
+  setTimeout(() => {
+    if (!chatbotMessages.children.length) {
+      addMessage("Hey! 👋 I'm Omkar's AI assistant. Ask me anything about his experience, projects, compensation, or why he's annoyingly good at design.", false);
+    }
+  }, 500);
+})();
+</script>
 </body>
 </html>
