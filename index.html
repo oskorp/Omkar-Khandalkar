@@ -256,8 +256,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .filter-btn{padding:.42rem 1rem;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text2);font-family:'Inter',system-ui,sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .3s var(--ease);}
 .filter-btn:hover{border-color:var(--borderS);color:var(--text);background:rgba(255,255,255,.04);}
 .filter-btn.active{background:var(--text);color:#000;border-color:var(--text);}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
-.project-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .4s var(--ease);cursor:pointer;}
+.projects-carousel-shell{position:relative;}
+.projects-carousel-controls{display:flex;justify-content:flex-end;gap:.5rem;margin-bottom:.8rem;}
+.projects-carousel-controls button{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s var(--ease);font-size:.95rem;}
+.projects-carousel-controls button:hover{border-color:var(--borderS);background:rgba(255,255,255,.08);transform:translateY(-1px);}
+.projects-carousel-controls button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+.projects-grid{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:.35rem;-webkit-overflow-scrolling:touch;}
+.projects-grid::-webkit-scrollbar{display:none;}
+.project-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .4s var(--ease);cursor:pointer;min-width:calc(33.333% - .8rem);flex:0 0 calc(33.333% - .8rem);scroll-snap-align:center;scroll-snap-stop:always;}
 .project-card.hidden{display:none;}
 .project-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3);border-color:var(--borderS);}
 .p-thumb{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;display:block;}
@@ -421,8 +427,13 @@ body.simplified .projects-grid{display:none !important;}
 .gallery-tab.active{background:var(--text);color:#000;}
 .gallery-panel{display:none;}
 .gallery-panel.active{display:block;}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
-.g-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.03);cursor:pointer;transition:transform .4s var(--ease);}
+.gallery-carousel-controls{display:flex;justify-content:flex-end;gap:.5rem;margin-bottom:.8rem;}
+.gallery-carousel-controls button{width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s var(--ease);font-size:.95rem;}
+.gallery-carousel-controls button:hover{border-color:var(--borderS);background:rgba(255,255,255,.08);transform:translateY(-1px);}
+.gallery-carousel-controls button:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+.gallery-grid{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:.35rem;-webkit-overflow-scrolling:touch;}
+.gallery-grid::-webkit-scrollbar{display:none;}
+.g-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.03);cursor:pointer;transition:transform .4s var(--ease);flex:0 0 calc(33.333% - .55rem);max-width:calc(33.333% - .55rem);scroll-snap-align:center;scroll-snap-stop:always;}
 .g-item:hover{transform:scale(1.01);}
 .g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
 .g-item:hover img{transform:scale(1.06);}
@@ -487,8 +498,8 @@ body.simplified .projects-grid{display:none !important;}
 .form-success{display:none;margin-top:1rem;padding:.85rem;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.15);border-radius:12px;color:var(--a3);font-size:.86rem;text-align:center;}
 
 /* ── FOOTER ──────────────────────────────────────── */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:100%;}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:0 0 0 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding:0 0 0 0;margin:0;}
 .footer-copy{font-size:.78rem;color:var(--muted);}
 .footer-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
 .footer-links a{font-size:1.2rem;color:var(--muted);transition:color .3s var(--ease);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:transparent;}
@@ -537,6 +548,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
   .two-col,.three-col{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:768px){
+  .projects-carousel-controls{display:flex !important;}
   .nav-links{display:none;position:fixed;top:52px;left:0;right:0;background:var(--nav-bg);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:1rem 1.5rem 1.5rem;gap:.15rem;border-bottom:1px solid var(--border);z-index:800;}
   .nav-links.open{display:flex;}
   .nav-links a{padding:.7rem .95rem;border-radius:12px;font-size:.9rem;white-space:normal;word-break:break-word;}
@@ -572,7 +584,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:0;width:1
 }
 
 @media(min-width:769px){
-  .projects-carousel-controls{display:none !important;}
+  .projects-carousel-controls{display:flex !important;}
 }
 @media(max-width:480px){
     .footer-links{width:100%;justify-content:flex-start;gap:0.5rem;margin-top:0.5rem;}
@@ -1507,13 +1519,12 @@ The best design is the one users don't think about</p>
       <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
       <button class="filter-btn" data-filter="dev">Development</button>
     </div>
-    <div class="projects-grid stagger reveal">
-
-      <!-- Mobile carousel controls -->
-      <div class="projects-carousel-controls" aria-hidden="true">
-        <button id="projPrev" class="btn btn-outline" aria-label="Previous projects">◀</button>
-        <button id="projNext" class="btn btn-outline" aria-label="Next projects">▶</button>
+    <div class="projects-carousel-shell stagger reveal">
+      <div class="projects-carousel-controls" aria-label="Project carousel controls">
+        <button id="projPrev" type="button" aria-label="Previous projects">◀</button>
+        <button id="projNext" type="button" aria-label="Next projects">▶</button>
       </div>
+      <div class="projects-grid">
 
       <div class="project-card" data-categories="ux fintech" onclick="openCS('cs-clio')">
         <div class="p-thumb">
@@ -1606,6 +1617,7 @@ The best design is the one users don't think about</p>
         </div>
       </div>
 
+      </div>
     </div>
   </div>
 </section>
@@ -1614,7 +1626,7 @@ The best design is the one users don't think about</p>
 <section id="resume" aria-label="Resume">
   <div class="container">
     <div class="reveal" style="margin-bottom:3.5rem;">
-      <p class="eyebrow">Resume</p>
+      <p class="eyebrow">Workex and Education</p>
       <h2 class="section-title">Where I&rsquo;ve been,<br/>what I&rsquo;ve built</h2>
       <p class="section-sub">Every role has added a layer strategy, systems, scale, and the stubborn belief that design can make education better for everyone.</p>
     </div>
@@ -1645,14 +1657,18 @@ The best design is the one users don't think about</p>
   <div class="container">
     <div class="reveal" style="margin-bottom:2rem;">
       <p class="eyebrow">Creative Work</p>
-      <h2 class="section-title">What I make<br/>when no one&rsquo;s watching</h2>
-      <p class="section-sub">Design thinking doesn&rsquo;t clock out. Photography, graphic work, and AI art each one a different way of seeing the same world.</p>
+      <h2 class="section-title">Visual stories<br/>from the lens and beyond</h2>
+      <p class="section-sub">Photography remains the core of my visual language, and the rest of my creative work extends that same curiosity through composition, texture, mood, and storytelling.</p>
     </div>
-    <div class="gallery-tabs" role="tablist" aria-label="Gallery categories">
+    <div class="gallery-tabs" role="tablist" aria-label="Gallery categories" style="display:none;">
       <button class="gallery-tab active" role="tab" aria-selected="true" data-tab="photography">Photography</button>
     </div>
     <div class="gallery-panel active" id="panel-photography" role="tabpanel">
-      <div class="gallery-grid stagger reveal">
+      <div class="gallery-carousel-controls" aria-label="Photography carousel controls">
+        <button id="galleryPrev" type="button" aria-label="Previous photographs">◀</button>
+        <button id="galleryNext" type="button" aria-label="Next photographs">▶</button>
+      </div>
+      <div class="gallery-grid stagger reveal" id="galleryGrid">
         <div class="g-item" onclick="openLB('images/photography/image1.jpg','Photo 1')"><img src="images/photography/image1.jpg" alt="Photography 1" loading="lazy"/><div class="g-overlay"><span>Landscape - Sunset, Vasai Fort</span></div></div>
         <div class="g-item" onclick="openLB('images/photography/image2.jpg','Photo 2')"><img src="images/photography/image2.jpg" alt="Photography 2" loading="lazy"/><div class="g-overlay"><span>Macro - Housefly</span></div></div>
         <div class="g-item" onclick="openLB('images/photography/image3.jpg','Photo 3')"><img src="images/photography/image3.jpg" alt="Photography 3" loading="lazy"/><div class="g-overlay"><span>Portrait</span></div></div>
@@ -2128,30 +2144,71 @@ initCarousel('carousel4','dots4','pauseBtn4');
 </script>
 <script>
 (function(){
-  // Projects carousel controls for small viewports
   const grid = document.querySelector('.projects-grid');
   const prev = document.getElementById('projPrev');
   const next = document.getElementById('projNext');
   if(!grid || !prev || !next) return;
 
+  function getScrollAmount(){
+    const visibleCard = grid.querySelector('.project-card:not(.hidden)');
+    if(!visibleCard) return grid.clientWidth * 0.86;
+    const style = getComputedStyle(grid);
+    const gap = parseFloat(style.columnGap || style.gap || 0);
+    return visibleCard.getBoundingClientRect().width + gap;
+  }
+
   function scrollByCard(dir){
-    const card = grid.querySelector('.project-card');
-    if(!card) return;
-    const scrollAmount = Math.round(grid.clientWidth * 0.86);
-    grid.scrollBy({left: dir * scrollAmount, behavior: 'smooth'});
+    const amount = getScrollAmount();
+    grid.scrollBy({left: dir * amount, behavior: 'smooth'});
   }
 
   prev.addEventListener('click', ()=> scrollByCard(-1));
   next.addEventListener('click', ()=> scrollByCard(1));
 
-  // enable/disable buttons near ends
   function updateButtons(){
     const maxScroll = grid.scrollWidth - grid.clientWidth - 1;
     prev.disabled = grid.scrollLeft <= 5;
     next.disabled = grid.scrollLeft >= maxScroll - 5;
   }
+
   grid.addEventListener('scroll', updateButtons, {passive:true});
   window.addEventListener('resize', updateButtons);
+  window.addEventListener('load', updateButtons);
+  updateButtons();
+})();
+</script>
+<script>
+(function(){
+  const grid = document.getElementById('galleryGrid');
+  const prev = document.getElementById('galleryPrev');
+  const next = document.getElementById('galleryNext');
+  if(!grid || !prev || !next) return;
+
+  function getScrollAmount(){
+    const firstItem = grid.querySelector('.g-item');
+    if(!firstItem) return grid.clientWidth * 0.86;
+    const style = getComputedStyle(grid);
+    const gap = parseFloat(style.columnGap || style.gap || 0);
+    return firstItem.getBoundingClientRect().width + gap;
+  }
+
+  function scrollByCard(dir){
+    const amount = getScrollAmount();
+    grid.scrollBy({left: dir * amount, behavior: 'smooth'});
+  }
+
+  prev.addEventListener('click', ()=> scrollByCard(-1));
+  next.addEventListener('click', ()=> scrollByCard(1));
+
+  function updateButtons(){
+    const maxScroll = grid.scrollWidth - grid.clientWidth - 1;
+    prev.disabled = grid.scrollLeft <= 5;
+    next.disabled = grid.scrollLeft >= maxScroll - 5;
+  }
+
+  grid.addEventListener('scroll', updateButtons, {passive:true});
+  window.addEventListener('resize', updateButtons);
+  window.addEventListener('load', updateButtons);
   updateButtons();
 })();
 </script>
