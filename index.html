@@ -284,17 +284,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .cs-btn{font-size:.78rem;padding:.44rem .9rem;flex:1;justify-content:center;min-width:0;}
 
 /* (compact view removed) */
-/* Global simplified portfolio view */
-body.simplified section{display:none;}
-body.simplified #projects, body.simplified footer, body.simplified nav{display:block;}
-body.simplified .projects-grid{display:none !important;}
-.simplified-list{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:1.2rem;}
-.simplified-list ul{list-style:none;padding:0;margin:0;}
-.simplified-list li{padding:.8rem 1rem;border-bottom:1px solid rgba(255,255,255,.03);display:flex;align-items:center;justify-content:space-between;gap:1rem;}
-.simplified-list li:last-child{border-bottom:none;}
-.simplified-title{font-weight:700;color:var(--text);}
-.simplified-desc{color:var(--text2);font-size:.92rem;max-width:70%;}
-.simplified-actions{flex-shrink:0;}
 
 /* ── CASE STUDY PANEL (full-page overlay) ─────────── */
 .cs-panel{
@@ -604,6 +593,44 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
   .nav-links a, .btn, .cs-panel-nav-title {white-space:normal !important;word-break:break-word !important;}
 }
 </style>
+
+<!-- SEO: meta description, canonical, Open Graph, Twitter Card, and JSON-LD -->
+<meta name="description" content="Product Designer from Mumbai blending engineering, behavioral psychology, systems thinking, and visual craft — creating accessible, research-led AI and education products." />
+<meta name="robots" content="index, follow" />
+<!-- Replace the href below with your site's canonical URL -->
+<link rel="canonical" href="https://example.com/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Omkar Khandalkar — Senior Product Designer" />
+<meta property="og:description" content="Product Designer from Mumbai blending engineering, behavioral psychology, systems thinking, and visual craft — creating accessible, research-led AI and education products." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://example.com/" />
+<meta property="og:image" content="images/profile.jpeg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Omkar Khandalkar — Senior Product Designer" />
+<meta name="twitter:description" content="Product Designer from Mumbai blending engineering, behavioral psychology, systems thinking, and visual craft — creating accessible, research-led AI and education products." />
+<meta name="twitter:image" content="images/profile.jpeg" />
+
+<!-- JSON-LD structured data for Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Omkar Khandalkar",
+  "url": "https://example.com/",
+  "jobTitle": "Senior Product Designer",
+  "image": "https://example.com/images/profile.jpeg",
+  "description": "Product Designer from Mumbai blending engineering, behavioural psychology, systems thinking, and visual craft — creating accessible, research-led AI and education products.",
+  "sameAs": [
+    "https://www.linkedin.com/in/omkarkhandalkar/",
+    "https://www.behance.net/omkark3",
+    "https://www.instagram.com/hey.omyya/",
+    "https://www.youtube.com/@omkarskhandalkar"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1424,8 +1451,7 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
         </ul>
         <div class="nav-actions">
           <!-- <a href="mailto:oomkarsk6@gmail.com" class="btn btn-primary">Hire Me</a> -->
-          <button id="simplifyToggle" class="btn btn-outline" title="Toggle simplified portfolio view" aria-pressed="false">Simplified</button>
-          <button id="themeToggle" class="btn btn-outline" title="Toggle theme" aria-pressed="false">Light</button>
+          <button id="themeToggle" class="btn btn-outline" title="Toggle theme" aria-pressed="false"><i class="fas fa-sun" aria-hidden="true"></i></button>
           <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
         </div>
       </div>
@@ -1440,9 +1466,9 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
       <div>
         <div class="hero-badge"><span class="badge-dot" aria-hidden="true"></span>Open to new opportunities</div>
         <h1 class="hero-name">Omkar<br/><span class="grad">Khandalkar</span></h1>
-        <p class="hero-role"><span class="role-highlight">Senior AI Product Designer</span>
+        <p class="hero-role"><span class="role-highlight">Senior Product Designer</span>
           <!-- <span class="role-highlight">Podcast Host</span> -->
-           &nbsp;&middot;&nbsp; <span class="role-highlight">Accessibility Advocate</span></p>
+           <!-- &nbsp;&middot;&nbsp; <span class="role-highlight">Accessibility Design</span></p> -->
         <p class="hero-desc">Electronics/Telecom Engineer who traded circuits & antenna for digital interfaces, crafting thoughtful AI experiences through research, accessibility, and storytelling, bridging the gap between humans, technology, and intelligent systems.</p>
         <div class="hero-ctas">
           <a href="#projects" class="btn btn-primary">See My Case Studies &rarr;</a>
@@ -1799,6 +1825,23 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
           <div class="extra-stats"><div class="xstat"><strong>National</strong> Representation</div><div class="xstat"><strong>eYantra</strong> Finalist</div></div>
         </div>
       </div>
+      <div class="extra-card">
+        <div class="carousel-wrap extra-img-wrap">
+          <div class="carousel-inner" id="carousel4">
+            <div class="carousel-item"><img src="images/extracurricular/1663270449670.jpg" alt="DYP RAIT Design Hackathon" class="carousel-img" loading="lazy"/></div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-dots" id="dots4"><span class="carousel-dot active" data-index="0"></span></div>
+            <button class="carousel-pause-btn" id="pauseBtn4" aria-label="Pause carousel" title="Pause">⏸</button>
+          </div>
+        </div>
+        <div class="extra-body">
+          <div class="extra-meta"><span class="x-badge xb-event">Judge</span><span class="extra-date">DYP RAIT</span></div>
+          <h3>Judge &mdash; DYP RAIT Design Hackathon</h3>
+          <p>Attended as a judge at the DYP RAIT Design Hackathon, evaluating student teams and providing feedback on design thinking, prototyping, and presentations.</p>
+          <div class="extra-stats"><div class="xstat"><strong>Judged</strong> Student Teams</div></div>
+        </div>
+      </div>
     </div>
     <div class="impact-row reveal">
       <div class="impact-item"><div class="impact-num">1000+</div><div class="impact-lbl">Students Directly Mentored</div></div>
@@ -1862,9 +1905,6 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
 <div class="floating-actions" role="group" aria-label="Quick actions">
   <button id="scrollToTopBtn" class="floating-action-btn" type="button" aria-label="Scroll to top" title="Scroll to top">
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
-  </button>
-  <button id="scrollToBottomBtn" class="floating-action-btn" type="button" aria-label="Scroll to bottom" title="Scroll to bottom">
-    <i class="fas fa-arrow-down" aria-hidden="true"></i>
   </button>
 </div>
 <style>
@@ -1936,27 +1976,20 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
 }
 </style>
 <script>
-// Scroll to Top Button logic (global)
+// Scroll to Top Button logic (show on slight scroll)
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-const scrollBtn = document.getElementById('scrollToBottomBtn');
 
 function updateFloatingButtons() {
-  const showTop = window.scrollY > 200;
-  const showBottom = window.innerHeight + window.scrollY < document.body.offsetHeight - 100;
-  scrollToTopBtn.classList.toggle('visible', showTop);
-  scrollBtn.classList.toggle('visible', showBottom);
+  const showTop = window.scrollY > 50; // show earlier on small scroll
+  if (scrollToTopBtn) scrollToTopBtn.classList.toggle('visible', showTop);
 }
 
-window.addEventListener('scroll', updateFloatingButtons);
+window.addEventListener('scroll', updateFloatingButtons, {passive:true});
 window.addEventListener('resize', updateFloatingButtons);
 updateFloatingButtons();
 
-scrollToTopBtn.addEventListener('click', () => {
+if (scrollToTopBtn) scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });
 </script>
 
@@ -2211,82 +2244,7 @@ initCarousel('carousel4','dots4','pauseBtn4');
 })();
 </script>
 <script>
-(function(){
-  const simplifyBtn = document.getElementById('simplifyToggle');
-  const projectsSection = document.getElementById('projects');
-  const body = document.body;
-  if(!simplifyBtn || !projectsSection) return;
-
-  function buildList(){
-    let list = projectsSection.querySelector('.simplified-list');
-    if(list) return list;
-    list = document.createElement('div');
-    list.className = 'simplified-list';
-    const ul = document.createElement('ul');
-
-    const cards = projectsSection.querySelectorAll('.project-card');
-    cards.forEach(card=>{
-      const titleEl = card.querySelector('.p-body h3');
-      const descEl = card.querySelector('.p-body > p');
-      const title = titleEl ? titleEl.textContent.trim() : '';
-      let desc = descEl ? descEl.textContent.trim() : '';
-      // keep first sentence or first 120 chars
-      const first = desc.split(/\.|\n/)[0] || desc;
-      desc = first.length > 120 ? first.slice(0,117)+'...' : first;
-
-      const onclick = card.getAttribute('onclick') || '';
-
-      const li = document.createElement('li');
-      const left = document.createElement('div');
-      const right = document.createElement('div');
-      left.style.display='flex';left.style.flexDirection='column';
-      const t = document.createElement('div'); t.className='simplified-title'; t.textContent = title;
-      const d = document.createElement('div'); d.className='simplified-desc'; d.textContent = desc;
-      left.appendChild(t); left.appendChild(d);
-      right.className='simplified-actions';
-      if(onclick){
-        const btn = document.createElement('button');
-        btn.className='btn btn-primary';
-        btn.textContent='Open';
-        // forward click to card's onclick
-        btn.addEventListener('click', (e)=>{ e.stopPropagation(); if(onclick) { try{ eval(onclick); }catch(err){} } });
-        right.appendChild(btn);
-      }
-
-      li.appendChild(left); li.appendChild(right);
-      ul.appendChild(li);
-    });
-
-    list.appendChild(ul);
-    const container = projectsSection.querySelector('.container') || projectsSection;
-    const grid = container.querySelector('.projects-grid');
-    container.insertBefore(list, grid);
-    return list;
-  }
-
-  function setSimplified(on){
-    if(on){
-      body.classList.add('simplified');
-      simplifyBtn.textContent='Full View';
-      simplifyBtn.setAttribute('aria-pressed','true');
-      buildList();
-    } else {
-      body.classList.remove('simplified');
-      simplifyBtn.textContent='Simplified';
-      simplifyBtn.setAttribute('aria-pressed','false');
-    }
-    try{ localStorage.setItem('portfolioMode', on ? 'simplified' : 'full'); }catch(e){}
-  }
-
-  simplifyBtn.addEventListener('click', ()=>{
-    const now = !body.classList.contains('simplified');
-    setSimplified(now);
-  });
-
-  // initialize
-  const pref = localStorage.getItem('portfolioMode');
-  if(pref === 'simplified') setSimplified(true);
-})();
+</script>
 </script>
 <script>
 // Theme toggle: toggles html[data-theme] between 'dark' and 'light'
@@ -2297,8 +2255,15 @@ initCarousel('carousel4','dots4','pauseBtn4');
 
   function applyTheme(t){
     html.setAttribute('data-theme', t);
-    themeBtn.textContent = t === 'light' ? 'Dark' : 'Light';
-    themeBtn.setAttribute('aria-pressed', t === 'light' ? 'true' : 'false');
+    if(t === 'light'){
+      themeBtn.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i>';
+      themeBtn.setAttribute('aria-pressed','true');
+      themeBtn.setAttribute('aria-label','Switch to dark theme');
+    } else {
+      themeBtn.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+      themeBtn.setAttribute('aria-pressed','false');
+      themeBtn.setAttribute('aria-label','Switch to light theme');
+    }
     try{ localStorage.setItem('preferredTheme', t); }catch(e){}
   }
 

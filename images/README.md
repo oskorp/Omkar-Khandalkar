@@ -6,7 +6,7 @@ Simply add your images to the appropriate folders with simple numbering. **No co
 
 ### 📸 Photography
 **Folder:** `images/photography/`
-- Add files: `image1.jpg`, `image2.jpg`, `image3.jpg`, `image4.jpg`, `image5.jpg`, `image6.jpg`
+- Add files: `image1.jpg`, `image2.jpg`, `image3.jpg`, `image4.JPG`, `image5.jpg`, `image6.jpg`
 - These will display in the Photography gallery tab
 
 ### 🎨 Graphics
