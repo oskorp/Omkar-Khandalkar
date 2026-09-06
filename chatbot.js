@@ -31,6 +31,7 @@
   function syncMobileViewport() {
     if (!window.visualViewport || window.innerWidth > 767) return;
     document.documentElement.style.setProperty('--chatbot-viewport-height', `${window.visualViewport.height}px`);
+    document.documentElement.style.setProperty('--chatbot-viewport-top', `${window.visualViewport.offsetTop}px`);
   }
 
   function setOpen(isOpen) {
