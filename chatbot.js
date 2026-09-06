@@ -28,6 +28,11 @@
   let pending = false;
   let lastQuestion = '';
 
+  function syncMobileViewport() {
+    if (!window.visualViewport || window.innerWidth > 767) return;
+    document.documentElement.style.setProperty('--chatbot-viewport-height', `${window.visualViewport.height}px`);
+  }
+
   function setOpen(isOpen) {
     panel.classList.toggle('open', isOpen);
     document.body.classList.toggle('chatbot-open', isOpen);
@@ -35,7 +40,8 @@
     toggle.setAttribute('aria-label', isOpen ? 'Close Omkiii' : 'Open Omkiii');
     toggle.setAttribute('title', isOpen ? 'Close Omkiii' : 'Open Omkiii');
     if (isOpen) {
-      input.focus();
+      syncMobileViewport();
+      requestAnimationFrame(() => input.focus({ preventScroll: true }));
       messages.scrollTop = messages.scrollHeight;
     }
   }
@@ -214,6 +220,10 @@
   document.getElementById('chatbotUnexpected')?.addEventListener('click', () => {
     sendMessage(unexpectedQuestions[Math.floor(Math.random() * unexpectedQuestions.length)]);
   });
+
+  window.visualViewport?.addEventListener('resize', syncMobileViewport);
+  window.visualViewport?.addEventListener('scroll', syncMobileViewport);
+  window.addEventListener('resize', syncMobileViewport);
 
   resetConversation();
   setOpen(false);
