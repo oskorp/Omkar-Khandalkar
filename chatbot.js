@@ -30,6 +30,7 @@
 
   function setOpen(isOpen) {
     panel.classList.toggle('open', isOpen);
+    document.body.classList.toggle('chatbot-open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.setAttribute('aria-label', isOpen ? 'Close Ask Omkar' : 'Open Ask Omkar');
     toggle.setAttribute('title', isOpen ? 'Close Ask Omkar' : 'Open Ask Omkar');
