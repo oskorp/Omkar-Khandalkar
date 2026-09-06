@@ -91,23 +91,6 @@
     item.appendChild(content);
 
     if (role === 'assistant' && options.actions) renderActions(item, options.actions);
-    if (role === 'assistant' && options.copyable) {
-      const copy = document.createElement('button');
-      copy.className = 'chatbot-copy';
-      copy.type = 'button';
-      copy.textContent = 'Copy';
-      copy.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(text);
-          copy.textContent = 'Copied';
-          setTimeout(() => { copy.textContent = 'Copy'; }, 1400);
-        } catch (error) {
-          copy.textContent = 'Unavailable';
-        }
-      });
-      item.appendChild(copy);
-    }
-
     messages.appendChild(item);
     scrollToLatest();
     return item;
@@ -191,14 +174,12 @@
       conversation.push({ role: 'user', content: question });
       const answer = cleanResponseText(payload.message || '');
       conversation.push({ role: 'assistant', content: answer });
-      addMessage(answer, 'assistant', { actions: payload.actions, copyable: true });
+      addMessage(answer, 'assistant', { actions: payload.actions });
     } catch (error) {
       const errorMessage = error.message && error.message !== 'Request failed'
         ? error.message
         : 'Oops. My brain temporarily disconnected from the internet. Try again in a moment.';
-      addMessage(errorMessage, 'assistant', {
-        copyable: false
-      });
+      addMessage(errorMessage, 'assistant');
       const retry = document.createElement('button');
       retry.type = 'button';
       retry.className = 'chatbot-retry';
@@ -215,7 +196,7 @@
   function resetConversation() {
     conversation.length = 0;
     messages.replaceChildren();
-    addMessage("Hey! I'm Omkiii, Omkar's AI sidekick. Ask me about his work, projects, skills, career journey, or something completely random. I promise to know more than his LinkedIn bio does.", 'assistant', { copyable: false });
+    addMessage("Hey! I'm Omkiii, Omkar's AI sidekick. Ask me about his work, projects, skills, career journey, or something completely random. I promise to know more than his LinkedIn bio does.", 'assistant');
     renderSuggestions();
   }
 
