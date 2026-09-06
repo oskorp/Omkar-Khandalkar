@@ -121,7 +121,7 @@ exports.handler = async (event) => {
   ];
 
   try {
-    const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
       method: 'POST',
       headers: {
@@ -150,7 +150,7 @@ exports.handler = async (event) => {
       if (response.status === 429) {
         return jsonResponse(429, { error: 'Gemini free-tier limit reached. Please try again later.' });
       }
-      return jsonResponse(502, { error: 'Gemini is temporarily unavailable.' });
+      return jsonResponse(502, { error: `Gemini rejected the request (${response.status}). Check the selected model and API key permissions.` });
     }
 
     const result = await response.json();

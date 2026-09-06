@@ -7,7 +7,7 @@ Ask Omkar is a static-site chatbot with a browser UI in `chatbot.js`, a local ed
 1. Open [Google AI Studio](https://aistudio.google.com/apikey) and create a Gemini API key.
 2. Copy `.env.example` to `.env` for local Netlify development.
 3. Set `GEMINI_API_KEY` to the Gemini key stored in your server environment.
-4. Optionally set `GEMINI_MODEL`; the default is `gemini-2.0-flash`.
+4. Optionally set `GEMINI_MODEL`; the default is `gemini-2.5-flash`.
 4. Never commit `.env` or put the key in HTML, browser JavaScript, or a `NEXT_PUBLIC_`/client-exposed variable.
 
 On Netlify, add `GEMINI_API_KEY` in Site configuration > Environment variables. The function reads it at request time. Gemini free-tier limits and availability depend on the Google AI Studio account and selected model.
