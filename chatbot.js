@@ -74,8 +74,7 @@
         link.rel = 'noopener';
       } else {
         link.addEventListener('click', () => {
-          panel.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
+          setOpen(false);
         });
       }
       actionRow.appendChild(link);
@@ -152,6 +151,7 @@
     pending = isBusy;
     send.disabled = isBusy;
     input.disabled = isBusy;
+    if (clear) clear.disabled = isBusy;
     send.setAttribute('aria-busy', String(isBusy));
   }
 
@@ -204,10 +204,6 @@
   }
 
   toggle.addEventListener('click', () => {
-    if (!isChatPage && window.innerWidth <= 767) {
-      window.location.href = 'omkiii.html';
-      return;
-    }
     setOpen(!panel.classList.contains('open'));
   });
   close.addEventListener('click', () => {
