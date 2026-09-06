@@ -1629,6 +1629,13 @@
       gap: 1.2rem;
     }
 
+    .content-carousel-controls {
+      display: none;
+      justify-content: flex-end;
+      gap: .5rem;
+      margin-bottom: .8rem;
+    }
+
     .video-card {
       display: flex;
       flex-direction: column;
@@ -2015,6 +2022,10 @@
       margin-bottom: 3rem;
     }
 
+    .extra-carousel-controls {
+      display: none;
+    }
+
     .extra-card {
       background: rgba(255, 255, 255, .03);
       border: 1px solid var(--border);
@@ -2022,6 +2033,11 @@
       overflow: hidden;
       transition: all .4s var(--ease);
     }
+
+    .extra-card:nth-child(1) { order: 2; }
+    .extra-card:nth-child(2) { order: 4; }
+    .extra-card:nth-child(3) { order: 3; }
+    .extra-card:nth-child(4) { order: 1; }
 
     .extra-card:hover {
       transform: translateY(-3px);
@@ -2478,6 +2494,7 @@
     }
 
     .carousel-item {
+      width: 100%;
       min-width: 100%;
       flex-shrink: 0;
       height: 100%;
@@ -2652,8 +2669,70 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .g-item {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      .content-carousel-controls {
+        display: flex;
+      }
+
+      .videos-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: .8rem;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .videos-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .videos-grid .video-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+      }
+
       .extra-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        gap: .8rem;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .extra-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .extra-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+      }
+
+      .extra-carousel-controls {
+        display: flex;
+      }
+
+      .carousel-wrap,
+      .carousel-inner,
+      .carousel-item {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .carousel-img {
+        object-fit: contain;
       }
 
       .impact-row {
@@ -4965,7 +5044,11 @@
             experts and thought leaders on design, technology, and personal growth. Each episode brings unique
             perspectives on building products, careers in tech, and making an impact in the industry.</p>
         </div>
-        <div class="videos-grid stagger reveal">
+        <div class="content-carousel-controls" aria-label="Podcast carousel controls">
+          <button id="podcastPrev" type="button" aria-label="Previous podcast">◀</button>
+          <button id="podcastNext" type="button" aria-label="Next podcast">▶</button>
+        </div>
+        <div class="videos-grid stagger reveal" id="podcastGrid">
           <a href="https://youtu.be/oApycQg4BUY?si=YVH9UgieQSmFfCWG" target="_blank" rel="noopener" class="video-card">
             <div class="video-thumb"><img src="https://img.youtube.com/vi/oApycQg4BUY/0.jpg" alt="Podcast 1"
                 loading="lazy" />
@@ -5008,7 +5091,11 @@
             places, and rich history while connecting with diverse communities and capturing untold stories from across
             the state.</p>
         </div>
-        <div class="videos-grid stagger reveal">
+        <div class="content-carousel-controls" aria-label="Vlog carousel controls">
+          <button id="vlogPrev" type="button" aria-label="Previous vlog">◀</button>
+          <button id="vlogNext" type="button" aria-label="Next vlog">▶</button>
+        </div>
+        <div class="videos-grid stagger reveal" id="vlogGrid">
           <a href="https://www.youtube.com/watch?v=h0UtWpyLZw8" target="_blank" rel="noopener" class="video-card">
             <div class="video-thumb"><img src="https://img.youtube.com/vi/h0UtWpyLZw8/0.jpg" alt="Vlog 1"
                 loading="lazy" />
@@ -5051,7 +5138,11 @@
             <p class="section-sub">The best designers never stop learning and never stop giving back. Here&rsquo;s where
               I put that belief into practice.</p>
           </div>
-          <div class="extra-grid stagger reveal">
+          <div class="gallery-carousel-controls extra-carousel-controls" aria-label="Extracurricular card controls">
+            <button id="extraPrev" type="button" aria-label="Previous extracurricular card">◀</button>
+            <button id="extraNext" type="button" aria-label="Next extracurricular card">▶</button>
+          </div>
+          <div class="extra-grid stagger reveal" id="extraGrid">
             <div class="extra-card">
               <div class="carousel-wrap extra-img-wrap">
                 <div class="carousel-inner" id="carousel1">
@@ -5063,8 +5154,10 @@
                       class="carousel-img" loading="lazy" /></div>
                 </div>
                 <div class="carousel-controls">
+                  <button class="carousel-pause-btn" id="prevBtn1" aria-label="Previous photo" title="Previous">◀</button>
                   <div class="carousel-dots" id="dots1"><span class="carousel-dot active" data-index="0"></span><span
                       class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span></div>
+                  <button class="carousel-pause-btn" id="nextBtn1" aria-label="Next photo" title="Next">▶</button>
                   <button class="carousel-pause-btn" id="pauseBtn1" aria-label="Pause carousel" title="Pause">⏸</button>
                 </div>
               </div>
@@ -5092,8 +5185,10 @@
                       alt="Kotak Education Foundation Session" class="carousel-img" loading="lazy" /></div>
                 </div>
                 <div class="carousel-controls">
+                  <button class="carousel-pause-btn" id="prevBtn2" aria-label="Previous photo" title="Previous">◀</button>
                   <div class="carousel-dots" id="dots2"><span class="carousel-dot active" data-index="0"></span><span
                       class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span></div>
+                  <button class="carousel-pause-btn" id="nextBtn2" aria-label="Next photo" title="Next">▶</button>
                   <button class="carousel-pause-btn" id="pauseBtn2" aria-label="Pause carousel" title="Pause">⏸</button>
                 </div>
               </div>
@@ -5121,8 +5216,10 @@
                       class="carousel-img" loading="lazy" /></div>
                 </div>
                 <div class="carousel-controls">
+                  <button class="carousel-pause-btn" id="prevBtn3" aria-label="Previous photo" title="Previous">◀</button>
                   <div class="carousel-dots" id="dots3"><span class="carousel-dot active" data-index="0"></span><span
                       class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span></div>
+                  <button class="carousel-pause-btn" id="nextBtn3" aria-label="Next photo" title="Next">▶</button>
                   <button class="carousel-pause-btn" id="pauseBtn3" aria-label="Pause carousel" title="Pause">⏸</button>
                 </div>
               </div>
@@ -5157,7 +5254,11 @@
 
                 </div>
                 <div class="carousel-controls">
-                  <div class="carousel-dots" id="dots4"><span class="carousel-dot active" data-index="0"></span></div>
+                  <button class="carousel-pause-btn" id="prevBtn4" aria-label="Previous photo" title="Previous">◀</button>
+                  <div class="carousel-dots" id="dots4"><span class="carousel-dot active" data-index="0"></span><span
+                      class="carousel-dot" data-index="1"></span><span class="carousel-dot" data-index="2"></span><span
+                      class="carousel-dot" data-index="3"></span><span class="carousel-dot" data-index="4"></span></div>
+                  <button class="carousel-pause-btn" id="nextBtn4" aria-label="Next photo" title="Next">▶</button>
                   <button class="carousel-pause-btn" id="pauseBtn4" aria-label="Pause carousel" title="Pause">⏸</button>
                 </div>
               </div>
@@ -5516,10 +5617,12 @@
         }
 
         /* CAROUSEL AUTO-PLAY */
-        function initCarousel(carouselId, dotsId, pauseBtnId) {
+        function initCarousel(carouselId, dotsId, pauseBtnId, prevBtnId, nextBtnId) {
           const carousel = document.getElementById(carouselId);
           const dots = document.querySelectorAll(`#${dotsId} .carousel-dot`);
           const pauseBtn = document.getElementById(pauseBtnId);
+          const prevBtn = document.getElementById(prevBtnId);
+          const nextBtn = document.getElementById(nextBtnId);
           let current = 0;
           let isPaused = false;
           const total = carousel.querySelectorAll('.carousel-item').length;
@@ -5532,6 +5635,11 @@
 
           function next() {
             current = (current + 1) % total;
+            updateCarousel();
+          }
+
+          function previous() {
+            current = (current - 1 + total) % total;
             updateCarousel();
           }
 
@@ -5570,14 +5678,16 @@
           });
 
           pauseBtn.addEventListener('click', togglePause);
+          prevBtn.addEventListener('click', previous);
+          nextBtn.addEventListener('click', next);
 
           startAutoPlay();
         }
 
-        initCarousel('carousel1', 'dots1', 'pauseBtn1');
-        initCarousel('carousel2', 'dots2', 'pauseBtn2');
-        initCarousel('carousel3', 'dots3', 'pauseBtn3');
-        initCarousel('carousel4', 'dots4', 'pauseBtn4');
+        initCarousel('carousel1', 'dots1', 'pauseBtn1', 'prevBtn1', 'nextBtn1');
+        initCarousel('carousel2', 'dots2', 'pauseBtn2', 'prevBtn2', 'nextBtn2');
+        initCarousel('carousel3', 'dots3', 'pauseBtn3', 'prevBtn3', 'nextBtn3');
+        initCarousel('carousel4', 'dots4', 'pauseBtn4', 'prevBtn4', 'nextBtn4');
 
       </script>
       <script>
@@ -5617,6 +5727,35 @@
       </script>
       <script>
         (function () {
+          const grid = document.getElementById('extraGrid');
+          const prev = document.getElementById('extraPrev');
+          const next = document.getElementById('extraNext');
+          if (!grid || !prev || !next) return;
+
+          function getScrollAmount() {
+            const card = grid.querySelector('.extra-card');
+            if (!card) return grid.clientWidth;
+            const style = getComputedStyle(grid);
+            const gap = parseFloat(style.columnGap || style.gap || 0);
+            return card.getBoundingClientRect().width + gap;
+          }
+
+          function updateButtons() {
+            const maxScroll = grid.scrollWidth - grid.clientWidth - 1;
+            prev.disabled = grid.scrollLeft <= 5;
+            next.disabled = grid.scrollLeft >= maxScroll - 5;
+          }
+
+          prev.addEventListener('click', () => grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }));
+          next.addEventListener('click', () => grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }));
+          grid.addEventListener('scroll', updateButtons, { passive: true });
+          window.addEventListener('resize', updateButtons);
+          window.addEventListener('load', updateButtons);
+          updateButtons();
+        })();
+      </script>
+      <script>
+        (function () {
           const grid = document.getElementById('galleryGrid');
           const prev = document.getElementById('galleryPrev');
           const next = document.getElementById('galleryNext');
@@ -5648,6 +5787,40 @@
           window.addEventListener('resize', updateButtons);
           window.addEventListener('load', updateButtons);
           updateButtons();
+        })();
+      </script>
+      <script>
+        (function () {
+          function initContentCarousel(gridId, prevId, nextId) {
+            const grid = document.getElementById(gridId);
+            const prev = document.getElementById(prevId);
+            const next = document.getElementById(nextId);
+            if (!grid || !prev || !next) return;
+
+            function getScrollAmount() {
+              const card = grid.querySelector('.video-card');
+              if (!card) return grid.clientWidth;
+              const style = getComputedStyle(grid);
+              const gap = parseFloat(style.columnGap || style.gap || 0);
+              return card.getBoundingClientRect().width + gap;
+            }
+
+            function updateButtons() {
+              const maxScroll = grid.scrollWidth - grid.clientWidth - 1;
+              prev.disabled = grid.scrollLeft <= 5;
+              next.disabled = grid.scrollLeft >= maxScroll - 5;
+            }
+
+            prev.addEventListener('click', () => grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }));
+            next.addEventListener('click', () => grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }));
+            grid.addEventListener('scroll', updateButtons, { passive: true });
+            window.addEventListener('resize', updateButtons);
+            window.addEventListener('load', updateButtons);
+            updateButtons();
+          }
+
+          initContentCarousel('podcastGrid', 'podcastPrev', 'podcastNext');
+          initContentCarousel('vlogGrid', 'vlogPrev', 'vlogNext');
         })();
       </script>
       <script>
