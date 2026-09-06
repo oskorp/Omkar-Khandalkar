@@ -59,8 +59,8 @@
     actionRow.className = 'chatbot-actions';
     actions.forEach((action) => {
       if (!action || typeof action.label !== 'string' || typeof action.href !== 'string') return;
-      const isInternal = action.href.startsWith('#');
-      const isKnownExternal = /^https:\/\/(accessiq-codeos\.netlify\.app|mai-website-nldxkgar8-sakshi1520s-projects\.vercel\.app)\//.test(action.href);
+      const isInternal = action.href.startsWith('#') || action.href.startsWith('index.html#');
+      const isKnownExternal = /^https:\/\/(www\.behance\.net|accessiq-codeos\.netlify\.app|mai-website-nldxkgar8-sakshi1520s-projects\.vercel\.app)\//.test(action.href);
       if (!isInternal && !isKnownExternal) return;
       const link = document.createElement('a');
       link.className = 'chatbot-action';
@@ -87,7 +87,7 @@
 
     const content = document.createElement('div');
     content.className = 'chatbot-message-content';
-    content.textContent = text;
+    content.textContent = role === 'assistant' ? cleanResponseText(text) : text;
     item.appendChild(content);
 
     if (role === 'assistant' && options.actions) renderActions(item, options.actions);
@@ -119,9 +119,20 @@
     typing.id = 'chatbotTyping';
     typing.setAttribute('role', 'status');
     typing.setAttribute('aria-label', 'Omkiii is thinking');
-    typing.innerHTML = '<span></span><span></span><span></span>';
+    typing.innerHTML = '<span></span><span></span><span></span><em>Omkiii is thinking</em>';
     messages.appendChild(typing);
     scrollToLatest();
+  }
+
+  function cleanResponseText(text) {
+    return String(text)
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/__(.*?)__/g, '$1')
+      .replace(/`{1,3}/g, '')
+      .replace(/^#{1,6}\s+/gm, '')
+      .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+      .replace(/\s*\*\s*/g, ' ')
+      .trim();
   }
 
   function hideTyping() {
@@ -178,8 +189,9 @@
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(payload.error || 'Request failed');
       conversation.push({ role: 'user', content: question });
-      conversation.push({ role: 'assistant', content: payload.message });
-      addMessage(payload.message, 'assistant', { actions: payload.actions, copyable: true });
+      const answer = cleanResponseText(payload.message || '');
+      conversation.push({ role: 'assistant', content: answer });
+      addMessage(answer, 'assistant', { actions: payload.actions, copyable: true });
     } catch (error) {
       const errorMessage = error.message && error.message !== 'Request failed'
         ? error.message

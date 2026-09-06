@@ -59,21 +59,17 @@ function getActions(message) {
   const actions = [];
 
   if (/(accessiq|accessibility|wcag)/i.test(text)) {
-    actions.push({ label: 'View AccessIQ case study', href: '#cs-accessiq' });
     actions.push({ label: 'Open AccessIQ website', href: 'https://accessiq-codeos.netlify.app/' });
   } else if (/\bmai\b|website project|next\.js|tailwind/i.test(text)) {
-    actions.push({ label: 'View MAI case study', href: '#cs-mai' });
     actions.push({ label: 'Open MAI website', href: 'https://mai-website-nldxkgar8-sakshi1520s-projects.vercel.app/' });
-  } else if (/quantum|lms|cms|edtech/i.test(text)) {
-    actions.push({ label: 'View Quantum case study', href: '#cs-quantum' });
   } else if (/clio|investment assistant|fintech/i.test(text)) {
-    actions.push({ label: 'View Clio case study', href: '#cs-clio' });
+    actions.push({ label: 'View Clio case study on Behance', href: 'https://www.behance.net/gallery/231258555/Clio-AI-Investment-Assistant-Feature-Case-Study' });
   } else if (/tryfit|shopping app|ecommerce/i.test(text)) {
-    actions.push({ label: 'View Tryfit case study', href: '#cs-tryfit' });
+    actions.push({ label: 'View Tryfit case study on Behance', href: 'https://www.behance.net/gallery/209155525/UX-Case-Study-Shopping-App' });
   }
 
   if (/contact|hire|email|reach out|connect/i.test(text)) {
-    actions.push({ label: 'Contact Omkar', href: '#contact' });
+    actions.push({ label: 'Contact Omkar', href: 'index.html#contact' });
   }
 
   return actions.slice(0, 2);
