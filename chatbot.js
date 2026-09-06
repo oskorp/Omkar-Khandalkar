@@ -47,6 +47,8 @@
     }
   }
 
+  const isChatPage = document.body.dataset.chatPage === 'true';
+
   function scrollToLatest() {
     messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
   }
@@ -205,8 +207,20 @@
     renderSuggestions();
   }
 
-  toggle.addEventListener('click', () => setOpen(!panel.classList.contains('open')));
-  close.addEventListener('click', () => setOpen(false));
+  toggle.addEventListener('click', () => {
+    if (!isChatPage && window.innerWidth <= 767) {
+      window.location.href = 'omkiii.html';
+      return;
+    }
+    setOpen(!panel.classList.contains('open'));
+  });
+  close.addEventListener('click', () => {
+    if (isChatPage) {
+      window.location.href = 'index.html#chatbot';
+      return;
+    }
+    setOpen(false);
+  });
   clear?.addEventListener('click', resetConversation);
   send.addEventListener('click', () => sendMessage());
   input.addEventListener('keydown', (event) => {
@@ -227,5 +241,5 @@
   window.addEventListener('resize', syncMobileViewport);
 
   resetConversation();
-  setOpen(false);
+  setOpen(isChatPage);
 })();
