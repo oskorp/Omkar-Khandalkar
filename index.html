@@ -267,6 +267,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--nav-bg);bac
 .project-card.hidden{display:none;}
 .project-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3);border-color:var(--borderS);}
 .p-thumb{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;display:block;}
+.p-thumb-img{width:100%;height:100%;object-fit:cover;}
 .p-thumb-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .p-thumb-label{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.12);letter-spacing:.08em;text-transform:uppercase;}
 .p-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s var(--ease);}
@@ -775,25 +776,25 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
   </div>
 </div>
 
-<!-- PANEL: QUANTUM LMS -->
-<div class="cs-panel" id="cs-quantum" role="dialog" aria-modal="true" aria-label="Quantum LMS dashboard case study">
+<!-- PANEL: QUANTUM VIRTUAL CLASSROOM -->
+<div class="cs-panel" id="cs-quantum" role="dialog" aria-modal="true" aria-label="Quantum Virtual Classroom case study">
   <div class="cs-panel-nav">
     <button class="cs-back-btn" onclick="closeCS('cs-quantum')">
       <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Work
     </button>
-    <span class="cs-panel-nav-title">Quantum LMS Student Dashboard</span>
+    <span class="cs-panel-nav-title">Quantum Virtual Classroom</span>
     <span></span>
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#0d1d16 0%,#254f3a 100%);">
     <div class="container cs-hero-inner">
-      <div class="cs-tags"><span class="cs-tag">EdTech</span><span class="cs-tag">Accessibility</span><span class="cs-tag">Modern Dashboard</span><span class="cs-tag">Design Systems</span></div>
-      <h1>Quantum LMS Student Dashboard</h1>
-      <p class="cs-sub">An accessible, modern student dashboard for an enterprise LMS designed to make deadlines, progress, and next actions obvious for students without sacrificing depth for power users.</p>
+      <div class="cs-tags"><span class="cs-tag">EdTech</span><span class="cs-tag">Virtual Classroom</span><span class="cs-tag">Zoom Integration</span><span class="cs-tag">Teacher Tools</span></div>
+      <h1>Quantum Virtual Classroom</h1>
+      <p class="cs-sub">A virtual classroom experience integrated into Quantum LMS that helps teachers organise live lessons, connect Zoom sessions, manage attendance and participation, record classes, and make replays easy for students to find.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Senior UI Designer</div></div>
-        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Web Dashboard</div></div>
+        <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Quantum LMS Web App</div></div>
         <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">6 Months</div></div>
-        <div><div class="cs-meta-lbl">Focus</div><div class="cs-meta-val">Accessibility + UX</div></div>
+        <div><div class="cs-meta-lbl">Focus</div><div class="cs-meta-val">Teacher Workflow + Live Learning</div></div>
       </div>
     </div>
   </div>
@@ -801,62 +802,62 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
     <div class="cs-sec">
       <p class="sec-lbl">Overview</p>
       <h2>The brief in one sentence</h2>
-      <p>Redesign the student dashboard so it feels modern, clear, and usable across devices while meeting strict accessibility expectations for keyboard, screen reader, and zoom support.</p>
-      <p>The challenge wasn&rsquo;t just visual polish. It was helping students answer three questions instantly: What&rsquo;s due next? What&rsquo;s going well? What should I do now?</p>
-      <div class="cs-quote"><p>&ldquo;A dashboard should reduce friction, not add new questions.&rdquo;</p></div>
+      <p>Design a virtual classroom feature inside Quantum LMS that gives teachers one reliable place to plan, launch, manage, record, and review live online classes.</p>
+      <p>The challenge was connecting the flexibility of Zoom with the structure of an LMS. Teachers needed to organise sessions without duplicating work, while students needed a clear route to join live classes and watch recordings later.</p>
+      <div class="cs-quote"><p>&ldquo;The live class should feel like part of the course, not a separate link teachers have to manage on the side.&rdquo;</p></div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">The Problem</p>
-      <h2>Legacy dashboards overloaded students with information but not clarity</h2>
+      <h2>Live teaching was fragmented across tools</h2>
       <div class="two-col">
         <div>
-          <p>The original experience packed course browsing, task state, assessments, and progress into a flat surface that felt dense and difficult to scan. Students had to hunt for deadlines, and important information often appeared only in table-heavy layouts that were hard to use on smaller screens.</p>
-          <p>From an accessibility standpoint, the old pattern also relied on hover-based controls and brittle layouts that failed under zoom, keyboard use, and responsive reflow.</p>
+          <p>Teachers had to move between the LMS, calendars, Zoom links, attendance records, and recording locations to run one class. That fragmentation made preparation slower and made it difficult to maintain a reliable history of what happened in each session.</p>
+          <p>Students also needed a predictable place to see upcoming classes, join on time, and find the recording after the session ended.</p>
         </div>
         <div class="ic">
           <h3>Key pain points</h3>
           <ul>
-            <li>No always-visible view of what was due next</li>
-            <li>Critical interactions were not fully keyboard reachable</li>
-            <li>Layout broke or clipped at smaller widths and larger zoom</li>
-            <li>Course cards presented competing actions and little guidance</li>
-            <li>Students had to mentally connect progress, task state, and priorities</li>
+            <li>Teachers had to create and share Zoom links manually</li>
+            <li>Session scheduling was disconnected from course structure</li>
+            <li>Attendance and participation were difficult to manage consistently</li>
+            <li>Recordings were not clearly connected to the original class</li>
+            <li>Students had no single view for upcoming, live, and recorded sessions</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Approach</p>
-      <h2>Accessible by default, modern in practice</h2>
+      <h2>One classroom workflow inside the LMS</h2>
       <div class="three-col">
-        <div class="ic"><h3>Clear hierarchy</h3><p>Promoted task state into a dedicated, always-visible module so students could immediately see deadlines and urgency.</p></div>
-        <div class="ic"><h3>Accessible interactions</h3><p>Reworked controls to be keyboard operable, touch friendly, and usable without hover-only affordances.</p></div>
-        <div class="ic"><h3>Responsive system</h3><p>Built the dashboard as a flexible component system that reflowed cleanly from mobile to large displays without clipped content.</p></div>
+        <div class="ic"><h3>Organise</h3><p>Teachers create a classroom session from the course, add the topic and agenda, choose the date and time, and invite the right learners.</p></div>
+        <div class="ic"><h3>Connect</h3><p>Zoom is integrated into the session workflow so teachers can launch the live class from Quantum without managing a separate link.</p></div>
+        <div class="ic"><h3>Continue</h3><p>Attendance, recordings, notes, and replay access stay attached to the classroom session so learning can continue after the live event.</p></div>
       </div>
-      <p style="margin-top:1.8rem;">The redesign kept the experience warm and polished, but the core improvement was making the dashboard easier to understand and easier to use for a wide range of learners.</p>
+      <p style="margin-top:1.8rem;">The design treats a virtual class as a complete learning object, not only as a video meeting. Planning, teaching, documentation, and review are connected in one LMS-native experience.</p>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">What changed</p>
-      <h2>From scattered surfaces to a guided student journey</h2>
+      <h2>From meeting link to managed classroom</h2>
       <div class="learn-grid">
-        <div class="learn-item"><h4>Task overview first</h4><p>Due today, overdue, and upcoming tasks were brought forward into a dedicated area that answered the “what’s next?” question immediately.</p></div>
-        <div class="learn-item"><h4>One action per course card</h4><p>Course cards now focused on a single primary CTA so students didn’t have to choose between competing actions.</p></div>
-        <div class="learn-item"><h4>Accessibility as a product requirement</h4><p>Keyboard focus, screen-reader structure, contrast, and layout resilience were treated as core UX requirements, not afterthoughts.</p></div>
-        <div class="learn-item"><h4>Modern information architecture</h4><p>The dashboard was reorganised around learning progress, task states, and momentum instead of burying everything in one dense view.</p></div>
+        <div class="learn-item"><h4>Session planning</h4><p>Teachers can arrange classroom sessions around course topics, schedules, and learner groups instead of maintaining a separate calendar and link list.</p></div>
+        <div class="learn-item"><h4>Zoom launch and control</h4><p>Live meeting access is connected to the classroom record, reducing setup friction and making the join action clear for both teachers and students.</p></div>
+        <div class="learn-item"><h4>Live class management</h4><p>Attendance, participant status, announcements, and class notes are treated as part of the teaching workflow rather than manual follow-up work.</p></div>
+        <div class="learn-item"><h4>Recording and replay</h4><p>Recorded sessions are linked back to the class so students can review missed content and teachers can keep a durable learning history.</p></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Outcome</p>
-      <h2>Better clarity, better confidence, better handoff</h2>
+      <h2>A clearer operating system for live learning</h2>
       <div class="three-col">
-        <div class="stat-c"><div class="stat-big">WCAG</div><div class="stat-lbl">Aligned to keyboard, zoom, and non-hover interaction requirements</div></div>
-        <div class="stat-c"><div class="stat-big">1st</div><div class="stat-lbl">Always-visible task surface for near-term action</div></div>
-        <div class="stat-c"><div class="stat-big">Modern</div><div class="stat-lbl">A cleaner, calmer experience that still supports deeper student workflows</div></div>
+        <div class="stat-c"><div class="stat-big">1</div><div class="stat-lbl">LMS-native workflow for organising and launching a class</div></div>
+        <div class="stat-c"><div class="stat-big">360&deg;</div><div class="stat-lbl">Class history across scheduling, attendance, recording, and replay</div></div>
+        <div class="stat-c"><div class="stat-big">Zoom</div><div class="stat-lbl">Integrated live-session experience without a disconnected link journey</div></div>
       </div>
     </div>
     <div class="cs-cta-box">
-      <h2>Want to explore the full design reasoning?</h2>
-      <p>This project sits at the intersection of product UX, accessibility, and modern dashboard design for education.</p>
+      <h2>Want to explore the full classroom workflow?</h2>
+      <p>This project sits at the intersection of education technology, teacher productivity, live collaboration, and accessible learning continuity.</p>
       <div class="cta-row">
         <button class="btn btn-primary" onclick="closeCS('cs-quantum')">Back to Portfolio</button>
       </div>
@@ -998,14 +999,14 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
   </div>
   <div class="cs-hero-band" style="background:linear-gradient(135deg,#122010 0%,#1c3a18 100%);">
     <div class="container cs-hero-inner">
-      <div class="cs-tags"><span class="cs-tag">E commerce</span><span class="cs-tag">Mobile UX</span><span class="cs-tag">User Research</span><span class="cs-tag">Styling Feature</span></div>
+      <div class="cs-tags"><span class="cs-tag">E commerce</span><span class="cs-tag">Mobile UX</span><span class="cs-tag">User Research</span><span class="cs-tag">Try Before You Buy</span></div>
       <h1>Tryfit Shopping App</h1>
-      <p class="cs-sub">Clothing returns cost the industry billions every year, mostly because people can&rsquo;t tell if something will fit or suit them until they actually try it on. Tryfit gets rid of that guesswork. Order a few pieces, try them at home, and only pay for what you decide to keep.</p>
+      <p class="cs-sub">TryFit brings the confidence of an in-store trial to online fashion. Users schedule delivery for up to three items, try them at home while the delivery partner waits, and purchase or return them immediately.</p>
       <div class="cs-meta-row">
         <div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">UX Designer and Researcher</div></div>
         <div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">iOS Mobile App</div></div>
-        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">10 Weeks</div></div>
-        <div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Adobe XD, Lookback</div></div>
+        <div><div class="cs-meta-lbl">Duration</div><div class="cs-meta-val">6 Weeks</div></div>
+        <div><div class="cs-meta-lbl">Focus</div><div class="cs-meta-val">Research, IA, Wireframes, Prototyping</div></div>
       </div>
     </div>
   </div>
@@ -1013,20 +1014,20 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
     <div class="cs-sec">
       <p class="sec-lbl">Overview</p>
       <h2>The brief in one sentence</h2>
-      <p>Design a mobile shopping experience where people order clothes to try at home, get styling help on what to pick, and only pay for the pieces they actually want to keep. Everything else gets picked up for free, no questions asked.</p>
-      <div class="cs-quote"><p>&ldquo;I&rsquo;ve bought the same jeans in three different sizes hoping one fits. Two of them are still in the bag.&rdquo;</p></div>
+      <p>Design a try-before-you-buy mobile service that lets shoppers schedule a convenient delivery, try up to three clothing items at home, and make an immediate purchase or return decision with the delivery partner present.</p>
+      <div class="cs-quote"><p>&ldquo;I want to know the clothes fit before I commit, without going through another long return process.&rdquo;</p></div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">The Problem</p>
-      <h2>You can&rsquo;t really decide from a product page</h2>
+      <h2>Online fashion asks for commitment before confidence</h2>
       <div class="two-col">
-        <div><p>Clothing e commerce has had a returns problem for years, and most companies just treat it as a cost of doing business. But the real issue isn&rsquo;t logistics. It&rsquo;s that fit and style are things your body figures out, not your eyes. A photo can&rsquo;t tell you how a fabric actually falls, whether a colour works with your skin tone, or if a cut suits your shape. So buying turns into a guess, and guesses are what lead to returns, refunds, and people losing trust in the brand.</p><p>Tryfit&rsquo;s whole idea is to stop asking people to decide before they&rsquo;ve tried something on. The question moves from&ldquo;will I keep this?&rdquo;at checkout to&ldquo;did I actually like wearing this?&rdquo;at home, and payment only happens once that second question has an answer.</p></div>
+        <div><p>Online clothing shoppers cannot physically inspect fit, fabric, or product quality before purchase. Uncertain sizing, products that do not match their online representation, and limited return options create dissatisfaction and delay the purchase decision.</p><p>TryFit addresses this by combining online convenience with an at-home trial: shoppers choose a delivery slot, try the items immediately, and complete or reverse the purchase at the doorstep.</p></div>
         <div class="ic"><h3>Key pain points</h3><ul>
-          <li>Size charts are generic and ask for measurements most people don&rsquo;t know off the top of their head</li>
-          <li>Product photos show models with body proportions that are nothing like the shopper&rsquo;s own</li>
-          <li>People second guess style choices on their own, with no styling input before they buy</li>
-          <li>Standard return flows are slow, with refunds taking days and shipping something back feeling like a chore</li>
-          <li>There&rsquo;s no easy way to try a few options side by side without committing to all of them upfront</li>
+          <li>Uncertainty about size and fit before ordering</li>
+          <li>Products may not match their online representation</li>
+          <li>Return processes are long and inconvenient</li>
+          <li>Some vendors provide limited or no return options</li>
+          <li>Customers cannot easily try multiple items before committing</li>
         </ul></div>
       </div>
     </div>
@@ -1034,51 +1035,79 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
       <p class="sec-lbl">Research</p>
       <h2>Listening before designing</h2>
       <div class="three-col">
-        <div class="ic"><h3>Generative Research</h3><p>15 semi structured interviews with users aged 22 to 38. The goal was to understand how people actually decide to buy clothing online, and where their confidence usually breaks down.</p></div>
-        <div class="ic"><h3>Usability Baseline Testing</h3><p>Task based testing on the existing prototype, looking at completion rates, errors, and time on task across five key journeys, including ordering a try at home set and checking out a kept item.</p></div>
-        <div class="ic"><h3>Persona Development</h3><p>Three personas came out of this research: the Overcautious Returner, the Optimistic Guesser, and the Style Seeker, who wanted outfit guidance more than just a size check.</p></div>
+        <div class="ic"><h3>Qualitative Research</h3><p>In-depth interviews and focus groups explored sizing uncertainty, product mismatch, return frustrations, and how shoppers would use a try-before-you-buy service.</p></div>
+        <div class="ic"><h3>Quantitative Survey</h3><p>Survey responses tested the appeal of scheduled delivery and instant returns. 90% liked the core concept, while hygiene was the main concern raised.</p></div>
+        <div class="ic"><h3>Personas and Journey</h3><p>Personas for Tejas Jadhav and Arjun Patel clarified the needs of busy online shoppers: reliable fit, flexible delivery, accurate product representation, and efficient returns.</p></div>
       </div>
-      <p style="margin-top:1.8rem;">The big insight here was that people weren&rsquo;t mainly worried about whether something would look good in a photo. They were worried about whether it would actually feel good and suit them in person, things like fit around the shoulders, fabric weight, or whether two pieces really worked together as an outfit. These are tactile, personal questions that no image or size chart can really answer. So the design problem became about removing the risk of finding out, not just predicting the answer ahead of time.</p>
+      <p style="margin-top:1.8rem;">The research showed that the strongest opportunity was not another size chart. It was reducing commitment risk through a flexible delivery slot, a real try-on moment, and an immediate return path.</p>
+    </div>
+    <div class="cs-sec">
+      <p class="sec-lbl">Personas</p>
+      <h2>Two shoppers, one confidence problem</h2>
+      <div class="two-col">
+        <div class="ic">
+          <h3>Tejas Jadhav, 24</h3>
+          <p><strong>Software Developer &middot; Mumbai</strong></p>
+          <p>Tejas shops online because her schedule is busy, but inconsistent sizing and long returns make every clothing order feel risky.</p>
+          <ul>
+            <li><strong>Goal:</strong> Try clothes at home and purchase only what fits perfectly</li>
+            <li><strong>Frustrations:</strong> Inconsistent sizing, long returns, and inaccurate descriptions</li>
+            <li><strong>Needs:</strong> Reliable fit, flexible delivery scheduling, and convenient returns</li>
+          </ul>
+        </div>
+        <div class="ic">
+          <h3>Arjun Patel, 30</h3>
+          <p><strong>DevOps Engineer &middot; Mumbai</strong></p>
+          <p>Arjun prefers online shopping for convenience and fashion variety, but often keeps items that do not fit because returning them takes too much effort.</p>
+          <ul>
+            <li><strong>Goal:</strong> Confirm fit before committing to a purchase</li>
+            <li><strong>Frustrations:</strong> Difficult returns, product-quality mismatch, and limited time</li>
+            <li><strong>Needs:</strong> Accurate product representation, efficient returns, and on-time delivery</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Process</p>
-      <h2>From insight to interface</h2>
+      <h2>From research to a six-week product direction</h2>
+      <p>The process combined design strategy, information architecture, empathy mapping, user flows, wireframes, visual design, prototyping, usability testing, and survey insights.</p>
       <div class="steps">
-        <div class="step"><div class="step-n">01</div><div><h4>Rethinking the commitment moment</h4><p>We redesigned checkout around something we called a Try Set instead of a single purchase. Users add a few items to a try at home box with zero payment collected upfront, which moves the actual decision from before delivery to after.</p></div></div>
-        <div class="step"><div class="step-n">02</div><div><h4>The styling feature</h4><p>We built a styling layer that suggests pieces and full looks based on whatever a user adds to their Try Set, so the box that shows up feels curated rather than just a pile of size options.</p></div></div>
-        <div class="step"><div class="step-n">03</div><div><h4>Keep or return, all on one screen</h4><p>We designed a single screen after delivery where people swipe each item into&ldquo;Keep&rdquo;or&ldquo;Return,&rdquo;watch a running total update live, and confirm. This replaced what used to be a multi step return form with one simple decision.</p></div></div>
-        <div class="step"><div class="step-n">04</div><div><h4>Free pickup instead of a return label</h4><p>The return flow became a scheduled doorstep pickup instead of a packing and shipping task. That one change removed the biggest reason people end up keeping things they didn&rsquo;t really want.</p></div></div>
-        <div class="step"><div class="step-n">05</div><div><h4>Paying only for what you keep</h4><p>Final payment only kicks in for items marked&ldquo;Keep,&rdquo;and it&rsquo;s charged automatically once pickup is scheduled for everything else. So the app never asks people to pay for uncertainty, only for choices they&rsquo;ve already made.</p></div></div>
+        <div class="step"><div class="step-n">01</div><div><h4>Empathize and define</h4><p>Interview and survey findings were translated into a clear problem statement around fit uncertainty, return friction, and delayed purchase decisions.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h4>Structure the shopping experience</h4><p>Information architecture covered the menu, pincode and address setup, product listing, cart, offers, and the try-at-home journey.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h4>Design the delivery choice</h4><p>Users can choose a delivery time that fits their schedule, making the at-home trial practical for students, professionals, parents, and fashion enthusiasts.</p></div></div>
+        <div class="step"><div class="step-n">04</div><div><h4>Enable an immediate decision</h4><p>The delivery experience supports real-time feedback: keep satisfactory items and return unsuitable items instantly while the delivery partner is present.</p></div></div>
+        <div class="step"><div class="step-n">05</div><div><h4>Prototype and test</h4><p>Wireframes, visual design, prototyping, usability checks, and survey insights were iterated across the six-week timeline.</p></div></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Design Screens</p>
       <h2>What the work looks like</h2>
-      <div class="mock-wide"><div class="mock-ph"><div class="mph-lbl">Try Set and Styling Suggestions</div><div class="mph-note">images/tryfit/tryset.png</div></div></div>
+      <div class="mock-wide"><div class="mock-ph"><img src="images/Tryfit/1.png" alt="Tryfit home and menu screen"><div class="mph-lbl">Home and Menu</div></div></div>
       <div class="mock-grid">
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Styling Feature</div><div class="mph-note">images/tryfit/styling.png</div></div></div>
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Keep or Return Screen</div><div class="mph-note">images/tryfit/keepreturn.png</div></div></div>
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Pickup Scheduling</div><div class="mph-note">images/tryfit/pickup.png</div></div></div>
-        <div class="mock-frame"><div class="mock-ph"><div class="mph-lbl">Pay for What You Keep Checkout</div><div class="mph-note">images/tryfit/checkout.png</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><img src="images/Tryfit/2.png" alt="Tryfit pincode and address screen"><div class="mph-lbl">Pincode and Address</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><img src="images/Tryfit/3.png" alt="Tryfit product listing screen"><div class="mph-lbl">Product Listing</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><img src="images/Tryfit/4.png" alt="Tryfit cart and offers screen"><div class="mph-lbl">Cart and Offers</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><img src="images/Tryfit/5.png" alt="Tryfit scheduled delivery screen"><div class="mph-lbl">Schedule Delivery</div></div></div>
+        <div class="mock-frame"><div class="mock-ph"><img src="images/Tryfit/6.png" alt="Tryfit try-before-you-buy confirmation screen"><div class="mph-lbl">Try Before You Buy</div></div></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Outcome</p>
       <h2>Numbers that tell the real story</h2>
       <div class="three-col">
-        <div class="stat-c"><div class="stat-big">89%</div><div class="stat-lbl">Task completion, up from a 54% baseline</div></div>
-        <div class="stat-c"><div class="stat-big">35% lower</div><div class="stat-lbl">Drop offs at the keep or return decision screen</div></div>
-        <div class="stat-c"><div class="stat-big">3.2x</div><div class="stat-lbl">More items added per Try Set after the styling feature launched</div></div>
+        <div class="stat-c"><div class="stat-big">90%</div><div class="stat-lbl">Participants liked the try-before-you-buy concept</div></div>
+        <div class="stat-c"><div class="stat-big">80%</div><div class="stat-lbl">Would prefer delivery times scheduled around their availability</div></div>
+        <div class="stat-c"><div class="stat-big">76%</div><div class="stat-lbl">Said instant returns during delivery would improve shopping</div></div>
       </div>
     </div>
     <div class="cs-sec">
       <p class="sec-lbl">Learnings</p>
       <h2>What this project taught me</h2>
       <div class="learn-grid">
-        <div class="learn-item"><h4>Remove the decision, not just the doubt</h4><p>Trying to convince people with better photos and size charts only gets you so far. Letting them try things at home and pay afterward got rid of the decision entirely, and the anxiety went with it.</p></div>
-        <div class="learn-item"><h4>Styling earns trust a catalogue can&rsquo;t</h4><p>Once the app started suggesting what to pair with something a user picked, people stopped treating Tryfit like a store and started treating it more like a stylist. That shift is what drove bigger Try Sets.</p></div>
-        <div class="learn-item"><h4>Free pickup is the real lever</h4><p>The pay for what you keep model only works if returning the rest feels effortless. The moment we swapped return labels for scheduled pickup, keep rates and repeat orders both went up.</p></div>
-        <div class="learn-item"><h4>One screen beats five steps</h4><p>The original return flow had separate screens for selecting items, giving a reason, and confirming. Folding all of that into one swipeable keep or return screen with a live running total cut abandonment by a lot.</p></div>
+        <div class="learn-item"><h4>Confidence comes from physical confirmation</h4><p>Fit, size, and product quality are difficult to judge from a screen. A short at-home trial closes the gap between online convenience and real-world confidence.</p></div>
+        <div class="learn-item"><h4>Convenience must include timing</h4><p>Scheduled delivery is central to the experience because the trial only works when it fits the shopper&rsquo;s day.</p></div>
+        <div class="learn-item"><h4>Instant returns reduce friction</h4><p>Returning items while the delivery partner is still present removes packaging, waiting, and uncertainty from the return journey.</p></div>
+        <div class="learn-item"><h4>Trust needs a hygiene answer</h4><p>One participant raised a valid concern about multiple people trying the same garments. Hygiene and item-handling rules are important product requirements for the next iteration.</p></div>
       </div>
     </div>
     <div class="cs-cta-box">
@@ -1537,10 +1566,7 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
       </div>
     </div>
     <div class="filter-row stagger reveal">
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="ux">UX Design</button>
-      <button class="filter-btn" data-filter="fintech">Fintech</button>
-      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="filter-btn active" data-filter="design">Design</button>
       <button class="filter-btn" data-filter="dev">Development</button>
     </div>
     <div class="projects-carousel-shell stagger reveal">
@@ -1550,7 +1576,7 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
       </div>
       <div class="projects-grid">
 
-      <div class="project-card" data-categories="ux fintech" onclick="openCS('cs-clio')">
+      <div class="project-card" data-categories="design" onclick="openCS('cs-clio')">
         <div class="p-thumb">
           <img class="p-thumb-img" src="images/clio/Clio_cover.png" alt="Clio — AI Investment Assistant">
           <div class="p-overlay"><span>Open Case Study</span></div>
@@ -1566,33 +1592,20 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
         </div>
       </div>
 
-      <div class="project-card" data-categories="ux edtech" onclick="openCS('cs-quantum')">
-        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#10261d,#2d5a45);"><span class="p-thumb-label">Quantum</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+      <div class="project-card" data-categories="design" onclick="openCS('cs-quantum')">
+        <div class="p-thumb"><img class="p-thumb-img" src="images/quantum/lms_cover.png" alt="Quantum Virtual Classroom"><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
-          <div class="p-tags"><span class="p-tag">EdTech</span><span class="p-tag">Accessibility</span><span class="p-tag">Dashboard UX</span></div>
-          <h3>Quantum LMS Student Dashboard</h3>
-          <p>An accessible, modern student dashboard for an enterprise LMS designed to make deadlines, progress, and next actions obvious without sacrificing depth for power users.</p>
+          <div class="p-tags"><span class="p-tag">EdTech</span><span class="p-tag">Virtual Classroom</span><span class="p-tag">Zoom Integration</span></div>
+          <h3>Quantum Virtual Classroom</h3>
+          <p>A teacher-focused classroom feature integrated with Quantum LMS for arranging, managing, recording, and reviewing live Zoom lessons.</p>
           <div class="p-card-footer">
             <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-quantum')">Read Case Study</button>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-categories="ux ecommerce" onclick="openCS('cs-assure')">
-        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0a1a14,#0f2d20);"><span class="p-thumb-label">Assure</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
-        <div class="p-body">
-          <div class="p-tags"><span class="p-tag">Ecommerce</span><span class="p-tag">Trust Design</span></div>
-          <h3>Amazon Assure</h3>
-          <p>Postpurchase anxiety is a trust killer. This feature redesign fixes what happens after users click&ldquo;Buy Now&rdquo;and the silence that follows.</p>
-          <div class="p-card-footer">
-            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-assure')">Read Case Study</button>
-            <a href="https://www.behance.net/gallery/229228627/Amazon-Assure-Prodcut-Feature-Case-Study" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-categories="ux ecommerce" onclick="openCS('cs-tryfit')">
-        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#122010,#1c3a18);"><span class="p-thumb-label">Tryfit</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+      <div class="project-card" data-categories="design" onclick="openCS('cs-tryfit')">
+        <div class="p-thumb"><img class="p-thumb-img" src="images/Tryfit/tryfit_cover.png" alt="Tryfit Shopping App"><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
           <div class="p-tags"><span class="p-tag">Ecommerce</span><span class="p-tag">User Research</span><span class="p-tag">Mobile</span></div>
           <h3>Tryfit Shopping App</h3>
@@ -1604,21 +1617,8 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
         </div>
       </div>
 
-      <div class="project-card" data-categories="ux" onclick="openCS('cs-codevault')">
-        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0d2818,#1a4d2e);"><span class="p-thumb-label">CodeVault</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
-        <div class="p-body">
-          <div class="p-tags"><span class="p-tag">ELearning</span><span class="p-tag">Mobile</span></div>
-          <h3>CodeVault Learn to Code</h3>
-          <p>Interview prep shouldn&rsquo;t feel like homework. A mobile learning companion built around how developers actually retain knowledge.</p>
-          <div class="p-card-footer">
-            <button class="btn btn-primary cs-btn" onclick="event.stopPropagation();openCS('cs-codevault')">Read Case Study</button>
-            <a href="https://www.behance.net/gallery/173062333/CodeValutThe-ultimate-companion-for-your-interviews" target="_blank" rel="noopener" class="btn btn-outline cs-btn" onclick="event.stopPropagation()">Behance</a>
-          </div>
-        </div>
-      </div>
-
       <div class="project-card" data-categories="dev" onclick="openCS('cs-mai')">
-        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#091a12,#0d2d1a);"><span class="p-thumb-label">MAI Labs</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+        <div class="p-thumb"><img class="p-thumb-img" src="images/mai/mai_cover.png" alt="MAI Labs Company Website"><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
           <div class="p-tags"><span class="p-tag">Next.js</span><span class="p-tag">Tailwind CSS</span><span class="p-tag">Frontend</span></div>
           <h3>MAI Labs Company Website</h3>
@@ -1629,8 +1629,8 @@ footer{background:transparent;border-top:none;padding:0 0 0 0;width:100%;margin:
         </div>
       </div>
 
-      <div class="project-card" data-categories="dev ux" onclick="openCS('cs-accessiq')">
-        <div class="p-thumb"><div class="p-thumb-bg" style="background:linear-gradient(135deg,#0e200e,#173517);"><span class="p-thumb-label">AccessIQ</span></div><div class="p-overlay"><span>Open Case Study</span></div></div>
+      <div class="project-card" data-categories="dev" onclick="openCS('cs-accessiq')">
+        <div class="p-thumb"><img class="p-thumb-img" src="images/accessiq/accessiq_cover.svg" alt="AccessIQ WCAG Summariser"><div class="p-overlay"><span>Open Case Study</span></div></div>
         <div class="p-body">
           <div class="p-tags"><span class="p-tag">Accessibility</span><span class="p-tag">Design + Dev</span><span class="p-tag">AI Tool</span></div>
           <h3>AccessIQ WCAG Summariser</h3>
@@ -2041,6 +2041,7 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     });
   });
 });
+document.querySelector('.filter-btn.active')?.click();
 
 /* CASE STUDY PANEL OPEN/CLOSE */
 function openCS(id){

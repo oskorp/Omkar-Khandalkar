@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">AccessIQ accessibility tool cover</title>
+  <desc id="desc">Abstract accessibility audit interface for the AccessIQ project.</desc>
+  <rect width="960" height="600" fill="#0e200e"/><rect x="76" y="64" width="808" height="472" rx="26" fill="#173517" stroke="#5c9b62" stroke-width="2"/>
+  <rect x="76" y="64" width="808" height="76" rx="26" fill="#245126"/><circle cx="120" cy="102" r="11" fill="#a3e6a0"/><rect x="150" y="91" width="148" height="22" rx="11" fill="#d2f4cf"/>
+  <rect x="122" y="178" width="214" height="282" rx="18" fill="#1f4822"/><circle cx="229" cy="264" r="62" fill="none" stroke="#9ce39a" stroke-width="14"/><path d="M191 264l27 28 53-61" fill="none" stroke="#d2f4cf" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><rect x="166" y="366" width="126" height="14" rx="7" fill="#a3e6a0"/><rect x="158" y="396" width="142" height="12" rx="6" fill="#73b878"/>
+  <rect x="376" y="178" width="450" height="82" rx="16" fill="#245126"/><rect x="408" y="208" width="156" height="18" rx="9" fill="#d2f4cf"/><rect x="704" y="201" width="78" height="30" rx="15" fill="#63bd68"/>
+  <rect x="376" y="284" width="450" height="82" rx="16" fill="#245126"/><rect x="408" y="314" width="198" height="18" rx="9" fill="#d2f4cf"/><rect x="704" y="307" width="78" height="30" rx="15" fill="#e7b85c"/>
+  <rect x="376" y="390" width="450" height="70" rx="16" fill="#245126"/><rect x="408" y="416" width="178" height="18" rx="9" fill="#d2f4cf"/><rect x="704" y="409" width="78" height="30" rx="15" fill="#d96a68"/>
+</svg>
