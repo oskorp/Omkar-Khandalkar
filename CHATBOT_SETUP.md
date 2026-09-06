@@ -7,7 +7,7 @@ Ask Omkar is a static-site chatbot with a browser UI in `chatbot.js`, a local ed
 1. Open [OpenRouter keys](https://openrouter.ai/keys) and create an API key.
 2. Copy `.env.example` to `.env` for local Netlify development.
 3. Set `OPENROUTER_API_KEY` to the OpenRouter key stored in your server environment.
-4. Optionally set `OPENROUTER_MODEL`; the default is `google/gemini-2.0-flash-exp:free`.
+4. Optionally set `OPENROUTER_MODEL`; the default is `openrouter/free`.
 4. Never commit `.env` or put the key in HTML, browser JavaScript, or a `NEXT_PUBLIC_`/client-exposed variable.
 
 On Netlify, add `OPENROUTER_API_KEY` in Site configuration > Environment variables. The function reads it at request time. OpenRouter free-model limits and availability depend on the selected model.

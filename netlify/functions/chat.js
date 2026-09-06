@@ -121,7 +121,7 @@ exports.handler = async (event) => {
   ];
 
   try {
-    const model = process.env.OPENROUTER_MODEL?.trim() || 'google/gemini-2.0-flash-exp:free';
+    const model = process.env.OPENROUTER_MODEL?.trim() || 'openrouter/free';
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -143,13 +143,17 @@ exports.handler = async (event) => {
 
     if (!response.ok) {
       console.error('OpenRouter request failed:', response.status);
+      const providerError = await response.json().catch(() => ({}));
+      const providerMessage = typeof providerError.error?.message === 'string'
+        ? providerError.error.message.slice(0, 240)
+        : '';
       if (response.status === 401) {
         return jsonResponse(502, { error: 'OpenRouter rejected the server key. Check OPENROUTER_API_KEY in Netlify and redeploy.' });
       }
       if (response.status === 429) {
         return jsonResponse(429, { error: 'OpenRouter free-model limit reached. Please try again later or choose another model.' });
       }
-      return jsonResponse(502, { error: `OpenRouter rejected the request (${response.status}). Check OPENROUTER_MODEL and API key permissions.` });
+      return jsonResponse(502, { error: `OpenRouter rejected the request (${response.status}).${providerMessage ? ` ${providerMessage}` : ' Check OPENROUTER_MODEL and API key permissions.'}` });
     }
 
     const result = await response.json();
