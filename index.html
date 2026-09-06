@@ -1149,6 +1149,11 @@
       -webkit-overflow-scrolling: touch;
     }
 
+    #cs-assure,
+    #cs-codevault {
+      display: none !important;
+    }
+
     .cs-panel.open {
       transform: translateX(0);
     }
@@ -3212,9 +3217,9 @@
       </div>
       <div class="cs-nav-btns">
         <span></span>
-        <button class="cs-nav-btn" onclick="closeCS('cs-clio');openCS('cs-assure')">
+        <button class="cs-nav-btn" onclick="closeCS('cs-clio');openCS('cs-quantum')">
           <span class="cs-nav-btn-dir">Next Case Study &rarr;</span>
-          <span class="cs-nav-btn-name">Amazon Assure</span>
+          <span class="cs-nav-btn-name">Quantum</span>
         </button>
       </div>
     </div>
@@ -3379,9 +3384,9 @@
           <span class="cs-nav-btn-dir">&larr; Previous</span>
           <span class="cs-nav-btn-name">Clio</span>
         </button>
-        <button class="cs-nav-btn" onclick="closeCS('cs-quantum');openCS('cs-assure')">
+        <button class="cs-nav-btn" onclick="closeCS('cs-quantum');openCS('cs-tryfit')">
           <span class="cs-nav-btn-dir">Next Case Study &rarr;</span>
-          <span class="cs-nav-btn-name">Amazon Assure</span>
+          <span class="cs-nav-btn-name">Tryfit</span>
         </button>
       </div>
     </div>
@@ -3891,11 +3896,11 @@
         </div>
       </div>
       <div class="cs-nav-btns">
-        <button class="cs-nav-btn" onclick="closeCS('cs-tryfit');openCS('cs-assure')">
-          <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Amazon Assure</span>
+        <button class="cs-nav-btn" onclick="closeCS('cs-tryfit');openCS('cs-quantum')">
+          <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Quantum</span>
         </button>
-        <button class="cs-nav-btn" onclick="closeCS('cs-tryfit');openCS('cs-codevault')">
-          <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">CodeVault</span>
+        <button class="cs-nav-btn" onclick="closeCS('cs-tryfit');openCS('cs-mai')">
+          <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">MAI Labs</span>
         </button>
       </div>
     </div>
@@ -4373,8 +4378,8 @@
         </div>
       </div>
       <div class="cs-nav-btns">
-        <button class="cs-nav-btn" onclick="closeCS('cs-mai');openCS('cs-codevault')">
-          <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">CodeVault</span>
+        <button class="cs-nav-btn" onclick="closeCS('cs-mai');openCS('cs-tryfit')">
+          <span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Tryfit</span>
         </button>
         <button class="cs-nav-btn" onclick="closeCS('cs-mai');openCS('cs-accessiq')">
           <span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">AccessIQ</span>
@@ -6273,7 +6278,6 @@ Why this matters: Engineering background + design mindset = someone who actually
               response: `The portfolio hits different. Here's what Omkar's shipped:
 
 🎯 **Clio AI Investment Assistant** - Progressive disclosure for financial data
-🛍️ **Amazon Assure** - Trust-building for post-purchase anxiety
 🏢 **MAI Labs Website** - Enterprise site with 94 Lighthouse score
 🔍 **AccessIQ** - WCAG compliance tool
 💰 **Fintech Dashboard Redesign** - Enterprise-scale system thinking
