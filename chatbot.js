@@ -7,6 +7,7 @@
   const messages = document.getElementById('chatbotMessages');
   const suggestions = document.getElementById('chatbotSuggestions');
   const clear = document.getElementById('chatbotClear');
+  const inputForm = input?.closest('form');
 
   if (!panel || !toggle || !close || !input || !send || !messages) return;
 
@@ -27,6 +28,7 @@
   const conversation = [];
   let pending = false;
   let lastQuestion = '';
+  let composing = false;
 
   function syncMobileViewport() {
     if (!window.visualViewport || window.innerWidth > 767) return;
@@ -40,6 +42,7 @@
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.setAttribute('aria-label', isOpen ? 'Close Omkiii' : 'Open Omkiii');
     toggle.setAttribute('title', isOpen ? 'Close Omkiii' : 'Open Omkiii');
+    panel.setAttribute('aria-hidden', String(!isOpen));
     if (isOpen) {
       syncMobileViewport();
       requestAnimationFrame(() => input.focus({ preventScroll: true }));
@@ -209,15 +212,21 @@
   });
   close.addEventListener('click', () => {
     if (isChatPage) {
-      window.location.href = 'index.html#chatbot';
+      window.location.replace('./index.html');
       return;
     }
     setOpen(false);
   });
   clear?.addEventListener('click', resetConversation);
-  send.addEventListener('click', () => sendMessage());
+  inputForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    sendMessage();
+  });
+  input.addEventListener('compositionstart', () => { composing = true; });
+  input.addEventListener('compositionend', () => { composing = false; });
   input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    const isEnter = event.key === 'Enter' || event.keyCode === 13;
+    if (isEnter && !event.shiftKey && !composing && event.isComposing !== true) {
       event.preventDefault();
       sendMessage();
     }

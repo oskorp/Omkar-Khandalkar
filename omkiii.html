@@ -33,7 +33,7 @@
     .chatbot-status::before { content: ''; display: inline-block; width: 6px; height: 6px; margin: 0 .3rem .05rem .4rem; border-radius: 50%; background: #34d399; }
     .chatbot-clear, .chatbot-close { border: 0; color: var(--muted); background: transparent; cursor: pointer; min-width: 44px; min-height: 44px; }
     .chatbot-clear { margin-left: auto; font-size: .72rem; }
-    .chatbot-close { font-size: 1.6rem; }
+    .chatbot-close { position: relative; z-index: 1; font-size: 1.6rem; touch-action: manipulation; }
     .chatbot-clear:hover, .chatbot-close:hover { color: var(--text); }
     .chatbot-messages { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; display: flex; flex-direction: column; gap: .8rem; padding: 1rem; }
     .chatbot-message { display: flex; flex-direction: column; gap: .25rem; animation: fadeUp .25s ease; }
@@ -52,6 +52,7 @@
     .chatbot-typing span:nth-child(3) { animation-delay: .3s; }
     .chatbot-typing em { margin-left: .25rem; font-style: normal; }
     .chatbot-input-wrapper { display: flex; flex: 0 0 auto; gap: .5rem; padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--border); background: var(--bg); }
+    .chatbot-form { display: flex; width: 100%; gap: .5rem; }
     .chatbot-input { width: 100%; min-height: 44px; max-height: 110px; resize: none; padding: .7rem .85rem; border: 1px solid var(--border); border-radius: 12px; outline: 0; background: var(--card); color: var(--text); line-height: 1.4; }
     .chatbot-input:focus { border-color: var(--accent); }
     .chatbot-send { min-width: 46px; min-height: 46px; border: 0; border-radius: 12px; background: var(--accent); color: var(--btn-on-accent); cursor: pointer; font-size: 1.1rem; }
@@ -78,8 +79,10 @@
       <div class="chatbot-messages" id="chatbotMessages"></div>
       <div class="chatbot-suggestions" id="chatbotSuggestions" aria-label="Suggested questions"></div>
       <div class="chatbot-input-wrapper">
+        <form class="chatbot-form" id="chatbotForm">
         <textarea id="chatbotInput" class="chatbot-input" rows="1" placeholder="Ask anything about Omkar..." autocomplete="off" aria-label="Message for Omkiii"></textarea>
-        <button class="chatbot-send" id="chatbotSend" type="button" aria-label="Send message">→</button>
+        <button class="chatbot-send" id="chatbotSend" type="submit" aria-label="Send message">→</button>
+        </form>
       </div>
     </section>
   </main>
