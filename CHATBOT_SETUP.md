@@ -1,15 +1,16 @@
 # Ask Omkar setup
 
-Ask Omkar is a static-site chatbot with a browser UI in `chatbot.js`, a local editable knowledge base in `data/omkar/knowledge.json`, and a server-side Netlify function in `netlify/functions/chat.js`.
+Ask Omkar is a static-site chatbot with a browser UI in `chatbot.js`, a local editable knowledge base in `data/omkar/knowledge.json`, and a server-side Netlify function in `netlify/functions/chat.js`. It uses Google's Gemini API.
 
 ## Configure the AI provider
 
-1. Copy `.env.example` to `.env` for local Netlify development.
-2. Set `OPENAI_API_KEY` to the OpenAI key stored in your server environment.
-3. Optionally set `OPENAI_MODEL`; the default is `gpt-4o-mini`.
+1. Open [Google AI Studio](https://aistudio.google.com/apikey) and create a Gemini API key.
+2. Copy `.env.example` to `.env` for local Netlify development.
+3. Set `GEMINI_API_KEY` to the Gemini key stored in your server environment.
+4. Optionally set `GEMINI_MODEL`; the default is `gemini-2.0-flash`.
 4. Never commit `.env` or put the key in HTML, browser JavaScript, or a `NEXT_PUBLIC_`/client-exposed variable.
 
-On Netlify, add the variables in Site configuration > Environment variables. The function reads them at request time.
+On Netlify, add `GEMINI_API_KEY` in Site configuration > Environment variables. The function reads it at request time. Gemini free-tier limits and availability depend on the Google AI Studio account and selected model.
 
 ## Run locally
 

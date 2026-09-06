@@ -171,7 +171,10 @@
       conversation.push({ role: 'assistant', content: payload.message });
       addMessage(payload.message, 'assistant', { actions: payload.actions, copyable: true });
     } catch (error) {
-      addMessage('Oops. My brain temporarily disconnected from the internet. Try again in a moment.', 'assistant', {
+      const errorMessage = error.message && error.message !== 'Request failed'
+        ? error.message
+        : 'Oops. My brain temporarily disconnected from the internet. Try again in a moment.';
+      addMessage(errorMessage, 'assistant', {
         copyable: false
       });
       const retry = document.createElement('button');

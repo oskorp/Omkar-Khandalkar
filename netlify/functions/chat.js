@@ -87,8 +87,8 @@ exports.handler = async (event) => {
     return jsonResponse(429, { error: 'Too many requests. Please try again in a minute.' });
   }
 
-  if (!process.env.OPENAI_API_KEY) {
-    return jsonResponse(503, { error: 'Chat service is not configured yet.' });
+  if (!process.env.GEMINI_API_KEY) {
+    return jsonResponse(503, { error: 'Gemini chat service is not configured yet.' });
   }
 
   let payload;
@@ -115,34 +115,46 @@ exports.handler = async (event) => {
     : '';
 
   const messages = [
-    { role: 'system', content: `${systemPrompt}\n\nPersonal knowledge base:\n${JSON.stringify(knowledge)}` },
     ...normalizeHistory(payload.conversation),
     ...(contextMessage ? [{ role: 'user', content: contextMessage }] : []),
     { role: 'user', content: message }
   ];
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-        messages,
-        temperature: 0.45,
-        max_tokens: 500
+        system_instruction: {
+          parts: [{ text: `${systemPrompt}\n\nPersonal knowledge base:\n${JSON.stringify(knowledge)}` }]
+        },
+        contents: messages.map((item) => ({
+          role: item.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: item.content }]
+        })),
+        generationConfig: {
+          temperature: 0.45,
+          maxOutputTokens: 500
+        }
       })
     });
 
     if (!response.ok) {
-      console.error('OpenAI request failed:', response.status);
-      return jsonResponse(502, { error: 'The assistant is temporarily unavailable.' });
+      console.error('Gemini request failed:', response.status);
+      if (response.status === 401) {
+        return jsonResponse(502, { error: 'Gemini rejected the server key. Check GEMINI_API_KEY in Netlify and redeploy.' });
+      }
+      if (response.status === 429) {
+        return jsonResponse(429, { error: 'Gemini free-tier limit reached. Please try again later.' });
+      }
+      return jsonResponse(502, { error: 'Gemini is temporarily unavailable.' });
     }
 
     const result = await response.json();
-    const answer = result.choices?.[0]?.message?.content?.trim();
+    const answer = result.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('').trim();
     if (!answer) return jsonResponse(502, { error: 'The assistant returned an empty response.' });
 
     return jsonResponse(200, { message: answer, actions: getActions(message) });
