@@ -121,26 +121,32 @@ exports.handler = async (event) => {
   ];
 
   try {
-    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+    const configuredModel = process.env.GEMINI_MODEL?.trim();
+    const models = configuredModel ? [configuredModel, 'gemini-2.5-flash'] : ['gemini-2.5-flash'];
+    const requestBody = {
+      system_instruction: {
+        parts: [{ text: `${systemPrompt}\n\nPersonal knowledge base:\n${JSON.stringify(knowledge)}` }]
       },
-      body: JSON.stringify({
-        system_instruction: {
-          parts: [{ text: `${systemPrompt}\n\nPersonal knowledge base:\n${JSON.stringify(knowledge)}` }]
-        },
-        contents: messages.map((item) => ({
-          role: item.role === 'assistant' ? 'model' : 'user',
-          parts: [{ text: item.content }]
-        })),
-        generationConfig: {
-          temperature: 0.45,
-          maxOutputTokens: 500
-        }
-      })
-    });
+      contents: messages.map((item) => ({
+        role: item.role === 'assistant' ? 'model' : 'user',
+        parts: [{ text: item.content }]
+      })),
+      generationConfig: {
+        temperature: 0.45,
+        maxOutputTokens: 500
+      }
+    };
+    let response;
+    let model = models[0];
+    for (const candidate of models) {
+      model = candidate;
+      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${candidate}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+      });
+      if (response.status !== 404 || candidate === models[models.length - 1]) break;
+    }
 
     if (!response.ok) {
       console.error('Gemini request failed:', response.status);
