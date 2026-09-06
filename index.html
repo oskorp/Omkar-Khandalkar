@@ -5868,13 +5868,21 @@
       <div id="chatbotContainer" class="chatbot-container">
         <div class="chatbot-panel" id="chatbotPanel" role="dialog" aria-label="Chatbot panel" aria-modal="false">
           <div class="chatbot-header">
-            <h3 id="chatbotTitle">Ask About Omkar</h3>
+            <div class="chatbot-heading">
+              <div class="chatbot-avatar" aria-hidden="true">O</div>
+              <div>
+                <h3 id="chatbotTitle">ASK OMKAR</h3>
+                <p>Omkar's AI sidekick <span class="chatbot-status">Active</span></p>
+              </div>
+            </div>
+            <button class="chatbot-clear" id="chatbotClear" type="button">Clear</button>
             <button class="chatbot-close" id="chatbotClose" type="button" aria-label="Close chatbot">&times;</button>
           </div>
           <div class="chatbot-messages" id="chatbotMessages"></div>
+          <div class="chatbot-suggestions" id="chatbotSuggestions" aria-label="Suggested questions"></div>
           <div class="chatbot-input-wrapper">
-            <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask anything about Omkar 🤖"
-              autocomplete="off" />
+            <textarea id="chatbotInput" class="chatbot-input" placeholder="Ask anything about Omkar..."
+              autocomplete="off" rows="1" aria-label="Message for Ask Omkar"></textarea>
             <button class="chatbot-send" id="chatbotSend" type="button" aria-label="Send message">→</button>
           </div>
         </div>
@@ -6140,8 +6148,38 @@
         }
       </style>
 
+      <style>
+        .chatbot-heading { display: flex; align-items: center; gap: .7rem; }
+        .chatbot-avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--btn-on-accent); font-weight: 700; }
+        .chatbot-heading p { margin: .2rem 0 0; color: var(--muted); font-size: .7rem; }
+        .chatbot-status::before { content: ''; display: inline-block; width: 6px; height: 6px; margin: 0 .3rem .05rem .4rem; border-radius: 50%; background: #34d399; }
+        .chatbot-clear { margin-left: auto; background: none; border: 0; color: var(--muted); cursor: pointer; font-size: .72rem; padding: .5rem; }
+        .chatbot-clear:hover, .chatbot-clear:focus-visible { color: var(--text); }
+        .chatbot-suggestions { display: flex; gap: .45rem; overflow-x: auto; padding: 0 1rem .75rem; scrollbar-width: none; }
+        .chatbot-suggestions:empty { display: none; }
+        .chatbot-suggestion { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.04); color: var(--text2); cursor: pointer; padding: .45rem .7rem; font: inherit; font-size: .7rem; white-space: nowrap; }
+        .chatbot-suggestion:hover, .chatbot-suggestion:focus-visible { border-color: var(--borderS); color: var(--text); }
+        .chatbot-message-content { white-space: pre-wrap; }
+        .chatbot-actions { display: flex; flex-wrap: wrap; gap: .4rem; max-width: 78%; margin-top: .35rem; }
+        .chatbot-action, .chatbot-retry, .chatbot-copy { border: 1px solid var(--border); border-radius: 999px; background: transparent; color: var(--text2); cursor: pointer; font: inherit; font-size: .7rem; padding: .4rem .65rem; text-decoration: none; }
+        .chatbot-action:hover, .chatbot-retry:hover, .chatbot-copy:hover { border-color: var(--borderS); color: var(--text); }
+        .chatbot-copy { align-self: flex-start; margin-top: .25rem; }
+        .chatbot-retry { display: block; margin-top: .5rem; }
+        .chatbot-typing { align-self: flex-start; }
+        .chatbot-input { resize: none; max-height: 100px; line-height: 1.4; }
+        @media (max-width: 480px) {
+          .chatbot-container { inset: 0; bottom: auto; right: auto; align-items: stretch; }
+          .chatbot-toggle { position: fixed; right: 1rem; bottom: 5.2rem; z-index: 2; }
+          .chatbot-panel { inset: .6rem; width: auto; height: calc(100dvh - 1.2rem); max-height: none; border-radius: 16px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .chatbot-panel, .chatbot-message, .chatbot-send { transition: none; animation: none; }
+        }
+      </style>
+
       <script>
         (function () {
+          return;
           const chatbotToggle = document.getElementById('chatbotToggle');
           const chatbotClose = document.getElementById('chatbotClose');
           const chatbotPanel = document.getElementById('chatbotPanel');
@@ -6438,6 +6476,7 @@ Click any project card to see the full story. Omkar doesn't do shallow.`
           }, 500);
         })();
       </script>
+      <script src="chatbot.js" defer></script>
 </body>
 
 </html>

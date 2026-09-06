@@ -1,561 +1,216 @@
-<!-- CHATBOT -->
-<div id="chatbotContainer" class="chatbot-container">
-  <div class="chatbot-panel" id="chatbotPanel">
-    <div class="chatbot-header">
-      <h3>Ask About Omkar</h3>
-      <button class="chatbot-close" id="chatbotClose" aria-label="Close chatbot">&times;</button>
-    </div>
-    <div class="chatbot-messages" id="chatbotMessages"></div>
-    <div class="chatbot-input-wrapper">
-      <input 
-        type="text" 
-        id="chatbotInput" 
-        class="chatbot-input" 
-        placeholder="Ask anything about Omkar 🤖" 
-        autocomplete="off"
-      />
-      <button class="chatbot-send" id="chatbotSend" aria-label="Send message">→</button>
-    </div>
-  </div>
-  <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chatbot">
-    <span class="chatbot-icon">💬</span>
-  </button>
-</div>
+(() => {
+  const panel = document.getElementById('chatbotPanel');
+  const toggle = document.getElementById('chatbotToggle');
+  const close = document.getElementById('chatbotClose');
+  const input = document.getElementById('chatbotInput');
+  const send = document.getElementById('chatbotSend');
+  const messages = document.getElementById('chatbotMessages');
+  const suggestions = document.getElementById('chatbotSuggestions');
+  const clear = document.getElementById('chatbotClear');
 
-<style>
-/* ── CHATBOT STYLES ──────────────────────────────── */
-.chatbot-container {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 999;
-  font-family: 'Inter', system-ui, sans-serif;
-}
+  if (!panel || !toggle || !close || !input || !send || !messages) return;
 
-.chatbot-toggle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
-  transition: all 0.3s var(--ease);
-}
+  const starters = [
+    'What does Omkar actually do?',
+    'Tell me about his accessibility experience',
+    'What is his most interesting project?',
+    'Omkar ne LMS pe kya kaam kiya?',
+    'ओंकार काय काम करतो?',
+    'Ask me something unexpected'
+  ];
+  const unexpectedQuestions = [
+    'Would Omkar survive without Figma?',
+    'What would Omkar probably argue with a PM about?',
+    'What is something Omkar learned the hard way?',
+    'What would Omkar do if he was not a designer?'
+  ];
+  const conversation = [];
+  let pending = false;
+  let lastQuestion = '';
 
-.chatbot-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
-}
-
-.chatbot-toggle.hidden {
-  display: none;
-}
-
-.chatbot-panel {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  width: 380px;
-  height: 520px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transform: translateY(20px) scale(0.9);
-  pointer-events: none;
-  transition: all 0.3s var(--ease);
-}
-
-.chatbot-panel.open {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.chatbot-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.chatbot-header h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  margin: 0;
-}
-
-.chatbot-close {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.chatbot-close:hover {
-  color: var(--text);
-}
-
-.chatbot-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
-}
-
-.chatbot-message {
-  display: flex;
-  gap: 0.6rem;
-  animation: fadeUp 0.3s var(--ease);
-}
-
-.chatbot-message.user {
-  justify-content: flex-end;
-}
-
-.chatbot-message-content {
-  max-width: 78%;
-  padding: 0.85rem 0.95rem;
-  border-radius: 14px;
-  font-size: 0.9rem;
-  line-height: 1.55;
-  word-wrap: break-word;
-  white-space: normal;
-}
-
-.chatbot-message.bot .chatbot-message-content {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text2);
-  border: 1px solid var(--border);
-}
-
-.chatbot-message.user .chatbot-message-content {
-  background: var(--accent);
-  color: var(--btn-on-accent);
-}
-
-.chatbot-summary-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.chatbot-summary-title {
-  font-weight: 700;
-  color: var(--text);
-}
-
-.chatbot-summary-text {
-  color: var(--text2);
-}
-
-.chatbot-summary-list {
-  margin: 0;
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  color: var(--text2);
-}
-
-.chatbot-summary-footer {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-top: 0.2rem;
-}
-
-.chatbot-typing {
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-  padding: 0.7rem 0.9rem;
-}
-
-.chatbot-typing span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--muted);
-  animation: bounce 1s infinite ease-in-out;
-}
-
-.chatbot-typing span:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.chatbot-typing span:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.chatbot-input-wrapper {
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-top: 1px solid var(--border);
-}
-
-.chatbot-input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.85rem;
-  color: var(--text);
-  outline: none;
-  transition: all 0.2s;
-}
-
-.chatbot-input::placeholder {
-  color: var(--muted);
-}
-
-.chatbot-input:focus {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.chatbot-send {
-  width: 40px;
-  height: 40px;
-  background: var(--accent);
-  border: none;
-  border-radius: 10px;
-  color: var(--btn-on-accent);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-
-.chatbot-send:hover {
-  transform: scale(1.05);
-}
-
-.chatbot-send:active {
-  transform: scale(0.95);
-}
-
-@keyframes bounce {
-  0%, 80%, 100% { transform: translateY(0); opacity: 0.55; }
-  40% { transform: translateY(-4px); opacity: 1; }
-}
-
-@media (max-width: 480px) {
-  .chatbot-container {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .chatbot-panel {
-    width: 320px;
-    height: 480px;
-  }
-
-  .chatbot-message-content {
-    max-width: 85%;
-  }
-}
-</style>
-
-<script>
-(function() {
-  const chatbotToggle = document.getElementById('chatbotToggle');
-  const chatbotClose = document.getElementById('chatbotClose');
-  const chatbotPanel = document.getElementById('chatbotPanel');
-  const chatbotInput = document.getElementById('chatbotInput');
-  const chatbotSend = document.getElementById('chatbotSend');
-  const chatbotMessages = document.getElementById('chatbotMessages');
-
-  chatbotToggle.addEventListener('click', () => {
-    chatbotPanel.classList.toggle('open');
-    if (chatbotPanel.classList.contains('open')) {
-      chatbotInput.focus();
+  function setOpen(isOpen) {
+    panel.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close Ask Omkar' : 'Open Ask Omkar');
+    toggle.setAttribute('title', isOpen ? 'Close Ask Omkar' : 'Open Ask Omkar');
+    if (isOpen) {
+      input.focus();
+      messages.scrollTop = messages.scrollHeight;
     }
-  });
-
-  chatbotClose.addEventListener('click', () => {
-    chatbotPanel.classList.remove('open');
-  });
-
-  const knowledgeBase = {
-    greeting: {
-      triggers: ['hello', 'hi', 'hey', 'start', 'help', 'about'],
-      responses: [
-        "Hi! 👋 I can help with Omkar’s background, projects, design philosophy, and how to get in touch.",
-        "Hi there! I’m Omkar’s portfolio assistant. Ask me about his experience, work style, or current focus.",
-        "Hello! I can give you a quick overview of Omkar’s experience, skills, and projects in a concise format."
-      ]
-    },
-    experience: {
-      triggers: ['experience', 'work', 'job', 'career', 'role', 'position', 'worked', 'working'],
-      response: {
-        title: 'Experience snapshot',
-        summary: 'Omkar has built a career at the intersection of product design, UX strategy, and accessible digital experiences.',
-        bullets: [
-          'Senior UI Designer / Design Analyst at Zeus Learning (Jul 2025 – Present)',
-          'Previously UI Designer / Design Analyst at Zeus Learning (Aug 2023 – Jun 2025)',
-          'Earlier roles include UI Developer at MAI Labs and UX Designer Intern at Corbin Technology'
-        ],
-        footer: 'He combines design thinking with implementation awareness to create systems that are both useful and scalable.'
-      }
-    },
-    education: {
-      triggers: ['education', 'college', 'university', 'degree', 'studied', 'school', 'graduation', 'graduated'],
-      response: {
-        title: 'Education',
-        summary: 'His academic foundation blends engineering rigor with design thinking.',
-        bullets: [
-          'B.E. in Electronics & Telecommunication from D Y Patil’s Ramrao Adik Institute of Technology, Mumbai University',
-          'CGPA: 9.35/10',
-          'Vice Chairman of IETE RAIT and active in hackathons, robotics, and workshops'
-        ],
-        footer: 'That background helps him approach product design with both analytical depth and user empathy.'
-      }
-    },
-    projects: {
-      triggers: ['projects', 'case study', 'portfolio', 'design', 'built', 'created'],
-      response: {
-        title: 'Featured work',
-        summary: 'Omkar’s portfolio spans AI-assisted products, e-commerce trust flows, accessibility tools, and enterprise design systems.',
-        bullets: [
-          'Clio AI Investment Assistant for clearer, progressive financial data interaction',
-          'Amazon Assure for trust-building in post-purchase experiences',
-          'MAI Labs website with strong performance and a refined UI',
-          'AccessIQ and fintech dashboard redesigns focused on usability and scale'
-        ],
-        footer: 'Each project reflects a strong mix of research, systems thinking, and polished execution.'
-      }
-    },
-    compensation: {
-      triggers: ['salary', 'compensation', 'pay', 'ctc', 'package', 'lpa', 'cost', 'rate', 'price'],
-      response: {
-        title: 'Compensation',
-        summary: 'Current expectation is in the ₹16–20 LPA range.',
-        bullets: [
-          'Aligned with current market standards for his role and experience',
-          'Open to discussing details during a direct conversation'
-        ],
-        footer: 'If you want the full context, a direct conversation is the best next step.'
-      }
-    },
-    notice_period: {
-      triggers: ['notice', 'availability', 'notice period', 'joining', 'when', 'start'],
-      response: {
-        title: 'Availability',
-        summary: 'Omkar is currently available with a notice period of around 60 days.',
-        bullets: [
-          'This gives enough time to wrap up ongoing work properly',
-          'He is generally ready to discuss next steps after that window'
-        ],
-        footer: 'A direct conversation is the fastest way to confirm timing.'
-      }
-    },
-    accessibility: {
-      triggers: ['accessibility', 'wcag', 'inclusive', 'a11y', 'accessible', 'inclusive design'],
-      response: {
-        title: 'Accessibility focus',
-        summary: 'Accessibility is treated as a core design requirement, not a checkbox.',
-        bullets: [
-          'WCAG-compliant design practices',
-          'Heuristic checks and usability evaluation built into the process',
-          'Designs aimed at real users with different needs and contexts'
-        ],
-        footer: 'The goal is to make experiences usable for everyone, from the first draft onward.'
-      }
-    },
-    team_work: {
-      triggers: ['team', 'collaborate', 'mentoring', 'leadership', 'mentor', 'developers', 'engineers'],
-      response: {
-        title: 'Team impact',
-        summary: 'Omkar works well across design, product, and engineering, especially in complex product environments.',
-        bullets: [
-          'Mentors junior designers and supports collaborative growth',
-          'Acts as a design point of contact for large cross-functional teams',
-          'Builds systems that are practical for both users and developers'
-        ],
-        footer: 'He is strong in both execution and shared decision-making.'
-      }
-    },
-    creative: {
-      triggers: ['creative', 'photography', 'podcast', 'youtube', 'vlog', 'video', 'content', 'codeos'],
-      response: {
-        title: 'Creative side',
-        summary: 'His work extends beyond product design into storytelling, media, and community-driven content.',
-        bullets: [
-          'Photography with a strong eye for composition and place',
-          'CodeOS podcast featuring industry insights and personal growth conversations',
-          'Vlogs that explore culture, identity, and regional narratives'
-        ],
-        footer: 'That creative range adds depth to his visual and narrative thinking.'
-      }
-    },
-    tools: {
-      triggers: ['tools', 'skills', 'tech stack', 'software', 'figma', 'react', 'css', 'html', 'code'],
-      response: {
-        title: 'Skills & tools',
-        summary: 'Omkar works comfortably across design, prototyping, and front-end implementation.',
-        bullets: [
-          'Design: Figma, systems thinking, prototyping',
-          'Frontend: React, HTML, CSS, JavaScript, Next.js',
-          'Research: usability testing, accessibility audits, competitive analysis'
-        ],
-        footer: 'That mix makes handoff smoother and design execution more realistic.'
-      }
-    },
-    values: {
-      triggers: ['values', 'believe', 'philosophy', 'approach', 'mindset', 'why'],
-      response: {
-        title: 'Design philosophy',
-        summary: 'The core themes behind his work are clarity, empathy, and responsibility.',
-        bullets: [
-          'Accessibility first',
-          'Research-led decisions over assumptions',
-          'Simplicity through depth',
-          'Systems thinking that scales well'
-        ],
-        footer: 'He tends to design for people, not just for screens.'
-      }
-    },
-    size_scope: {
-      triggers: ['scale', 'users', 'million', 'impact', 'size', 'scope'],
-      response: {
-        title: 'Scale of impact',
-        summary: 'His work has touched large product ecosystems and high-traffic educational platforms.',
-        bullets: [
-          'Zeus Learning LMS used by 1M+ students',
-          'Built solutions for large cross-functional teams',
-          'Worked on multi-module products where design quality directly affects adoption'
-        ],
-        footer: 'He is comfortable operating at both strategic and execution levels.'
-      }
-    }
-  };
-
-  function escapeHtml(value) {
-    return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
   }
 
-  function formatText(text) {
-    return escapeHtml(text)
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\n/g, '<br>');
+  function scrollToLatest() {
+    messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
   }
 
-  function buildSummaryMarkup(response) {
-    const title = response.title ? `<div class="chatbot-summary-title">${escapeHtml(response.title)}</div>` : '';
-    const summary = response.summary ? `<div class="chatbot-summary-text">${formatText(response.summary)}</div>` : '';
-    const bullets = response.bullets && response.bullets.length ? `<ul class="chatbot-summary-list">${response.bullets.map(item => `<li>${formatText(item)}</li>`).join('')}</ul>` : '';
-    const footer = response.footer ? `<div class="chatbot-summary-footer">${formatText(response.footer)}</div>` : '';
-
-    return `<div class="chatbot-summary-card">${title}${summary}${bullets}${footer}</div>`;
+  function renderActions(container, actions) {
+    if (!Array.isArray(actions) || !actions.length) return;
+    const actionRow = document.createElement('div');
+    actionRow.className = 'chatbot-actions';
+    actions.forEach((action) => {
+      if (!action || typeof action.label !== 'string' || typeof action.href !== 'string') return;
+      const isInternal = action.href.startsWith('#');
+      const isKnownExternal = /^https:\/\/(accessiq-codeos\.netlify\.app|mai-website-nldxkgar8-sakshi1520s-projects\.vercel\.app)\//.test(action.href);
+      if (!isInternal && !isKnownExternal) return;
+      const link = document.createElement('a');
+      link.className = 'chatbot-action';
+      link.href = action.href;
+      link.textContent = action.label;
+      if (!isInternal) {
+        link.target = '_blank';
+        link.rel = 'noopener';
+      } else {
+        link.addEventListener('click', () => {
+          panel.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+      actionRow.appendChild(link);
+    });
+    if (actionRow.children.length) container.appendChild(actionRow);
   }
 
-  function findBestResponse(userMessage) {
-    const msg = userMessage.toLowerCase().trim();
+  function addMessage(text, role, options = {}) {
+    const item = document.createElement('article');
+    item.className = `chatbot-message ${role}`;
+    item.setAttribute('aria-label', role === 'user' ? 'You' : 'Ask Omkar');
 
-    for (const content of Object.values(knowledgeBase)) {
-      if (content.triggers.some(trigger => msg.includes(trigger))) {
-        if (Array.isArray(content.responses)) {
-          return content.responses[Math.floor(Math.random() * content.responses.length)];
+    const content = document.createElement('div');
+    content.className = 'chatbot-message-content';
+    content.textContent = text;
+    item.appendChild(content);
+
+    if (role === 'assistant' && options.actions) renderActions(item, options.actions);
+    if (role === 'assistant' && options.copyable) {
+      const copy = document.createElement('button');
+      copy.className = 'chatbot-copy';
+      copy.type = 'button';
+      copy.textContent = 'Copy';
+      copy.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(text);
+          copy.textContent = 'Copied';
+          setTimeout(() => { copy.textContent = 'Copy'; }, 1400);
+        } catch (error) {
+          copy.textContent = 'Unavailable';
         }
-        return content.response;
-      }
+      });
+      item.appendChild(copy);
     }
 
-    const defaultResponses = [
-      "That’s a useful question. I don’t have an exact answer ready, but Omkar can help directly at oomkarsk6@gmail.com.",
-      "I’d recommend reaching out directly to Omkar for that one—he can answer it faster than I can guess."
-    ];
-
-    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    messages.appendChild(item);
+    scrollToLatest();
+    return item;
   }
 
-  function addTypingIndicator() {
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'chatbot-message bot';
-    typingDiv.innerHTML = '<div class="chatbot-message-content chatbot-typing"><span></span><span></span><span></span></div>';
-    chatbotMessages.appendChild(typingDiv);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    return typingDiv;
+  function showTyping() {
+    const typing = document.createElement('div');
+    typing.className = 'chatbot-typing';
+    typing.id = 'chatbotTyping';
+    typing.setAttribute('role', 'status');
+    typing.setAttribute('aria-label', 'Ask Omkar is thinking');
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(typing);
+    scrollToLatest();
   }
 
-  function addMessage(text, isUser = false) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `chatbot-message ${isUser ? 'user' : 'bot'}`;
+  function hideTyping() {
+    document.getElementById('chatbotTyping')?.remove();
+  }
 
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'chatbot-message-content';
+  function renderSuggestions() {
+    if (!suggestions) return;
+    suggestions.replaceChildren();
+    starters.forEach((question) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'chatbot-suggestion';
+      button.textContent = question;
+      button.addEventListener('click', () => sendMessage(question));
+      suggestions.appendChild(button);
+    });
+  }
 
-    if (text && typeof text === 'object' && !Array.isArray(text)) {
-      contentDiv.innerHTML = buildSummaryMarkup(text);
-    } else {
-      contentDiv.innerHTML = formatText(String(text));
+  function pageContext() {
+    const activeSection = [...document.querySelectorAll('section[id]')]
+      .map((section) => ({ section, distance: Math.abs(section.getBoundingClientRect().top - 120) }))
+      .sort((a, b) => a.distance - b.distance)[0]?.section;
+    return {
+      path: window.location.hash || window.location.pathname,
+      title: activeSection?.getAttribute('aria-label') || document.title
+    };
+  }
+
+  function setBusy(isBusy) {
+    pending = isBusy;
+    send.disabled = isBusy;
+    input.disabled = isBusy;
+    send.setAttribute('aria-busy', String(isBusy));
+  }
+
+  async function sendMessage(value = input.value.trim()) {
+    const question = value.trim();
+    if (!question || pending || question.length > 1200) return;
+
+    lastQuestion = question;
+    input.value = '';
+    suggestions?.replaceChildren();
+    addMessage(question, 'user');
+    setBusy(true);
+    showTyping();
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: question, conversation, pageContext: pageContext() })
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(payload.error || 'Request failed');
+      conversation.push({ role: 'user', content: question });
+      conversation.push({ role: 'assistant', content: payload.message });
+      addMessage(payload.message, 'assistant', { actions: payload.actions, copyable: true });
+    } catch (error) {
+      addMessage('Oops. My brain temporarily disconnected from the internet. Try again in a moment.', 'assistant', {
+        copyable: false
+      });
+      const retry = document.createElement('button');
+      retry.type = 'button';
+      retry.className = 'chatbot-retry';
+      retry.textContent = 'Try again';
+      retry.addEventListener('click', () => sendMessage(lastQuestion));
+      messages.lastElementChild.appendChild(retry);
+    } finally {
+      hideTyping();
+      setBusy(false);
+      input.focus();
     }
-
-    messageDiv.appendChild(contentDiv);
-    chatbotMessages.appendChild(messageDiv);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
   }
 
-  function sendMessage() {
-    const message = chatbotInput.value.trim();
-    if (!message) return;
-
-    addMessage(message, true);
-    chatbotInput.value = '';
-
-    const typingIndicator = addTypingIndicator();
-
-    setTimeout(() => {
-      typingIndicator.remove();
-      const response = findBestResponse(message);
-      addMessage(response, false);
-    }, 400);
+  function resetConversation() {
+    conversation.length = 0;
+    messages.replaceChildren();
+    addMessage("Hey! I'm Omkar's AI sidekick. Ask me about his work, projects, skills, career journey, or something completely random. I promise to know more than his LinkedIn bio does.", 'assistant', { copyable: false });
+    renderSuggestions();
   }
 
-  chatbotSend.addEventListener('click', sendMessage);
-  chatbotInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') sendMessage();
+  toggle.addEventListener('click', () => setOpen(!panel.classList.contains('open')));
+  close.addEventListener('click', () => setOpen(false));
+  clear?.addEventListener('click', resetConversation);
+  send.addEventListener('click', () => sendMessage());
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      sendMessage();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && panel.classList.contains('open')) setOpen(false);
+  });
+  document.getElementById('chatbotUnexpected')?.addEventListener('click', () => {
+    sendMessage(unexpectedQuestions[Math.floor(Math.random() * unexpectedQuestions.length)]);
   });
 
-  setTimeout(() => {
-    if (!chatbotMessages.children.length) {
-      addMessage({
-        title: 'Welcome',
-        summary: 'I can quickly answer questions about Omkar’s experience, projects, and contact details.',
-        bullets: [
-          'Experience and career background',
-          'Portfolio highlights and design focus',
-          'Availability and ways to contact him'
-        ],
-        footer: 'Try asking about his work, education, or skills.'
-      }, false);
-    }
-  }, 500);
+  resetConversation();
+  setOpen(false);
 })();
-</script>

@@ -1,0 +1,102 @@
+{
+  "profile": {
+    "name": "Omkar Khandalkar",
+    "role": "Product Designer / UI Designer",
+    "summary": "Omkar designs clear, accessible interfaces for complex products and can collaborate closely with engineers to bring those ideas to life.",
+    "interests": [
+      "HCI",
+      "UX",
+      "product design",
+      "technology",
+      "learning",
+      "content creation",
+      "travel",
+      "communication"
+    ]
+  },
+  "education": [
+    {
+      "title": "B.E. in Electronics & Telecommunication Engineering",
+      "institution": "Ramrao Adik Institute of Technology, Mumbai University"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Product design and UI/UX work",
+      "details": "Experience working on EdTech products, particularly LMS and CMS products, including Quantum LMS/CMS at Zeus Learning. Work includes complex enterprise workflows, responsive interfaces, design systems, accessibility, and collaboration with developers, QA, product managers, and stakeholders.",
+      "tags": ["EdTech", "LMS", "CMS", "enterprise workflows", "responsive design"]
+    },
+    {
+      "title": "Accessibility and design systems",
+      "details": "Worked on WCAG-aware interfaces and style-guide/design-system work to improve consistency and development efficiency.",
+      "tags": ["WCAG", "accessibility", "design systems"]
+    },
+    {
+      "title": "CodeOS community",
+      "details": "Created or was involved in CodeOS, a technology community focused on learning, interviews, workshops, and mentoring. Mentored students and conducted technical learning activities.",
+      "tags": ["community", "mentoring", "workshops"]
+    }
+  ],
+  "skills": {
+    "design": ["product design", "UI/UX", "UX research", "design systems", "product thinking", "responsive design", "WCAG accessibility"],
+    "tools_and_technology": ["Figma", "Adobe XD", "React", "React Native", "Tailwind CSS", "Next.js", "Angular", "Git/GitHub"]
+  },
+  "projects": [
+    {
+      "title": "Quantum LMS/CMS",
+      "details": "Major product experience in EdTech, focused on LMS/CMS workflows and complex product environments.",
+      "anchor": "#cs-quantum",
+      "tags": ["EdTech", "LMS", "CMS"]
+    },
+    {
+      "title": "AccessIQ WCAG Summariser",
+      "details": "An accessibility-focused project that translates WCAG issues into language teams can act on.",
+      "anchor": "#cs-accessiq",
+      "url": "https://accessiq-codeos.netlify.app/",
+      "tags": ["accessibility", "WCAG", "AI tool"]
+    },
+    {
+      "title": "MAI Labs Company Website",
+      "details": "A frontend and website project involving responsive, performant implementation.",
+      "anchor": "#cs-mai",
+      "url": "https://mai-website-nldxkgar8-sakshi1520s-projects.vercel.app/",
+      "tags": ["Next.js", "Tailwind CSS", "frontend"]
+    },
+    {
+      "title": "Clio AI Investment Assistant",
+      "details": "A product design case study about making dense financial data more approachable through progressive disclosure.",
+      "anchor": "#cs-clio",
+      "tags": ["fintech", "data visualization", "AI feature"]
+    },
+    {
+      "title": "Tryfit Shopping App",
+      "details": "A shopping experience focused on reducing size uncertainty and making fit decisions clearer.",
+      "anchor": "#cs-tryfit",
+      "tags": ["ecommerce", "user research", "mobile"]
+    }
+  ],
+  "philosophy": [
+    "Make complex products easier to understand.",
+    "Treat accessibility as part of product quality, not an afterthought.",
+    "Use systems and collaboration to make good design consistent and buildable.",
+    "Stay curious about people, technology, and the details that shape an experience."
+  ],
+  "community_and_content": [
+    "CodeOS workshops, mentoring, and learning activities.",
+    "Photography, podcasting, and vlogging as creative interests."
+  ],
+  "faq": [
+    {
+      "question": "What does Omkar do?",
+      "answer": "Omkar is a Product Designer / UI Designer who works on clear, accessible interfaces for complex products, especially EdTech LMS/CMS experiences."
+    },
+    {
+      "question": "What is Omkar's experience with accessibility?",
+      "answer": "He has worked with WCAG considerations and accessibility-focused product work, including the AccessIQ project, and treats accessibility as part of product quality."
+    },
+    {
+      "question": "What did Omkar study?",
+      "answer": "He studied Electronics and Telecommunication Engineering at Ramrao Adik Institute of Technology, Mumbai University."
+    }
+  ]
+}
