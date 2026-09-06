@@ -5868,10 +5868,10 @@
       <div id="chatbotContainer" class="chatbot-container">
         <div class="chatbot-panel" id="chatbotPanel" role="dialog" aria-label="Chatbot panel" aria-modal="false">
           <div class="chatbot-header">
-            <div class="chatbot-heading">
-              <div class="chatbot-avatar" aria-hidden="true">O</div>
+              <div class="chatbot-heading">
+                <div class="chatbot-avatar" aria-hidden="true"><img src="images/image.png" alt="" /></div>
               <div>
-                <h3 id="chatbotTitle">ASK OMKAR</h3>
+                <h3 id="chatbotTitle">OMKIII</h3>
                 <p>Omkar's AI sidekick <span class="chatbot-status">Active</span></p>
               </div>
             </div>
@@ -5882,18 +5882,14 @@
           <div class="chatbot-suggestions" id="chatbotSuggestions" aria-label="Suggested questions"></div>
           <div class="chatbot-input-wrapper">
             <textarea id="chatbotInput" class="chatbot-input" placeholder="Ask anything about Omkar..."
-              autocomplete="off" rows="1" aria-label="Message for Ask Omkar"></textarea>
+              autocomplete="off" rows="1" aria-label="Message for Omkiii"></textarea>
             <button class="chatbot-send" id="chatbotSend" type="button" aria-label="Send message">→</button>
           </div>
         </div>
         <button class="chatbot-toggle floating-action-btn" id="chatbotToggle" type="button" aria-expanded="false"
           aria-controls="chatbotPanel" aria-label="Open chatbot" title="Open chatbot">
           <span class="chatbot-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img" focusable="false">
-              <path d="M12 2.5l1.35 3.15L16.5 7l-3.15 1.35L12 11.5l-1.35-3.15L7.5 7l3.15-1.35L12 2.5z" />
-              <path d="M19 13.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9.9-2.1z" />
-              <path d="M5.5 14.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7.7-1.6z" />
-            </svg>
+            <img src="images/image.png" alt="" />
           </span>
         </button>
       </div>
@@ -6150,7 +6146,8 @@
 
       <style>
         .chatbot-heading { display: flex; align-items: center; gap: .7rem; }
-        .chatbot-avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--btn-on-accent); font-weight: 700; }
+        .chatbot-avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; overflow: hidden; background: var(--accent); color: var(--btn-on-accent); font-weight: 700; }
+        .chatbot-avatar img, .chatbot-icon img { width: 100%; height: 100%; display: block; object-fit: cover; }
         .chatbot-heading p { margin: .2rem 0 0; color: var(--muted); font-size: .7rem; }
         .chatbot-status::before { content: ''; display: inline-block; width: 6px; height: 6px; margin: 0 .3rem .05rem .4rem; border-radius: 50%; background: #34d399; }
         .chatbot-clear { margin-left: auto; background: none; border: 0; color: var(--muted); cursor: pointer; font-size: .72rem; padding: .5rem; }
@@ -6170,10 +6167,10 @@
         @media (max-width: 767px) {
           body.chatbot-open { overflow: hidden; }
           .chatbot-container { inset: 0; right: auto; bottom: auto; display: block; pointer-events: none; }
-          .chatbot-container::before { content: ''; position: fixed; inset: 0; background: rgba(0, 0, 0, .72); opacity: 0; pointer-events: none; transition: opacity .25s var(--ease); }
+          .chatbot-container::before { content: ''; position: fixed; inset: 0; background: var(--bg); opacity: 0; pointer-events: none; transition: opacity .25s var(--ease); }
           .chatbot-container:has(.chatbot-panel.open)::before { opacity: 1; }
           .chatbot-toggle { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); z-index: 2; pointer-events: auto; }
-          .chatbot-panel { position: fixed; inset: 0; z-index: 3; width: 100%; height: 100dvh; max-height: none; border: 0; border-radius: 0; transform: translateY(100%); }
+          .chatbot-panel { position: fixed; inset: 0; z-index: 3; width: 100%; height: 100dvh; max-height: none; background: var(--bg); border: 0; border-radius: 0; transform: translateY(100%); }
           .chatbot-panel.open { transform: translateY(0); }
           .chatbot-header { padding: calc(.8rem + env(safe-area-inset-top)) 1rem .8rem; }
           .chatbot-messages { min-height: 0; padding: 1rem; }

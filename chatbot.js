@@ -32,8 +32,8 @@
     panel.classList.toggle('open', isOpen);
     document.body.classList.toggle('chatbot-open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.setAttribute('aria-label', isOpen ? 'Close Ask Omkar' : 'Open Ask Omkar');
-    toggle.setAttribute('title', isOpen ? 'Close Ask Omkar' : 'Open Ask Omkar');
+    toggle.setAttribute('aria-label', isOpen ? 'Close Omkiii' : 'Open Omkiii');
+    toggle.setAttribute('title', isOpen ? 'Close Omkiii' : 'Open Omkiii');
     if (isOpen) {
       input.focus();
       messages.scrollTop = messages.scrollHeight;
@@ -74,7 +74,7 @@
   function addMessage(text, role, options = {}) {
     const item = document.createElement('article');
     item.className = `chatbot-message ${role}`;
-    item.setAttribute('aria-label', role === 'user' ? 'You' : 'Ask Omkar');
+    item.setAttribute('aria-label', role === 'user' ? 'You' : 'Omkiii');
 
     const content = document.createElement('div');
     content.className = 'chatbot-message-content';
@@ -109,7 +109,7 @@
     typing.className = 'chatbot-typing';
     typing.id = 'chatbotTyping';
     typing.setAttribute('role', 'status');
-    typing.setAttribute('aria-label', 'Ask Omkar is thinking');
+    typing.setAttribute('aria-label', 'Omkiii is thinking');
     typing.innerHTML = '<span></span><span></span><span></span>';
     messages.appendChild(typing);
     scrollToLatest();
@@ -194,7 +194,7 @@
   function resetConversation() {
     conversation.length = 0;
     messages.replaceChildren();
-    addMessage("Hey! I'm Omkar's AI sidekick. Ask me about his work, projects, skills, career journey, or something completely random. I promise to know more than his LinkedIn bio does.", 'assistant', { copyable: false });
+    addMessage("Hey! I'm Omkiii, Omkar's AI sidekick. Ask me about his work, projects, skills, career journey, or something completely random. I promise to know more than his LinkedIn bio does.", 'assistant', { copyable: false });
     renderSuggestions();
   }
 
