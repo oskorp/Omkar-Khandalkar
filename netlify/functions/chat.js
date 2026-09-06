@@ -87,8 +87,8 @@ exports.handler = async (event) => {
     return jsonResponse(429, { error: 'Too many requests. Please try again in a minute.' });
   }
 
-  if (!process.env.GEMINI_API_KEY) {
-    return jsonResponse(503, { error: 'Gemini chat service is not configured yet.' });
+  if (!process.env.OPENROUTER_API_KEY) {
+    return jsonResponse(503, { error: 'OpenRouter chat service is not configured yet.' });
   }
 
   let payload;
@@ -121,46 +121,39 @@ exports.handler = async (event) => {
   ];
 
   try {
-    const configuredModel = process.env.GEMINI_MODEL?.trim();
-    const models = configuredModel ? [configuredModel, 'gemini-2.5-flash'] : ['gemini-2.5-flash'];
-    const requestBody = {
-      system_instruction: {
-        parts: [{ text: `${systemPrompt}\n\nPersonal knowledge base:\n${JSON.stringify(knowledge)}` }]
+    const model = process.env.OPENROUTER_MODEL?.trim() || 'google/gemini-2.0-flash-exp:free';
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'HTTP-Referer': process.env.SITE_URL || 'https://omkar-khandalkar.netlify.app',
+        'X-Title': "Omkar Khandalkar Portfolio"
       },
-      contents: messages.map((item) => ({
-        role: item.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: item.content }]
-      })),
-      generationConfig: {
+      body: JSON.stringify({
+        model,
+        messages: [
+          { role: 'system', content: `${systemPrompt}\n\nPersonal knowledge base:\n${JSON.stringify(knowledge)}` },
+          ...messages
+        ],
         temperature: 0.45,
-        maxOutputTokens: 500
-      }
-    };
-    let response;
-    let model = models[0];
-    for (const candidate of models) {
-      model = candidate;
-      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${candidate}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestBody)
-      });
-      if (response.status !== 404 || candidate === models[models.length - 1]) break;
-    }
+        max_tokens: 500
+      })
+    });
 
     if (!response.ok) {
-      console.error('Gemini request failed:', response.status);
+      console.error('OpenRouter request failed:', response.status);
       if (response.status === 401) {
-        return jsonResponse(502, { error: 'Gemini rejected the server key. Check GEMINI_API_KEY in Netlify and redeploy.' });
+        return jsonResponse(502, { error: 'OpenRouter rejected the server key. Check OPENROUTER_API_KEY in Netlify and redeploy.' });
       }
       if (response.status === 429) {
-        return jsonResponse(429, { error: 'Gemini free-tier limit reached. Please try again later.' });
+        return jsonResponse(429, { error: 'OpenRouter free-model limit reached. Please try again later or choose another model.' });
       }
-      return jsonResponse(502, { error: `Gemini rejected the request (${response.status}). Check the selected model and API key permissions.` });
+      return jsonResponse(502, { error: `OpenRouter rejected the request (${response.status}). Check OPENROUTER_MODEL and API key permissions.` });
     }
 
     const result = await response.json();
-    const answer = result.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('').trim();
+    const answer = result.choices?.[0]?.message?.content?.trim();
     if (!answer) return jsonResponse(502, { error: 'The assistant returned an empty response.' });
 
     return jsonResponse(200, { message: answer, actions: getActions(message) });
