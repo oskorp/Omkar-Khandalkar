@@ -38,6 +38,7 @@
 
   function setOpen(isOpen) {
     panel.classList.toggle('open', isOpen);
+    if (isOpen) toggle.classList.remove('chatbot-intro', 'chatbot-nudge-visible');
     document.body.classList.toggle('chatbot-open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.setAttribute('aria-label', isOpen ? 'Close Omkiii' : 'Open Omkiii');
@@ -206,6 +207,17 @@
   toggle.addEventListener('click', () => {
     setOpen(!panel.classList.contains('open'));
   });
+  toggle.addEventListener('animationend', (event) => {
+    if (event.animationName === 'chatbotWander') {
+      toggle.classList.remove('chatbot-intro');
+      toggle.classList.add('chatbot-nudge-visible');
+    } else if (event.animationName === 'chatbotNudge') {
+      toggle.classList.remove('chatbot-nudge-visible');
+    }
+  });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    toggle.classList.add('chatbot-intro');
+  }
   close.addEventListener('click', () => {
     if (isChatPage) {
       window.location.replace('./index.html');

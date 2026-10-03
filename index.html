@@ -5939,6 +5939,7 @@
           <span class="chatbot-icon" aria-hidden="true">
             <img src="images/optimized-webp/image.webp" alt="" loading="lazy" decoding="async" />
           </span>
+          <span class="chatbot-nudge" aria-hidden="true">Psst! I know where the pixels are buried.</span>
         </button>
       </div>
 
@@ -5970,8 +5971,71 @@
           transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease), filter 0.2s var(--ease);
           opacity: 1;
           pointer-events: auto;
-          overflow: hidden;
+          overflow: visible;
           position: relative;
+        }
+
+        .chatbot-toggle.chatbot-intro {
+          animation: chatbotWander 3.2s cubic-bezier(.2, .8, .2, 1) both;
+          will-change: transform;
+        }
+
+        .chatbot-icon {
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+
+        .chatbot-nudge {
+          position: absolute;
+          right: calc(100% + .75rem);
+          bottom: 50%;
+          z-index: 3;
+          width: max-content;
+          max-width: min(16rem, calc(100vw - 5rem));
+          padding: .55rem .75rem;
+          border: 1px solid var(--borderS);
+          border-radius: 12px 12px 3px 12px;
+          background: var(--bg);
+          color: var(--text);
+          box-shadow: var(--shadow-c);
+          font: 600 .72rem/1.4 'Inter', system-ui, sans-serif;
+          text-align: left;
+          pointer-events: none;
+          opacity: 0;
+          transform: translate3d(8px, 50%, 0) scale(.94);
+        }
+
+        .chatbot-toggle.chatbot-nudge-visible .chatbot-nudge {
+          animation: chatbotNudge 3.2s ease both;
+        }
+
+        .chatbot-toggle:hover .chatbot-icon,
+        .chatbot-toggle:focus-visible .chatbot-icon {
+          animation: chatbotPeek .48s var(--ease-spring);
+        }
+
+        @keyframes chatbotWander {
+          0% { transform: translate3d(0, 0, 0) rotate(-8deg) scale(.7); }
+          12% { transform: translate3d(-9vw, -12vh, 0) rotate(22deg) scale(1.08); }
+          28% { transform: translate3d(-31vw, -8vh, 0) rotate(-18deg) scale(.92); }
+          44% { transform: translate3d(-60vw, -25vh, 0) rotate(14deg) scale(1.12); }
+          60% { transform: translate3d(-51vw, -55vh, 0) rotate(-16deg) scale(.94); }
+          76% { transform: translate3d(-21vw, -63vh, 0) rotate(12deg) scale(1.06); }
+          89% { transform: translate3d(-8vw, -18vh, 0) rotate(-10deg) scale(.92); }
+          100% { transform: translate3d(0, 0, 0) rotate(0) scale(1); }
+        }
+
+        @keyframes chatbotNudge {
+          0%, 100% { opacity: 0; transform: translate3d(8px, 50%, 0) scale(.94); }
+          12%, 78% { opacity: 1; transform: translate3d(0, 50%, 0) scale(1); }
+        }
+
+        @keyframes chatbotPeek {
+          0%, 100% { transform: rotate(0) scale(1); }
+          35% { transform: rotate(-12deg) scale(1.12); }
+          70% { transform: rotate(8deg) scale(1.08); }
         }
 
         .chatbot-toggle::before {
@@ -6243,6 +6307,12 @@
         }
         @media (prefers-reduced-motion: reduce) {
           .chatbot-panel, .chatbot-message, .chatbot-send { transition: none; animation: none; }
+          .chatbot-toggle, .chatbot-toggle:hover, .chatbot-toggle:focus-visible,
+          .chatbot-toggle .chatbot-icon, .chatbot-toggle.chatbot-intro .chatbot-nudge {
+            animation: none !important;
+            transition: none;
+            transform: none;
+          }
         }
       </style>
 
