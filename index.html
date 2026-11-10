@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
   <title>Omkar Khandalkar | Product Designer</title>
 
   <!-- Google Analytics -->
@@ -4814,7 +4815,7 @@
         })();
       </script>
       <script>
-        // Theme toggle: toggles html[data-theme] between 'dark' and 'light'
+        // Theme follows the device. The button is a temporary switch for this visit and is never saved.
         (function () {
           const themeBtn = document.getElementById('themeToggle');
           if (!themeBtn) return;
@@ -4831,7 +4832,8 @@
               themeBtn.setAttribute('aria-pressed', 'false');
               themeBtn.setAttribute('aria-label', 'Switch to light theme');
             }
-            try { localStorage.setItem('preferredTheme', t); } catch (e) { }
+            const bar = document.querySelector('meta[name="theme-color"]');
+            if (bar) bar.setAttribute('content', t === 'light' ? '#ffffff' : '#000000');
           }
 
           themeBtn.addEventListener('click', () => {
@@ -4840,14 +4842,12 @@
             applyTheme(next);
           });
 
-          // initialize from preference or system
-          const pref = localStorage.getItem('preferredTheme');
-          if (pref === 'light' || pref === 'dark') {
-            applyTheme(pref);
-          } else {
-            const sys = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-            applyTheme(sys);
-          }
+          // Returning visitors may have a choice saved by the old button; it must no longer override the device.
+          try { localStorage.removeItem('preferredTheme'); } catch (e) { }
+          const lightQuery = window.matchMedia('(prefers-color-scheme: light)');
+          const followDevice = () => applyTheme(lightQuery.matches ? 'light' : 'dark');
+          lightQuery.addEventListener('change', followDevice);
+          followDevice();
         })();
       </script>
 
