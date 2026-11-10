@@ -357,8 +357,8 @@ const CASES = [
     stats:[['+40%','dashboard comprehension score'],['89%','task completion, up from 54%'],['3×','faster trade decisions']],
     links:[['View on Behance','https://www.behance.net/gallery/231258555/Clio-AI-Investment-Assistant-Feature-Case-Study']] },
   { id:'quantum', name:'Quantum LMS & CMS', color:'#ffd23f', where:'Roof of the Zeus Learning tower', how:'Jump up the design-system steps that spiral around the Zeus tower.',
-    tag:'EdTech · Live product', sub:'Senior UI Designer · Zeus Learning · 2023 – present',
-    body:`<p>Sole primary designer on a live, enterprise-grade LMS and CMS used by over a million students. End to end: research, discovery, prototyping, implementation audits and QA handoff.</p><ul><li>AI-powered evaluation workflow: teachers review open-ended answers with AI-generated contextual feedback. Shipped in the live product.</li><li>Virtual Classroom inside the LMS: Zoom launch, attendance, recordings and replays attached to the class.</li><li>Responsive, WCAG 2.2 compliant dashboards, course flows, gradebook, calendar and LTI tools.</li></ul>`,
+    tag:'EdTech · Live product', sub:'Senior Product Designer · Zeus Learning · 2023 – present',
+    body:`<p>Sole primary designer on a live, enterprise-grade LMS and CMS. End to end: research, discovery, prototyping, implementation audits and QA handoff.</p><ul><li>AI-powered evaluation workflow: teachers review open-ended answers with AI-generated contextual feedback. Shipped in the live product.</li><li>Virtual Classroom inside the LMS: Zoom launch, attendance, recordings and replays attached to the class.</li><li>Responsive, WCAG 2.2 compliant dashboards, course flows, gradebook, calendar and LTI tools.</li></ul>`,
     stats:[['60%','less manual evaluation effort'],['80+','design-system components'],['40%','fewer UI inconsistencies']], links:[] },
   { id:'codevault', name:'CodeVault', color:'#ff8a3d', where:'Top of the CodeOS stage screen', how:'Stage, small speaker, big speaker, then the top of the screen.',
     tag:'EdTech · Mobile learning', sub:'Product Designer · interview-prep companion',
@@ -386,7 +386,7 @@ const SPOTS = {
     <span class="tag">Main character</span>
     <div class="about-head" style="margin-top:14px">
       <figure class="polaroid"><img src="omkar.jpg" alt="Omkar Khandalkar"></figure>
-      <div><h2 style="margin-top:0">Omkar Suresh Khandalkar</h2><p class="sub" style="margin:0">Senior UI/UX Designer · Mumbai, Maharashtra</p></div>
+      <div><h2 style="margin-top:0">Omkar Suresh Khandalkar</h2><p class="sub" style="margin:0">Senior Product Designer · Mumbai, Maharashtra</p></div>
     </div>
     <h3>Design is how I decode the world</h3>
     <p>A product designer with an engineering backbone. 3+ years designing AI-driven, enterprise-grade experiences end to end: problem definition, storytelling, prototyping, handoff and iteration. His work sits where behavioural psychology, systems thinking and visual craft meet.</p>
@@ -395,10 +395,10 @@ const SPOTS = {
     <div class="pills"><span>UX Design</span><span>Visual & UI Design</span><span>Frontend in React</span><span>Content Creation</span></div>` },
   zeus: { label:'Zeus Learning HQ', accent:'#ffd23f', html:() => `
     <span class="tag">Experience</span><h2>Where he's been</h2>
-    <p class="sub">Design lead for Quantum, an LMS and CMS used by over a million students.</p>
+    <p class="sub">Design lead for Quantum, an LMS and CMS.</p>
     <div class="tl">
-      <div class="tl-item"><div class="when">JUL 2025 –<br>PRESENT</div><div><h4>Senior UI/UX Designer</h4><div class="where">Zeus Learning · Mumbai</div>
-        <ul><li>Owns the full design lifecycle for an enterprise LMS and CMS</li><li>Partners with 35+ developers, 8 QA engineers and product managers</li><li>Implementation audits cut UI inconsistencies by 40%</li><li>Mentors 3 junior designers; design-to-dev efficiency up 30%</li></ul></div></div>
+      <div class="tl-item"><div class="when">JUL 2025 –<br>PRESENT</div><div><h4>Senior Product Designer</h4><div class="where">Zeus Learning · Mumbai</div>
+        <ul><li>Owns the full design lifecycle for an enterprise LMS and CMS</li><li>Partners with developers and QA engineers and product managers</li><li>Runs implementation audits to keep UI consistent</li><li>Mentors junior designers</li></ul></div></div>
       <div class="tl-item"><div class="when">AUG 2023 –<br>JUN 2025</div><div><h4>Associate UI/UX Designer</h4><div class="where">Zeus Learning · Mumbai</div>
         <ul><li>AI-powered evaluation workflow: 60% less manual effort</li><li>Figma design system on Angular Material, 80+ components, token theming</li><li>Competitive analysis across 6+ LMS platforms</li></ul></div></div>
       <div class="tl-item"><div class="when">JUN –<br>AUG 2023</div><div><h4>UI Developer, Consultant</h4><div class="where">MAI Labs · Remote</div><p style="margin:0">Built the company website in Next.js and Tailwind.</p></div></div>
@@ -1219,9 +1219,9 @@ const NPCS = [
       'People with a speech bubble know Omkar. Walk up and press E to chat, just like now.',
       'Red bugs only chase you if you get close. Jump on top of them. Lost hearts? Grab a chai.'] },
   { name:'Priya', role:'Frontend developer · Zeus Learning', g:'f', at:[-21, -13], skin:0xa66e4a, hair:0x150d09, style:'long', top:0xffd23f, bot:0x3b4a6b, skirt:false, pitch:660, glasses:true,
-    lines:['I build the screens Omkar designs. He has been at Zeus Learning since August 2023, now as Senior UI/UX Designer.',
+    lines:['I build the screens Omkar designs. He has been at Zeus Learning since August 2023, now as Senior Product Designer.',
       'He is the primary designer on Quantum, a live LMS and CMS for students, teachers and admins.',
-      'He works with 35+ developers and 8 QA engineers on sprint planning, priorities and breaking down tasks.',
+      'He works with developers and QA engineers on sprint planning, priorities and breaking down tasks.',
       'His implementation audits cut UI inconsistencies by 40%. What ships matches the Figma, down to the pixel.'] },
   { name:'Arjun', role:'Teacher · uses Quantum LMS', g:'m', at:[-35, -15], skin:0x8b5a3c, hair:0x1a120e, style:'short', top:0xf2efe6, bot:0x5b4636, pitch:300,
     lines:['Grading open-ended answers used to eat my whole weekend.',
@@ -2113,7 +2113,7 @@ function contactHTML(){
 }
 function openResume(){
   openCard(`<span class="tag">Résumé view</span><h2>Omkar Suresh Khandalkar</h2>
-    <p class="sub">Senior UI/UX Designer · Zeus Learning · Mumbai</p>
+    <p class="sub">Senior Product Designer · Zeus Learning · Mumbai</p>
     <div class="links" style="margin:0 0 6px"><a href="${LINKS.linkedin}" target="_blank" rel="noopener">LinkedIn</a><a href="${LINKS.behance}" target="_blank" rel="noopener" class="ghost">Behance</a><a href="${LINKS.site}" target="_blank" rel="noopener" class="ghost">omkarkhandalkar.online</a></div>
     <section>${SPOTS.about.html().replace(/<span class="tag">[^<]*<\/span>/, '').replace(/<div class="about-head"[\s\S]*?<\/div>\s*<\/div>/, '')}</section>
     <section>${SPOTS.zeus.html()}</section>

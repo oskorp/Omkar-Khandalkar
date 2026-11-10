@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://omkarkhandalkar.space/sitemap.xml
+Sitemap: https://omkarkhandalkar.online/sitemap.xml

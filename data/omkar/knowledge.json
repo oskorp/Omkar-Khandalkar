@@ -43,6 +43,12 @@
   },
   "projects": [
     {
+      "title": "Chitralo",
+      "details": "A mobile-first marketplace for booking verified photographers and videographers in India, built as a pre-launch test product with mock payments.",
+      "anchor": "#cs-chitralo",
+      "tags": ["marketplace", "product design", "0 to 1"]
+    },
+    {
       "title": "Quantum LMS/CMS",
       "details": "Major product experience in EdTech, focused on LMS/CMS workflows and complex product environments.",
       "anchor": "#cs-quantum",
@@ -53,7 +59,7 @@
       "details": "An accessibility-focused project that translates WCAG issues into language teams can act on.",
       "anchor": "#cs-accessiq",
       "url": "https://accessiq-codeos.netlify.app/",
-      "tags": ["accessibility", "WCAG", "AI tool"]
+      "tags": ["accessibility", "WCAG", "reference guide"]
     },
     {
       "title": "MAI Labs Company Website",
