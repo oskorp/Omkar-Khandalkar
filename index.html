@@ -2959,6 +2959,24 @@
     .nav-resume { padding: .42rem .95rem; font-size: .8rem; }
     .float-tag .ft-main { font-size: 1rem; font-weight: 700; letter-spacing: -.01em; }
     .float-tag .ft-sub { font-size: .76rem; margin-top: .1rem; }
+    @media (max-width: 768px) {
+      .hero-layout .hero-proof, .cta-long, .cta-arrow { display: none; }
+      .hero-layout .hero-ctas { flex-wrap: nowrap; justify-content: center; align-items: center; gap: .4rem; }
+      .hero-layout .hero-ctas .btn { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: auto; flex: 0 0 auto; height: 2.75rem; padding: 0 .85rem; font-size: .8rem; white-space: nowrap; }
+      .hero-layout .hero-ctas .icon-btn { width: 2.75rem; padding: 0; }
+    }
+    @media (max-width: 400px) {
+      .hero-layout .hero-ctas { gap: .3rem; }
+      .hero-layout .hero-ctas .btn { padding: 0 .7rem; }
+      .hero-layout .hero-ctas .icon-btn { padding: 0; }
+    }
+    @media (max-width: 345px) {
+      .hero-layout .hero-ctas { gap: .25rem; }
+      .hero-layout .hero-ctas .btn { height: 2.4rem; padding: 0 .45rem; font-size: .74rem; }
+      .hero-layout .hero-ctas .icon-btn { width: 2.4rem; padding: 0; }
+      .contact-link-item, .cl-text { min-width: 0; }
+      .cl-val { overflow-wrap: anywhere; }
+    }
     @media (max-width: 1024px) {
       .hero-layout { gap: 2rem; padding-top: 1.25rem; }
       .hero-layout > .hero-card { display: block; order: -1; width: 100%; max-width: 360px; }
@@ -3717,8 +3735,8 @@
           <h1 class="hero-headline">I make complex products <span class="hero-accent">simple to use.</span></h1>
           <p class="hero-desc">Senior Product Designer at Zeus Learning, leading UX and visual design for Quantum, an enterprise LMS and CMS. I focus on research-led workflows, accessible interfaces and systems engineers can build.</p>
           <div class="hero-ctas">
-            <a href="#projects" class="btn btn-primary">View Case Studies &rarr;</a>
-            <a href="Omkar_Khandalkar_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">Download Resume</a>
+            <a href="#projects" class="btn btn-primary">View Case Studies<span class="cta-arrow">&nbsp;&rarr;</span></a>
+            <a href="Omkar_Khandalkar_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline"><span class="cta-long">Download&nbsp;</span>Resume</a>
             <a href="https://www.linkedin.com/in/omkarkhandalkar/" target="_blank" rel="noopener" aria-label="LinkedIn" class="btn btn-outline icon-btn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
             <a href="https://www.behance.net/omkark3" target="_blank" rel="noopener" aria-label="Behance" class="btn btn-outline icon-btn" title="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
           </div>
@@ -5235,7 +5253,7 @@
           .chatbot-container { inset: 0; right: auto; bottom: auto; display: block; pointer-events: none; }
           .chatbot-container::before { content: ''; position: fixed; inset: 0; background: var(--bg); opacity: 0; pointer-events: none; transition: opacity .25s var(--ease); }
           .chatbot-container:has(.chatbot-panel.open)::before { opacity: 1; }
-          .chatbot-toggle { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom)); z-index: 2; pointer-events: auto; }
+          .chatbot-toggle { position: fixed; right: 1rem; bottom: calc(1rem + 44px + .75rem + env(safe-area-inset-bottom)); z-index: 2; pointer-events: auto; }
           .chatbot-panel { position: fixed; top: var(--chatbot-viewport-top, 0px); right: 0; bottom: auto; left: 0; z-index: 3; width: 100%; height: var(--chatbot-viewport-height, 100dvh); max-height: none; min-height: 0; box-sizing: border-box; background: var(--bg); border: 0; border-radius: 0; overscroll-behavior: contain; transform: translateY(100%); }
           .chatbot-panel.open { transform: translateY(0); }
           .chatbot-header { padding: calc(.8rem + env(safe-area-inset-top)) 1rem .8rem; }
