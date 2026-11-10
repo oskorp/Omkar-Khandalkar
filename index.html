@@ -3015,8 +3015,15 @@
     .play-card strong { display: block; color: var(--text); font-size: .9rem; }
     .play-card small { color: var(--text2); font-size: .76rem; }
 
-    .skill-list { list-style: none; padding: 0; margin: 0 0 1rem; }
-    .skill-list li { padding: .6rem 0; border-bottom: 1px solid var(--border); color: var(--text2); font-size: .9rem; }
+    .skill-groups { margin: 0; padding-left: 1.8rem; }
+    .skill-groups > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1.2rem; padding: .95rem 0; border-top: 1px solid var(--border); }
+    .skill-groups > div:first-child { padding-top: 0; border-top: 0; }
+    .skill-groups dt { font-size: .82rem; font-weight: 600; line-height: 1.5; color: var(--text); }
+    .skill-groups dd { margin: 0; font-size: .84rem; line-height: 1.65; color: var(--text2); }
+    @media (max-width: 480px) {
+      .skill-groups { padding-left: 0; }
+      .skill-groups > div { grid-template-columns: 1fr; gap: .25rem; }
+    }
 
     .cs-status { display: inline-block; font-size: .74rem; font-weight: 600; padding: .28rem .7rem; border-radius: 100px; background: rgba(255, 255, 255, .14); color: #fff; margin-bottom: 1rem; }
     .cs-project-name { color: rgba(255, 255, 255, .78); font-size: .95rem; font-weight: 500; margin-bottom: .45rem; }
@@ -3952,14 +3959,15 @@
               <div class="tl-desc">Vice Chairman of IETE RAIT. Organised the Internal Smart India Hackathon, ran Python and Java workshops, and represented the college at eYantra, a national robotics competition.</div>
             </div>
           </div>
-          <h3 class="col-head"><span class="col-dot"></span>Tools and skills</h3>
-          <ul class="skill-list">
-            <li>Figma: Auto Layout, Variables, Components</li>
-            <li>Adobe XD, Sketch, prototyping</li>
-            <li>Journey mapping, personas, information architecture</li>
-            <li>Heuristic evaluation, WCAG accessibility audits</li>
-            <li>HTML, CSS, JavaScript, React, Tailwind CSS</li>
-          </ul>
+          <h3 class="col-head"><span class="col-dot"></span>Skills and tools</h3>
+          <dl class="skill-groups skills-block">
+            <div><dt>Product design</dt><dd>End-to-end product design, enterprise UX, interaction design, information architecture, responsive design</dd></div>
+            <div><dt>AI products</dt><dd>Human-in-the-loop workflows, explainable AI, conversational UI, AI confidence patterns</dd></div>
+            <div><dt>Research</dt><dd>User interviews, usability testing, heuristic evaluation, journey mapping, competitive analysis</dd></div>
+            <div><dt>Systems and accessibility</dt><dd>Component libraries, design tokens, documentation, WCAG 2.2, ARIA patterns</dd></div>
+            <div><dt>Design tools</dt><dd>Figma (Auto Layout, Components, Variables), Adobe XD, Illustrator, Photoshop</dd></div>
+            <div><dt>Front-end</dt><dd>HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Angular Material</dd></div>
+          </dl>
         </div>
       </div>
     </div>
