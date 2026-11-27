@@ -3089,6 +3089,34 @@
     .two-stat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .cs-outcome-note { margin-top: 1.4rem; }
     .learn-item h3 { font-size: .98rem; font-weight: 600; margin-bottom: .35rem; }
+    .cs-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+    .cs-note { font-size: .92rem !important; margin-top: 1.2rem; }
+    .cs-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
+    .cs-cards.is-four { grid-template-columns: repeat(4, 1fr); }
+    .cs-table-wrap { margin-top: 1.6rem; border: 1px solid var(--borderS); border-radius: 14px; overflow-x: auto; }
+    .cs-table-wrap.is-flush { margin-top: 0; }
+    .cs-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .cs-table caption { caption-side: top; text-align: left; padding: .9rem 1.1rem .2rem; font-size: .8rem; font-weight: 600; color: var(--text); }
+    .cs-table th { text-align: left; font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text2); padding: .75rem 1.1rem; border-bottom: 1px solid var(--borderS); white-space: nowrap; }
+    .cs-table td { padding: .8rem 1.1rem; border-top: 1px solid var(--border); color: var(--text2); line-height: 1.5; vertical-align: top; }
+    .cs-table td:first-child { color: var(--text); font-weight: 600; }
+    .cs-table.is-matrix th:not(:first-child), .cs-table.is-matrix td:not(:first-child) { text-align: center; }
+    .cs-yes { color: var(--tag); } .cs-no { color: var(--text2); opacity: .55; }
+    .cs-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1rem 0 .2rem; }
+    .cs-option { border: 1px dashed var(--borderS); border-radius: 12px; padding: 1rem 1.1rem; }
+    .cs-option.is-chosen { border: 1px solid var(--tag); background: var(--tag-bg); }
+    .cs-option h4 { font-size: .92rem; font-weight: 700; margin: .5rem 0 .3rem; color: var(--text); }
+    .cs-option p { font-size: .86rem !important; line-height: 1.5 !important; margin: 0 !important; }
+    .cs-chip { display: inline-block; font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: .18rem .55rem; border-radius: 100px; border: 1px solid var(--borderS); color: var(--text2); }
+    .cs-option.is-chosen .cs-chip { border-color: var(--tag); color: var(--tag); }
+    .cs-shot figcaption strong { color: var(--text); font-weight: 600; }
+    @media (max-width: 900px) { .cs-cards.is-four { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 720px) {
+      .cs-cards, .cs-cards.is-four, .cs-options { grid-template-columns: 1fr; }
+      #cs-dam .two-col { grid-template-columns: 1fr; gap: 1.2rem; }
+      .cs-table { min-width: 520px; }
+      .cs-table.is-matrix { min-width: 560px; }
+    }
     .form-error { display: none; margin-top: .8rem; font-size: .88rem; color: #f87171; }
     [data-theme="light"] .form-error { color: #b91c1c; }
     .form-error a { color: inherit; }
@@ -3222,91 +3250,112 @@
     <div class="cs-hero-band" style="background:linear-gradient(135deg,#0e1a3d 0%,#1e3c9a 100%);">
       <div class="container cs-hero-inner">
         <p class="cs-status">Enterprise product &middot; Shipped Oct 2026</p>
-        <div class="cs-tags"><span class="cs-tag">EdTech</span><span class="cs-tag">Enterprise SaaS</span><span class="cs-tag">CMS</span><span class="cs-tag">Digital Asset Management</span><span class="cs-tag">Accessibility</span></div>
-        <p class="cs-project-name">Media Library &middot; Digital Asset Management for Quantum CMS</p>
-        <h1>Upload once, reuse everywhere, never break live content</h1>
-        <p class="cs-sub">A digital asset management module for US K-12 publishers, built to ship inside the CMS, as an add-on, or white-labelled.</p>
-        <div class="cs-meta-row"><div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Product Designer</div></div><div><div class="cs-meta-lbl">Company</div><div class="cs-meta-val">Zeus Learning</div></div><div><div class="cs-meta-lbl">Timeline</div><div class="cs-meta-val">Jul&ndash;Oct 2026 &middot; 7 sprints</div></div><div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Jira</div></div></div>
+        <div class="cs-tags"><span class="cs-tag">EdTech</span><span class="cs-tag">Enterprise CMS</span><span class="cs-tag">Digital Asset Management</span><span class="cs-tag">Accessibility</span></div>
+        <p class="cs-project-name">Media Library &middot; Digital asset management for Quantum CMS</p>
+        <h1>Making media reusable without ever breaking live content</h1>
+        <p class="cs-sub">One governed home for every image, video, audio file and document used in K-12 courses and assessments, built as a module that can be sold three ways.</p>
+        <div class="cs-meta-row"><div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Product Designer</div></div><div><div class="cs-meta-lbl">Team</div><div class="cs-meta-val">PO/BA, co-designer, tech lead, 5 engineers, 2 QA</div></div><div><div class="cs-meta-lbl">Timeline</div><div class="cs-meta-val">Jul&ndash;Oct 2026 &middot; 7 sprints</div></div><div><div class="cs-meta-lbl">Platform</div><div class="cs-meta-val">Quantum Plus CMS, web</div></div></div>
       </div>
     </div>
     <div class="container cs-body">
       <div class="cs-tldr" aria-label="Summary">
-        <div><h2>The problem</h2><p>Every question and lesson carried its own copy of each file, so nobody could reuse media or see where it was used.</p></div>
-        <div><h2>What I did</h2><p>Designed the Media Library end to end: IA, core flows, role permissions, accessibility specs and UX copy.</p></div>
-        <div><h2>The result</h2><p>36 user stories shipped across 7 sprints, with replace and delete gated so live content can't break.</p></div>
+        <div><h2>The problem</h2><p>Media lived inside each question and lesson. Files were re-uploaded, untagged and untracked, so replacing or deleting one could silently break a live assessment.</p></div>
+        <div><h2>What I did</h2><p>Owned the IA, core flows, role matrix, accessibility layer and UX copy, and drove the riskiest call: how to delete media that content depends on.</p></div>
+        <div><h2>The result</h2><p>A role-aware DAM shipped in one quarter: 36 of 36 stories closed and design-reviewed, sellable bundled, standalone or white-labelled.</p></div>
       </div>
-      <figure class="cs-cover"><button type="button" onclick="openLB('images/dam/listing.jpg','Media Library listing screen')" aria-label="Enlarge: Media Library listing screen" style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;"><img src="images/dam/listing.jpg" alt="Media Library listing: folder tree and filters on the left, a grid of media and folders in the middle, and a preview panel with metadata on the right" decoding="async" loading="lazy"></button></figure>
+      <figure class="cs-cover"><button type="button" class="cs-zoom" onclick="openLB('images/dam/listing.jpg','Media Library listing screen')" aria-label="Enlarge: Media Library listing screen"><img src="images/dam/listing.jpg" alt="Media Library listing: folder tree and filters on the left, a grid of media and folders in the middle, and a preview panel with metadata on the right" decoding="async" loading="lazy"></button></figure>
+
       <div class="cs-sec">
-        <p class="sec-lbl">My Contribution</p>
-        <h2>What I was responsible for</h2>
-        <ul class="cs-contrib"><li>Information architecture and every core flow of the Media Library</li><li>The role permission matrix for admins, editors and reviewers</li><li>Accessibility specs as a separate annotation layer in Figma, and all UX copy</li><li>Design sign-off on every story, after QA tested it across breakpoints</li></ul>
-        <div class="three-col" style="margin-top:1.6rem;"><div class="stat-c"><div class="stat-big">36</div><div class="stat-lbl">User stories shipped across 7 sprints</div></div><div class="stat-c"><div class="stat-big">433</div><div class="stat-lbl">Review comments from QA, engineering and BA worked through</div></div><div class="stat-c"><div class="stat-big">5</div><div class="stat-lbl">Breakpoints specified, 1920+ down to 320 px</div></div></div>
+        <p class="sec-lbl">Context and Role</p>
+        <h2>A feature request that became a product line</h2>
+        <div class="two-col"><div><p>Quantum is an LMS/CMS for US K-12 publishers. A media library kept coming up in sales because competitors bundled one. Engineering chose to build it as an independent module, which turned a CMS feature into something the business could sell on its own.</p><p>I was one of two designers, working with the product owner and BA. I owned the information architecture, the core flows (listing, folders, preview, edit, replace, archive, delete), the role matrix, accessibility annotations and UX copy, and I signed off every story in design review.</p></div>
+        <div class="ic"><h3>What I owned</h3><ul><li>IA and every core flow, desktop first across 5 breakpoints</li><li>The role permission matrix</li><li>Accessibility as a separate annotation layer in Figma</li><li>UX copy and terminology</li><li>Design sign-off on all 36 stories</li></ul></div></div>
+        <div class="cs-table-wrap"><table class="cs-table"><caption>One module, three ways to sell it</caption><thead><tr><th scope="col">Edition</th><th scope="col">Buyer</th><th scope="col">What they get</th></tr></thead><tbody><tr><td>Bundled</td><td>Existing Quantum CMS customers</td><td>The library wired into the editor, learning objects, 13 question types, stimuli and teacher guides</td></tr><tr><td>Standalone add-on</td><td>Publishers and districts on other authoring tools</td><td>The same library behind a feature flag, with storage tiers</td></tr><tr><td>White label</td><td>LMS and assessment vendors</td><td>The library re-themed through design tokens and mapped to partner roles</td></tr></tbody></table></div>
+        <p class="cs-note">That shaped the design: every flow had to work without assuming the rest of Quantum, and nothing visual could be hard-coded.</p>
       </div>
+
       <div class="cs-sec">
         <p class="sec-lbl">The Problem</p>
-        <h2>Media lived inside content, so nobody could reuse or govern it</h2>
-        <div class="two-col"><div><p>Every question, text lesson and teacher guide carried its own copy of a file. Nobody could see where a file was used, so replacing or deleting one was a gamble that could break a live assessment.</p><p>For publishers it was also a compliance gap: they must prove rights and accessibility for every asset they sell.</p></div><div class="ic"><h3>Key pain points</h3><ul><li>The same image uploaded again for every piece of content</li><li>No visibility of where a file is used</li><li>No subject, grade, language or standards tags</li><li>Alt text, captions and transcripts re-entered per use</li><li>No licence or expiry tracking for stock media</li></ul></div></div>
+        <h2>Media lived inside content, so nobody could reuse, govern or audit it</h2>
+        <div class="cs-cards"><div class="ic"><h3>For authors</h3><ul><li>The same file uploaded again for every question, lesson or teacher guide</li><li>No way to see where a file was used before replacing or deleting it</li><li>No subject, grade, language or standards tags, so nothing could be found by curriculum</li><li>Alt text, captions and transcripts re-entered per use, if at all</li></ul></div><div class="ic"><h3>For the business</h3><ul><li>Publishers must prove rights (licence, author, expiry) and accessibility for every asset they sell</li><li>Duplicate uploads inflated storage</li><li>Competitors bundled a media library, and its absence came up in sales</li><li>An opening for a module that could sell on its own</li></ul></div></div>
       </div>
+
       <div class="cs-sec">
-        <p class="sec-lbl">Users</p>
-        <h2>Four roles, and actions you can't use are hidden, not disabled</h2>
-        <div class="two-col"><div class="ic"><h3>Publisher and Content Admins</h3><p>Govern the library: organise folders, archive, restore and delete.</p></div><div class="ic"><h3>Content Editors</h3><p>Upload, tag, edit, replace, move and insert media into content. No archive or delete.</p></div><div class="ic"><h3>Content Reviewers</h3><p>Browse, preview, download and check usage only.</p></div><div class="ic"><h3>Students and teachers</h3><p>Never see the library, but see its output: images, captions and transcripts inside courses.</p></div></div>
+        <p class="sec-lbl">Users and Permissions</p>
+        <h2>Four roles, and actions a role can't use are hidden, not disabled</h2>
+        <div class="cs-table-wrap"><table class="cs-table is-matrix"><caption>Role permission matrix</caption><thead><tr><th scope="col">Action</th><th scope="col">Publisher admin</th><th scope="col">Content admin</th><th scope="col">Content editor</th><th scope="col">Reviewer</th></tr></thead><tbody><tr><td>Browse, search, filter, preview, download</td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td></tr><tr><td>Upload, edit, move, create folders, insert into content</td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-no" aria-label="No">&#9675;</span></td></tr><tr><td>Archive, unarchive, delete</td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-yes" aria-label="Yes">&#9679;</span></td><td><span class="cs-no" aria-label="No">&#9675;</span></td><td><span class="cs-no" aria-label="No">&#9675;</span></td></tr></tbody></table></div>
+        <p class="cs-note">Students and teachers never open the library, but they see its output: images, captions and transcripts inside courses. Publisher clients reviewed builds; their requests lived on separate Figma pages so they never forked the core flow.</p>
       </div>
+
       <div class="cs-sec">
         <p class="sec-lbl">Research</p>
-        <h2>Borrow the mental model authors already have</h2>
-        <div class="three-col"><div class="ic"><h3>Pattern benchmarking</h3><p>Windows File Explorer, OneDrive and Google Drive: folder trees, new folders created where you stand, OneDrive's grid keyboard model.</p></div><div class="ic"><h3>Platform constraints</h3><p>Mapped storage, search and user-service limits with the tech lead before committing to UI: 100 MB per file, 10 per upload, 20 per bulk edit.</p></div><div class="ic"><h3>Content audit</h3><p>Every place media can live: 13 question types, three learning-object types, stimuli and teacher guides, plus what is out of scope.</p></div></div>
-        <div class="cs-insight"><span>Key insight</span><p>The most expensive mistake is breaking live content. So &ldquo;Used In&rdquo; had to be visible everywhere, and it had to gate replace and delete.</p></div>
+        <h2>Borrow the mental model authors already have, then design around the platform's limits</h2>
+        <div class="cs-cards is-four"><div class="ic"><h3>Pattern benchmarking</h3><p>File Explorer, OneDrive and Google Drive: tree behaviour, folders created where you stand, OneDrive's grid keyboard model.</p></div><div class="ic"><h3>Platform constraints</h3><p>Agreed with the tech lead up front: 100 MB per file, 10 per upload, 20 per bulk edit, 60 per page, and no video frame extraction.</p></div><div class="ic"><h3>Content audit</h3><p>Every place media can live: 13 question types, three learning-object types, stimuli and teacher guides, and what was out of scope.</p></div><div class="ic"><h3>Structured reviews</h3><p>A mock walkthrough with QA, BA and engineering before every story was built, and a design review after.</p></div></div>
+        <div class="cs-table-wrap"><table class="cs-table"><caption>What we learned, and what it changed</caption><thead><tr><th scope="col">Insight</th><th scope="col">Design response</th></tr></thead><tbody><tr><td>Authors think in folders and in curriculum at the same time</td><td>The left panel holds a folder tree and Search and Filters, one open at a time</td></tr><tr><td>The costliest mistake is breaking live content</td><td>&ldquo;Used In&rdquo; is visible everywhere, and it gates replace and delete</td></tr><tr><td>Accessibility data is cheapest to capture once</td><td>Alt text is mandatory at upload; captions and transcripts are stored with the media</td></tr><tr><td>Uploads come in batches of related files</td><td>Properties typed on the first file carry over to the rest</td></tr></tbody></table></div>
+        <p class="cs-note">Honest gap: we validated with expert and client reviews, not moderated sessions with authors. That is the first thing I would change.</p>
       </div>
+
       <div class="cs-sec">
-        <p class="sec-lbl">Design Process</p>
-        <h2>From constraints to a shipped module</h2>
-        <div class="steps">
-          <div class="step"><div class="step-n">01</div><div><h4>Discover</h4><p>Benchmarked file managers, audited where media is used, and listed platform limits.</p></div></div>
-          <div class="step"><div class="step-n">02</div><div><h4>Define</h4><p>One listing page as the hub; every other surface is a panel, modal or page that returns to it. Wrote the role matrix and split the epic into listing, creation, actions and access points.</p></div></div>
-          <div class="step"><div class="step-n">03</div><div><h4>Design</h4><p>Desktop first at 1920&ndash;1366, then four smaller breakpoints. Explored three deletion approaches side by side.</p></div></div>
-          <div class="step"><div class="step-n">04</div><div><h4>Validate</h4><p>Story-by-story walkthroughs with QA, BA and engineering, plus a separate accessibility annotation layer in Figma.</p></div></div>
-          <div class="step"><div class="step-n">05</div><div><h4>Deliver</h4><p>Built in sprints; QA tested each story across breakpoints; I closed each one in design review.</p></div></div>
+        <p class="sec-lbl">Key Decisions</p>
+        <h2>The calls that shaped the product</h2>
+        <div class="cs-decisions">
+          <article class="cs-decision"><div class="cs-decision-n">01</div><div><h3>One listing hub that behaves like a file explorer</h3><p>Every other surface (preview panel, edit page, archive, delete) is a panel, modal or page that returns to the listing. The editor and learning objects open the same listing in select-only mode, so authors learn one library.</p>
+            <dl><div><dt>Why</dt><dd>&ldquo;Behave like a file explorer&rdquo; gave the team a shared rule that settled most debates before they started.</dd></div><div><dt>The trade-off</dt><dd>Clicking a folder opens it rather than showing details, so folder information moved into table columns and card counts.</dd></div></dl></div></article>
+          <article class="cs-decision"><div class="cs-decision-n">02</div><div><h3>Block and guide: media in use can't be deleted</h3><p>This was the riskiest flow, so I designed three approaches side by side in Figma and let the team choose with the trade-offs in view.</p>
+            <div class="cs-options"><div class="cs-option"><span class="cs-chip">Rejected</span><h4>Delete with content</h4><p>One click could remove live assessments.</p></div><div class="cs-option"><span class="cs-chip">Rejected</span><h4>Manage references in the dialog</h4><p>Powerful, but bulk replace across item types was risky to build and test.</p></div><div class="cs-option is-chosen"><span class="cs-chip">Shipped</span><h4>Block and guide</h4><p>List every item using the media with an Edit link; Delete stays disabled until usage is zero.</p></div></div>
+            <dl><div><dt>Why</dt><dd>It can't break content, it reuses existing edit pages, and it gives a clear way to recover.</dd></div><div><dt>The trade-off</dt><dd>Retiring a widely used file takes admins more steps. Archive covers the common case: hidden from new use, untouched where it already lives.</dd></div></dl></div></article>
+          <article class="cs-decision"><div class="cs-decision-n">03</div><div><h3>Replace keeps the Media ID, except where geometry matters</h3><p>Replacing a file updates it everywhere it is used, after a warning that it is in use. Replace is blocked for Hotspot and Drag-and-Drop questions.</p>
+            <dl><div><dt>Why</dt><dd>Those questions' answer areas are drawn on the image, so a new image would silently invalidate the answer key.</dd></div><div><dt>The trade-off</dt><dd>Authors of those question types have to upload a new asset and re-author the answer areas.</dd></div></dl></div></article>
+          <article class="cs-decision"><div class="cs-decision-n">04</div><div><h3>Hide actions a role can't use, everywhere</h3><p>Editors never see Archive or Delete; reviewers never see Upload.</p>
+            <dl><div><dt>Why</dt><dd>No dead-end buttons, and a simpler screen for the roles that do most of the work.</dd></div><div><dt>The trade-off</dt><dd>Some users won&rsquo;t discover that an action exists for other roles.</dd></div></dl></div></article>
+          <article class="cs-decision"><div class="cs-decision-n">05</div><div><h3>Capture accessibility once, at upload</h3><p>Alt text is required to publish. Values typed on the first file copy to the rest until you switch files, and Publish validates every file at once, opening the first incomplete one.</p>
+            <dl><div><dt>Why</dt><dd>Metadata entered once travels with the media wherever it is inserted, which is what publishers need to prove compliance.</dd></div><div><dt>The trade-off</dt><dd>Uploading is slower up front. The carry-over rule claws that time back, and is more predictable than an &ldquo;apply to all&rdquo; toggle.</dd></div></dl></div></article>
+          <article class="cs-decision"><div class="cs-decision-n">06</div><div><h3>Every visual value is a token</h3><p>Built on Quantum's Material 3 based tokens: primary #2C54CE, Noto Sans 12&ndash;20 px, 8 px card radius, a 4/8 px spacing scale.</p>
+            <dl><div><dt>Why</dt><dd>The white-label edition re-brands by swapping values, not redesigning screens.</dd></div><div><dt>The trade-off</dt><dd>No one-off styling, even where a custom treatment would have looked better.</dd></div></dl></div></article>
         </div>
       </div>
+
       <div class="cs-sec">
-        <p class="sec-lbl">Key Decision</p>
-        <h2>Deleting media that's in use: three approaches, one safe choice</h2>
-        <div class="cs-decisions"><article class="cs-decision"><div class="cs-decision-n">01</div><div><h3>Block and guide, instead of deleting with content</h3><p>The delete dialog lists every item that uses the media, each with an Edit link, and Delete stays disabled until usage is zero.</p>
-          <dl><div><dt>Why</dt><dd>Delete-with-content could wipe live assessments, and managing references inside the dialog was heavy to build and test.</dd></div><div><dt>The trade-off</dt><dd>Admins do a little more work to retire a widely used file, in exchange for zero broken content.</dd></div></dl></div></article></div>
-        <div class="cs-shots"><figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/delete-approaches.jpg','Three deletion approaches compared')" aria-label="Enlarge: Three deletion approaches compared"><img src="images/dam/delete-approaches.jpg" alt="Three deletion approaches compared; block and guide is marked as shipped" loading="lazy" decoding="async"></button><figcaption>Three deletion approaches, side by side. Block and guide shipped.</figcaption></figure><figure class="cs-shot"><button type="button" onclick="openLB('images/dam/delete-dialog.jpg','Delete Media dialog')" aria-label="Enlarge: Delete Media dialog"><img src="images/dam/delete-dialog.jpg" alt="Delete Media dialog listing content that uses the media, with Edit links and a disabled Delete button" loading="lazy" decoding="async"></button><figcaption>Delete stays disabled while the media is in use</figcaption></figure><div class="ic"><h3>The guardrails around it</h3><ul><li>Unused media still needs a typed passphrase to delete.</li><li>Archive is the reversible option: hidden from new use, untouched in existing content.</li><li>Replace keeps the Media ID and updates content everywhere. It's blocked for Hotspot and Drag-and-Drop questions, whose answers depend on image geometry.</li></ul></div></div>
+        <p class="sec-lbl">The Design</p>
+        <h2>What shipped</h2>
+        <div class="cs-shots">
+          <figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/add-media.jpg','Add New Media page')" aria-label="Enlarge: Add New Media page"><img src="images/dam/add-media.jpg" alt="Add New Media page: uploaded files on the left, media properties form on the right with an alt-text required error" loading="lazy" decoding="async"></button><figcaption><strong>Add New Media.</strong> Up to 10 files at once; properties carry over from the first file; missing alt text blocks Publish and is flagged inline.</figcaption></figure>
+          <figure class="cs-shot"><button type="button" onclick="openLB('images/dam/delete-dialog.jpg','Delete Media dialog')" aria-label="Enlarge: Delete Media dialog"><img src="images/dam/delete-dialog.jpg" alt="Delete Media dialog listing content that uses the media, with Edit links and a disabled Delete button" loading="lazy" decoding="async"></button><figcaption><strong>Delete, blocked.</strong> Every item using the media, with Edit and Refresh. Unused media still needs a typed passphrase.</figcaption></figure>
+          <figure class="cs-shot"><button type="button" onclick="openLB('images/dam/colours.jpg','Media Library colour tokens')" aria-label="Enlarge: Media Library colour tokens"><img src="images/dam/colours.jpg" alt="Colour tokens: primary blue, text greys, outlines, folder yellows, error red and success green" loading="lazy" decoding="async"></button><figcaption><strong>Colour tokens.</strong> The layer the white-label edition swaps.</figcaption></figure>
+        </div>
       </div>
+
       <div class="cs-sec">
-        <p class="sec-lbl">Design Screens</p>
-        <h2>Tag ten files in the time it used to take to tag one</h2>
-        <div class="cs-shots"><figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/add-media.jpg','Add New Media page')" aria-label="Enlarge: Add New Media page"><img src="images/dam/add-media.jpg" alt="Add New Media page: uploaded files on the left, media properties form on the right with an alt-text required error" loading="lazy" decoding="async"></button><figcaption>Add New Media: one form, many files</figcaption></figure></div>
-        <p style="margin-top:1.4rem;">Values typed on the first file copy to the rest until you switch files. Publish validates every file at once, opens the first incomplete one and flags the others. Alt text is mandatory, and captions and transcripts are stored once and reused wherever the media goes.</p>
+        <p class="sec-lbl">Accessibility and Responsive</p>
+        <h2>Accessibility specified as its own layer, not left to chance</h2>
+        <div class="two-col"><div class="ic"><h3>Accessibility annotations</h3><ul><li>Grid keyboard model from OneDrive: arrows move between tiles, Tab reaches the checkbox, Space selects, focus never selects by itself</li><li>Folder tree as a real tree view, with expand and open as separate targets</li><li>Live regions announce upload, processing, archive and delete results</li><li>Every overlay closes with a Close button and Escape</li><li>Tooltips on every icon-only button and truncated name</li></ul></div>
+        <div class="cs-table-wrap is-flush"><table class="cs-table"><caption>Five breakpoints</caption><thead><tr><th scope="col">Viewport</th><th scope="col">Left panel</th><th scope="col">Grid</th></tr></thead><tbody><tr><td>1920+</td><td>Always open</td><td>10 cols</td></tr><tr><td>1920&ndash;1366</td><td>Push drawer</td><td>10 / 6</td></tr><tr><td>1365&ndash;1024</td><td>Overlay drawer</td><td>6</td></tr><tr><td>1023&ndash;768</td><td>Overlay, icon buttons</td><td>5 / 4</td></tr><tr><td>767&ndash;320</td><td>Full-screen overlay</td><td>3 / 2</td></tr></tbody></table></div></div>
+        <p class="cs-note">Column count follows the grid's own width, not the viewport, so opening the drawer re-flows cards instead of squeezing them.</p>
       </div>
+
       <div class="cs-sec">
-        <p class="sec-lbl">Feedback</p>
-        <h2>433 comments, six themes, fixed once as rules</h2>
-        <div class="three-col"><div class="ic"><h3>Terminology</h3><p>Asset, media, image and file meant the same thing. One word, Media, everywhere.</p></div><div class="ic"><h3>Missing states</h3><p>Every story now ships default, hover, focus, loading, empty, error and API-failure states.</p></div><div class="ic"><h3>Accessibility</h3><p>Close button on every overlay, OneDrive-style grid keyboard model, screen-reader hints, tooltips on icon buttons.</p></div></div>
+        <p class="sec-lbl">Working with the Team</p>
+        <h2>433 review comments, turned into six rules</h2>
+        <p>Every story got a mock walkthrough with QA, BA and engineering before build. Instead of fixing comments one by one, I grouped them into themes and fixed each theme once, as a rule for every later story.</p>
+        <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th scope="col">Theme</th><th scope="col">Typical feedback</th><th scope="col">The rule that fixed it</th></tr></thead><tbody><tr><td>Terminology</td><td>Asset, media, image and file used for one thing</td><td>One word, Media, everywhere</td></tr><tr><td>Missing states</td><td>No drop-zone hover, loader, empty archive or limit error</td><td>Every story ships default, hover, focus, selected, loading, empty, error and API-failure states</td></tr><tr><td>Destructive actions</td><td>No confirm on Cancel, no retry on failed upload</td><td>Discard Changes prompt, Retry on failed entries, and the three-approach deletion study</td></tr><tr><td>Copy</td><td>Vague limits; file-type errors without the allowed types</td><td>Errors name the allowed types and sizes</td></tr><tr><td>Responsive</td><td>Wrong column counts at 1775 and 1366 px</td><td>Columns tied to grid width, and a 1920 case added</td></tr><tr><td>Accessibility</td><td>Nested interactive cards, no close on overlays, unclear tab order</td><td>Close on every overlay, the OneDrive grid model, screen-reader hints</td></tr></tbody></table></div>
       </div>
+
       <div class="cs-sec">
-        <p class="sec-lbl">UI Style</p>
-        <h2>Native to Quantum, re-themable for white label</h2>
-        <p>Built on Quantum's Material 3 based tokens: Primary #2C54CE, Noto Sans 12&ndash;20 px, 8 px radius, an 8-point spacing rhythm. Every value is a token, so a partner can re-brand by swapping values, not screens.</p>
-        <div class="cs-shots"><figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/colours.jpg','Media Library colour tokens')" aria-label="Enlarge: Media Library colour tokens"><img src="images/dam/colours.jpg" alt="Colour tokens: primary blue, text greys, outlines, folder yellows, error red and success green" loading="lazy" decoding="async"></button><figcaption>Colour tokens</figcaption></figure></div>
+        <p class="sec-lbl">Outcome</p>
+        <h2>Shipped in one quarter, with a plan to prove it works</h2>
+        <div class="three-col"><div class="stat-c"><div class="stat-big">36 / 36</div><div class="stat-lbl">Stories closed and design-reviewed across 7 sprints</div><div class="stat-src">Delivered</div></div><div class="stat-c"><div class="stat-big">3</div><div class="stat-lbl">Ways to sell one module: bundled, add-on, white label</div><div class="stat-src">Delivered</div></div><div class="stat-c"><div class="stat-big">60%</div><div class="stat-lbl">Media insertions that reuse a library asset</div><div class="stat-src">North-star target</div></div></div>
+        <div class="cs-table-wrap"><table class="cs-table"><caption>Measurement plan</caption><thead><tr><th scope="col">Area</th><th scope="col">Metric</th><th scope="col">Target</th></tr></thead><tbody><tr><td>Adoption</td><td>Weekly active authors using the library</td><td>70% of active authors</td></tr><tr><td>Findability</td><td>Median search-to-insert time</td><td>Under 30 s</td></tr><tr><td>Quality</td><td>New images with alt text &middot; videos with captions</td><td>100% &middot; 80%</td></tr><tr><td>Safety</td><td>Content broken by replace or delete</td><td>Zero</td></tr><tr><td>Experience</td><td>SUS after 30 days &middot; first-time task success</td><td>75 &middot; 90%</td></tr></tbody></table></div>
+        <p class="cs-note">The module closed in October 2026, so usage numbers are targets with a measurement plan, not results yet.</p>
       </div>
-      <div class="cs-sec">
-        <p class="sec-lbl">Success Metrics</p>
-        <h2>What success looks like</h2>
-        <div class="three-col"><div class="stat-c"><div class="stat-big">60%</div><div class="stat-lbl">Media insertions that reuse a library asset</div><div class="stat-src">North-star target</div></div><div class="stat-c"><div class="stat-big">100%</div><div class="stat-lbl">New images published with alt text</div><div class="stat-src">Target</div></div><div class="stat-c"><div class="stat-big">0</div><div class="stat-lbl">Content broken by replace or delete</div><div class="stat-src">Target</div></div></div>
-        <p class="cs-outcome-note">The module closed in October 2026, so these are targets with a measurement plan, not results yet.</p>
-      </div>
+
       <div class="cs-sec">
         <p class="sec-lbl">Reflection</p>
-        <h2>What this project taught me</h2>
-        <div class="learn-grid"><div class="learn-item"><h3>Familiar beats clever</h3><p>&ldquo;Behave like a file explorer&rdquo; settled most debates before they started.</p></div><div class="learn-item"><h3>Show the options</h3><p>Putting three deletion approaches side by side made the safe one easy for everyone to agree on.</p></div><div class="learn-item"><h3>Turn feedback into rules</h3><p>Fixing comment themes once, as rules, stopped the same comment returning on the next story.</p></div><div class="learn-item"><h3>Test earlier</h3><p>Next time: moderated sessions with authors before build, and analytics shipped with the UI.</p></div></div>
+        <h2>What I took from this</h2>
+        <div class="learn-grid"><div class="learn-item"><h3>Familiar beats clever</h3><p>One borrowed mental model, the file explorer, did more to align the team than any number of new patterns would have.</p></div><div class="learn-item"><h3>Put the options side by side</h3><p>Showing three deletion approaches with their trade-offs made the safe choice easy for engineering, QA and the BA to agree on.</p></div><div class="learn-item"><h3>Turn feedback into rules</h3><p>Fixing each comment theme once stopped the same feedback returning on the next story.</p></div><div class="learn-item"><h3>What I would do differently</h3><p>Run 5&ndash;6 moderated tests with editors and admins before build, lock terminology and platform limits in week one, and ship analytics events with the UI.</p></div></div>
       </div>
       <div class="cs-cta-box">
         <h2>Want the full case study?</h2>
-        <p>Research, decisions, design tokens, accessibility specs and the success-metric plan in an 11-page PDF.</p>
+        <p>IA, rebuilt screens, the full deletion study, tokens, accessibility specs and the measurement plan in an 11-page PDF.</p>
         <div class="cta-row"><a href="DAM_Case_Study_Omkar_Khandalkar.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download PDF &rarr;</a><button class="btn btn-outline" onclick="closeCS('cs-dam')">Back to Portfolio</button></div>
       </div>
       <div class="cs-nav-btns"><button class="cs-nav-btn" onclick="openCS('cs-quantum')"><span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Quantum Virtual Classroom</span></button><button class="cs-nav-btn" onclick="openCS('cs-chitralo')"><span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Chitralo</span></button></div>
@@ -3885,10 +3934,10 @@
           <a class="work-thumb" href="#cs-dam" tabindex="-1" aria-hidden="true"><img src="images/dam/listing.jpg" alt="" loading="lazy" decoding="async" style="object-position:left top;"></a>
           <div class="work-body">
             <p class="work-status">Enterprise product &middot; Shipped Oct 2026</p>
-            <h3><a href="#cs-dam">Upload once, reuse everywhere, never break live content</a></h3>
+            <h3><a href="#cs-dam">Making media reusable without ever breaking live content</a></h3>
             <p class="work-project">Media Library, Digital Asset Management for Quantum CMS &middot; Product Designer</p>
-            <p class="work-summary">A K-12 digital asset management module that ships in the CMS, as an add-on, or white-labelled.</p>
-            <p class="work-proof">36 user stories shipped across 7 sprints</p>
+            <p class="work-summary">A role-aware digital asset management module for K-12 publishers, sold bundled, as an add-on or white-labelled.</p>
+            <p class="work-proof">36 of 36 stories shipped in one quarter</p>
             <div class="work-actions"><span class="work-link" aria-hidden="true">Read case study &rarr;</span><a class="work-ext" href="DAM_Case_Study_Omkar_Khandalkar.pdf" target="_blank" rel="noopener">PDF case study &#8599;</a></div>
           </div>
         </article>
