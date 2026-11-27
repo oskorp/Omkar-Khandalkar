@@ -49,6 +49,17 @@
       "tags": ["marketplace", "product design", "0 to 1"]
     },
     {
+      "title": "Media Library (Digital Asset Management) for Quantum CMS",
+      "details": "At Zeus Learning (Jul-Oct 2026, 7 sprints) Omkar designed a DAM module for K-12 publishers: IA, core flows, role permission matrix, accessibility specs and UX copy. 36 user stories shipped; 433 review comments resolved; delete is blocked and guided while media is in use so live content never breaks.",
+      "anchor": "#cs-dam",
+      "tags": [
+        "EdTech",
+        "DAM",
+        "CMS",
+        "accessibility"
+      ]
+    },
+    {
       "title": "Quantum LMS/CMS",
       "details": "Major product experience in EdTech, focused on LMS/CMS workflows and complex product environments.",
       "anchor": "#cs-quantum",
