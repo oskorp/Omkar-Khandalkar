@@ -3101,6 +3101,7 @@
     .cs-table td { padding: .8rem 1.1rem; border-top: 1px solid var(--border); color: var(--text2); line-height: 1.5; vertical-align: top; }
     .cs-table td:first-child { color: var(--text); font-weight: 600; }
     .cs-table.is-matrix th:not(:first-child), .cs-table.is-matrix td:not(:first-child) { text-align: center; }
+    .cs-table.is-matrix th:not(:first-child) { white-space: normal; width: 13%; }
     .cs-yes { color: var(--tag); } .cs-no { color: var(--text2); opacity: .55; }
     .cs-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1rem 0 .2rem; }
     .cs-option { border: 1px dashed var(--borderS); border-radius: 12px; padding: 1rem 1.1rem; }
@@ -3115,7 +3116,9 @@
       .cs-cards, .cs-cards.is-four, .cs-options { grid-template-columns: 1fr; }
       #cs-dam .two-col { grid-template-columns: 1fr; gap: 1.2rem; }
       .cs-table { min-width: 520px; }
-      .cs-table.is-matrix { min-width: 560px; }
+      .cs-table.is-matrix { min-width: 470px; }
+      .cs-table.is-matrix td:first-child { min-width: 170px; }
+      .cs-table th, .cs-table td { padding-left: .8rem; padding-right: .8rem; }
     }
     .form-error { display: none; margin-top: .8rem; font-size: .88rem; color: #f87171; }
     [data-theme="light"] .form-error { color: #b91c1c; }
