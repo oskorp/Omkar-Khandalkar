@@ -3209,7 +3209,107 @@
         <h2>What I took from this</h2>
         <div class="learn-grid"><div class="learn-item"><h3>Scope the object before the screens</h3><p>Deciding that the class was the core object made the later decisions about Zoom, attendance and replay much simpler.</p></div><div class="learn-item"><h3>Design the after as carefully as the during</h3><p>Most of the lasting value of a live class appears once the call ends, in the record it leaves behind.</p></div><div class="learn-item"><h3>What I would measure next</h3><p>Time to set up a class, on-time joins, and how often students return to replays are the signals I would track to prove the workflow is working.</p></div></div>
       </div>
-      <div class="cs-nav-btns"><span></span><button class="cs-nav-btn" onclick="openCS('cs-chitralo')"><span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Chitralo</span></button></div>
+      <div class="cs-nav-btns"><span></span><button class="cs-nav-btn" onclick="openCS('cs-dam')"><span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Media Library (DAM)</span></button></div>
+    </div>
+  </div>
+
+  <div class="cs-panel" id="cs-dam" role="dialog" aria-modal="true" aria-label="Media Library digital asset management case study" tabindex="-1">
+    <div class="cs-panel-nav">
+      <button class="cs-back-btn" onclick="closeCS('cs-dam')"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>Back to Work</button>
+      <span class="cs-panel-nav-title">Media Library for Quantum CMS</span>
+      <span></span>
+    </div>
+    <div class="cs-hero-band" style="background:linear-gradient(135deg,#0e1a3d 0%,#1e3c9a 100%);">
+      <div class="container cs-hero-inner">
+        <p class="cs-status">Enterprise product &middot; Shipped Oct 2026</p>
+        <div class="cs-tags"><span class="cs-tag">EdTech</span><span class="cs-tag">Enterprise SaaS</span><span class="cs-tag">CMS</span><span class="cs-tag">Digital Asset Management</span><span class="cs-tag">Accessibility</span></div>
+        <p class="cs-project-name">Media Library &middot; Digital Asset Management for Quantum CMS</p>
+        <h1>Upload once, reuse everywhere, never break live content</h1>
+        <p class="cs-sub">A digital asset management module for US K-12 publishers, built to ship inside the CMS, as an add-on, or white-labelled.</p>
+        <div class="cs-meta-row"><div><div class="cs-meta-lbl">Role</div><div class="cs-meta-val">Product Designer</div></div><div><div class="cs-meta-lbl">Company</div><div class="cs-meta-val">Zeus Learning</div></div><div><div class="cs-meta-lbl">Timeline</div><div class="cs-meta-val">Jul&ndash;Oct 2026 &middot; 7 sprints</div></div><div><div class="cs-meta-lbl">Tools</div><div class="cs-meta-val">Figma, Jira</div></div></div>
+      </div>
+    </div>
+    <div class="container cs-body">
+      <div class="cs-tldr" aria-label="Summary">
+        <div><h2>The problem</h2><p>Every question and lesson carried its own copy of each file, so nobody could reuse media or see where it was used.</p></div>
+        <div><h2>What I did</h2><p>Designed the Media Library end to end: IA, core flows, role permissions, accessibility specs and UX copy.</p></div>
+        <div><h2>The result</h2><p>36 user stories shipped across 7 sprints, with replace and delete gated so live content can't break.</p></div>
+      </div>
+      <figure class="cs-cover"><button type="button" onclick="openLB('images/dam/listing.jpg','Media Library listing screen')" aria-label="Enlarge: Media Library listing screen" style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;"><img src="images/dam/listing.jpg" alt="Media Library listing: folder tree and filters on the left, a grid of media and folders in the middle, and a preview panel with metadata on the right" decoding="async" loading="lazy"></button></figure>
+      <div class="cs-sec">
+        <p class="sec-lbl">My Contribution</p>
+        <h2>What I was responsible for</h2>
+        <ul class="cs-contrib"><li>Information architecture and every core flow of the Media Library</li><li>The role permission matrix for admins, editors and reviewers</li><li>Accessibility specs as a separate annotation layer in Figma, and all UX copy</li><li>Design sign-off on every story, after QA tested it across breakpoints</li></ul>
+        <div class="three-col" style="margin-top:1.6rem;"><div class="stat-c"><div class="stat-big">36</div><div class="stat-lbl">User stories shipped across 7 sprints</div></div><div class="stat-c"><div class="stat-big">433</div><div class="stat-lbl">Review comments from QA, engineering and BA worked through</div></div><div class="stat-c"><div class="stat-big">5</div><div class="stat-lbl">Breakpoints specified, 1920+ down to 320 px</div></div></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">The Problem</p>
+        <h2>Media lived inside content, so nobody could reuse or govern it</h2>
+        <div class="two-col"><div><p>Every question, text lesson and teacher guide carried its own copy of a file. Nobody could see where a file was used, so replacing or deleting one was a gamble that could break a live assessment.</p><p>For publishers it was also a compliance gap: they must prove rights and accessibility for every asset they sell.</p></div><div class="ic"><h3>Key pain points</h3><ul><li>The same image uploaded again for every piece of content</li><li>No visibility of where a file is used</li><li>No subject, grade, language or standards tags</li><li>Alt text, captions and transcripts re-entered per use</li><li>No licence or expiry tracking for stock media</li></ul></div></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Users</p>
+        <h2>Four roles, and actions you can't use are hidden, not disabled</h2>
+        <div class="two-col"><div class="ic"><h3>Publisher and Content Admins</h3><p>Govern the library: organise folders, archive, restore and delete.</p></div><div class="ic"><h3>Content Editors</h3><p>Upload, tag, edit, replace, move and insert media into content. No archive or delete.</p></div><div class="ic"><h3>Content Reviewers</h3><p>Browse, preview, download and check usage only.</p></div><div class="ic"><h3>Students and teachers</h3><p>Never see the library, but see its output: images, captions and transcripts inside courses.</p></div></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Research</p>
+        <h2>Borrow the mental model authors already have</h2>
+        <div class="three-col"><div class="ic"><h3>Pattern benchmarking</h3><p>Windows File Explorer, OneDrive and Google Drive: folder trees, new folders created where you stand, OneDrive's grid keyboard model.</p></div><div class="ic"><h3>Platform constraints</h3><p>Mapped storage, search and user-service limits with the tech lead before committing to UI: 100 MB per file, 10 per upload, 20 per bulk edit.</p></div><div class="ic"><h3>Content audit</h3><p>Every place media can live: 13 question types, three learning-object types, stimuli and teacher guides, plus what is out of scope.</p></div></div>
+        <div class="cs-insight"><span>Key insight</span><p>The most expensive mistake is breaking live content. So &ldquo;Used In&rdquo; had to be visible everywhere, and it had to gate replace and delete.</p></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Design Process</p>
+        <h2>From constraints to a shipped module</h2>
+        <div class="steps">
+          <div class="step"><div class="step-n">01</div><div><h4>Discover</h4><p>Benchmarked file managers, audited where media is used, and listed platform limits.</p></div></div>
+          <div class="step"><div class="step-n">02</div><div><h4>Define</h4><p>One listing page as the hub; every other surface is a panel, modal or page that returns to it. Wrote the role matrix and split the epic into listing, creation, actions and access points.</p></div></div>
+          <div class="step"><div class="step-n">03</div><div><h4>Design</h4><p>Desktop first at 1920&ndash;1366, then four smaller breakpoints. Explored three deletion approaches side by side.</p></div></div>
+          <div class="step"><div class="step-n">04</div><div><h4>Validate</h4><p>Story-by-story walkthroughs with QA, BA and engineering, plus a separate accessibility annotation layer in Figma.</p></div></div>
+          <div class="step"><div class="step-n">05</div><div><h4>Deliver</h4><p>Built in sprints; QA tested each story across breakpoints; I closed each one in design review.</p></div></div>
+        </div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Key Decision</p>
+        <h2>Deleting media that's in use: three approaches, one safe choice</h2>
+        <div class="cs-decisions"><article class="cs-decision"><div class="cs-decision-n">01</div><div><h3>Block and guide, instead of deleting with content</h3><p>The delete dialog lists every item that uses the media, each with an Edit link, and Delete stays disabled until usage is zero.</p>
+          <dl><div><dt>Why</dt><dd>Delete-with-content could wipe live assessments, and managing references inside the dialog was heavy to build and test.</dd></div><div><dt>The trade-off</dt><dd>Admins do a little more work to retire a widely used file, in exchange for zero broken content.</dd></div></dl></div></article></div>
+        <div class="cs-shots"><figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/delete-approaches.jpg','Three deletion approaches compared')" aria-label="Enlarge: Three deletion approaches compared"><img src="images/dam/delete-approaches.jpg" alt="Three deletion approaches compared; block and guide is marked as shipped" loading="lazy" decoding="async"></button><figcaption>Three deletion approaches, side by side. Block and guide shipped.</figcaption></figure><figure class="cs-shot"><button type="button" onclick="openLB('images/dam/delete-dialog.jpg','Delete Media dialog')" aria-label="Enlarge: Delete Media dialog"><img src="images/dam/delete-dialog.jpg" alt="Delete Media dialog listing content that uses the media, with Edit links and a disabled Delete button" loading="lazy" decoding="async"></button><figcaption>Delete stays disabled while the media is in use</figcaption></figure><div class="ic"><h3>The guardrails around it</h3><ul><li>Unused media still needs a typed passphrase to delete.</li><li>Archive is the reversible option: hidden from new use, untouched in existing content.</li><li>Replace keeps the Media ID and updates content everywhere. It's blocked for Hotspot and Drag-and-Drop questions, whose answers depend on image geometry.</li></ul></div></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Design Screens</p>
+        <h2>Tag ten files in the time it used to take to tag one</h2>
+        <div class="cs-shots"><figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/add-media.jpg','Add New Media page')" aria-label="Enlarge: Add New Media page"><img src="images/dam/add-media.jpg" alt="Add New Media page: uploaded files on the left, media properties form on the right with an alt-text required error" loading="lazy" decoding="async"></button><figcaption>Add New Media: one form, many files</figcaption></figure></div>
+        <p style="margin-top:1.4rem;">Values typed on the first file copy to the rest until you switch files. Publish validates every file at once, opens the first incomplete one and flags the others. Alt text is mandatory, and captions and transcripts are stored once and reused wherever the media goes.</p>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Feedback</p>
+        <h2>433 comments, six themes, fixed once as rules</h2>
+        <div class="three-col"><div class="ic"><h3>Terminology</h3><p>Asset, media, image and file meant the same thing. One word, Media, everywhere.</p></div><div class="ic"><h3>Missing states</h3><p>Every story now ships default, hover, focus, loading, empty, error and API-failure states.</p></div><div class="ic"><h3>Accessibility</h3><p>Close button on every overlay, OneDrive-style grid keyboard model, screen-reader hints, tooltips on icon buttons.</p></div></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">UI Style</p>
+        <h2>Native to Quantum, re-themable for white label</h2>
+        <p>Built on Quantum's Material 3 based tokens: Primary #2C54CE, Noto Sans 12&ndash;20 px, 8 px radius, an 8-point spacing rhythm. Every value is a token, so a partner can re-brand by swapping values, not screens.</p>
+        <div class="cs-shots"><figure class="cs-shot is-wide"><button type="button" onclick="openLB('images/dam/colours.jpg','Media Library colour tokens')" aria-label="Enlarge: Media Library colour tokens"><img src="images/dam/colours.jpg" alt="Colour tokens: primary blue, text greys, outlines, folder yellows, error red and success green" loading="lazy" decoding="async"></button><figcaption>Colour tokens</figcaption></figure></div>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Success Metrics</p>
+        <h2>What success looks like</h2>
+        <div class="three-col"><div class="stat-c"><div class="stat-big">60%</div><div class="stat-lbl">Media insertions that reuse a library asset</div><div class="stat-src">North-star target</div></div><div class="stat-c"><div class="stat-big">100%</div><div class="stat-lbl">New images published with alt text</div><div class="stat-src">Target</div></div><div class="stat-c"><div class="stat-big">0</div><div class="stat-lbl">Content broken by replace or delete</div><div class="stat-src">Target</div></div></div>
+        <p class="cs-outcome-note">The module closed in October 2026, so these are targets with a measurement plan, not results yet.</p>
+      </div>
+      <div class="cs-sec">
+        <p class="sec-lbl">Reflection</p>
+        <h2>What this project taught me</h2>
+        <div class="learn-grid"><div class="learn-item"><h3>Familiar beats clever</h3><p>&ldquo;Behave like a file explorer&rdquo; settled most debates before they started.</p></div><div class="learn-item"><h3>Show the options</h3><p>Putting three deletion approaches side by side made the safe one easy for everyone to agree on.</p></div><div class="learn-item"><h3>Turn feedback into rules</h3><p>Fixing comment themes once, as rules, stopped the same comment returning on the next story.</p></div><div class="learn-item"><h3>Test earlier</h3><p>Next time: moderated sessions with authors before build, and analytics shipped with the UI.</p></div></div>
+      </div>
+      <div class="cs-cta-box">
+        <h2>Want the full case study?</h2>
+        <p>Research, decisions, design tokens, accessibility specs and the success-metric plan in an 11-page PDF.</p>
+        <div class="cta-row"><a href="DAM_Case_Study_Omkar_Khandalkar.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download PDF &rarr;</a><button class="btn btn-outline" onclick="closeCS('cs-dam')">Back to Portfolio</button></div>
+      </div>
+      <div class="cs-nav-btns"><button class="cs-nav-btn" onclick="openCS('cs-quantum')"><span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Quantum Virtual Classroom</span></button><button class="cs-nav-btn" onclick="openCS('cs-chitralo')"><span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Chitralo</span></button></div>
     </div>
   </div>
 
@@ -3293,7 +3393,7 @@
         <h2>What I took from this</h2>
         <div class="learn-grid"><div class="learn-item"><h3>Edge cases are design work</h3><p>Automated checks caught a real race condition when two customers tried to book the same date. Specifying that case early is what made it catchable.</p></div><div class="learn-item"><h3>Model behaviour, don&rsquo;t fight it</h3><p>Escrow only makes sense in India if it respects how advances already work.</p></div><div class="learn-item"><h3>Direction matters more when building is fast</h3><p>With AI-assisted development, the requirements, priorities and quality bar became the main design tools.</p></div><div class="learn-item"><h3>What I would do next</h3><p>Run the planned 30 creator interviews, complete a manual screen-reader audit, get a native Hindi review, and connect real payments.</p></div></div>
       </div>
-      <div class="cs-nav-btns"><button class="cs-nav-btn" onclick="openCS('cs-quantum')"><span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Quantum Virtual Classroom</span></button><button class="cs-nav-btn" onclick="openCS('cs-clio')"><span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Clio</span></button></div>
+      <div class="cs-nav-btns"><button class="cs-nav-btn" onclick="openCS('cs-dam')"><span class="cs-nav-btn-dir">&larr; Previous</span><span class="cs-nav-btn-name">Media Library (DAM)</span></button><button class="cs-nav-btn" onclick="openCS('cs-clio')"><span class="cs-nav-btn-dir">Next &rarr;</span><span class="cs-nav-btn-name">Clio</span></button></div>
     </div>
   </div>
 
@@ -3779,6 +3879,17 @@
             <p class="work-summary">One place for teachers to plan, launch, record and review live classes inside an enterprise LMS.</p>
             <p class="work-proof">5 disconnected places became 1 class record</p>
             <div class="work-actions"><span class="work-link" aria-hidden="true">Read case study &rarr;</span></div>
+          </div>
+        </article>
+        <article class="work-row reveal">
+          <a class="work-thumb" href="#cs-dam" tabindex="-1" aria-hidden="true"><img src="images/dam/listing.jpg" alt="" loading="lazy" decoding="async" style="object-position:left top;"></a>
+          <div class="work-body">
+            <p class="work-status">Enterprise product &middot; Shipped Oct 2026</p>
+            <h3><a href="#cs-dam">Upload once, reuse everywhere, never break live content</a></h3>
+            <p class="work-project">Media Library, Digital Asset Management for Quantum CMS &middot; Product Designer</p>
+            <p class="work-summary">A K-12 digital asset management module that ships in the CMS, as an add-on, or white-labelled.</p>
+            <p class="work-proof">36 user stories shipped across 7 sprints</p>
+            <div class="work-actions"><span class="work-link" aria-hidden="true">Read case study &rarr;</span><a class="work-ext" href="DAM_Case_Study_Omkar_Khandalkar.pdf" target="_blank" rel="noopener">PDF case study &#8599;</a></div>
           </div>
         </article>
         <article class="work-row reveal">
