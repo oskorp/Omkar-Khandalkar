@@ -3089,6 +3089,15 @@
     .two-stat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .cs-outcome-note { margin-top: 1.4rem; }
     .learn-item h3 { font-size: .98rem; font-weight: 600; margin-bottom: .35rem; }
+    .cs-stacked .cs-sec { position: relative; background: var(--bg2); border: 1px solid var(--borderS); border-bottom: 1px solid var(--borderS); border-radius: 24px; padding: clamp(1.6rem, 4vw, 3rem); margin-bottom: 1.4rem; box-shadow: 0 -12px 40px rgba(0, 0, 0, .35); }
+    .cs-stacked .cs-sec:last-of-type { margin-bottom: 2.6rem; }
+    .cs-stacked .cs-sec::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: #000; opacity: calc(var(--p, 0) * .45); pointer-events: none; }
+    [data-theme="light"] .cs-stacked .cs-sec { box-shadow: 0 -10px 30px rgba(2, 6, 23, .08); }
+    [data-theme="light"] .cs-stacked .cs-sec::after { opacity: calc(var(--p, 0) * .08); }
+    @media (prefers-reduced-motion: no-preference) {
+      .cs-stacked .cs-sec { position: sticky; transform-origin: 50% 0; transform: scale(calc(1 - var(--p, 0) * .05)); will-change: transform; }
+    }
+    @media (max-width: 720px) { .cs-stacked .cs-sec { border-radius: 18px; padding: 1.4rem 1.1rem; } }
     .cs-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
     .cs-note { font-size: .92rem !important; margin-top: 1.2rem; }
     .cs-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
@@ -3244,7 +3253,7 @@
     </div>
   </div>
 
-  <div class="cs-panel" id="cs-dam" role="dialog" aria-modal="true" aria-label="Media Library digital asset management case study" tabindex="-1">
+  <div class="cs-panel cs-stacked" id="cs-dam" role="dialog" aria-modal="true" aria-label="Media Library digital asset management case study" tabindex="-1">
     <div class="cs-panel-nav">
       <button class="cs-back-btn" onclick="closeCS('cs-dam')"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>Back to Work</button>
       <span class="cs-panel-nav-title">Media Library for Quantum CMS</span>
@@ -5758,6 +5767,43 @@ Click any project card to see the full story. Omkar doesn't do shallow.`
         }
       </script>
       <script src="chatbot.js" defer></script>
+<script>
+  /* Stacked case-study cards: each section sticks below the nav and the next one slides over it */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('.cs-panel.cs-stacked').forEach(function (panel) {
+      var cards = Array.prototype.slice.call(panel.querySelectorAll('.cs-sec'));
+      var nav = panel.querySelector('.cs-panel-nav');
+      var tops = [], ticking = false;
+      function layout() {
+        var vh = panel.clientHeight, base = (nav ? nav.offsetHeight : 52) + 16;
+        cards.forEach(function (c, i) {
+          var want = base + Math.min(i, 4) * 10;
+          var t = Math.min(want, vh - c.offsetHeight - 16);
+          tops[i] = t; c.style.top = t + 'px';
+        });
+        update();
+      }
+      function update() {
+        ticking = false;
+        var vh = panel.clientHeight, pTop = panel.getBoundingClientRect().top;
+        cards.forEach(function (c, i) {
+          var next = cards[i + 1], p = 0;
+          if (next) {
+            var nTop = next.getBoundingClientRect().top - pTop;
+            var start = vh, end = Math.max(tops[i + 1], 0);
+            p = Math.min(Math.max((start - nTop) / Math.max(start - end, 1), 0), 1);
+          }
+          c.style.setProperty('--p', p.toFixed(3));
+        });
+      }
+      panel.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      window.addEventListener('resize', layout);
+      if ('ResizeObserver' in window) { var ro = new ResizeObserver(layout); cards.forEach(function (c) { ro.observe(c); }); }
+      layout();
+    });
+  })();
+</script>
 </body>
 
 </html>
