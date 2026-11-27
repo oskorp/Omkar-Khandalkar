@@ -3995,7 +3995,7 @@
       </div>
       <div class="work-extra">
         <h3 class="work-extra-h reveal">Design and build <span>Tools and websites I also coded</span></h3>
-        <div class="work-list">
+        <div class="work-list is-stacked">
         <article class="work-row reveal">
           <a class="work-thumb" href="#cs-accessiq" tabindex="-1" aria-hidden="true"><img src="images/optimized-webp/accessiq_cover.webp" alt="" loading="lazy" decoding="async"></a>
           <div class="work-body">
@@ -5770,35 +5770,35 @@ Click any project card to see the full story. Omkar doesn't do shallow.`
   /* Selected Work stacked cards: set each card's sticky offset and how far the next card covers it */
   (function () {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var list = document.querySelector('#projects .work-list.is-stacked');
-    if (!list) return;
-    var rows = Array.prototype.slice.call(list.querySelectorAll('.work-row'));
     var nav = document.querySelector('nav');
-    var tops = [], ticking = false;
-    function layout() {
-      var vh = window.innerHeight, base = (nav ? nav.offsetHeight : 53) + 24;
-      rows.forEach(function (r, i) {
-        var t = Math.min(base + i * 16, vh - r.offsetHeight - 16);
-        tops[i] = t; r.style.top = t + 'px';
-      });
-      update();
-    }
-    function update() {
-      ticking = false;
-      var vh = window.innerHeight;
-      rows.forEach(function (r, i) {
-        var next = rows[i + 1], p = 0;
-        if (next) {
-          var nt = next.getBoundingClientRect().top;
-          p = Math.min(Math.max((vh - nt) / Math.max(vh - tops[i + 1], 1), 0), 1);
-        }
-        r.style.setProperty('--p', p.toFixed(3));
-      });
-    }
-    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    window.addEventListener('resize', layout);
-    if ('ResizeObserver' in window) { var ro = new ResizeObserver(layout); rows.forEach(function (r) { ro.observe(r); }); }
-    layout();
+    document.querySelectorAll('#projects .work-list.is-stacked').forEach(function (list) {
+      var rows = Array.prototype.slice.call(list.querySelectorAll('.work-row'));
+      var tops = [], ticking = false;
+      function layout() {
+        var vh = window.innerHeight, base = (nav ? nav.offsetHeight : 53) + 24;
+        rows.forEach(function (r, i) {
+          var t = Math.min(base + i * 16, vh - r.offsetHeight - 16);
+          tops[i] = t; r.style.top = t + 'px';
+        });
+        update();
+      }
+      function update() {
+        ticking = false;
+        var vh = window.innerHeight;
+        rows.forEach(function (r, i) {
+          var next = rows[i + 1], p = 0;
+          if (next) {
+            var nt = next.getBoundingClientRect().top;
+            p = Math.min(Math.max((vh - nt) / Math.max(vh - tops[i + 1], 1), 0), 1);
+          }
+          r.style.setProperty('--p', p.toFixed(3));
+        });
+      }
+      window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      window.addEventListener('resize', layout);
+      if ('ResizeObserver' in window) { var ro = new ResizeObserver(layout); rows.forEach(function (r) { ro.observe(r); }); }
+      layout();
+    });
   })();
 </script>
 </body>
